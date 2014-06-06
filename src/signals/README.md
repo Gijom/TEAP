@@ -1,5 +1,8 @@
 #These are all the signals actually supported:
 
+##DMY:
+	A simple dummy signal for tests, learning, and co.
+
 ##BVP:
 	Blood Volume Pressure
 

@@ -3,7 +3,8 @@ function Signal_assert_type(Signal, nameWanted)
 % This function is mainly used by SSS_assert_type(Sig), with params Sig and SSS.
 
 if(nargin != 2)
-	error('Should be called with the Signal and the expected name')
+	%If fucking matlab was clever, they'd have implemented print_usage, like octave
+	error('Usage: Signal_assert_type(Signal, nameWanted)')
 end
 
 name = Signal_get_name(Signal);

@@ -6,14 +6,18 @@
 #So these are just some trivial checks to make sure that I didn't leaked some
 #'typos'
 
+function dontWant() {
+	git grep "$@" -- '*.m'
+}
 
 #Check for comparisons
-git grep '\!\=' #!=
-git grep '(\!'  #(!   if(!foo…
+dontWant '\!\=' #!=
+dontWant '(\!'  #(!   if(!foo…
 
 #Stupid matlab doesn't support things like i++, i+=, etc.
-git grep '++'   #++
-git grep '+\='  #+=
-git grep -e '\-\-' --and --not -e '<\!\-\-' # --; we dont want xml comments
-git grep '\-\=' #-=
+dontWant '++'   #++
+dontWant '+\='  #+=
+dontWant -e '\-\-' --and --not -e '<\!\-\-' # --; we dont want xml comments
+dontWant '\-\=' #-=
+
 

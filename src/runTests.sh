@@ -3,6 +3,9 @@
 #First, syntax check
 ./tests/checkMatlabCompatibility.sh
 
+#and pedantic style checks
+./tests/checkStyle.sh
+
 
 #then, unit testing
 result=$(octave -q tests/unitTesting.m | grep 'test failed')

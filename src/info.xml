@@ -1,5 +1,4 @@
-<productinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:noNamespaceSchemaLocation="optional">
+<productinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="optional">
 	<?xml-stylesheet type="text/xsl"href="optional"?>
 	<!-- info.xml file for the toolbox -->
 	<!-- Author: Mandatory ? -->
@@ -30,14 +29,14 @@ xsi:noNamespaceSchemaLocation="optional">
 			<!-- Include call to open your documentation, if any -->
 			<label>TEAPhysio Documentation</label>
 			<!-- FIXME -->
-			<callback>web(fullfile(fileparts(which('TOOLBOX_REPRESENTATIVE_FUNCTION')),'help','tb_product_page.html'),'-helpbrowser')
+			<callback>web(fullfile(fileparts(which('TOOLBOX_REPRESENTATIVE_FUNCTION')), 'help', 'tb_product_page.html'), '-helpbrowser')
 			</callback>
 			<icon>$toolbox/matlab/icons/bookicon.gif</icon>
 		</listitem>
 		<listitem>
 			<!-- Include call to show release note, if any -->
 			<label>TEAPhysio Release Notes</label>
-			<callback>web(fullfile(fileparts(which('TOOLBOX_REPRESENTATIVE_FUNCTION')),'help','tb_release_notes.html'),'-helpbrowser')</callback>
+			<callback>web(fullfile(fileparts(which('TOOLBOX_REPRESENTATIVE_FUNCTION')), 'help', 'tb_release_notes.html'), '-helpbrowser')</callback>
 			<icon>HelpIcon.RELEASE_NOTES</icon>
 		</listitem>
 		<listitem>

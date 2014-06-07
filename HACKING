@@ -15,6 +15,12 @@ level, then with spaces. Ex:
 		Bar
 	}
 
+Spaces:
+-------
+Obviously, there should be no trailing spaces. Also, when calling a function
+or in arrays, there should be a single space after the comma (like in the
+English language :p)
+
 Variable naming:
 ----------------
 Variables should be camelCased except for signal structures that should have

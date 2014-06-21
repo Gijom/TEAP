@@ -35,3 +35,8 @@ physioSignalXXX/                The signal (GSR, ECG, …)
 	features/               Getting some features from the signal
 	view/                   Simple viewing of the signal
 	tests/                  Tests about the code
+
+
+#Coding conventions
+##raw signals
+	Raw signals should be given as an horizontal vector (aka. 1xN)

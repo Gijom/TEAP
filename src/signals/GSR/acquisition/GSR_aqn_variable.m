@@ -9,7 +9,8 @@ function Signal = GSR_aqn_variable(GSR, sampFreq)
 Signal = GSR_new_empty();
 
 Signal.sampFreq = sampFreq; %Hz
-Signal.raw = GSR;
+
+Signal.raw = Raw_convert_1D(GSR);
 
 
 end

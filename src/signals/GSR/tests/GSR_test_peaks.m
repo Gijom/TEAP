@@ -6,7 +6,7 @@ data = csvread('GSR_example.csv');
 data = data'; %put in horizontal form
 
 
-%Create the signal
+%Create the signal, the sampling freq of the signal we have is 1024Hz
 signal = GSR_aqn_variable(data, 1024);
 
 %And compute the features:

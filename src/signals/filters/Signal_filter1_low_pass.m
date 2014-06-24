@@ -1,4 +1,4 @@
-function Signal = Signal_filter_low1D(Signal, cutOffFreq)
+function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 %A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
 % Inputs:
 %  Signal: the signal to filter (will use the .raw component)
@@ -7,7 +7,7 @@ function Signal = Signal_filter_low1D(Signal, cutOffFreq)
 %  Signal: the low-passed-signal
 
 %Take the sampling frequency of the signal
-Fs = Signal_get_sampfreq(Signal);
+Fs = Signal_get_samprate(Signal);
 
 %The normalized cutOff freq
 Wn = (2/Fs)*cutOffFreq;

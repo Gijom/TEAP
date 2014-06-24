@@ -18,7 +18,7 @@ end
 %Compute the results
 
 rawSignal = Signal_get_raw(ECGsignal);
-signalSampFreq = Signal_get_sampfreq(ECGsignal);
+signalSampFreq = Signal_get_samprate(ECGsignal);
 
 newfs = 256; %Hz, as needed by rpeakdetect
 ECG = downsample(rawSignal, signalSampFreq/newfs);

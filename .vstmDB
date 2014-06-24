@@ -1,5 +1,5 @@
 @L Add some documentation to functions
 @L Add documentation to library
-On setRaw and setSamp, change the rawHash -
+On setRaw and setSamp, change the rawHash -> features
 @H change the signal structure
 @L talk about the license w/ Mohammad and Guillaume

@@ -1,4 +1,5 @@
-@H Add some test examples
-@H Try GSR works
 @L Add some documentation to functions
 @L Add documentation to library
+On setRaw and setSamp, change the rawHash -
+@H change the signal structure
+@L talk about the license w/ Mohammad and Guillaume

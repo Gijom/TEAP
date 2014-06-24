@@ -1,21 +1,17 @@
-function GSRsignal = GSR_filter_basic(GSRsignal, cutOffFreq)
-%Cleans a signal adding a low-pass filter to it
+function GSRsignal = GSR_filter_basic(GSRsignal)
+%Cleans a signal adding a low-pass median filter to it. The window equals the
+%sample rate, aka 1 sec.
 % Inputs:
 %  GSRsignal: the GSR signal.
-%  cutOffFreq: the cutOff frequency for the filter. Default is 100Hz
-
 % Outputs:
 %  Signal: the filtered GSR signal
+%
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
 %Make sure we have a GSR signal
-GSR_assert_type(GSRsignal)
+GSR_assert_type(GSRsignal);
 
+sampRate = Signal_get_samprate(GSRsignal);
 
-%Default cutoff
-if(nargin < 2)
-	cutOffFreq = 100; %Hz
-end
-
-GSRsignal = Signal_filter_low1D(GSRsignal, cutOffFreq);
+GSRsignal = Signal_filter1_low_median(GSRsignal, sampRate);

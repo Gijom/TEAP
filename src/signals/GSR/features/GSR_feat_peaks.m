@@ -80,7 +80,6 @@ for(iP = [1:length(idxL)])
 			%if rise time and amplitude fits threshold then the peak is
 			%considered and stored
 			if((rt >= tThreshLow) && (rt <= tThreshUp) && (amp >= ampThresh))
-				display('taken');
 				riseTime = [riseTime rt];
 				ampPeaks = [ampPeaks amp];
 				posPeaks = [posPeaks idxL(iP)];

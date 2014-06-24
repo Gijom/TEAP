@@ -12,5 +12,5 @@ raw = Signal_get_raw(Signal);
 
 filtered = medfilt1(raw, windowSize);
 
-Signal = Signal_set_raw(filtered);
+Signal = Signal_set_raw(Signal, filtered);
 

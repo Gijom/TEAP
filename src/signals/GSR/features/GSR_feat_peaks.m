@@ -24,9 +24,13 @@ if(nargin < 2)
 	ampThresh = 200;%Ohm
 end
 
+tThreshLow = 1;
+tThreshUp  = 10;
+
 
 %If the features were already computed
 if(isfield(GSRsignal, 'peaks') && GSRsignal.peaks.ampThresh == ampThresh)
+	warning('Features already calculated, only displaying them');
 	nbPeaks  = GSRsignal.peaks.nbPeaks;
 	ampPeaks = GSRsignal.peaks.ampPeaks;
 	riseTime = GSRsignal.peaks.riseTime;
@@ -39,11 +43,14 @@ end
 %Search low and high peaks
 %low peaks are the GSR appex reactions (highest sudation)
 %High peaks are used as starting points for the reaction
-dN = diff(diff(Signal_get_raw(GSRsignal) <= 0);
+GSR = Signal_get_raw(GSRsignal);
+
+dN = diff(diff(GSR) <= 0);
 idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;
 
 sampfreq = Signal_get_sampfreq(GSRsignal);
+display(['my sampling freq is ' num2str(sampfreq) ' biatch']);
 
 %For each low peaks find it's nearest high peak and check that there is no
 %low peak between them, if there is one, reject the peak (OR SEARCH FOR CURVATURE)
@@ -62,13 +69,14 @@ for(iP = [1:length(idxL)])
 
 		%check if there is no other low peaks between the nearest high and
 		%the current low peaks. If not the case then compute peak features
-		if(~any((idxL > nearestHP) & (idxL < idxL(iP))))
+		if(~any((idxL > nearestHP) && (idxL < idxL(iP))))
 			rt = (idxL(iP) - nearestHP)/sampfreq;
 			amp = GSR(nearestHP) - GSR(idxL(iP));
 
 			%if rise time and amplitude fits threshold then the peak is
 			%considered and stored
-			if((rt >= tThreshLow) & (rt <= tThreshUp) & (amp >= ampThresh))
+			if((rt >= tThreshLow) && (rt <= tThreshUp) && (amp >= ampThresh))
+				display('taken');
 				riseTime = [riseTime rt];
 				ampPeaks = [ampPeaks amp];
 				posPeaks = [posPeaks idxL(iP)];

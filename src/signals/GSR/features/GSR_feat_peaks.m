@@ -62,7 +62,6 @@ idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;
 
 sampfreq = Signal_get_samprate(GSRsignal);
-display(['my sampling freq is ' num2str(sampfreq) ' biatch']);
 
 %For each low peaks find it's nearest high peak and check that there is no
 %low peak between them, if there is one, reject the peak (OR SEARCH FOR CURVATURE)

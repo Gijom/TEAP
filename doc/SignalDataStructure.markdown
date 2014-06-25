@@ -12,6 +12,7 @@ Signals of the TEAP toolbox are in fact structures. The signal has the following
 attributes embedded:
 * name: the signal name (ex: GSR)
 * raw: the raw signal acquired from the device
+* rawID: a simple id that should change when raw does
 * sampFreq: the sampling frequency of the signal (in Hz)
 * feats: a sub structure containing the features of the signal
 

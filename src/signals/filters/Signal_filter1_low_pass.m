@@ -21,3 +21,5 @@ newRaw = filter(b, 1, rawSignal);
 
 Signal = Signal_set_raw(Signal, newRaw);
 
+%Indicate that the signal has been filtered
+Signal = Signal_set_preproc_lowpass(Signal);

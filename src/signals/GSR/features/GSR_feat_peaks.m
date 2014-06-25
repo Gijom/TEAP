@@ -45,7 +45,12 @@ if(Signal_has_feature(GSRsignal, 'peaks'))
 	end
 end
 
-%Compute the results
+%Compute the features
+
+if(~Signal_has_preproc_lowpass(GSRsignal))
+	warning(['For the function to work well, you should low-pass the signal' ...
+	         '. Preferably with a median filter']);
+end
 
 %Search low and high peaks
 %low peaks are the GSR appex reactions (highest sudation)

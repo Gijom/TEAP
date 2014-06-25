@@ -14,3 +14,5 @@ filtered = medfilt1(raw, windowSize);
 
 Signal = Signal_set_raw(Signal, filtered);
 
+%Indicate that the signal has been filtered
+Signal = Signal_set_preproc_lowpass(Signal);

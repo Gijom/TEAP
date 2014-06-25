@@ -27,3 +27,35 @@ Please note that once a signal is acquired, it's features are NOT automatically
 calculated. When you call a feature getter on a signal, if this feature wasn't 
 calculated previously, it will be calculated; else, it will only be returned.
 
+
+##Complete example
+Here is a little example of a complete signal showing features and 
+pre-processing markers:
+
+signal =
+
+  scalar structure containing the fields:
+
+    sampFreq =  1024
+    raw =  …snip…
+    name = GSR
+    preprocessing =
+
+      scalar structure containing the fields:
+
+        lowpass =  1
+
+    feats =
+
+      scalar structure containing the fields:
+
+        peaks =
+
+          scalar structure containing the fields:
+
+            ampThresh: 1x1 scalar
+            nbPeaks: 1x1 scalar
+            ampPeaks: 1x14 matrix
+            riseTime: 1x14 matrix
+            posPeaks: 1x14 matrix
+

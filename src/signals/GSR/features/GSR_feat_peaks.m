@@ -33,13 +33,16 @@ tThreshUp  = 10;
 
 
 %If the features were already computed
-if(isfield(GSRsignal, 'peaks') && GSRsignal.peaks.ampThresh == ampThresh)
-	warning('Features already calculated, only displaying them');
-	nbPeaks  = GSRsignal.peaks.nbPeaks;
-	ampPeaks = GSRsignal.peaks.ampPeaks;
-	riseTime = GSRsignal.peaks.riseTime;
-	posPeaks = GSRsignal.peaks.posPeaks;
-	return;
+if(Signal_has_feature(GSRsignal, 'peaks'))
+	sigFeatures = Signal_get_feature(GSRsignal, 'peaks');
+	if(sigFeatures.ampThresh == ampThresh)
+		warning('Features already calculated, only displaying them'); %FIXME: to remove
+		nbPeaks  = sigFeatures.nbPeaks;
+		ampPeaks = sigFeatures.ampPeaks;
+		riseTime = sigFeatures.riseTime;
+		posPeaks = sigFeatures.posPeaks;
+		return;
+	end
 end
 
 %Compute the results
@@ -91,9 +94,10 @@ end
 nbPeaks = length(posPeaks);
 
 %Now, store everything in the signal:
-GSRsignal.peaks.ampThresh = ampThresh;
-GSRsignal.peaks.nbPeaks   = nbPeaks;
-GSRsignal.peaks.ampPeaks  = ampPeaks;
-GSRsignal.peaks.riseTime  = riseTime;
-GSRsignal.peaks.posPeaks  = posPeaks;
+calcFeatures.ampThresh = ampThresh;
+calcFeatures.nbPeaks   = nbPeaks;
+calcFeatures.ampPeaks  = ampPeaks;
+calcFeatures.riseTime  = riseTime;
+calcFeatures.posPeaks  = posPeaks;
 
+GSRsignal = Signal_set_feature(GSRsignal, 'peaks', calcFeatures);

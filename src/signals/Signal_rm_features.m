@@ -8,4 +8,6 @@ function Signal = Signal_rm_features(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal = rmfield(Signal, 'feats');
+if(isfield(Signal, 'feats'))
+	Signal = rmfield(Signal, 'feats');
+end

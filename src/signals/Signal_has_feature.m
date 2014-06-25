@@ -12,12 +12,14 @@ function Boolean = Signal_has_feature(Signal, featureName)
 
 %Does the signal have some features
 if(~isfield(Signal, 'feats'))
-	return false;
+	Boolean = false;
+	return;
 end
 
 %Does it have the feature:
 if(~isfield(Signal.feats, featureName))
-	return false;
+	Boolean = false;
+	return;
 end
 
-return true;
+Boolean = true;

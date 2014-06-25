@@ -9,12 +9,14 @@ echo Running tests…
 #and pedantic style checks
 ./tests/checkStyle.sh
 
+#and unit testing:
+./octaveTests.sh
 
 #then, unit testing
-result=$(octave -q tests/unitTesting.m | grep 'test failed')
+#result=$(octave -q tests/unitTesting.m | grep 'test failed')
 
-if [ -n "$result" ]; then
-	echo 'Some tests failed ! Run runTests.m to see them';
-fi
+#if [ -n "$result" ]; then
+#	echo 'Some tests failed ! Run runTests.m to see them';
+#fi
 
 echo '…Done ;)'

@@ -1,5 +1,4 @@
 @L Add some documentation to functions
 @L Add documentation to library
-@H change the signal structure
 @L talk about the license w/ Mohammad and Guillaume
-@H signal structure: add preprocess fields + GSR warn on no low pass
+@H visualization toolbox (set_axis, show_signal, add_pts, etc.)

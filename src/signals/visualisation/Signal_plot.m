@@ -22,7 +22,7 @@ end
 
 xes = [1:length(raw)];
 
-seconds = xes ./ samprate;
+seconds = xes / samprate;
 
 plot(seconds, raw);
 

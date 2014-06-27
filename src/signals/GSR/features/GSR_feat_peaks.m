@@ -80,7 +80,7 @@ for(iP = [1:length(idxL)])
 
 		%check if there is no other low peaks between the nearest high and
 		%the current low peaks. If not the case then compute peak features
-		if(~any((idxL > nearestHP) && (idxL < idxL(iP))))
+		if(~any((idxL > nearestHP) & (idxL < idxL(iP))))
 			rt = (idxL(iP) - nearestHP)/sampfreq;
 			amp = GSR(nearestHP) - GSR(idxL(iP));
 

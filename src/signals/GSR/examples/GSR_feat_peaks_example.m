@@ -20,6 +20,7 @@ Signal_plot(signal);
 hold on;
 
 %As now the axis are in seconds, we have to use this function to plot the points
-Signal_plot_pts(signal, posPeaks, Signal_get_raw(signal)(posPeaks), 'r*');
+rawSig = Signal_get_raw(signal);
+Signal_plot_pts(signal, posPeaks, rawSig(posPeaks), 'r*');
 
 

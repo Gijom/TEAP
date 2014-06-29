@@ -33,7 +33,7 @@ fs = Signal_get_samprate(RESsignal);
 
 
 %TODO FIXME:
-%%% [b,a] = getRespFilter(fs);
+%%% [b, a] = getRespFilter(fs);
 %%% Resp_filt = filtfilt(b, a, signal);
 
 

@@ -2,33 +2,33 @@ function [filtdata]  = filterECG128Hz(data)
 
 % [filtdata]  = filterECG128Hz(data);
 % apply a zerophase FIR filter (coeffs designed with sptool)
-% Least Sq. FIR LP & HP filters (cascaded): 70dB 0.05-40Hz 1dB ripple. 
+% Least Sq. FIR LP & HP filters (cascaded): 70dB 0.05-40Hz 1dB ripple.
 % Sampling Frequency of Fs = 128.
 %
-% Should work nicely for 16bit, 256Hz ECG. You may experince 
-% some ringing at turning points, but that's FIR filters for you.  
-% You might like to try wavelets for a better filter 
+% Should work nicely for 16bit, 256Hz ECG. You may experince
+% some ringing at turning points, but that's FIR filters for you.
+% You might like to try wavelets for a better filter
 %
-% These routines are made available under the GNU general public license. 
-% If you have not received a copy of this license, please download from 
+% These routines are made available under the GNU general public license.
+% If you have not received a copy of this license, please download from
 % http://www.gnu.org/
 %
-% Please distribute (and modify) freely, commenting where you have 
-% added modifications. The author would appreciate correspondence 
+% Please distribute (and modify) freely, commenting where you have
+% added modifications. The author would appreciate correspondence
 % regarding corrections, modifications, improvements etc.
 %
 % G. Clifford : gari@ieee.org
 
 % sampling frequency
-Fs      = 128;  % Hz    
+Fs      = 128;  % Hz
 
 % Data should be zeromeaned before calling this function
-data = data-mean(data);
+data = data - mean(data);
 
 % set up transfer function
 %0.00128 1.28 &  35-45Hz
 denominator = 1;
-numerator_lp =[
+numerator_lp = [
     -7.836313016322635e-03
     -1.896972756320189e-02
     -5.175330833579545e-03
@@ -61,7 +61,7 @@ numerator_lp =[
 ];
 
 
-numerator_hp = [ 
+numerator_hp = [
     -5.272437301928293e-04
     -1.270087347478445e-04
     -1.421348135287156e-04
@@ -310,17 +310,14 @@ numerator_hp = [
 ];
 
 % low pass filter
-aff_lp = filtfilt(numerator_lp,denominator,data);
+aff_lp = filtfilt(numerator_lp, denominator, data);
 
-% Don't high pass filter it if you don't want to remove the baseline 
+% Don't high pass filter it if you don't want to remove the baseline
 % fluctuations due to resp, BP? and electrode noise?
-filtdata = filtfilt(numerator_hp,denominator,aff_lp);
+filtdata = filtfilt(numerator_hp, denominator, aff_lp);
 
 % correct for amplitude distortion. !!!??????
 %mean_s = mean(new_data);
 %mean_a = mean(aff_hp);
 %a = aff*(mean_s/mean_a);
-
-
-
 

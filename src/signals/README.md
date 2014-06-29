@@ -21,8 +21,8 @@
 ##GSR:
 	Galvanic Skin Response
 
-##HRP:
-	Human Respiration pattern
+##RES:
+	Respiration
 
 ##HST:
 	Human Skin Temperature (actually, I made that myself)

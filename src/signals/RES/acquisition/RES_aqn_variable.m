@@ -1,13 +1,13 @@
-function Signal = GSR_aqn_variable(rawGSR, sampFreq)
-% GSR_aqn_variable gets a GSR signal from a variable
+function Signal = RES_aqn_variable(rawRES, sampFreq)
+% RES_aqn_variable gets a RES signal from a variable
 % Inputs:
-%   rawGSR [1xN]: the raw GSR signal
+%   rawRES [1xN]: the raw RES signal
 %   sampFreq [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: A GSR TEAPhysio signal
 
-Signal = GSR_new_empty();
-Signal = Signal_set_samprate(sampFreq);
+Signal = RES_new_empty();
+Signal = Signal_set_samprate(Signal, sampFreq);
 
 if(median(rawGSR) < 1)
 	warning(['The signal given seems to be given in Siemens. I need Ohms. ' ...

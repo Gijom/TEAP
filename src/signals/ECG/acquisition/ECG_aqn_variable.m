@@ -7,8 +7,7 @@ function Signal = ECG_aqn_variable(ECG, sampFreq)
 %   Signal: An ECG TEAPhysio signal
 
 Signal = ECG_new_empty();
-
-Signal.sampFreq = sampFreq; %Hz
+Signal = Signal_set_samprate(sampFreq);
 
 Signal.raw = 42; % FIXME Raw_convert_1D(GSR);
 

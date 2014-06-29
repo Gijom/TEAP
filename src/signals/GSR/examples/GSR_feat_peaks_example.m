@@ -17,10 +17,19 @@ signal = GSR_filter_basic(signal);
 
 %Show the signal
 Signal_plot(signal);
-hold on;
 
 %As now the axis are in seconds, we have to use this function to plot the points
 rawSig = Signal_get_raw(signal);
 Signal_plot_pts(signal, posPeaks, rawSig(posPeaks), 'r*');
+%Note that we didn't had to 'hold on': the function does-it itself.
 
+figure
+
+%Take a part of a signal
+truncated = Signal_get_window(signal, 41, 85);
+Signal_plot(truncated);
+
+[nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(truncated);
+rawSig = Signal_get_raw(truncated);
+Signal_plot_pts(truncated, posPeaks, rawSig(posPeaks), 'r*');
 

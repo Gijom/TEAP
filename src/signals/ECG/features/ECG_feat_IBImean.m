@@ -24,10 +24,10 @@ end
 %Compute the results
 
 rawSignal = Signal_get_raw(ECGSignal);
-signalSampFreq = Signal_get_samprate(ECGSignal);
+samprate = Signal_get_samprate(ECGSignal);
 
 newfs = 256; %Hz, as needed by rpeakdetect
-ECG = downsample(rawSignal, signalSampFreq/newfs);
+ECG = downsample(rawSignal, samprate/newfs);
 [hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG, newfs);
 [BPM IBI] = correctBPM(R_index, newfs);
 

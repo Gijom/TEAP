@@ -8,4 +8,4 @@ function Signal = Signal_set_samprate(Signal, samprate)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal.sampfreq = samprate;
+Signal.samprate = samprate;

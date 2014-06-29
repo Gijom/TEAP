@@ -61,7 +61,7 @@ dN = diff(diff(GSR) <= 0);
 idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;
 
-sampfreq = Signal_get_samprate(GSRsignal);
+samprate = Signal_get_samprate(GSRsignal);
 
 %For each low peaks find it's nearest high peak and check that there is no
 %low peak between them, if there is one, reject the peak (OR SEARCH FOR CURVATURE)
@@ -81,7 +81,7 @@ for(iP = [1:length(idxL)])
 		%check if there is no other low peaks between the nearest high and
 		%the current low peaks. If not the case then compute peak features
 		if(~any((idxL > nearestHP) & (idxL < idxL(iP))))
-			rt = (idxL(iP) - nearestHP)/sampfreq;
+			rt = (idxL(iP) - nearestHP)/samprate;
 			amp = GSR(nearestHP) - GSR(idxL(iP));
 
 			%if rise time and amplitude fits threshold then the peak is

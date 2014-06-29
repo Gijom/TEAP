@@ -26,7 +26,17 @@ seconds = xes / samprate;
 
 plot(seconds, raw);
 
-xlabel('Seconds');
+
+offset = Signal_get_offset(Signal);
+
+%The signal may be offseted with Signal_get_window. If so, say it
+if(offset ~= 0)
+	offsetT = offset / samprate;
+	xlabel(['Seconds - ' num2str(offsetT) ' (offset)']);
+else
+	xlabel('Seconds');
+end
+
 ylabel([name ' (' signal_unit ')']);
 title([name ' vs Seconds']);
 

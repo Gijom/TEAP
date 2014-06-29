@@ -22,7 +22,4 @@
 %! assert(riseTime, [2.99 2.69 2.55 3.91  2.62 2.67 3.39 4.87 1.94 2.41 5.69 3.21 2.49 2.57], 0.5)
 %! assert(posPeaks, [31594 36591 43458 52418 60798 68388 78432 87726 93780 98686 126104 131732 144591 149817], 1)
 %!
-%! %plot(Signal_get_raw(signal))
-%! %hold on;
-%! %plot(posPeaks, Signal_get_raw(signal)(posPeaks), 'r*')
 

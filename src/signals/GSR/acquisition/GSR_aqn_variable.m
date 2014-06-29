@@ -7,7 +7,7 @@ function Signal = GSR_aqn_variable(rawGSR, sampRate)
 %   Signal: A GSR TEAPhysio signal
 
 Signal = GSR_new_empty();
-Signal = Signal_set_sampRate(Signal, sampFreq);
+Signal = Signal_set_samprate(Signal, sampRate);
 
 if(median(rawGSR) < 1)
 	warning(['The signal given seems to be given in Siemens. I need Ohms. ' ...

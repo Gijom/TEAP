@@ -1,4 +1,4 @@
-function [mainFreq RESsignal] = RES_feat_peaks(RESsignal)
+function [mainFreq RESsignal] = RES_feat_mainfreq(RESsignal)
 %Computes the main frequency of a respiration signal.
 % Inputs:
 %  RESsignal: the RES signal.
@@ -28,15 +28,23 @@ if(~Signal_has_preproc_lowpass(RESsignal))
 	         '. Preferably with a median filter']);
 end
 
-
+raw = Signal_get_raw(RESsignal);
 fs = Signal_get_samprate(RESsignal);
 
 
+%TODO FIXME:
+%%% [b,a] = getRespFilter(fs);
+%%% Resp_filt = filtfilt(b, a, signal);
+
+
 %Compute the energy spectrum
-[RespPower, fResp] = pwelch(Resp_filt, 30*fs, [], [], fs); %30 seconds segment
+[RespPower, fResp] = pwelch(raw, 30*fs, [], [], fs); %30 seconds segment
+
 iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
+
+
 [dummy, iMainFreq] = max(RespPower(iFreqInterest));
 
 mainFrequency.value = fResp(iFreqInterest(iMainFreq));
-
+mainFreq = mainFrequency.value;
 RESsignal = Signal_set_feature(RESsignal, 'mainfreq', mainFrequency);

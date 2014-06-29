@@ -19,10 +19,10 @@
 	Electrooculography
 
 ##GSR:
-	Galvanic Skin Response
+	Galvanic Skin Response (also known as SCR: Skin Conductance Response)
 
 ##RES:
-	Respiration
+	Respiration (also known as HRP: Human Respiration Pattern)
 
 ##HST:
 	Human Skin Temperature (actually, I made that myself)

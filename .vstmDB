@@ -3,3 +3,4 @@
 @L talk about the license w/ Mohammad and Guillaume
 @H finish ECG
 @M start EEG
+@H when Signal_window, keep attributes (lowpassed, highpassed, etc)

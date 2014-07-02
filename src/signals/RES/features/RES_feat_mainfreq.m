@@ -12,6 +12,9 @@ function [mainFreq RESsignal] = RES_feat_mainfreq(RESsignal)
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+%FIXME: this function does not seem to work really well ?!
+
+
 %Make sure we have a RES signal
 RES_assert_type(RESsignal)
 
@@ -48,3 +51,4 @@ iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
 mainFrequency.value = fResp(iFreqInterest(iMainFreq));
 mainFreq = mainFrequency.value;
 RESsignal = Signal_set_feature(RESsignal, 'mainfreq', mainFrequency);
+

@@ -25,23 +25,19 @@ if(Signal_has_feature(RESsignal, 'mainfreq'))
 	return;
 end
 
-%Compute the features
-if(~Signal_has_preproc_lowpass(RESsignal))
-	warning(['For the function to work well, you should low-pass the signal' ...
-	         '. Preferably with a median filter']);
-end
-
 raw = Signal_get_raw(RESsignal);
 fs = Signal_get_samprate(RESsignal);
 
 
-%TODO FIXME:
-%%% [b, a] = getRespFilter(fs);
-%%% Resp_filt = filtfilt(b, a, signal);
+Fpeak = 0.375;  % Peak Frequency
+BW    = 0.5;    % Bandwidth
+Apass = 1;      % Bandwidth Attenuation
+[b, a] = iirpeak(Fpeak/(fs/2), BW/(fs/2), Apass);
+Resp_filt = filtfilt(b, a, raw);
 
 
 %Compute the energy spectrum
-[RespPower, fResp] = pwelch(raw, 30*fs, [], [], fs); %30 seconds segment
+[RespPower, fResp] = pwelch(Resp_filt, 30*fs, [], [], fs); %30 seconds segment
 
 iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
 

@@ -58,9 +58,9 @@ if(b > a)
 end
 
 %%%%%%%%%% if there's no time axis - make one
-if (a | b == 1);
+if (a || b == 1)
 % make time axis
-  tt = 1/samp_freq:1/samp_freq:ceil(len/samp_freq);
+  tt = [1/samp_freq:1/samp_freq:ceil(len/samp_freq)];
   t = tt(1:len);
   x = data;
 end
@@ -80,10 +80,10 @@ end
 
  % FIR filtering stage
  bpf=x; %Initialise
-if( (samp_freq == 128) & (exist('filterECG128Hz') ~= 0) )
+if( (samp_freq == 128) && (exist('filterECG128Hz') ~= 0) )
         bpf = filterECG128Hz(x);
 end
-if( (samp_freq == 256) & (exist('filterECG256Hz') ~= 0) )
+if( (samp_freq == 256) && (exist('filterECG256Hz') ~= 0) )
         bpf = filterECG256Hz(x);
 end
 

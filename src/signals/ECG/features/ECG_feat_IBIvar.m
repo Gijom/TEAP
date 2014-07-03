@@ -33,4 +33,4 @@ ECG = downsample(rawSignal, samprate/newfs);
 [BPM IBI] = correctBPM(R_index, newfs);
 
 IBIVar = var(IBI);
-ECGSignal = Signal_set_feature('IBIVar', IBIVar);
+ECGSignal = Signal_set_feature(ECGSignal, 'IBIVar', IBIVar);

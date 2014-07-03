@@ -1,4 +1,4 @@
-function [bpm, delta_t, t, listePic] = correctBPM(listePic_in, fe,thresh)
+function [bpm, delta_t, t, listePic] = correctBPM(listePic_in, fe, thresh)
 % IN :
 %   listePic_in [1*N] : vector of peaks with position of peak in sample for each
 %                       peak ([1 8 20] 3 peaks at samples 1, 8 and 20)
@@ -32,9 +32,9 @@ timePic = diff(listePic)./fe;
 %Find potential problem by checking the change in duration between two
 %peaks compared to the threshold
 listePb = [];
-medTP = zeros(1,length(timePic));
-for(iTP=nbTP+1:length(timePic))
-    medTP(iTP) = median(timePic(iTP-nbTP:iTP-1));
+medTP = zeros(1, length(timePic));
+for(iTP = [nbTP+1:length(timePic)])
+    medTP(iTP) = median(timePic([iTP-nbTP:iTP-1]));
     if(medTP(iTP) - timePic(iTP)> thresh) %Pb detected %%%%%%%%%%%%%
         listePb = [listePb iTP];
     end
@@ -45,7 +45,7 @@ end
 %Decide wich problems are true ones (if the peak is removed does the remaining
 %interval corresponds to the median of the precedent)
 realPb = [];
-for(iPb=1:length(listePb))
+for(iPb = [1:length(listePb)])
     if(timePic(listePb(iPb))+timePic(listePb(iPb)-1) < medTP(listePb(iPb)) + thresh)
         realPb = [realPb listePb(iPb)];
     end
@@ -61,8 +61,8 @@ timePic = diff(listePic)./fe;
 %Find potential problem by checking the change in duration between two
 %peaks compared to the threshold
 listePb = [];
-medTP = zeros(1,length(timePic));
-for(iTP=nbTP+1:length(timePic))
+medTP = zeros(1, length(timePic));
+for(iTP = [nbTP+1:length(timePic)])
     medTP(iTP) = median(timePic(iTP-nbTP:iTP-1));
     if(medTP(iTP) - timePic(iTP) < -thresh) %Pb detected
         listePb = [listePb iTP];
@@ -72,10 +72,10 @@ end
 %for each problem add the necessary number of peaks
 
 nbAddTotal = 0;
-for(iPb=1:length(listePb))
+for(iPb = [1:length(listePb)])
     nbAdd = round(timePic(listePb(iPb))/medTP(listePb(iPb)))-1;
     splAdd = (timePic(listePb(iPb)) / (nbAdd + 1))*fe;
-    relativePos = round(cumsum(splAdd*ones(1,nbAdd))); %relative position of each new peak to the peak before missing ones
+    relativePos = round(cumsum(splAdd*ones(1, nbAdd))); %relative position of each new peak to the peak before missing ones
     listePic = [listePic(1:listePb(iPb)+nbAddTotal)  (relativePos + listePic(listePb(iPb)+nbAddTotal)) listePic(listePb(iPb)+nbAddTotal+1:end)];
     nbAddTotal = nbAddTotal + nbAdd;
 end

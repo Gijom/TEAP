@@ -9,5 +9,10 @@ function Signal = Signal_set_feature(Signal, featureName, featureStructure)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 3)
+	error('Signal_set_feature needs 3 args (signal, featName, featStructure)');
+end
+
+
 Signal.feats.(featureName) = featureStructure;
 

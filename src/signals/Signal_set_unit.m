@@ -8,4 +8,11 @@ function Signal = Signal_set_unit(Signal, unitStr)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 2)
+	error('Usage: Signal = Signal_set_unit(Signal, unitStr)');
+end
+
+Signal_assert_mine(Signal);
+
 Signal.unit = unitStr;
+

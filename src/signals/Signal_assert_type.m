@@ -7,6 +7,8 @@ if(nargin ~= 2)
 	error('Usage: Signal_assert_type(Signal, nameWanted)')
 end
 
+Signal_assert_mine(Signal);
+
 name = Signal_get_name(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])

@@ -8,4 +8,12 @@ function Signal = Signal_set_preprocessing(Signal, preprocName)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 2)
+	error('Usage: Signal = Signal_set_preprocessing(Signal, preprocName)');
+end
+
+Signal_assert_mine(Signal);
+
 Signal.preprocessing.(preprocName) = true;
+
+

@@ -16,6 +16,14 @@ function Child = Signal_get_window(Signal, startT, endT)
 %  Signal_get_offset
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+
+if(nargin ~= 3)
+	error('Usage: ChildSig = Signal_get_window(Signal, startT, endT)');
+end
+
+Signal_assert_mine(Signal);
+
+
 fs = Signal_get_samprate(Signal);
 
 startTFrame = startT * fs;

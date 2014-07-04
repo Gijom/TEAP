@@ -8,4 +8,10 @@ function feature = Signal_get_feature(Signal, featureName)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 2)
+	error('Usage: feature = Signal_get_feature(Signal, featureName)');
+end
+
+Signal_assert_mine(Signal);
+
 feature = Signal.feats.(featureName);

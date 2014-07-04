@@ -7,4 +7,11 @@ function unit = Signal_get_unit(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 1)
+	error('Usage: unitName = Signal_get_unit(Signal)');
+end
+
+Signal_assert_mine(Signal);
+
 unit = Signal.unit;
+

@@ -9,8 +9,15 @@ function offset = Signal_get_offset(Signal)
 %  Signal_get_window_frames
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 1)
+	error('Usage: offset = Signal_get_offset(Signal)');
+end
+
+Signal_assert_mine(Signal);
+
 if(isfield(Signal, 'relatime'))
 	offset = Signal.relatime;
 else
 	offset = 0;
 end
+

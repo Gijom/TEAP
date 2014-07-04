@@ -9,4 +9,12 @@ function Signal = Signal_set_name(Signal, nameStr)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 2)
+	error('Usage: Signal = Signal_set_name(Signal, nameStr)');
+end
+
+Signal_assert_mine(Signal);
+
+
 Signal.name = nameStr;
+

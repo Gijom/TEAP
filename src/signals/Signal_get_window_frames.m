@@ -41,3 +41,8 @@ end
 
 Child = Signal_set_raw(Child, raw(startT: endT));
 
+%Keep the signal preprocessing features (like 'low-passed', etc.)
+if(isfield(Signal, 'preprocessing'))
+	Child.preprocessing = Signal.preprocessing;
+end
+

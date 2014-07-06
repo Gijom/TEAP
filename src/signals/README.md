@@ -1,12 +1,12 @@
 #These are all the signals actually supported:
 
-##DMY:
+##DMY: DONE
 	A simple dummy signal for tests, learning how the toolbox works, and co.
 
 ##BVP:
 	Blood Volume Pressure
 
-##ECG:
+##ECG: DONE
 	Electrocardiography
 
 ##EEG:
@@ -18,10 +18,10 @@
 ##EOG:
 	Electrooculography
 
-##GSR:
+##GSR: DONE
 	Galvanic Skin Response (also known as SCR: Skin Conductance Response)
 
-##RES:
+##RES: DONE
 	Respiration (also known as HRP: Human Respiration Pattern)
 
 ##HST:

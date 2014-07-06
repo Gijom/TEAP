@@ -17,9 +17,7 @@ function [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsign
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
-
 %TODO: we need filtering. Do-it inside here or outside ?
-%TODO: best to convert from DC to AC ?
 
 %Make sure we have a GSR signal
 GSR_assert_type(GSRsignal)
@@ -36,7 +34,6 @@ tThreshUp  = 10;
 if(Signal_has_feature(GSRsignal, 'peaks'))
 	sigFeatures = Signal_get_feature(GSRsignal, 'peaks');
 	if(sigFeatures.ampThresh == ampThresh)
-		warning('Features already calculated, only displaying them'); %FIXME: to remove
 		nbPeaks  = sigFeatures.nbPeaks;
 		ampPeaks = sigFeatures.ampPeaks;
 		riseTime = sigFeatures.riseTime;
@@ -76,7 +73,7 @@ for(iP = [1:length(idxL)])
 	%if no high peak before (first peak detected in the signal) do nothing
 	if(~isempty(nearestHP))
 		%Get nearest high peak
-		nearestHP = nearestHP(end); %FIXME
+		nearestHP = nearestHP(end);
 
 		%check if there is no other low peaks between the nearest high and
 		%the current low peaks. If not the case then compute peak features

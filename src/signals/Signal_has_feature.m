@@ -23,3 +23,11 @@ if(~isfield(Signal.feats, featureName))
 end
 
 Boolean = true;
+
+%!assert(Signal_has_feature(Signal_new_empty(), 'oauoau'), false);
+
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_feature(sig, 'aoeu', 42);
+%! assert(Signal_has_feature(sig, 'aoeu'), true);
+%! assert(Signal_has_feature(sig, 'htns'), false);

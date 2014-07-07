@@ -8,5 +8,5 @@ function Signal = Signal_set_preproc_lowpass(Signal)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
-Signal = Signal_set_preprocessing(Signal, 'lowpass');
+Signal = Signal_set_preproc(Signal, 'lowpass');
 

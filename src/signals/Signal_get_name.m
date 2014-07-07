@@ -22,3 +22,4 @@ end
 signalName = Signal.name;
 
 %!assert(strcmp(Signal_get_name(Signal_new_empty()), 'invalid'))
+

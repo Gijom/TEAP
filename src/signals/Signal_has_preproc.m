@@ -21,3 +21,11 @@ if(~isfield(Signal.preprocessing, preprocName))
 end
 
 Boolean = true;
+
+%!assert(Signal_has_preproc(Signal_new_empty(), 'oauoau'), false);
+
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_preproc(sig, 'aoeu');
+%! assert(Signal_has_preproc(sig, 'aoeu'), true);
+%! assert(Signal_has_preproc(sig, 'htns'), false);

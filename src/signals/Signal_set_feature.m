@@ -10,9 +10,18 @@ function Signal = Signal_set_feature(Signal, featureName, featureStructure)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 3)
-	error('Signal_set_feature needs 3 args (signal, featName, featStructure)');
+	error('Usage: Signal_set_feature(signal, featName, featStructure)');
+end
+
+if(nargout ~= 1)
+	error('You need to retrieve the function''s result. Else, it''s useless !');
 end
 
 
 Signal.feats.(featureName) = featureStructure;
+
+%!error(Signal_set_feature())
+%!error(Signal_set_feature(Signal_new_empty(), 'toto', 42)) %no result retreivd
+%!assert(Signal_get_feature(Signal_set_feature(Signal_new_empty(), 'to', 42),
+%!       'to'), 42)
 

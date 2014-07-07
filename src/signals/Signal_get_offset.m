@@ -21,3 +21,9 @@ else
 	offset = 0;
 end
 
+%!assert(Signal_get_offset(Signal_new_empty()), 0)
+
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_samprate(sig, 1);
+%! assert(Signal_get_offset(Signal_get_window(sig, 10, 20)), 10);

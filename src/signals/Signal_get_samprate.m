@@ -14,3 +14,10 @@ Signal_assert_mine(Signal);
 
 samprate = Signal.samprate;
 
+%!error(Signal_get_samprate());
+%!error(Signal_get_samprate(42));
+
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_samprate(sig, 42);
+%! assert(Signal_get_samprate(sig), 42);

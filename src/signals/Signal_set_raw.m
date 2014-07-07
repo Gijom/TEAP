@@ -5,10 +5,20 @@ if(nargin ~= 2)
 	error('Usage: Signal = Signal_set_raw(Signal, raw)');
 end
 
+if(nargout ~= 1)
+	error('You need to retrieve the function''s result. Else, it''s useless !');
+end
+
 Signal_assert_mine(Signal);
 
 Signal.raw = raw;
 
 %As the signal changed, we remove it's features
 Signal = Signal_rm_features(Signal);
+
+%!error(Signal_set_raw())
+%!error(Signal_set_raw(42))
+%!error(Signal_set_raw(42, [1 2 3 4]))
+%!error(Signal_set_raw(Signal_new_empty(), [1 2 3 4])) %No result retreived
+%!assert(Signal_set_raw(Signal_new_empty(), [1 2 3 4]).raw, [1 2 3 4])
 

@@ -15,3 +15,10 @@ Signal_assert_mine(Signal);
 
 unit = Signal.unit;
 
+%!error(Signal_get_unit())
+%!error(Signal_get_unit(42))
+
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_unit(sig, 'tu');
+%! assert(Signal_get_unit(sig), 'tu');

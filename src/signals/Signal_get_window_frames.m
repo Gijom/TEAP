@@ -36,7 +36,7 @@ Child.relatime = startT + offset;
 
 raw = Signal_get_raw(Signal);
 if(endT > length(raw))
-	endT = length(raw)
+	endT = length(raw);
 end
 
 Child = Signal_set_raw(Child, raw(startT: endT));

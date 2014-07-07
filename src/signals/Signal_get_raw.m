@@ -14,3 +14,7 @@ Signal_assert_mine(Signal);
 
 Raw = Signal.raw;
 
+%!test
+%! sig = Signal_new_empty();
+%! sig = Signal_set_raw(sig, [1 2 3 4]);
+%! assert(Signal_get_raw(sig), [1 2 3 4]);

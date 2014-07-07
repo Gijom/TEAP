@@ -31,3 +31,8 @@ endTFrame = endT * fs;
 
 Child = Signal_get_window_frames(Signal, startTFrame, endTFrame);
 
+%!error(Signal_get_window())
+%!error(Signal_get_window(42))
+%!error(Signal_get_window(42, 1))
+%!error(Signal_get_window(42, 1, 2))
+

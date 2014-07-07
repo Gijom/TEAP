@@ -7,9 +7,12 @@ if(nargin ~= 2)
 	error('Usage: Signal_assert_type(Signal, nameWanted)')
 end
 
+%First, make sure it's a TEAPhysio signal
 Signal_assert_mine(Signal);
 
+%And then, compare the name
 name = Signal_get_name(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])
 end
+

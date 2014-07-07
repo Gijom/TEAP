@@ -24,7 +24,7 @@
 ##RES: DONE
 	Respiration (also known as HRP: Human Respiration Pattern)
 
-##HST:
+##HST: DONE
 	Human Skin Temperature (actually, I made that myself)
 
 

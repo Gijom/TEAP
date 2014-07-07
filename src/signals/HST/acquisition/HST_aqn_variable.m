@@ -6,6 +6,11 @@ function Signal = HST_aqn_variable(rawHST, sampRate)
 % Outputs:
 %   Signal: A HST TEAPhysio signal
 
+
+if(nargin ~= 2)
+	error('Usage: HST_new_empty(rawHST, sampRate)');
+end
+
 Signal = HST_new_empty();
 Signal = Signal_set_samprate(Signal, sampRate);
 

@@ -19,8 +19,10 @@ Signal = ECG_new_empty();
 if(nargin == 2) %second case
 	sampRate = ECG2;
 	raw = ECG;
-else
+else if(nargin == 3) %first case
 	raw = ECG2 - ECG;
+else
+	error('Usage: ECG_aqn_variable(ECG [, ECG2], sampRate)');
 end
 
 Signal = Signal_set_samprate(Signal, sampRate);

@@ -6,6 +6,10 @@ function Signal = RES_aqn_variable(rawRES, sampRate)
 % Outputs:
 %   Signal: A RES TEAPhysio signal
 
+if(nargin ~= 2)
+	error('Usage: RES_aqn_variable(rawRes, sampRate');
+end
+
 Signal = RES_new_empty();
 Signal = Signal_set_samprate(Signal, sampRate);
 

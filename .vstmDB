@@ -6,4 +6,3 @@
 @H for filters, if they offset the signal by x, indicate-it !
 @M could a structure for output be useful ? Ex: structure{value, unit}
 @H for modification functions, use nargout to check for return value used
-@H assert narign = 2 for aqn_variable

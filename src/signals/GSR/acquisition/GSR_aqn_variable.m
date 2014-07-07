@@ -6,6 +6,11 @@ function Signal = GSR_aqn_variable(rawGSR, sampRate)
 % Outputs:
 %   Signal: A GSR TEAPhysio signal
 
+if(nargin ~= 2)
+	error('Usage: GSR_aqn_variable(rawGSR, sampRate)');
+end
+
+
 Signal = GSR_new_empty();
 Signal = Signal_set_samprate(Signal, sampRate);
 

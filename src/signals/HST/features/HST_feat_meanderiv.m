@@ -1,10 +1,10 @@
 function [meanTemp HSTsignal] = HST_feat_mean(HSTsignal)
-%Computes the mean of the HST signal (aka the mean temperature)
+%Computes the mean derivation of the HST signal.
 % Inputs:
 %  HSTsignal: the HST signal.
 %
 % Outputs:
-%  meanTemp: the mean temperature, in °C
+%  meanTemp: the mean derivation of the temperature, in d°C/dt
 %  Signal: the HST signal with the values computed inside: will be faster if
 %          you run-it a second time: if the feature was already comptued for
 %          this signal, only fetches the results.
@@ -15,8 +15,8 @@ function [meanTemp HSTsignal] = HST_feat_mean(HSTsignal)
 HST_assert_type(HSTsignal)
 
 %If the features were already computed
-if(Signal_has_feature(HSTsignal, 'mean'))
-	sigFeatures = Signal_get_feature(HSTsignal, 'mean');
+if(Signal_has_feature(HSTsignal, 'meanderiv'))
+	sigFeatures = Signal_get_feature(HSTsignal, 'meanderiv');
 	meanTemp = sigFeatures.value;
 	return;
 end
@@ -29,8 +29,8 @@ end
 
 raw = Signal_get_raw(HSTsignal);
 
-calcFeatures.value = mean(raw);
+calcFeatures.value = mean(diff(raw));
 meanTemp = calcFeatures.value;
 
-HSTsignal = Signal_set_feature(HSTsignal, 'mean', calcFeatures);
+HSTsignal = Signal_set_feature(HSTsignal, 'meanderiv', calcFeatures);
 

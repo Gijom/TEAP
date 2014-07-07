@@ -2,3 +2,6 @@
 @L Add documentation to library
 @L talk about the license w/ Mohammad and Guillaume
 @M start EEG
+@M tests: use !error
+@H for filters, if they offset the signal by x, indicate-it !
+@M could a structure for output be useful ? Ex: structure{value, unit}

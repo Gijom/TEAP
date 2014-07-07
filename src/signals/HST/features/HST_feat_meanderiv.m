@@ -1,4 +1,4 @@
-function [meanTemp HSTsignal] = HST_feat_mean(HSTsignal)
+function [meanTemp HSTsignal] = HST_feat_meanderiv(HSTsignal)
 %Computes the mean derivation of the HST signal.
 % Inputs:
 %  HSTsignal: the HST signal.

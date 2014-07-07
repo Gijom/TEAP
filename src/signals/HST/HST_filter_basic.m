@@ -12,5 +12,5 @@ HST_assert_type(HSTSignal);
 
 sampRate = Signal_get_samprate(HSTSignal);
 
-HSTSignal = Signal_filter1_low_mean(HSTSignal);
+HSTSignal = Signal_filter1_low_mean(HSTSignal, sampRate);
 

@@ -7,6 +7,9 @@ function Signal = Signal_set_preproc_lowpass(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 1 || nargout ~= 1)
+	error('Usage: Signal = Signal_set_preproc_lowpass(Signal)');
+end
 
 Signal = Signal_set_preproc(Signal, 'lowpass');
 

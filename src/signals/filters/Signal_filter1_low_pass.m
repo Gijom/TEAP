@@ -6,6 +6,13 @@ function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 % Outputs:
 %  Signal: the low-passed-signal
 
+if(nargin ~= 2 || nargout ~= 1)
+	error('Usage: Signal = Signal_filter1_low_pass(Signal, cutOffFreq)');
+end
+
+Signal_assert_mine(Signal);
+
+
 %Take the sampling frequency of the signal
 Fs = Signal_get_samprate(Signal);
 

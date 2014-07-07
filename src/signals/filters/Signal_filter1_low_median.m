@@ -1,4 +1,4 @@
-function [Signal] = Signal_filter1_low_median(Signal, windowSize)
+function Signal = Signal_filter1_low_median(Signal, windowSize)
 %Filters the signal with a low pass median filtering method
 % Inputs:
 %  Signal: the signal to filter
@@ -7,6 +7,10 @@ function [Signal] = Signal_filter1_low_median(Signal, windowSize)
 %  Signal: the newly filtered signal
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+
+if(nargin ~= 2 || nargout ~= 1)
+	error('Usage: Signal = Signal_filter1_low_median(Signal, windowSize)');
+end
 
 raw = Signal_get_raw(Signal);
 

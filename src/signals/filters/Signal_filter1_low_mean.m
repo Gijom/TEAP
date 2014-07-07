@@ -8,19 +8,22 @@ function Signal = Signal_filter1_low_mean(Signal, windowSize)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+if(nargin ~= 2 || nargout ~= 1)
+	error('Usage: Signal = Signal_filter1_low_mean(Signal, windowSize)');
+end
+
+Signal_assert_mine(Signal);
+
+
 raw = Signal_get_raw(Signal);
 
-
 filtAvgEls = ones(1, windowSize)/windowSize;
-
-
 raw = filtfilt(filtAvgEls, 1, [repmat(raw(1), windowSize, 1); raw']);
 
 raw = raw';
 
 %take out first second
 raw = raw(windowSize+1:end);
-
 
 Signal = Signal_set_raw(Signal, raw);
 

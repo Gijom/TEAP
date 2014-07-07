@@ -2,4 +2,3 @@
 @L Add documentation to library
 @L talk about the license w/ Mohammad and Guillaume
 @M start EEG
-@H when Signal_window, keep attributes (lowpassed, highpassed, etc)

@@ -4,16 +4,16 @@ Hacking TEAPhysio
 Coding Style
 ++++++++++++
 The best to see the actual coding style is to see how the src/signals/DMY dummy
-signal library. Anyway these are the main baselines:
+signal library is done. Anyway these are the main guidelines:
 
 Indentation:
 ------------
-The indentation should be made with the use of TABs to adjust to the identation
+The indentation should be made with the use of TABs to adjust to the indentation
 level, then with spaces. Ex:
 	if(this_long_function(
-	    will_overflow) {
+	    will_overflow)
 		Bar
-	}
+	end
 
 Spaces:
 -------
@@ -24,7 +24,7 @@ English language :p)
 Variable naming:
 ----------------
 Variables should be camelCased except for signal structures that should have
-a uppercase character, then all the rest in lowercase.
+an uppercase character, then all the rest in lowercase.
 
 Function naming:
 ----------------
@@ -35,5 +35,5 @@ rrr is the role of the function (eg. aqn=acquisition, get, wrk=work, ect.),
 eee are the extra attributes (eg. file, realtime, etc.).
 
 Here are some examples:
-ECG_aqn_file(filename), ECG_aqn_realtime(), ECG_wrk(Signal).
+ECG_aqn_file(filename), ECG_aqn_realtime(), ECG_feat_IBIMean(Signal), …
 

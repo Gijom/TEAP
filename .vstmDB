@@ -1,5 +1,5 @@
 @L Add some documentation to functions
 @L Add documentation to library
-@L talk about the license w/ Mohammad and Guillaume
 @M start EEG
 @M could a structure for output be useful ? Ex: structure{value, unit}
+@H add license creative commons

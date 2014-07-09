@@ -23,7 +23,10 @@ raw = filtfilt(filtAvgEls, 1, [repmat(raw(1), windowSize, 1); raw']);
 raw = raw';
 
 %take out first second
-raw = raw(windowSize+1:end);
+offset = windowSize + 1;
+raw = raw(offset:end);
+%and say that the signal was offseted by offset frames
+Signal = Signal_set_offset(Signal, Signal_get_offset(Signal) + offset);
 
 Signal = Signal_set_raw(Signal, raw);
 

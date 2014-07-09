@@ -21,25 +21,24 @@ end
 
 Signal_assert_mine(Signal);
 
-if(isfield(Signal, 'relatime')) %noatime too ? :P
-	warning(['The signal you want to take a portion was already cut. ' ...
-	         'Are you sure you want that ?. Will proceed anyway']);
-	offset = Signal.relatime;
-else
-	offset = 0;
-end
+Child = Signal; %Clone them. I wish they were dinosaurs. :p
 
-
-Child = Signal; %Clone them. I wish they were dinosaurs.
-
-Child.relatime = startT + offset;
-
+%Take the portion of the signal we want
 raw = Signal_get_raw(Signal);
 if(endT > length(raw))
 	endT = length(raw);
 end
-
 Child = Signal_set_raw(Child, raw(startT: endT));
+
+%Sets the new offset of the signal
+if(Signal_get_offset(Signal) > 0)
+	warning(['The signal you want to take a portion was already cut. ' ...
+	         'Are you sure you want that ?. Will proceed anyway']);
+	offset = Signal_get_offset(Signal);
+else
+	offset = 0;
+end
+Child = Signal_set_offset(Child, startT + offset);
 
 %Keep the signal preprocessing features (like 'low-passed', etc.)
 if(isfield(Signal, 'preprocessing'))

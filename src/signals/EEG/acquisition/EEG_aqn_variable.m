@@ -16,7 +16,7 @@ Signal = EEG_new_empty();
 Signal = Signal_set_samprate(Signal, sampRate);
 
 [nChannels, ~] = size(eegChannels);
-[nChannelsGiven, ~] = size(eegData'); %Note the transposition
+[nChannelsGiven, ~] = size(eegData);
 
 if(nChannelsGiven ~= nChannels)
 	error(['Hey, you said that you''d give me ' num2str(nChannels) ...
@@ -24,6 +24,6 @@ if(nChannelsGiven ~= nChannels)
 end
 
 for(i = [1:nChannels])
-	Signal = EEG_set_channel(Signal, eegChannels(i, :), eegData(:, i));
+	Signal = EEG_set_channel(Signal, eegChannels(i, :), eegData(i, :));
 end
 

@@ -21,6 +21,6 @@ raw = Signal_get_raw(Signal);
 
 raw.(channelName) = channelData;
 
-Signal = Signal_set_raw(raw);
+Signal = Signal_set_raw(Signal, raw);
 
 

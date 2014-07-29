@@ -13,9 +13,6 @@ Signal_assert_mine(Signal);
 
 Signal.raw = raw;
 
-%As the signal changed, we remove it's features
-Signal = Signal_rm_features(Signal);
-
 %!error(Signal_set_raw())
 %!error(Signal_set_raw(42))
 %!error(Signal_set_raw(42, [1 2 3 4]))

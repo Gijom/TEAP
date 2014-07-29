@@ -22,7 +22,8 @@ for iEpoch = [1:nEpochs]
 	clear Bulk;
 	Bulk.tatat = 42;
 
-	Bulk = addGSR(Bulk, iEpoch);
+%%%%%	Bulk = addGSR(Bulk, iEpoch); %%%FIXME data wrong
+	Bulk = addHST(Bulk, iEpoch);
 
 	BulkSig(iEpoch) = Bulk;
 end
@@ -31,19 +32,43 @@ end
 
 %GSR
 function BulkSig = addGSR(BulkSig, iEpoch);
-	GSRChannel = 41; %FIXME: my examples don't work: negative RES
-	if(strcmp('GSR1', EEGV.chanlocs(GSRChannel).labels) ~= 1)
-		disp(['nonon: ' EEGV.chanlocs(GSRChannel).labels]);
+	GSRChannel = findMyChannel('GSR1');
+	if(GSRChannel == 0)
 		return;
 	end
 
 	data = EEGV.data(GSRChannel, :, iEpoch);
 	reshaped = reshape(data, 1, length(data));
-	plot(reshaped)
+
 	GSRSig = GSR_aqn_variable(reshaped, EEGV.srate);
 	Bulk.(GSR_get_name()) = GSRSig;
 end
 
+%Temp/HST
+function BulkSig = addHST(BulkSig, iEpoch);
+	GSRChannel = findMyChannel('Temp');
+	if(GSRChannel == 0)
+		return;
+	end
+
+	data = EEGV.data(GSRChannel, :, iEpoch);
+	reshaped = reshape(data, 1, length(data));
+
+	GSRSig = HST_aqn_variable(reshaped, EEGV.srate);
+	Bulk.(HST_get_name()) = GSRSig;
+end
+
+
+%Find my channel
+function iChannel = findMyChannel(chanName)
+	for iChannel = [1:length(EEGV.chanlocs)]
+		disp(EEGV.chanlocs(iChannel).labels);
+		if(strcmp(chanName, EEGV.chanlocs(iChannel).labels) == 1)
+			return;
+		end
+	end
+	iChannel = 0;
+end
 
 
 end

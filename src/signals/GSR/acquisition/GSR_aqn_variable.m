@@ -17,7 +17,7 @@ Signal = Signal_set_samprate(Signal, sampRate);
 if(median(rawGSR) < 1)
 	warning(['The signal given seems to be given in Siemens. I need Ohms. ' ...
 	         'Automatic conversion applied']);
-	rawGSR = 1/rawGSR;
+	rawGSR = 1./rawGSR;
 end
 
 

@@ -3,7 +3,7 @@
 ##DMY: DONE
 	A simple dummy signal for tests, learning how the toolbox works, and co.
 
-##BVP:
+##BVP/PLET
 	Blood Volume Pressure
 
 ##ECG: DONE

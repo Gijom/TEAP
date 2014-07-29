@@ -33,3 +33,4 @@ ECG = downsample(rawSignal, samprate/newfs);
 
 IBIMean = mean(IBI);
 ECGSignal = Signal_set_feature(ECGSignal, 'IBIMean', IBIMean);
+

@@ -1,4 +1,4 @@
-function Signal = GSR_aqn_variable(rawGSR, sampRate)
+function Signal = GSR_aqn_variable(rawGSR, sampRate, forceSiemens
 % GSR_aqn_variable gets a GSR signal from a variable
 % Inputs:
 %   rawGSR [1xN]: the raw GSR signal
@@ -14,15 +14,17 @@ end
 Signal = GSR_new_empty();
 Signal = Signal_set_samprate(Signal, sampRate);
 
-if(median(rawGSR) < 1)
+%If it is given in Siemens
+if(min(rawGSR) >= 0 && max(rawGSR) < 1)
 	warning(['The signal given seems to be given in Siemens. I need Ohms. ' ...
 	         'Automatic conversion applied']);
 	rawGSR = 1./rawGSR;
+elseif(min(rawGSR) < 0) %if the signal was baselined/relatived
+	Signal = Signal_set_absolute(Signal, false);
 end
 
 
 Signal = Signal_set_raw(Signal, Raw_convert_1D(rawGSR));
-
 
 end
 

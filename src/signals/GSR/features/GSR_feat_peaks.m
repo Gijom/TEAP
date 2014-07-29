@@ -1,4 +1,4 @@
-function [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsignal, ampThresh)
+function [nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(GSRsignal, ampThresh)
 %Computes the number of peaks from a GSR signal. It is based on the analysis of
 %local minima and local maxima preceding the local minima.
 % Inputs:
@@ -10,17 +10,17 @@ function [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsign
 %  ampPeaks [1xP]: the amplitude of the peaks (maxima - minima)
 %  riseTime [1xP]: the duration of the rise time of each peak
 %  posPeaks [1xP]: index of the detected peaks in the GSR signal
-%  Signal: the GSR signal with the values computed inside: will be faster if
-%          you run-it a second time: if the feature was already comptued for
-%          this signal, only fetches the results.
 %Copyright XXX 2011
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
-%TODO: we need filtering. Do-it inside here or outside ?
-
 %Make sure we have a GSR signal
 GSR_assert_type(GSRsignal)
+
+if(~Signal_has_preproc_lowpass(GSRsignal))
+	warning(['For the function to work well, you should low-pass the signal' ...
+	         '. Preferably with a median filter']);
+end
 
 if(nargin < 2)
 	ampThresh = 200;%Ohm
@@ -30,24 +30,6 @@ tThreshLow = 1;
 tThreshUp  = 10;
 
 
-%If the features were already computed
-if(Signal_has_feature(GSRsignal, 'peaks'))
-	sigFeatures = Signal_get_feature(GSRsignal, 'peaks');
-	if(sigFeatures.ampThresh == ampThresh)
-		nbPeaks  = sigFeatures.nbPeaks;
-		ampPeaks = sigFeatures.ampPeaks;
-		riseTime = sigFeatures.riseTime;
-		posPeaks = sigFeatures.posPeaks;
-		return;
-	end
-end
-
-%Compute the features
-
-if(~Signal_has_preproc_lowpass(GSRsignal))
-	warning(['For the function to work well, you should low-pass the signal' ...
-	         '. Preferably with a median filter']);
-end
 
 %Search low and high peaks
 %low peaks are the GSR appex reactions (highest sudation)
@@ -94,11 +76,5 @@ end
 
 nbPeaks = length(posPeaks);
 
-%Now, store everything in the signal:
-calcFeatures.ampThresh = ampThresh;
-calcFeatures.nbPeaks   = nbPeaks;
-calcFeatures.ampPeaks  = ampPeaks;
-calcFeatures.riseTime  = riseTime;
-calcFeatures.posPeaks  = posPeaks;
+end
 
-GSRsignal = Signal_set_feature(GSRsignal, 'peaks', calcFeatures);

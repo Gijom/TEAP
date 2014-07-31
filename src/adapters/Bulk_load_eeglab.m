@@ -55,7 +55,7 @@ function BulkSig = addHST(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	GSRSig = HST_aqn_variable(reshaped, EEGV.srate);
-	Bulk.(HST_get_name()) = GSRSig;
+	BulkSig.(HST_get_name()) = GSRSig;
 end
 
 

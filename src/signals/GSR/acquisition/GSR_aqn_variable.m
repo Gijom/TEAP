@@ -1,10 +1,11 @@
-function Signal = GSR_aqn_variable(rawGSR, sampRate, forceSiemens
+function Signal = GSR_aqn_variable(rawGSR, sampRate)
 % GSR_aqn_variable gets a GSR signal from a variable
 % Inputs:
 %   rawGSR [1xN]: the raw GSR signal
 %   sampRate [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: A GSR TEAPhysio signal
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 2)
 	error('Usage: GSR_aqn_variable(rawGSR, sampRate)');
@@ -20,6 +21,7 @@ if(min(rawGSR) >= 0 && max(rawGSR) < 1)
 	         'Automatic conversion applied']);
 	rawGSR = 1./rawGSR;
 elseif(min(rawGSR) < 0) %if the signal was baselined/relatived
+	disp('relatived');
 	Signal = Signal_set_absolute(Signal, false);
 end
 

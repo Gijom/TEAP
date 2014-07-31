@@ -8,6 +8,7 @@ function bandEnergy = EEG_feat_bandENR(EEGSignal)
 %Copyright Mohammad Soleymani 2009
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
+EEGSignal = EEG_assert_mine(EEGSignal);
 
 fs = Signal_get_samprate(EEGSignal);
 

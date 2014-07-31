@@ -14,7 +14,7 @@ function [meanTemp HSTsignal] = HST_feat_mean(HSTsignal)
 
 
 %Make sure we have a HST signal
-HST_assert_type(HSTsignal)
+HSTsignal = HST_assert_type(HSTsignal);
 
 %If the features were already computed
 if(Signal_has_feature(HSTsignal, 'mean'))

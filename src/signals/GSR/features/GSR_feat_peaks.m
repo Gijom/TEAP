@@ -18,7 +18,7 @@ function [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsign
 
 
 %Make sure we have a GSR signal
-GSR_assert_type(GSRsignal)
+GSRsignal = GSR_assert_type(GSRsignal);
 
 if(nargin < 2)
 	ampThresh = 200;%Ohm

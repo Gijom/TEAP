@@ -3,3 +3,4 @@
 @M start EEG
 @M could a structure for output be useful ? Ex: structure{value, unit}
 @H add license creative commons
+@H GSR_feat_peaks doesnt work with EEGLab

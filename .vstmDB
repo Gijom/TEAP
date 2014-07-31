@@ -7,7 +7,6 @@
 @L caching: get rid of
 @H visualisation: for each signal
 @M visualisation: figure with bulk signal ?
-@H assert_mine: for bulk signals too
 @M highlight extreme values: ex: the 1%
 @H compute useful thinngs: mean, quartiles, std, energy…
 @M tests
@@ -16,4 +15,6 @@
 @H start of documentation
 @H GSR_feat_peaks doesnt work with EEGLab
 @H add Fail: to function comments if they can fail
-@H rename SSS_get_name into SSS_get_type
+@H rename SSS_get_name into SSS_get_signame
+@H on tests: baselined ?
+@H assert_mine: nargin and nargout !

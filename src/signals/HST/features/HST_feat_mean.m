@@ -8,6 +8,8 @@ function [meanTemp HSTsignal] = HST_feat_mean(HSTsignal)
 %  Signal: the HST signal with the values computed inside: will be faster if
 %          you run-it a second time: if the feature was already comptued for
 %          this signal, only fetches the results.
+% WARNING: this function will give 'strange' results when applied on a relative
+%          signal
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
@@ -25,6 +27,10 @@ end
 if(~Signal_has_preproc_lowpass(HSTsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
 	         '. Preferably with a mean filter']);
+end
+
+if(Signal_get_absolute(HSTsignal) ~= true)
+	warning('The signal was baselined/relative, are you sure you want that ?');
 end
 
 raw = Signal_get_raw(HSTsignal);

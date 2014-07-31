@@ -3,3 +3,14 @@
 @M start EEG
 @M could a structure for output be useful ? Ex: structure{value, unit}
 @H add license creative commons
+@H epoch: make array
+@L caching: get rid of
+@H visualisation: for each signal
+@M visualisation: figure with bulk signal ?
+@H assert_mine: for bulk signals too
+@M highlight extreme values: ex: the 1%
+@H compute useful thinngs: mean, quartiles, std, energy…
+@M tests
+@L EOG ? Blinking rate
+@M scripting: things we want to import into BULK
+@H start of documentation

@@ -6,5 +6,5 @@ if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: Signal = ECG_assert_type(Signal)');
 end
 
-Signal = Signal_assert_type(Signal, ECG_get_name());
+Signal = Signal_assert_type(Signal, ECG_get_signame());
 

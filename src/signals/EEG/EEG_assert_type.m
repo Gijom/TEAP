@@ -6,4 +6,4 @@ if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: Signal = EEG_assert_type(Signal)');
 end
 
-Signal = Signal_assert_type(Signal, EEG_get_name());
+Signal = Signal_assert_type(Signal, EEG_get_signame());

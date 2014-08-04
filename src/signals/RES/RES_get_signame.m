@@ -1,4 +1,4 @@
-function name = RES_get_name()
+function name = RES_get_signame()
 %Get the name of a RES signal
 % Inputs:
 %  NONE

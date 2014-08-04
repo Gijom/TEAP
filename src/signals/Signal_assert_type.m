@@ -22,7 +22,7 @@ Signal_assert_mine(Signal);
 %TODO: switch: BULK or not ?
 
 %And then, compare the name
-name = Signal_get_name(Signal);
+name = Signal_get_signame(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])
 end

@@ -1,4 +1,4 @@
-function name = DMY_get_name()
+function name = DMY_get_signame()
 %Returns the name of a DMY signal
 % Inputs:
 %  NONE

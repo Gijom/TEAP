@@ -7,5 +7,5 @@ if(nargin ~= 1 || nargout ~= 1)
 end
 
 
-Signal = Signal_assert_type(Signal, DMY_get_name());
+Signal = Signal_assert_type(Signal, DMY_get_signame());
 

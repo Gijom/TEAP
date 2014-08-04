@@ -6,5 +6,5 @@ if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: Signal = HST_assert_type(Signal)');
 end
 
-Signal = Signal_assert_type(Signal, HST_get_name());
+Signal = Signal_assert_type(Signal, HST_get_signame());
 

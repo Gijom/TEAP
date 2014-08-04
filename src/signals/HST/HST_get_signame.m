@@ -1,4 +1,4 @@
-function name = HST_get_name()
+function name = HST_get_signame()
 %Get the name of a HST signal
 % Inputs:
 %  NONE

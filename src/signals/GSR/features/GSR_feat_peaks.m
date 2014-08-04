@@ -17,13 +17,15 @@ function [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsign
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
-%TODO: we need filtering. Do-it inside here or outside ?
-
 %Make sure we have a GSR signal
-GSR_assert_type(GSRsignal)
+GSRsignal = GSR_assert_type(GSRsignal);
 
 if(nargin < 2)
 	ampThresh = 200;%Ohm
+end
+
+if(nargin < 1)
+	error('Usage: [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsignal, ampThresh)');
 end
 
 tThreshLow = 1;

@@ -10,7 +10,7 @@ function Signal_plot(Signal, startT, endT)
 
 raw = Signal_get_raw(Signal);
 samprate = Signal_get_samprate(Signal);
-name = Signal_get_name(Signal);
+name = Signal_get_signame(Signal);
 signal_unit = Signal_get_unit(Signal);
 
 if(nargin == 2)

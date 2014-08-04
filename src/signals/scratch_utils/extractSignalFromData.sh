@@ -15,4 +15,4 @@ signVal=$(cat Participant*_signals.txt  | cut -f1 -d' ' | tail -n +2 | grep $sig
 dataFile=Participant*_data.txt
 signal=$(($signal + 1)) #time
 
-cat $dataFile | cut -d, -f $signal > outFile_signal_$signVal
+cat $dataFile | cut -d, -f $signal > "outFile_signal_$signVal"

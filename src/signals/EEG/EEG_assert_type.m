@@ -1,4 +1,9 @@
-function EEG_assert_type(Signal)
+function Signal = EEG_assert_type(Signal)
 %Asserts that the given signal is an EEG one
+%Please refer to Signal_assert_type for more extensive documentation
 
-Signal_assert_type(Signal, 'EEG');
+if(nargin ~= 1 || nargout ~= 1)
+	error('Usage: Signal = EEG_assert_type(Signal)');
+end
+
+Signal = Signal_assert_type(Signal, EEG_get_signame());

@@ -3,3 +3,16 @@
 @M start EEG
 @M could a structure for output be useful ? Ex: structure{value, unit}
 @H add license creative commons
+@H epoch: make array
+@L caching: get rid of
+@H visualisation: for each signal
+@M visualisation: figure with bulk signal ?
+@M highlight extreme values: ex: the 1%
+@H compute useful thinngs: mean, quartiles, std, energy…
+@M tests
+@L EOG ? Blinking rate
+@M scripting: things we want to import into BULK
+@H start of documentation
+@H GSR_feat_peaks doesnt work with EEGLab
+@H add Fail: to function comments if they can fail
+@H rename SSS_get_name into SSS_get_signame

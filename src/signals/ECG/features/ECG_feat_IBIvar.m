@@ -10,7 +10,7 @@ function IBIVar = ECG_feat_IBIvar(ECGSignal)
 
 
 %Make sure we have an ECG signal
-ECG_assert_type(ECGSignal)
+ECGSignal = ECG_assert_type(ECGSignal);
 
 
 %Compute the results

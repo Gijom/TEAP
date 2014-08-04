@@ -24,6 +24,7 @@ for iEpoch = [1:nEpochs]
 
 %%%%%	Bulk = addGSR(Bulk, iEpoch); %%%FIXME data wrong
 	Bulk = addHST(Bulk, iEpoch);
+	Bulk = addRES(Bulk, iEpoch);
 
 	BulkSig(iEpoch) = Bulk;
 end
@@ -46,16 +47,30 @@ end
 
 %Temp/HST
 function BulkSig = addHST(BulkSig, iEpoch);
-	GSRChannel = findMyChannel('Temp');
-	if(GSRChannel == 0)
+	HSTChannel = findMyChannel('Temp');
+	if(HSTChannel == 0)
 		return;
 	end
 
-	data = EEGV.data(GSRChannel, :, iEpoch);
+	data = EEGV.data(HSTChannel, :, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
-	GSRSig = HST_aqn_variable(reshaped, EEGV.srate);
-	Bulk.(HST_get_name()) = GSRSig;
+	HSTSig = HST_aqn_variable(reshaped, EEGV.srate);
+	BulkSig.(HST_get_name()) = HSTSig;
+end
+
+%Respiration
+function BulkSig = addRES(BulkSig, iEpoch);
+	RESChannel = findMyChannel('Resp');
+	if(RESChannel == 0)
+		return;
+	end
+
+	data = EEGV.data(RESChannel, :, iEpoch);
+	reshaped = reshape(data, 1, length(data));
+
+	RESSig = RES_aqn_variable(reshaped, EEGV.srate);
+	BulkSig.(RES_get_name()) = RESSig;
 end
 
 

@@ -26,5 +26,5 @@ Signal.name = nameStr;
 %!error(Signal_set_name(42))
 %!error(Signal_set_name(42, 43))
 %!error(Signal_set_name(Signal_new_empty(), 'hallo')) %no result retreived
-%!assert(Signal_get_name(Signal_set_name(Signal_new_empty(), 'gcr')), 'gcr')
+%!assert(Signal_get_signame(Signal_set_name(Signal_new_empty(), 'gcr')), 'gcr')
 

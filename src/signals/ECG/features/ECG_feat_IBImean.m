@@ -10,7 +10,7 @@ function IBIMean = ECG_feat_IBImean(ECGSignal)
 
 
 %Make sure we have an ECG signal
-ECG_assert_type(ECGSignal)
+ECGSignal = ECG_assert_type(ECGSignal);
 
 
 %Compute the results

@@ -10,7 +10,7 @@ function [meanTemp] = HST_feat_meanderiv(HSTsignal)
 
 
 %Make sure we have a HST signal
-HST_assert_type(HSTsignal)
+HSTsignal = HST_assert_type(HSTsignal);
 
 if(~Signal_has_preproc_lowpass(HSTsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...

@@ -15,7 +15,7 @@ function [nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(GSRsignal, ampThr
 
 
 %Make sure we have a GSR signal
-GSR_assert_type(GSRsignal)
+GSRsignal = GSR_assert_type(GSRsignal);
 
 if(~Signal_has_preproc_lowpass(GSRsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
@@ -24,6 +24,10 @@ end
 
 if(nargin < 2)
 	ampThresh = 200;%Ohm
+end
+
+if(nargin < 1)
+	error('Usage: [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsignal, ampThresh)');
 end
 
 tThreshLow = 1;

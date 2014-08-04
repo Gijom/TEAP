@@ -2,7 +2,6 @@
 @L Add documentation to library
 @M start EEG
 @M could a structure for output be useful ? Ex: structure{value, unit}
-@H add license creative commons
 @H epoch: make array
 @L caching: get rid of
 @H visualisation: for each signal

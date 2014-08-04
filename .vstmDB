@@ -16,4 +16,3 @@
 @H GSR_feat_peaks doesnt work with EEGLab
 @H add Fail: to function comments if they can fail
 @H rename SSS_get_name into SSS_get_signame
-@H on tests: baselined ?

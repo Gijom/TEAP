@@ -15,3 +15,4 @@ end
 
 %!error(Signal_assert_mine(42))
 %!error(Signal_assert_mine())
+

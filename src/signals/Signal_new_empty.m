@@ -18,3 +18,5 @@ Signal = Signal_set_name(Signal, 'invalid');
 
 %Was the signal NOT normalized/'baselined' ?
 Signal = Signal_set_absolute(Signal, true);
+
+

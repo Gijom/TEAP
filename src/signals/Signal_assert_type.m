@@ -17,11 +17,23 @@ if(nargin ~= 2 || nargout ~= 1)
 end
 
 %First, make sure it's a TEAPhysio signal
-Signal_assert_mine(Signal);
 
-%TODO: switch: BULK or not ?
+if(~isfield(Signal, 'TEAPhysio'))
+	error('Signal seems not to be a TEAPhysio one');
+end
 
-%And then, compare the name
+%Then, can either be a Bulk or a single signal
+
+if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
+	Signal_assert_mine(Signal);
+elseif(Signal.TEAPhysio == 'B') %Bulk signal
+	%We have to choose the signal that we want
+	Signal = Bulk_get_signal(Signal, nameWanted); %Will fail if does not exist
+else
+	error('The signal type is unknown. Should either be Signal or Bulk');
+end
+
+%And then, compare their name (redundant for 2nd case, but anyways :p)
 name = Signal_get_signame(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])

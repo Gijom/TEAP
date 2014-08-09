@@ -9,9 +9,13 @@ if(nargin ~= 1)
 	error('Usage: Signal_assert_mine(Signal)');
 end
 
-if(~isfield(Signal, 'TEAPhysio'))
-	error('The signal given is not a TEAPhysio one')
+if(isfield(Signal, 'TEAPhysio'))
+	if(Signal.TEAPhysio == 'S')
+		return;
+	end
 end
+
+error('The signal given is not a TEAPhysio one')
 
 %!error(Signal_assert_mine(42))
 %!error(Signal_assert_mine())

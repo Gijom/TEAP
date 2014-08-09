@@ -19,14 +19,14 @@ nEpochs = length(EEGV.epoch);
 
 %foreach epoch
 for iEpoch = [1:nEpochs]
-	clear Bulk;
-	Bulk.tatat = 42;
+	Bulk = Bulk_new_empty();
 
 %%%%%	Bulk = addGSR(Bulk, iEpoch); %%%FIXME data wrong
 	Bulk = addHST(Bulk, iEpoch);
 	Bulk = addRES(Bulk, iEpoch);
 
 	BulkSig(iEpoch) = Bulk;
+	clear Bulk;
 end
 
 
@@ -42,7 +42,7 @@ function BulkSig = addGSR(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	GSRSig = GSR_aqn_variable(reshaped, EEGV.srate);
-	Bulk.(GSR_get_name()) = GSRSig;
+	BulkSig = Bulk_add_signal(BulkSig, GSR_get_signame(), GSRSig);
 end
 
 %Temp/HST
@@ -56,7 +56,7 @@ function BulkSig = addHST(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	HSTSig = HST_aqn_variable(reshaped, EEGV.srate);
-	BulkSig.(HST_get_name()) = HSTSig;
+	BulkSig = Bulk_add_signal(BulkSig, HST_get_signame(), HSTSig);
 end
 
 %Respiration
@@ -70,7 +70,7 @@ function BulkSig = addRES(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	RESSig = RES_aqn_variable(reshaped, EEGV.srate);
-	BulkSig.(RES_get_name()) = RESSig;
+	BulkSig = Bulk_add_signal(BulkSig, RES_get_signame(), RESSig);
 end
 
 

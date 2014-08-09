@@ -1,8 +1,7 @@
 function Signal = Signal_new_empty()
 %Creates a new, empty, signal. This is mainly to represent the data structure
 
-Signal.TEAPhysio = 42; %Creates a TEAPhysio signal; arbitrary value to keep the
-                       % field
+Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk
 
 %The sampling rate of the signal
 Signal = Signal_set_samprate(Signal, -1);
@@ -18,3 +17,5 @@ Signal = Signal_set_name(Signal, 'invalid');
 
 %Was the signal NOT normalized/'baselined' ?
 Signal = Signal_set_absolute(Signal, true);
+
+

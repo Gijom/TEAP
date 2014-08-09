@@ -1,7 +1,7 @@
 #Signal data structure of the TEAP toolbox
 
 ##Description
-Signals are organised on a OOP sort of way: each signal (ex. Galvanic Skin 
+Signals are organised in a OOP sort of way: each signal (ex. Galvanic Skin 
 Response) has their own folder (in our case: GSR). Once in this folder, the 
 functions are ordered by folder (eg: acquisition, examples, features, tests, 
 baselines). If you want to capture a Galvanic Skin Response signal, you would 

@@ -3,6 +3,7 @@ function Signal_plot_pts(Signal, xvals, yvals, props)
 % your xvals are in the frame domain (aka not secs like the graph produced by
 % Signal_plot. This function just divides xval by Signal_get_samprate(Signal).
 % HOLDs ON the graph, so you don't have to do it yourself ;)
+%
 % Inputs:
 %  Signal: your signal
 %  xvals: the x values of your points. IN FRAMES (not secs !)
@@ -18,3 +19,4 @@ xvals = xvals / samprate;
 hold on;
 plot(xvals, yvals, props);
 hold off;
+

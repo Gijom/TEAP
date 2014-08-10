@@ -10,7 +10,7 @@ function [minmax] = RES_feat_minmax(RESsignal)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 %Make sure we have a RES signal
-RES_assert_type(RESsignal)
+RES_assert_type(RESsignal);
 
 %Compute the features
 if(~Signal_has_preproc_lowpass(RESsignal))

@@ -7,13 +7,5 @@ function [Result] = DMY_feat_feat1(Signal)
 
 Signal = DMY_assert_type(Signal)
 
-if(isfield(Signal, 'feat1'))
-	disp('calculated')
-	Result = Signal.feat1;
-	return;
-end
 
-
-ComputationResult = 42;
-Signal.feat1 = ComputationResult;
-Result = Signal.feat1;
+Result = 42;

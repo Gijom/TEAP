@@ -21,7 +21,5 @@ if(isfield(BulkSig, signame))
 	         ' signal. Il this wanted ?']);
  end
 
-disp(['Called with ' signame]);
-
 BulkSig.(signame) = sig;
 

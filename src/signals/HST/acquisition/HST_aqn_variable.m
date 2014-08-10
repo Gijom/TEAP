@@ -5,10 +5,12 @@ function Signal = HST_aqn_variable(rawHST, sampRate)
 %   sampRate [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: A HST TEAPhysio signal
+%
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 
 if(nargin ~= 2)
-	error('Usage: HST_new_empty(rawHST, sampRate)');
+	error('Usage: HST_aqn_variable(rawHST, sampRate)');
 end
 
 Signal = HST_new_empty();

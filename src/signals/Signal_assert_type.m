@@ -17,10 +17,8 @@ if(nargin ~= 2 || nargout ~= 1)
 end
 
 %First, make sure it's a TEAPhysio signal
+Signal_assert_mine(Signal);
 
-if(~isfield(Signal, 'TEAPhysio'))
-	error('Signal seems not to be a TEAPhysio one');
-end
 
 %Then, can either be a Bulk or a single signal
 

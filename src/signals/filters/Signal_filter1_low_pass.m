@@ -5,6 +5,8 @@ function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 %  cutOffFreq: the cutOff frequency of the filter
 % Outputs:
 %  Signal: the low-passed-signal
+%
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_pass(Signal, cutOffFreq)');

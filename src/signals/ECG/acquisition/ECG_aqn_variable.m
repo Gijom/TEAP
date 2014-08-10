@@ -6,6 +6,7 @@ function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 %   sampRate [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: An ECG TEAPhysio signal
+%
 % USES:
 % If you've got the signal from the 2 electrodes, you must call the function
 % like that:
@@ -13,6 +14,8 @@ function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 % If, however, the difference was already calculated by your device, you can
 % call the function that way:
 %  ECG_aqn_variable(electrodesDiff, sampRate);
+%
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 Signal = ECG_new_empty();
 

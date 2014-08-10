@@ -2,11 +2,12 @@ function [meanTemp] = HST_feat_mean(HSTsignal)
 %Computes the mean of the HST signal (aka the mean temperature)
 % Inputs:
 %  HSTsignal: the HST signal.
-%
 % Outputs:
 %  meanTemp: the mean temperature, in °C
+%
 % WARNING: this function will give 'strange' results when applied on a relative
 %          signal
+%
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 

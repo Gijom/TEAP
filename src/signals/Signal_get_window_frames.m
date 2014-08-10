@@ -3,6 +3,7 @@ function Child = Signal_get_window_frames(Signal, startT, endT)
 %child signal will memorize the offset to its father (the first-one, non recursive)
 %start: useful if you want to plot the signal with logical times.
 %If you want to specify seconds instead of frames, you should use Signal_get_window()
+%
 % Inputs:
 %  Signal: the signal you want to take a portion of.
 %  startT: the start time (frames)
@@ -13,6 +14,7 @@ function Child = Signal_get_window_frames(Signal, startT, endT)
 %SEE ALSO:
 %  Signal_get_window
 %  Signal_get_offset
+%
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 3)

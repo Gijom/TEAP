@@ -1,5 +1,9 @@
 function Signal = Signal_new_empty()
 %Creates a new, empty, signal. This is mainly to represent the data structure
+% Output:
+%  Signal: an empty signal
+%
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk
 

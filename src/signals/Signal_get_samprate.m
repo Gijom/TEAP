@@ -5,6 +5,7 @@ function samprate = Signal_get_samprate(Signal)
 % Outputs:
 %  samprate: the sampling rate of the signal, in hertz
 %
+%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 1)
 	error('Usage: samprate = Signal_get_samprate(Signal)');

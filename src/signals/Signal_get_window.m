@@ -14,6 +14,7 @@ function Child = Signal_get_window(Signal, startT, endT)
 %SEE ALSO:
 %  Signal_get_window_frames
 %  Signal_get_offset
+%
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 

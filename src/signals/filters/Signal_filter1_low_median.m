@@ -11,6 +11,7 @@ function Signal = Signal_filter1_low_median(Signal, windowSize)
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_median(Signal, windowSize)');
 end
+
 Signal_assert_mine(Signal);
 
 raw = Signal_get_raw(Signal);

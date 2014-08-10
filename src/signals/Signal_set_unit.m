@@ -1,5 +1,6 @@
 function Signal = Signal_set_unit(Signal, unitStr)
 %Sets the unit of a signal
+%
 % Inputs:
 %  Signal: the signal you want to add the unit to
 %  unitStr: the unit name (ex: 'Ohm');
@@ -13,7 +14,7 @@ if(nargin ~= 2)
 end
 
 if(nargout ~= 1)
-	error('You need to retreive the function''s result. Else, it''s useless !');
+	error('You need to retrieve the function''s result. Else, it''s useless !');
 end
 
 Signal_assert_mine(Signal);

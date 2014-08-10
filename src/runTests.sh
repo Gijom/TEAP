@@ -1,4 +1,5 @@
 #!/bin/bash
+#Runs some tests
 
 echo Running tests…
 

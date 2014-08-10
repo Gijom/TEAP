@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# For all the child directories, lauches octave and tells it to run the tests.
+#If some tests fail, displays the errors.
+
 #FIXME TODO: this is really crappy, should make-it better !
 
 current=$(pwd)

@@ -20,6 +20,11 @@ if(~isfield(Signal, 'TEAPhysio'))
 	error('The signal seems not to be a TEAP one.');
 end
 
+if(length(Signal) ~= 1)
+	error(['You seem to have given a bulk signal with multiple epochs. ' ...
+	       'Could you please choose the epoch you want (eg: with Bulk(1))']);
+end
+
 %can either be a Bulk or a single signal
 if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
 	Signal_assert_mine(Signal);

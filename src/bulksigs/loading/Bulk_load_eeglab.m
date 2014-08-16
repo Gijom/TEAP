@@ -21,7 +21,7 @@ nEpochs = length(EEGV.epoch);
 for iEpoch = [1:nEpochs]
 	Bulk = Bulk_new_empty();
 
-%%%%%	Bulk = addGSR(Bulk, iEpoch); %%%FIXME data wrong
+	Bulk = addGSR(Bulk, iEpoch);
 	Bulk = addHST(Bulk, iEpoch);
 	Bulk = addRES(Bulk, iEpoch);
 

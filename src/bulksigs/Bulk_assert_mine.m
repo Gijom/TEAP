@@ -9,6 +9,11 @@ if(nargin ~= 1)
 	error('Usage: Bulk_assert_mine(BulkSignal)');
 end
 
+if(length(BulkSignal) ~= 1)
+	error(['You seem to have given a bulk signal with multiple epochs. ' ...
+	       'Could you please choose the epoch you want (eg: with Bulk(1))']);
+end
+
 if(isfield(BulkSignal, 'TEAPhysio'))
 	if(BulkSignal.TEAPhysio == 'B')
 		return;

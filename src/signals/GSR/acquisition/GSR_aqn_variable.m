@@ -21,7 +21,6 @@ if(min(rawGSR) >= 0 && max(rawGSR) < 1)
 	         'Automatic conversion applied']);
 	rawGSR = 1./rawGSR;
 elseif(min(rawGSR) < 0) %if the signal was baselined/relatived
-	disp('relatived');
 	Signal = Signal_set_absolute(Signal, false);
 end
 

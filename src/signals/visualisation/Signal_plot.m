@@ -1,6 +1,7 @@
 function Signal_plot(Signal, startT, endT)
 %Plots a signal: value vs time, between startT and entT.
 % Signal_plot(sig); Signal_plot(sig, start); Signal_plot(sig, start, end);
+% NOTA BENE: if you want to display a bulk signal instead, use Bulk_plot(Bulk);
 % Inputs:
 %  Signal: the sigal to plot
 %  startT: the start time, in frames (optional)
@@ -10,6 +11,7 @@ function Signal_plot(Signal, startT, endT)
 
 raw = Signal_get_raw(Signal);
 samprate = Signal_get_samprate(Signal);
+
 name = Signal_get_signame(Signal);
 signal_unit = Signal_get_unit(Signal);
 
@@ -37,7 +39,17 @@ else
 	xlabel('Seconds');
 end
 
-ylabel([name ' (' signal_unit ')']);
+%The y label title
+if(Signal_has_preproc_lowpass(Signal))
+	comments = ' (low passed)';
+else
+	comments = '';
+end
+
+ylabel([name ' (' signal_unit ')' comments]);
+
+
+%The graph title
 title([name ' vs Seconds']);
 
 

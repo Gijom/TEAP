@@ -27,5 +27,8 @@ end
 
 Signal = Signal_set_raw(Signal, Raw_convert_1D(rawGSR));
 
+%And we filter the signal. Else, it's useless
+Signal = GSR_filter_basic(Signal);
+
 end
 

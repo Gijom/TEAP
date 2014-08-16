@@ -1,7 +1,6 @@
 @L Add documentation to library
 @M start EEG
 @H visualisation: for each signal
-@M visualisation: figure with bulk signal ?
 @M highlight extreme values: ex: the 1%
 @H compute useful thinngs: mean, quartiles, std, energy…
 @M tests

@@ -33,3 +33,6 @@ end
 
 Signal = Signal_set_raw(Signal, Raw_convert_1D(rawHST));
 
+%And, we filter the signal, else it's useless
+Signal = HST_filter_basic(Signal);
+

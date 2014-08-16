@@ -16,12 +16,11 @@ if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_assert_type(Signal, nameWanted)')
 end
 
-%First, make sure it's a TEAPhysio signal
-Signal_assert_mine(Signal);
+if(~isfield(Signal, 'TEAPhysio'))
+	error('The signal seems not to be a TEAP one.');
+end
 
-
-%Then, can either be a Bulk or a single signal
-
+%can either be a Bulk or a single signal
 if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
 	Signal_assert_mine(Signal);
 elseif(Signal.TEAPhysio == 'B') %Bulk signal

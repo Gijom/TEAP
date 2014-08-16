@@ -77,7 +77,6 @@ end
 %Find my channel
 function iChannel = findMyChannel(chanName)
 	for iChannel = [1:length(EEGV.chanlocs)]
-		disp(EEGV.chanlocs(iChannel).labels);
 		if(strcmp(chanName, EEGV.chanlocs(iChannel).labels) == 1)
 			return;
 		end

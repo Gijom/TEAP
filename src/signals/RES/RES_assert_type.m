@@ -6,5 +6,5 @@ if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: Signal = RES_assert_type(Signal)');
 end
 
-Signal = Signal_assert_type(Signal, RES_get_signame())
+Signal = Signal_assert_type(Signal, RES_get_signame());
 

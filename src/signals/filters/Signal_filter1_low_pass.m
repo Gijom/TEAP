@@ -1,7 +1,7 @@
 function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 %A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
 % Inputs:
-%  Signal: the signal to filter (will use the .raw component)
+%  Signal: the signal to filter (will use the .raw component). Not a bulk sig. !
 %  cutOffFreq: the cutOff frequency of the filter
 % Outputs:
 %  Signal: the low-passed-signal

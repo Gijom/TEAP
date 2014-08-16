@@ -1,7 +1,5 @@
-@L Add some documentation to functions
 @L Add documentation to library
 @M start EEG
-@M could a structure for output be useful ? Ex: structure{value, unit}
 @H visualisation: for each signal
 @M visualisation: figure with bulk signal ?
 @M highlight extreme values: ex: the 1%

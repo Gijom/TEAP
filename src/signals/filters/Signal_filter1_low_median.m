@@ -1,7 +1,7 @@
 function Signal = Signal_filter1_low_median(Signal, windowSize)
 %Filters the signal with a low pass median filtering method
 % Inputs:
-%  Signal: the signal to filter
+%  Signal: the signal to filter. Not a bulk signal !
 %  windowSize: the window size (in samples)
 % Outputs:
 %  Signal: the newly filtered signal

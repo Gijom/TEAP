@@ -1,12 +1,10 @@
 @L Add documentation to library
 @M start EEG
-@H visualisation: for each signal
 @M highlight extreme values: ex: the 1%
-@H compute useful thinngs: mean, quartiles, std, energy…
+@H compute useful thinngs: quartiles
 @M tests
 @L EOG ? Blinking rate
 @M scripting: things we want to import into BULK
 @H start of documentation
 @H GSR_feat_peaks doesnt work with EEGLab
 @L CONTRIB file ?
-@H bulk signals and filtering

@@ -11,7 +11,7 @@ end
 
 Signal_assert_mine(Signal);
 
-Signal.raw = raw;
+Signal.raw = double(raw);
 
 %!error(Signal_set_raw())
 %!error(Signal_set_raw(42))

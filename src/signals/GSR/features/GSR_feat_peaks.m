@@ -23,7 +23,7 @@ if(~Signal_has_preproc_lowpass(GSRsignal))
 end
 
 if(nargin < 2)
-	ampThresh = 200;%Ohm
+	ampThresh = 100;%Ohm
 end
 
 if(nargin < 1)

@@ -3,7 +3,7 @@ Hacking TEAPhysio
 
 Coding Style
 ++++++++++++
-The best to see the actual coding style is to see how the src/signals/DMY dummy
+The best way to see the actual coding style is to see how the src/signals/DMY dummy
 signal library is done. Anyway these are the main guidelines:
 
 Indentation:
@@ -19,7 +19,7 @@ Spaces:
 -------
 Obviously, there should be no trailing spaces. Also, when calling a function
 or in arrays, there should be a single space after the comma (like in the
-English language :p)
+English language ;) )
 
 Variable naming:
 ----------------

@@ -12,11 +12,11 @@ if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_pass(Signal, cutOffFreq)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 
 %Take the sampling frequency of the signal
-Fs = Signal_get_samprate(Signal);
+Fs = Signal__get_samprate(Signal);
 
 %The normalized cutOff freq
 Wn = (2/Fs)*cutOffFreq;
@@ -24,11 +24,11 @@ Wn = (2/Fs)*cutOffFreq;
 %Make the filter
 b = fir1(20, Wn, 'low', kaiser(21, 3));
 
-rawSignal = Signal_get_raw(Signal);
+rawSignal = Signal__get_raw(Signal);
 
 newRaw = filter(b, 1, rawSignal);
 
-Signal = Signal_set_raw(Signal, newRaw);
+Signal = Signal__set_raw(Signal, newRaw);
 
 %Indicate that the signal has been filtered
-Signal = Signal_set_preproc_lowpass(Signal);
+Signal = Signal__set_preproc_lowpass(Signal);

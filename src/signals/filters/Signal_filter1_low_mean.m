@@ -12,10 +12,10 @@ if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_mean(Signal, windowSize)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 
 filtAvgEls = ones(1, windowSize)/windowSize;
 raw = filtfilt(filtAvgEls, 1, [repmat(raw(1), windowSize, 1); raw']);
@@ -26,10 +26,10 @@ raw = raw';
 offset = windowSize + 1;
 raw = raw(offset:end);
 %and say that the signal was offseted by offset frames
-Signal = Signal_set_offset(Signal, Signal_get_offset(Signal) + offset);
+Signal = Signal__set_offset(Signal, Signal_get_offset(Signal) + offset);
 
-Signal = Signal_set_raw(Signal, raw);
+Signal = Signal__set_raw(Signal, raw);
 
 %Indicate that the signal has been filtered
-Signal = Signal_set_preproc_lowpass(Signal);
+Signal = Signal__set_preproc_lowpass(Signal);
 

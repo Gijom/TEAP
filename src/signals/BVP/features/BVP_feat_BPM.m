@@ -12,8 +12,8 @@ function BPM = BVP_feat_BPM(BVPSignal)
 %Make sure we have an BVP signal
 BVPSignal = BVP_assert_type(BVPSignal);
 
-data = Signal_get_raw(BVPSignal)';
-fs = Signal_get_samprate(BVPSignal);
+data = Signal__get_raw(BVPSignal)';
+fs = Signal__get_samprate(BVPSignal);
 
 
 if(nargin < 3)

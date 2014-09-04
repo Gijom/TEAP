@@ -14,7 +14,7 @@ end
 
 EEG_assert_mine(EEGSignal);
 
-raw = Signal_get_raw(EEGSignal);
+raw = Signal__get_raw(EEGSignal);
 
 if(isfield(raw, channelName))
 	ChannelExists = true;

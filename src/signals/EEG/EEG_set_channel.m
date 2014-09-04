@@ -17,10 +17,10 @@ if(length(channelName) < 2)
 	error('The name should be a string, like ''AF3');
 end
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 
 raw.(channelName) = channelData;
 
-Signal = Signal_set_raw(Signal, raw);
+Signal = Signal__set_raw(Signal, raw);
 
 

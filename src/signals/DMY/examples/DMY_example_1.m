@@ -7,6 +7,6 @@ Sig = DMY_aqn_file();
 
 
 %Note that with another signal of a different type:
-Sig2 = Signal_new_empty();
+Sig2 = Signal__new_empty();
 [feature Sig2] = DMY_feat_feat1(Sig2); %This wont work
 

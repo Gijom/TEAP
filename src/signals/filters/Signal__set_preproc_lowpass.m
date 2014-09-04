@@ -1,4 +1,4 @@
-function Signal = Signal_set_preproc_lowpass(Signal)
+function Signal = Signal__set_preproc_lowpass(Signal)
 %Sets the pre-processing property of low-pass for the signal
 % Inputs:
 %  Signal
@@ -8,8 +8,8 @@ function Signal = Signal_set_preproc_lowpass(Signal)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 1 || nargout ~= 1)
-	error('Usage: Signal = Signal_set_preproc_lowpass(Signal)');
+	error('Usage: Signal = Signal__set_preproc_lowpass(Signal)');
 end
 
-Signal = Signal_set_preproc(Signal, 'lowpass');
+Signal = Signal__set_preproc(Signal, 'lowpass');
 

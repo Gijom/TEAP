@@ -1,8 +1,8 @@
-function Child = Signal_get_window_frames(Signal, startT, endT)
+function Child = Signal__get_window_frames(Signal, startT, endT)
 %Takes a portion of a signal between startT and endT frames. NB: that the
 %child signal will memorize the offset to its father (the first-one, non recursive)
 %start: useful if you want to plot the signal with logical times.
-%If you want to specify seconds instead of frames, you should use Signal_get_window()
+%If you want to specify seconds instead of frames, you should use Signal__get_window()
 %
 % Inputs:
 %  Signal: the signal you want to take a portion of.
@@ -12,25 +12,25 @@ function Child = Signal_get_window_frames(Signal, startT, endT)
 %  Child: the cut signal
 %
 %SEE ALSO:
-%  Signal_get_window
+%  Signal__get_window
 %  Signal_get_offset
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 3)
-	error('Usage: ChildSig = Signal_get_window_frames(Signal, startT, endT)');
+	error('Usage: ChildSig = Signal__get_window_frames(Signal, startT, endT)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 Child = Signal; %Clone them. I wish they were dinosaurs. :p
 
 %Take the portion of the signal we want
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 if(endT > length(raw))
 	endT = length(raw);
 end
-Child = Signal_set_raw(Child, raw(startT: endT));
+Child = Signal__set_raw(Child, raw(startT: endT));
 
 %Sets the new offset of the signal
 if(Signal_get_offset(Signal) > 0)
@@ -40,7 +40,7 @@ if(Signal_get_offset(Signal) > 0)
 else
 	offset = 0;
 end
-Child = Signal_set_offset(Child, startT + offset);
+Child = Signal__set_offset(Child, startT + offset);
 
 %Keep the signal preprocessing features (like 'low-passed', etc.)
 if(isfield(Signal, 'preprocessing'))

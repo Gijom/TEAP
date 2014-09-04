@@ -1,4 +1,4 @@
-function signalName = Signal_get_signame(Signal)
+function signalName = Signal__get_signame(Signal)
 %Gets the name of a signal, eg: 'GSR' for a Galvanic Skin Response signal
 % Inputs:
 %  Signal: the signal you want to get the name of.
@@ -9,10 +9,10 @@ function signalName = Signal_get_signame(Signal)
 
 
 if(nargin ~= 1)
-	error('Usage: signalName = Signal_get_signame(Signal)');
+	error('Usage: signalName = Signal__get_signame(Signal)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 
 if(~isfield(Signal, 'name'))
@@ -21,5 +21,5 @@ end
 
 signalName = Signal.name;
 
-%!assert(strcmp(Signal_get_signame(Signal_new_empty()), 'invalid'))
+%!assert(strcmp(Signal__get_signame(Signal__new_empty()), 'invalid'))
 

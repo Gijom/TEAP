@@ -13,9 +13,9 @@ if(nargin ~= 2)
 end
 
 Signal = RES_new_empty();
-Signal = Signal_set_samprate(Signal, sampRate);
+Signal = Signal__set_samprate(Signal, sampRate);
 
-Signal = Signal_set_raw(Signal, Raw_convert_1D(rawRES));
+Signal = Signal__set_raw(Signal, Raw_convert_1D(rawRES));
 
 
 end

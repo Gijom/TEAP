@@ -10,7 +10,7 @@ function HSTSignal = HST_filter_basic(HSTSignal)
 
 HSTSignal = HST_assert_type(HSTSignal);
 
-sampRate = Signal_get_samprate(HSTSignal);
+sampRate = Signal__get_samprate(HSTSignal);
 
 HSTSignal = Signal_filter1_low_mean(HSTSignal, sampRate);
 

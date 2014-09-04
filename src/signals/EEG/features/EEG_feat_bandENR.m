@@ -10,11 +10,11 @@ function bandEnergy = EEG_feat_bandENR(EEGSignal)
 
 EEGSignal = EEG_assert_mine(EEGSignal);
 
-fs = Signal_get_samprate(EEGSignal);
+fs = Signal__get_samprate(EEGSignal);
 
 welchWindow = 15 * fs; %15 seconds
 %NB: if you want to offset the signal (eg: take out the first 0.5 secs, use
-%the Signal_get_window(Signal, 0.5) function
+%the Signal__get_window(Signal, 0.5) function
 
 %TODO
 

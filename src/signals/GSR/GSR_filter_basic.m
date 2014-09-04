@@ -12,6 +12,6 @@ function GSRsignal = GSR_filter_basic(GSRsignal)
 %Make sure we have a GSR signal
 GSRsignal = GSR_assert_type(GSRsignal);
 
-sampRate = Signal_get_samprate(GSRsignal);
+sampRate = Signal__get_samprate(GSRsignal);
 
 GSRsignal = Signal_filter1_low_median(GSRsignal, sampRate);

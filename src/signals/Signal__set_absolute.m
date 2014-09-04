@@ -1,4 +1,4 @@
-function [Signal] = Signal_set_absolute(Signal, isAbsolute) %vodka
+function [Signal] = Signal__set_absolute(Signal, isAbsolute) %vodka
 %Is the data of the signal absolute or relative. Example: for a HST signal, do
 %you have samples like [37, 37.5, 37.6] or more like [0, 0.5, 0.6] ? If true,
 %the data is absolute (37), if false, it is relative (0).
@@ -11,7 +11,7 @@ function [Signal] = Signal_set_absolute(Signal, isAbsolute) %vodka
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 2 || nargout ~= 1)
-	error('Usage: Signal = Signal_set_absolute(Signal, isAbsolute)');
+	error('Usage: Signal = Signal__set_absolute(Signal, isAbsolute)');
 end
 
 Signal.isAbsolute = isAbsolute;

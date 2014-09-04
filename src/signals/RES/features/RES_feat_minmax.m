@@ -13,12 +13,12 @@ function [minmax] = RES_feat_minmax(RESsignal)
 RESsignal = RES_assert_type(RESsignal);
 
 %Compute the features
-if(~Signal_has_preproc_lowpass(RESsignal))
+if(~Signal__has_preproc_lowpass(RESsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
 	         '. Preferably with a median filter']);
 end
 
-raw = Signal_get_raw(RESsignal);
+raw = Signal__get_raw(RESsignal);
 
 %%FIXME: this may be not always true ! Must find on single wave
 minmax = max(raw) - min(raw);

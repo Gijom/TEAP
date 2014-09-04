@@ -14,12 +14,12 @@ end
 
 EEG_assert_mine(Signal);
 
-if(~isfield(Signal_get_raw(Signal), channelName)
+if(~isfield(Signal__get_raw(Signal), channelName)
 	error(['Sorry, but I don''t have the channel that you wanted (' ...
 	       channelName ')');
 end
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 Data = raw.(channelName);
 
 

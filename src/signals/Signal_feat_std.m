@@ -7,9 +7,9 @@ function [STD] = Signal_feat_std(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 
 STD = std(raw);
 

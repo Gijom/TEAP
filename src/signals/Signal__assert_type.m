@@ -1,4 +1,4 @@
-function Signal = Signal_assert_type(Signal, nameWanted)
+function Signal = Signal__assert_type(Signal, nameWanted)
 % Checks that the signal given on the input is of the type nameWanted
 % This function is mainly used by SSS_assert_type(Sig), with params Sig and SSS.
 % NOTA BENE: in the case that Signal is a BULK signal, this function will
@@ -13,7 +13,7 @@ function Signal = Signal_assert_type(Signal, nameWanted)
 
 if(nargin ~= 2 || nargout ~= 1)
 	%If fucking matlab was clever, they'd have implemented print_usage, like octave
-	error('Usage: Signal = Signal_assert_type(Signal, nameWanted)')
+	error('Usage: Signal = Signal__assert_type(Signal, nameWanted)')
 end
 
 if(~isfield(Signal, 'TEAPhysio'))
@@ -27,7 +27,7 @@ end
 
 %can either be a Bulk or a single signal
 if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
-	Signal_assert_mine(Signal);
+	Signal__assert_mine(Signal);
 elseif(Signal.TEAPhysio == 'B') %Bulk signal
 	%We have to choose the signal that we want
 	Signal = Bulk_get_signal(Signal, nameWanted); %Will fail if does not exist
@@ -36,7 +36,7 @@ else
 end
 
 %And then, compare their name (redundant for 2nd case, but anyways :p)
-name = Signal_get_signame(Signal);
+name = Signal__get_signame(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])
 end

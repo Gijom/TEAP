@@ -13,7 +13,7 @@ end
 
 
 Signal = EEG_new_empty();
-Signal = Signal_set_samprate(Signal, sampRate);
+Signal = Signal__set_samprate(Signal, sampRate);
 
 [nChannels, ~] = size(eegChannels);
 [nChannelsGiven, ~] = size(eegData);

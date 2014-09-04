@@ -13,12 +13,12 @@ function [energy] = RES_feat_energy(RESsignal)
 RESsignal = RES_assert_type(RESsignal);
 
 %Compute the features
-if(~Signal_has_preproc_lowpass(RESsignal))
+if(~Signal__has_preproc_lowpass(RESsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
 	         '. Preferably with a median filter']);
 end
 
-raw = Signal_get_raw(RESsignal);
+raw = Signal__get_raw(RESsignal);
 
 energy = std(raw); %%FIXME: mail Guillaume. sum(raw.^2) ?
 

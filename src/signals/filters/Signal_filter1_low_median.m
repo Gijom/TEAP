@@ -12,14 +12,14 @@ if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_median(Signal, windowSize)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 
 filtered = medfilt1(raw, windowSize);
 
-Signal = Signal_set_raw(Signal, filtered);
+Signal = Signal__set_raw(Signal, filtered);
 
 %Indicate that the signal has been filtered
-Signal = Signal_set_preproc_lowpass(Signal);
+Signal = Signal__set_preproc_lowpass(Signal);
 

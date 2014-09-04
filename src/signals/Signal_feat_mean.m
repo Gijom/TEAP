@@ -7,8 +7,8 @@ function [MEAN] = Signal_feat_mean(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal_assert_mine(Signal);
-raw = Signal_get_raw(Signal);
+Signal__assert_mine(Signal);
+raw = Signal__get_raw(Signal);
 
 MEAN = mean(raw);
 

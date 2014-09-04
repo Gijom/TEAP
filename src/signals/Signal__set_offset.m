@@ -1,4 +1,4 @@
-function Signal = Signal_set_offset(Signal, offset)
+function Signal = Signal__set_offset(Signal, offset)
 %Sets the offset of the specified signal
 % Inputs:
 %  Signal: the signal
@@ -9,10 +9,10 @@ function Signal = Signal_set_offset(Signal, offset)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 2 || nargout ~= 1)
-	error('Usage: Signal = Signal_set_offset(Signal, offset)');
+	error('Usage: Signal = Signal__set_offset(Signal, offset)');
 end
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 Signal.relatime = offset;
 

@@ -17,7 +17,7 @@ function [nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(GSRsignal, ampThr
 %Make sure we have a GSR signal
 GSRsignal = GSR_assert_type(GSRsignal);
 
-if(~Signal_has_preproc_lowpass(GSRsignal))
+if(~Signal__has_preproc_lowpass(GSRsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
 	         '. Preferably with a median filter']);
 end
@@ -38,13 +38,13 @@ tThreshUp  = 10;
 %Search low and high peaks
 %low peaks are the GSR appex reactions (highest sudation)
 %High peaks are used as starting points for the reaction
-GSR = Signal_get_raw(GSRsignal);
+GSR = Signal__get_raw(GSRsignal);
 
 dN = diff(diff(GSR) <= 0);
 idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;
 
-samprate = Signal_get_samprate(GSRsignal);
+samprate = Signal__get_samprate(GSRsignal);
 
 %For each low peaks find it's nearest high peak and check that there is no
 %low peak between them, if there is one, reject the peak (OR SEARCH FOR CURVATURE)

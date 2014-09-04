@@ -7,7 +7,7 @@ function [isAbsolute] = Signal_get_absolute(Signal)
 %              (false) data.
 %
 %SEE ALSO:
-% Signal_set_absolute
+% Signal__set_absolute
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 

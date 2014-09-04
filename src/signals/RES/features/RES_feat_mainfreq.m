@@ -14,8 +14,8 @@ function [mainFreq] = RES_feat_mainfreq(RESsignal)
 RESsignal = RES_assert_type(RESsignal);
 
 
-raw = Signal_get_raw(RESsignal);
-fs = Signal_get_samprate(RESsignal);
+raw = Signal__get_raw(RESsignal);
+fs = Signal__get_samprate(RESsignal);
 
 %Make a filter for our signal
 Fpeak = 0.375;  % Peak Frequency

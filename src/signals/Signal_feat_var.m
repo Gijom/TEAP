@@ -7,9 +7,9 @@ function [var] = Signal_feat_var(Signal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
-raw = Signal_get_raw(Signal);
+raw = Signal__get_raw(Signal);
 
 var = var(raw);
 

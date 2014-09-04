@@ -9,11 +9,11 @@ function Signal_plot(Signal, startT, endT)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-raw = Signal_get_raw(Signal);
-samprate = Signal_get_samprate(Signal);
+raw = Signal__get_raw(Signal);
+samprate = Signal__get_samprate(Signal);
 
-name = Signal_get_signame(Signal);
-signal_unit = Signal_get_unit(Signal);
+name = Signal__get_signame(Signal);
+signal_unit = Signal__get_unit(Signal);
 
 if(nargin == 2)
 	raw = raw(startT:end);
@@ -31,7 +31,7 @@ plot(seconds, raw);
 
 offset = Signal_get_offset(Signal);
 
-%The signal may be offseted with Signal_get_window. If so, say it
+%The signal may be offseted with Signal__get_window. If so, say it
 if(offset ~= 0)
 	offsetT = offset / samprate;
 	xlabel(['Seconds - ' num2str(offsetT) ' (offset)']);
@@ -40,7 +40,7 @@ else
 end
 
 %The y label title
-if(Signal_has_preproc_lowpass(Signal))
+if(Signal__has_preproc_lowpass(Signal))
 	comments = ' (low passed)';
 else
 	comments = '';

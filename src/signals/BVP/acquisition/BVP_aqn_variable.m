@@ -13,9 +13,9 @@ end
 
 
 Signal = BVP_new_empty();
-Signal = Signal_set_samprate(Signal, sampRate);
+Signal = Signal__set_samprate(Signal, sampRate);
 
-Signal = Signal_set_raw(Signal, Raw_convert_1D(rawBVP));
+Signal = Signal__set_raw(Signal, Raw_convert_1D(rawBVP));
 
 %And we filter the signal. Else, it's useless
 Signal = BVP_filter_basic(Signal);

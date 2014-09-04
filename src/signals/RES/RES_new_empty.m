@@ -5,7 +5,7 @@ function Signal = RES_new_empty()
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal = Signal_new_empty();
-Signal = Signal_set_name(Signal, RES_get_signame());
-Signal = Signal_set_unit(Signal, 'µV'); %FIXME
+Signal = Signal__new_empty();
+Signal = Signal__set_name(Signal, RES_get_signame());
+Signal = Signal__set_unit(Signal, 'µV'); %FIXME
 

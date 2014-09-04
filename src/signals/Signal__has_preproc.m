@@ -1,4 +1,4 @@
-function Boolean = Signal_has_preproc(Signal, preprocName)
+function Boolean = Signal__has_preproc(Signal, preprocName)
 %Has the given signal been through this preprocessing step
 % Inputs:
 %  Signal: the signal
@@ -22,10 +22,10 @@ end
 
 Boolean = true;
 
-%!assert(Signal_has_preproc(Signal_new_empty(), 'oauoau'), false);
+%!assert(Signal__has_preproc(Signal__new_empty(), 'oauoau'), false);
 
 %!test
-%! sig = Signal_new_empty();
-%! sig = Signal_set_preproc(sig, 'aoeu');
-%! assert(Signal_has_preproc(sig, 'aoeu'), true);
-%! assert(Signal_has_preproc(sig, 'htns'), false);
+%! sig = Signal__new_empty();
+%! sig = Signal__set_preproc(sig, 'aoeu');
+%! assert(Signal__has_preproc(sig, 'aoeu'), true);
+%! assert(Signal__has_preproc(sig, 'htns'), false);

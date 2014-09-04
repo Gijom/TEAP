@@ -15,8 +15,8 @@ ECGSignal = ECG_assert_type(ECGSignal);
 
 %Compute the results
 
-rawSignal = Signal_get_raw(ECGSignal);
-samprate = Signal_get_samprate(ECGSignal);
+rawSignal = Signal__get_raw(ECGSignal);
+samprate = Signal__get_samprate(ECGSignal);
 
 newfs = 256; %Hz, as needed by rpeakdetect
 ECG = downsample(rawSignal, samprate/newfs);

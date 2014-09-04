@@ -1,4 +1,4 @@
-function Signal = Signal_set_preproc(Signal, preprocName)
+function Signal = Signal__set_preproc(Signal, preprocName)
 %Set a preprocessing attribute for a signal. Ex: lowPass, highPass
 % Inputs:
 %  Signal: the signal
@@ -9,7 +9,7 @@ function Signal = Signal_set_preproc(Signal, preprocName)
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
 if(nargin ~= 2)
-	error('Usage: Signal = Signal_set_preproc(Signal, preprocName)');
+	error('Usage: Signal = Signal__set_preproc(Signal, preprocName)');
 end
 
 if(nargout ~= 1)
@@ -17,7 +17,7 @@ if(nargout ~= 1)
 end
 
 
-Signal_assert_mine(Signal);
+Signal__assert_mine(Signal);
 
 Signal.preprocessing.(preprocName) = true;
 

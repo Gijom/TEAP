@@ -1,4 +1,4 @@
-function Signal = Signal_new_empty()
+function Signal = Signal__new_empty()
 %Creates a new, empty, signal. This is mainly to represent the data structure
 % Output:
 %  Signal: an empty signal
@@ -8,18 +8,18 @@ function Signal = Signal_new_empty()
 Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk
 
 %The sampling rate of the signal
-Signal = Signal_set_samprate(Signal, -1);
+Signal = Signal__set_samprate(Signal, -1);
 
 %The raw data of the signal
-Signal = Signal_set_raw(Signal, []);
+Signal = Signal__set_raw(Signal, []);
 
 %The unit of the signal (eg: °C, etc.)
-Signal = Signal_set_unit(Signal, 'no unit');
+Signal = Signal__set_unit(Signal, 'no unit');
 
 %The name of the signal (eg: GSR)
-Signal = Signal_set_name(Signal, 'invalid');
+Signal = Signal__set_name(Signal, 'invalid');
 
 %Was the signal NOT normalized/'baselined' ?
-Signal = Signal_set_absolute(Signal, true);
+Signal = Signal__set_absolute(Signal, true);
 
 

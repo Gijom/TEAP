@@ -28,8 +28,8 @@ else
 	error('Usage: ECG_aqn_variable(ECG [, ECG2], sampRate)');
 end
 
-Signal = Signal_set_samprate(Signal, sampRate);
-Signal = Signal_set_raw(Signal, raw);
+Signal = Signal__set_samprate(Signal, sampRate);
+Signal = Signal__set_raw(Signal, raw);
 
 end
 

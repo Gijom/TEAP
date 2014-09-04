@@ -12,12 +12,12 @@ function [meanTemp] = HST_feat_meanderiv(HSTsignal)
 %Make sure we have a HST signal
 HSTsignal = HST_assert_type(HSTsignal);
 
-if(~Signal_has_preproc_lowpass(HSTsignal))
+if(~Signal__has_preproc_lowpass(HSTsignal))
 	warning(['For the function to work well, you should low-pass the signal' ...
 	         '. Preferably with a mean filter']);
 end
 
-raw = Signal_get_raw(HSTsignal);
+raw = Signal__get_raw(HSTsignal);
 
 meanTemp = mean(diff(raw));
 

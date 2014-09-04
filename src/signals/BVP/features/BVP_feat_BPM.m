@@ -10,7 +10,7 @@ function BPM = BVP_feat_BPM(BVPSignal)
 
 
 %Make sure we have an BVP signal
-BVPSignal = BVP_assert_type(BVPSignal);
+BVPSignal = BVP__assert_type(BVPSignal);
 
 data = Signal__get_raw(BVPSignal)';
 fs = Signal__get_samprate(BVPSignal);

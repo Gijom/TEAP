@@ -12,7 +12,7 @@ if(nargin ~= 2)
 	error('Usage: RES_aqn_variable(rawRes, sampRate');
 end
 
-Signal = RES_new_empty();
+Signal = RES__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
 Signal = Signal__set_raw(Signal, Raw_convert_1D(rawRES));

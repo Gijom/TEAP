@@ -13,7 +13,7 @@ if(nargin ~= 2)
 	error('Usage: HST_aqn_variable(rawHST, sampRate)');
 end
 
-Signal = HST_new_empty();
+Signal = HST__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
 if(median(rawHST) > 70)

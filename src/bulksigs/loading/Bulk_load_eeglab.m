@@ -43,7 +43,7 @@ function BulkSig = addGSR(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	GSRSig = GSR_aqn_variable(reshaped, EEGV.srate);
-	BulkSig = Bulk_add_signal(BulkSig, GSR_get_signame(), GSRSig);
+	BulkSig = Bulk_add_signal(BulkSig, GSR__get_signame(), GSRSig);
 end
 
 %Temp/HST
@@ -57,7 +57,7 @@ function BulkSig = addHST(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	HSTSig = HST_aqn_variable(reshaped, EEGV.srate);
-	BulkSig = Bulk_add_signal(BulkSig, HST_get_signame(), HSTSig);
+	BulkSig = Bulk_add_signal(BulkSig, HST__get_signame(), HSTSig);
 end
 
 %Respiration
@@ -71,7 +71,7 @@ function BulkSig = addRES(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	RESSig = RES_aqn_variable(reshaped, EEGV.srate);
-	BulkSig = Bulk_add_signal(BulkSig, RES_get_signame(), RESSig);
+	BulkSig = Bulk_add_signal(BulkSig, RES__get_signame(), RESSig);
 end
 
 %BVT/Plet
@@ -85,7 +85,7 @@ function BulkSig = addBVP(BulkSig, iEpoch);
 	reshaped = reshape(data, 1, length(data));
 
 	BVPSig = BVP_aqn_variable(reshaped, EEGV.srate);
-	BulkSig = Bulk_add_signal(BulkSig, BVP_get_signame(), BVPSig);
+	BulkSig = Bulk_add_signal(BulkSig, BVP__get_signame(), BVPSig);
 end
 
 

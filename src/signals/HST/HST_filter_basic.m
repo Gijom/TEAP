@@ -8,7 +8,7 @@ function HSTSignal = HST_filter_basic(HSTSignal)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-HSTSignal = HST_assert_type(HSTSignal);
+HSTSignal = HST__assert_type(HSTSignal);
 
 sampRate = Signal__get_samprate(HSTSignal);
 

@@ -10,7 +10,7 @@ function GSRsignal = GSR_filter_basic(GSRsignal)
 
 
 %Make sure we have a GSR signal
-GSRsignal = GSR_assert_type(GSRsignal);
+GSRsignal = GSR__assert_type(GSRsignal);
 
 sampRate = Signal__get_samprate(GSRsignal);
 

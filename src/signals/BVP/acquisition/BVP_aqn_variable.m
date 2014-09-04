@@ -12,7 +12,7 @@ if(nargin ~= 2)
 end
 
 
-Signal = BVP_new_empty();
+Signal = BVP__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
 Signal = Signal__set_raw(Signal, Raw_convert_1D(rawBVP));

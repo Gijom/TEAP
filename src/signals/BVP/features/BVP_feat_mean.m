@@ -9,7 +9,7 @@ function mmean = BVP_feat_mean(BVPSignal)
 
 
 %Make sure we have an BVP signal
-BVPSignal = BVP_assert_type(BVPSignal);
+BVPSignal = BVP__assert_type(BVPSignal);
 
 mmean = Signal_feat_mean(BVPSignal);
 

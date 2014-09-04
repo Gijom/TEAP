@@ -12,7 +12,7 @@ function [meanTemp] = HST_feat_mean(HSTsignal)
 
 
 %Make sure we have a HST signal
-HSTsignal = HST_assert_type(HSTsignal);
+HSTsignal = HST__assert_type(HSTsignal);
 
 
 if(~Signal__has_preproc_lowpass(HSTsignal))

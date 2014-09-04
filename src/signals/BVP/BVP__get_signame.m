@@ -1,4 +1,4 @@
-function name = BVP_get_signame()
+function name = BVP__get_signame()
 %Returns the name of a BVP signal
 % Inputs:
 %  NONE

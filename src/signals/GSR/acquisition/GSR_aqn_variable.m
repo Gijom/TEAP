@@ -12,7 +12,7 @@ if(nargin ~= 2)
 end
 
 
-Signal = GSR_new_empty();
+Signal = GSR__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
 %If it is given in Siemens

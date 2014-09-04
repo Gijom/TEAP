@@ -1,4 +1,4 @@
-function name = ECG_get_signame()
+function name = ECG__get_signame()
 %Get the name of a ECG signal
 % Inputs:
 %  NONE

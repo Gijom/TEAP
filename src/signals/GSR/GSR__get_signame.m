@@ -1,4 +1,4 @@
-function name = GSR_get_signame()
+function name = GSR__get_signame()
 %Get the name of a GSR signal
 % Inputs:
 %  NONE

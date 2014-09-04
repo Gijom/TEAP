@@ -10,7 +10,7 @@ function BVPsignal = BVP_filter_basic(BVPsignal)
 
 
 %Make sure we have a BVP signal
-BVPsignal = BVP_assert_type(BVPsignal);
+BVPsignal = BVP__assert_type(BVPsignal);
 
 sampRate = Signal__get_samprate(BVPsignal);
 

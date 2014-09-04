@@ -9,7 +9,7 @@ function mvar = BVP_feat_var(BVPSignal)
 
 
 %Make sure we have an BVP signal
-BVPSignal = BVP_assert_type(BVPSignal);
+BVPSignal = BVP__assert_type(BVPSignal);
 
 mvar = Signal_feat_var(BVPSignal);
 

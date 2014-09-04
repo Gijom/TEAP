@@ -17,7 +17,7 @@ function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 %
 %Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
 
-Signal = ECG_new_empty();
+Signal = ECG__new_empty();
 
 if(nargin == 2) %second case
 	sampRate = ECG2;

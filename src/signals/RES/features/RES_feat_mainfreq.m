@@ -11,7 +11,7 @@ function [mainFreq] = RES_feat_mainfreq(RESsignal)
 
 
 %Make sure we have a RES signal
-RESsignal = RES_assert_type(RESsignal);
+RESsignal = RES__assert_type(RESsignal);
 
 
 raw = Signal__get_raw(RESsignal);

@@ -12,7 +12,7 @@ if(nargin ~= 3)
 end
 
 
-Signal = EEG_new_empty();
+Signal = EEG__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
 [nChannels, ~] = size(eegChannels);

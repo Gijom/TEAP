@@ -24,6 +24,7 @@ for iEpoch = [1:nEpochs]
 	Bulk = addGSR(Bulk, iEpoch);
 	Bulk = addHST(Bulk, iEpoch);
 	Bulk = addRES(Bulk, iEpoch);
+	Bulk = addBVP(Bulk, iEpoch);
 
 	BulkSig(iEpoch) = Bulk;
 	clear Bulk;
@@ -71,6 +72,20 @@ function BulkSig = addRES(BulkSig, iEpoch);
 
 	RESSig = RES_aqn_variable(reshaped, EEGV.srate);
 	BulkSig = Bulk_add_signal(BulkSig, RES_get_signame(), RESSig);
+end
+
+%BVT/Plet
+function BulkSig = addBVP(BulkSig, iEpoch);
+	BVPChannel = findMyChannel('Plet');
+	if(BVPChannel == 0)
+		return;
+	end
+
+	data = EEGV.data(BVPChannel, :, iEpoch);
+	reshaped = reshape(data, 1, length(data));
+
+	BVPSig = BVP_aqn_variable(reshaped, EEGV.srate);
+	BulkSig = Bulk_add_signal(BulkSig, BVP_get_signame(), BVPSig);
 end
 
 

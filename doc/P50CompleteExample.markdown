@@ -24,7 +24,7 @@ If you want to analyse multiple signals, import-them as a bulk:
 
 and create the bulk signal:
 
-    b = Bulk_load_eeglab(EEG);
+    b = Bulk_load_ecglab(EEG);
 
 plot all the signals:
 

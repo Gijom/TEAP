@@ -1,14 +1,7 @@
-@L Add documentation to library
 @M start EEG
-@M highlight extreme values: ex: the 1%
-@H compute useful thinngs: quartiles
-@M tests
 @L EOG ? Blinking rate
 @M scripting: things we want to import into BULK
-@H start of documentation
-@L CONTRIB file ?
 @H PLET/BVP
 @H EEG
 @H Bulk_plot- figures for EEG
-@H Doc
 @M Signal_has_feat -> Signal__has_feat, etc.

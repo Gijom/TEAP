@@ -7,7 +7,7 @@ function [BulkSig] = Bulk_add_signal(BulkSig, signame, sig)
 % Outputs:
 %  BulkSig: the bulksignal with the signal added
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: BulkSig = Bulk_add_signal(BulkSig, signame, sig)');

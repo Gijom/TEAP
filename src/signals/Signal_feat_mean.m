@@ -5,7 +5,7 @@ function [MEAN] = Signal_feat_mean(Signal)
 % Outputs:
 %  MEAN: the mean, calculated using the mean() function
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 Signal__assert_mine(Signal);
 raw = Signal__get_raw(Signal);

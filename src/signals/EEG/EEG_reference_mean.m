@@ -5,7 +5,7 @@ function EEGSignal = EEG_reference_mean(EEGSignal)
 % Outputs:
 %  EEGSignal: the referenced EEG signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: EEGSignal = EEG_reference_mean(EEGSignal);');

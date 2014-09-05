@@ -7,7 +7,7 @@ function Signal = EEG_set_channel(Signal, channelName, channelData)
 % Outputs:
 %  Signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: Signal = EEG_set_channel(Signal, channelName, channelData)');

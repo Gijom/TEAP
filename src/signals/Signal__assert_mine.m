@@ -3,7 +3,7 @@ function Signal__assert_mine(Signal)
 % Inputs:
 %  Signal: the signal to test
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 1)
 	error('Usage: Signal__assert_mine(Signal)');

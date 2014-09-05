@@ -6,7 +6,7 @@ function Signal = HST_aqn_variable(rawHST, sampRate)
 % Outputs:
 %   Signal: A HST TEAPhysio signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 
 if(nargin ~= 2)

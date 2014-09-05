@@ -10,7 +10,7 @@ function [thetaBand alphaBand betaBand slowAlpha gammaBand] = EEG_feat_bandENR(E
 %  gammaBand
 %
 %Copyright Mohammad Soleymani 2009
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 EEGSignal = EEG__assert_type(EEGSignal);
 

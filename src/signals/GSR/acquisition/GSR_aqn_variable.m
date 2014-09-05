@@ -5,7 +5,7 @@ function Signal = GSR_aqn_variable(rawGSR, sampRate)
 %   sampRate [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: A GSR TEAPhysio signal
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 2)
 	error('Usage: GSR_aqn_variable(rawGSR, sampRate)');

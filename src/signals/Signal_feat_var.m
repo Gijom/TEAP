@@ -5,7 +5,7 @@ function [var] = Signal_feat_var(Signal)
 % Outputs:
 %  var: the calculated var, using the var() function
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 Signal__assert_mine(Signal);
 

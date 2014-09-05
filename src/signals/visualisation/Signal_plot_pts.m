@@ -10,7 +10,7 @@ function Signal_plot_pts(Signal, xvals, yvals, props)
 %  yvals: the y values
 %  props: plot properties (like 'r*')
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 samprate = Signal__get_samprate(Signal);
 

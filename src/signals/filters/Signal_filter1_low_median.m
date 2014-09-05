@@ -6,7 +6,7 @@ function Signal = Signal_filter1_low_median(Signal, windowSize)
 % Outputs:
 %  Signal: the newly filtered signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_median(Signal, windowSize)');

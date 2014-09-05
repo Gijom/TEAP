@@ -6,7 +6,7 @@ function IBIVar = ECG_feat_IBIvar(ECGSignal)
 %  IBIVar: the InterBeatInterval variance
 %
 %Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 
 %Make sure we have an ECG signal

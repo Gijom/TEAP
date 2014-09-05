@@ -6,7 +6,7 @@ function BVPsignal = BVP_filter_basic(BVPsignal)
 % Outputs:
 %  Signal: the filtered BVP signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 
 %Make sure we have a BVP signal

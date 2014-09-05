@@ -6,7 +6,7 @@ function Signal = Signal__set_samprate(Signal, samprate)
 % Outputs:
 %  Signal: the newly modified signal
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 2)
 	error('Usage: Signal__set_samprate(Signal, samprate)');

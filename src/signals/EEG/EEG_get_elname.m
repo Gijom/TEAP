@@ -5,7 +5,7 @@ function [name] = EEG_get_elname(number)
 % Outputs:
 %  name: the name (eg: 'AF3')
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 correspondance = ['Fp1'; 'AF3'; 'F3'; 'F7'; 'FC5'; 'FC1'; 'C3'; 'T7'; 'CP5'; ...
                   'CP1'; 'P3'; 'P7'; 'PO3'; 'O1'; 'Oz'; 'Pz'; 'Fp2'; 'AF4'; ...

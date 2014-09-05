@@ -6,7 +6,7 @@ function Boolean = Signal__has_preproc(Signal, preprocName)
 % Outputs:
 %  Boolean: a boolean value indicating if yes (1) or no (you guessed-it)
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 %Does the signal have some preprocessing done ?
 if(~isfield(Signal, 'preprocessing')) %No preprocessing whatsoever

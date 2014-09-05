@@ -11,7 +11,7 @@ function [nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(GSRsignal, ampThr
 %  riseTime [1xP]: the duration of the rise time of each peak
 %  posPeaks [1xP]: index of the detected peaks in the GSR signal
 %Copyright XXX 2011
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 
 %Make sure we have a GSR signal

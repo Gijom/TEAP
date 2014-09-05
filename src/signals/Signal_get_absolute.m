@@ -9,7 +9,7 @@ function [isAbsolute] = Signal_get_absolute(Signal)
 %SEE ALSO:
 % Signal__set_absolute
 %
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 1)
 	error('Usage: isAbsolute = Signal_get_absolute(Signal)');

@@ -6,7 +6,7 @@ function BPM = BVP_feat_BPM(BVPSignal)
 %  BPM: the beats per minute
 %
 %Copyright Mohammad Soleymani 2013
-%Copyright Frank Villaro-Dixon Creative Commons BY-SA 4.0 2014
+%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 
 %Make sure we have an BVP signal

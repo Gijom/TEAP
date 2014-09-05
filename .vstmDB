@@ -1,6 +1,4 @@
 @M start EEG
-@L EOG ? Blinking rate
 @M scripting: things we want to import into BULK
 @H EEG
 @H Bulk_plot- figures for EEG
-@M Signal_has_feat -> Signal__has_feat, etc.

@@ -1,15 +1,12 @@
-#Introduction to the toolbox
+#Introduction
+TEAP was written during a bachelor project at University of Geneva by Frank 
+Villaro-Dixon. The main reason for TEAP was that we wanted a Matlab toolbox for 
+Emotion Analysis using Physiological signals (hence it's name). Indeed, some PhD 
+students used various scripts for different things, and it was a mess sharing 
+those scripts. TEAP's goal was to unify all that.
 
-##How to load TEAPhysio
-In order to load TEAPhysio, you have two possibilities, but they all use the 
-same principle
 
-###TEAPhysio for multiple small projects
-If you want to use TEAP for multiple small projects, the best way is to extract 
-TEAP somewhere and add-it to your matlab's (or octave's) classpath. This way, 
-TEAP's functions will always be accessible.
+Briefly, TEAP consists of 100 `.m` files (1700 lines of code + 1000 lines of 
+comments) and works quite well. We hope you'll enjoy-it.
 
-###TEAPhysio for a standalone project
-If you want to build a project that uses TEAP and that should work everywhere, 
-the best way is to copy TEAPhysio in your project's folder. Then, you'll simply 
-have to call the `init.m` scrip to load TEAP.
+Down below is some documentation on how to use TEAP.

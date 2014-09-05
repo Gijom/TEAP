@@ -12,7 +12,8 @@ htmldoc --book --links --titlefile Title.html  --footer h./ P*.html > documentat
 
 rm *.html
 
-mv documentation.htmla documentation.html
+mv documentation.htmla DOCUMENTATION.html
 
 #Convert to pdf
-wkhtmltopdf documentation.html documentation.pdf
+####wkhtmltopdf documentation.html documentation.pdf
+#HTML is more lisible

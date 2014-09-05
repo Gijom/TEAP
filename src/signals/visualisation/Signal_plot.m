@@ -30,7 +30,7 @@ if(strcmp(typeinfo(raw), 'matrix') == 0)
 
 		%This is a copy !
 		Sig_copy = Signal__set_raw(Signal, raw.(fields{i}));
-		Sig_copy = Signal__set_name(Sig_copy, [Signal__get_signame(Signal) ' - ' ...
+		Sig_copy = Signal__set_signame(Sig_copy, [Signal__get_signame(Signal) ' - ' ...
 		                                       fields{i}]);
 
 		Signal_plot(Sig_copy, startT, endT);

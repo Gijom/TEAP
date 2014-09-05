@@ -17,7 +17,7 @@ Signal = Signal__set_raw(Signal, []);
 Signal = Signal__set_unit(Signal, 'no unit');
 
 %The name of the signal (eg: GSR)
-Signal = Signal__set_name(Signal, 'invalid');
+Signal = Signal__set_signame(Signal, 'invalid');
 
 %Was the signal NOT normalized/'baselined' ?
 Signal = Signal__set_absolute(Signal, true);

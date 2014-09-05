@@ -14,13 +14,14 @@ if(nargin ~= 3 || nargout ~= 1)
 end
 
 if(length(channelName) < 2)
-	error('The name should be a string, like ''AF3');
+	error('The name should be a string, like ''AF3''');
 end
 
 raw = Signal__get_raw(Signal);
 
 raw.(channelName) = channelData;
 
-Signal = Signal__set_raw(Signal, raw);
+Signal.raw = raw; %nasty hack; little exception cos double() in Signal__set_raw will fail
+%%Signal = Signal__set_raw(Signal, raw);
 
 

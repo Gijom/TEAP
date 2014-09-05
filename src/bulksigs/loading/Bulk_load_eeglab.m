@@ -21,6 +21,7 @@ nEpochs = length(EEGV.epoch);
 for iEpoch = [1:nEpochs]
 	Bulk = Bulk_new_empty();
 
+	Bulk = addEEG(Bulk, iEpoch);
 	Bulk = addGSR(Bulk, iEpoch);
 	Bulk = addHST(Bulk, iEpoch);
 	Bulk = addRES(Bulk, iEpoch);
@@ -31,6 +32,32 @@ for iEpoch = [1:nEpochs]
 end
 
 
+%EEG
+function BulkSig = addEEG(BulkSig, iEpoch);
+correspondance = ['Fp1'; 'AF3'; 'F3'; 'F7'; 'FC5'; 'FC1'; 'C3'; 'T7'; 'CP5'; ...
+                  'CP1'; 'P3'; 'P7'; 'PO3'; 'O1'; 'Oz'; 'Pz'; 'Fp2'; 'AF4'; ...
+                  'Fz'; 'F4'; 'F8'; 'FC6'; 'FC2'; 'Cz'; 'C4'; 'T8'; 'CP6'; ...
+                  'CP2'; 'P4'; 'P8'; 'PO4'; 'O2'];
+
+	numel = size(correspondance, 1);
+	datlen = length(EEGV.data(1, :, 1));
+	data = zeros(numel, datlen);
+
+	for i = [1:numel]
+		chaname = strtrim(correspondance(i, :)); %fuckshit
+		chan = findMyChannel(chaname);
+%		disp(['Will do ' chaname ' - ' num2str(chan)]);
+		if(chan == 0)
+			warning(['The EEG channel ' correspondance(i, :) ' does not '...
+			         'exist. Aborting EEG']);
+			return;
+		end
+		data(1, :) = reshape(EEGV.data(chan, :, iEpoch), 1, datlen);
+	end
+
+	EEGSig = EEG_aqn_variable(correspondance, data, EEGV.srate);
+	BulkSig = Bulk_add_signal(BulkSig, EEG__get_signame(), EEGSig);
+end
 
 %GSR
 function BulkSig = addGSR(BulkSig, iEpoch);
@@ -92,6 +119,7 @@ end
 %Find my channel
 function iChannel = findMyChannel(chanName)
 	for iChannel = [1:length(EEGV.chanlocs)]
+%		disp(['Will compare ' chanName ' and ' EEGV.chanlocs(iChannel).labels]);
 		if(strcmp(chanName, EEGV.chanlocs(iChannel).labels) == 1)
 			return;
 		end

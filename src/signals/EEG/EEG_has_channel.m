@@ -12,7 +12,7 @@ if(nargin ~= 2)
 	error('Usage: ChannelExists = EEG_has_channel(EEGSignal, channelName)');
 end
 
-EEG_assert_mine(EEGSignal);
+EEG__assert_type(EEGSignal);
 
 raw = Signal__get_raw(EEGSignal);
 

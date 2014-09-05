@@ -24,6 +24,7 @@ if(nChannelsGiven ~= nChannels)
 end
 
 for(i = [1:nChannels])
-	Signal = EEG_set_channel(Signal, eegChannels(i, :), eegData(i, :));
+	chaname = strtrim(eegChannels(i, :));
+	Signal = EEG_set_channel(Signal, chaname, eegData(i, :));
 end
 

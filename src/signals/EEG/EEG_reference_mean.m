@@ -11,7 +11,7 @@ if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: EEGSignal = EEG_reference_mean(EEGSignal);');
 end
 
-EEG_assert_mine(EEGSignal);
+EEG__assert_type(EEGSignal);
 
 raw = Signal__get_raw(EEGSignal);
 

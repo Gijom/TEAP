@@ -12,11 +12,11 @@ if(nargin ~= 2)
 	error('Usage: Data = EEG_get_channel(Signal, channelName)');
 end
 
-EEG_assert_mine(Signal);
+Signal = EEG__assert_type(Signal);
 
-if(~isfield(Signal__get_raw(Signal), channelName)
+if(~isfield(Signal__get_raw(Signal), channelName))
 	error(['Sorry, but I don''t have the channel that you wanted (' ...
-	       channelName ')');
+	       channelName ')']);
 end
 
 raw = Signal__get_raw(Signal);

@@ -24,10 +24,11 @@ PRE { font-family: monospace }
 <BR>
 <BR><B><A HREF="#2">Introduction to the toolbox</A></B>
 <UL>
-<LI><A HREF="#2_1">How to load TEAPhysio</A>
+<LI><A HREF="#2_1">Getting TEAPhysio</A></LI>
+<LI><A HREF="#2_2">How to load TEAPhysio</A>
 <UL>
-<LI><A HREF="#2_1_1">TEAPhysio for multiple small projects</A></LI>
-<LI><A HREF="#2_1_2">TEAPhysio for a standalone project</A></LI>
+<LI><A HREF="#2_2_1">TEAPhysio for multiple small projects</A></LI>
+<LI><A HREF="#2_2_2">TEAPhysio for a standalone project</A></LI>
 </UL>
 </LI>
 </UL>
@@ -66,28 +67,32 @@ PRE { font-family: monospace }
 <LI><A HREF="#7_1">With a single signal</A></LI>
 <LI><A HREF="#7_2">With multiple signals</A></LI>
 </UL>
-<HR NOSHADE>
+<B><A HREF="#8">Contributing to TEAP</A></B><HR NOSHADE>
 <H1><A NAME="1">Introduction</A></H1>
-<P>TEAP was written during a bachelor project at University of Geneva by
- Frank Villaro-Dixon. The main reason for TEAP was that we wanted a
- Matlab toolbox for Emotion Analysis using Physiological signals (hence
- it's name). Indeed, some PhD students used various scripts for
- different things, and it was a mess sharing those scripts. TEAP's goal
- was to unify all that.</P>
+<P>TEAP was written during a bachelor project at <A href="http://cui.unige.ch">
+University of Geneva</A> by Frank Villaro-Dixon. The main reason for
+ TEAP was that we wanted a Matlab toolbox for Emotion Analysis using
+ Physiological signals (hence it's name). Indeed, some PhD students used
+ various scripts for different things, and it was a mess sharing those
+ scripts. TEAP's goal was to unify all that.</P>
 <P>Briefly, TEAP consists of 100 <CODE>.m</CODE> files (1700 lines of
  code + 1000 lines of comments) and works quite well. We hope you'll
  enjoy-it.</P>
 <P>Down below is some documentation on how to use TEAP.</P>
 <HR NOSHADE>
 <H1><A NAME="2">Introduction to the toolbox</A></H1>
-<H2><A NAME="2_1">How to load TEAPhysio</A></H2>
+<H2><A NAME="2_1">Getting TEAPhysio</A></H2>
+<P>The best way to get TEAP is via git: the URL is:</P>
+<PRE><CODE>git://git.vi-di.fr/TEAPhysio.git
+</CODE></PRE>
+<H2><A NAME="2_2">How to load TEAPhysio</A></H2>
 <P>In order to load TEAPhysio, you have two possibilities, but they all
  use the same principle</P>
-<H3><A NAME="2_1_1">TEAPhysio for multiple small projects</A></H3>
+<H3><A NAME="2_2_1">TEAPhysio for multiple small projects</A></H3>
 <P>If you want to use TEAP for multiple small projects, the best way is
  to extract TEAP somewhere and add-it to your matlab's (or octave's)
  classpath. This way, TEAP's functions will always be accessible.</P>
-<H3><A NAME="2_1_2">TEAPhysio for a standalone project</A></H3>
+<H3><A NAME="2_2_2">TEAPhysio for a standalone project</A></H3>
 <P>If you want to build a project that uses TEAP and that should work
  everywhere, the best way is to copy TEAPhysio in your project's folder.
  Then, you'll simply have to call the <CODE>init.m</CODE> scrip to load
@@ -255,3 +260,9 @@ GSR_get_signame()</CODE> gives back<STRONG> 'GSR'</STRONG>).</P>
 <PRE><CODE>epoch1 = b(1);
 GSR_feat_peaks(epoch1);
 </CODE></PRE>
+<HR NOSHADE>
+<H1><A NAME="8">Contributing to TEAP</A></H1>
+<P>If you want to contribute to TEAP, you are encouraged to send git
+ patches (see <A href=" https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">
+here</A> for more info) to <A href="mailto:TEAP@vi-di.fr">TEAP@vi-di.fr</A>
+; they'll be applied upstream</P>

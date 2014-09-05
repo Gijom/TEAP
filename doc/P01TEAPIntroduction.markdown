@@ -1,5 +1,11 @@
 #Introduction to the toolbox
 
+##Getting TEAPhysio
+The best way to get TEAP is via git: the URL is:
+
+	git://git.vi-di.fr/TEAPhysio.git
+
+
 ##How to load TEAPhysio
 In order to load TEAPhysio, you have two possibilities, but they all use the 
 same principle

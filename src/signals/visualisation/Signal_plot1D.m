@@ -33,7 +33,7 @@ seconds = xes / samprate;
 plot(seconds, raw);
 
 
-offset = Signal_get_offset(Signal);
+offset = Signal__get_offset(Signal);
 
 %The signal may be offseted with Signal__get_window. If so, say it
 if(offset ~= 0)

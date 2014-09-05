@@ -26,7 +26,7 @@ raw = raw';
 offset = windowSize + 1;
 raw = raw(offset:end);
 %and say that the signal was offseted by offset frames
-Signal = Signal__set_offset(Signal, Signal_get_offset(Signal) + offset);
+Signal = Signal__set_offset(Signal, Signal__get_offset(Signal) + offset);
 
 Signal = Signal__set_raw(Signal, raw);
 

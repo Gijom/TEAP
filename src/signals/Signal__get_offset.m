@@ -1,4 +1,4 @@
-function offset = Signal_get_offset(Signal)
+function offset = Signal__get_offset(Signal)
 %Gets the offset(in frames) relative to its parent (the first it had, non recursive).
 % Inputs:
 %  Signal: the signal you want to know the offset
@@ -12,7 +12,7 @@ function offset = Signal_get_offset(Signal)
 %Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 if(nargin ~= 1)
-	error('Usage: offset = Signal_get_offset(Signal)');
+	error('Usage: offset = Signal__get_offset(Signal)');
 end
 
 Signal__assert_mine(Signal);
@@ -23,9 +23,9 @@ else
 	offset = 0;
 end
 
-%!assert(Signal_get_offset(Signal__new_empty()), 0)
+%!assert(Signal__get_offset(Signal__new_empty()), 0)
 
 %!test
 %! sig = Signal__new_empty();
 %! sig = Signal__set_samprate(sig, 1);
-%! assert(Signal_get_offset(Signal__get_window(sig, 10, 20)), 10);
+%! assert(Signal__get_offset(Signal__get_window(sig, 10, 20)), 10);

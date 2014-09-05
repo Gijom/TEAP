@@ -20,7 +20,7 @@ if(~Signal__has_preproc_lowpass(HSTsignal))
 	         '. Preferably with a mean filter']);
 end
 
-if(Signal_get_absolute(HSTsignal) ~= true)
+if(Signal__get_absolute(HSTsignal) ~= true)
 	warning('The signal was baselined/relative, are you sure you want that ?');
 end
 

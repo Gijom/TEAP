@@ -13,7 +13,7 @@ function Child = Signal__get_window_frames(Signal, startT, endT)
 %
 %SEE ALSO:
 %  Signal__get_window
-%  Signal_get_offset
+%  Signal__get_offset
 %
 %Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
@@ -33,10 +33,10 @@ end
 Child = Signal__set_raw(Child, raw(startT: endT));
 
 %Sets the new offset of the signal
-if(Signal_get_offset(Signal) > 0)
+if(Signal__get_offset(Signal) > 0)
 	warning(['The signal you want to take a portion was already cut. ' ...
 	         'Are you sure you want that ?. Will proceed anyway']);
-	offset = Signal_get_offset(Signal);
+	offset = Signal__get_offset(Signal);
 else
 	offset = 0;
 end

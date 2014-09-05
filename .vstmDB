@@ -1,5 +1,2 @@
-@M start EEG
 @M scripting: things we want to import into BULK
-@H EEG
 @H Bulk_plot- figures for EEG
-@M change license to MIT from CC

@@ -10,46 +10,33 @@ function Signal_plot(Signal, startT, endT)
 %Copyright Frank Villaro-Dixon MIT LICENSE, 2014
 
 raw = Signal__get_raw(Signal);
-samprate = Signal__get_samprate(Signal);
 
-name = Signal__get_signame(Signal);
-signal_unit = Signal__get_unit(Signal);
-
-if(nargin == 2)
-	raw = raw(startT:end);
-elseif(nargin == 3)
-	raw = raw(startT:endT);
+if(nargin < 2)
+	startT = 1;
+	endT = 0;
+elseif(nargin < 3)
+	endT = 0;
 end
 
+%mainly for EEG
+if(strcmp(typeinfo(raw), 'matrix') == 0)
+	figure; %FIXME: embed within
+	%use things like parent=axes('Parent'); or things like that
 
-xes = [1:length(raw)];
+	fields = fieldnames(raw);
+	sq = ceil(sqrt(size(fields, 1)));
+	for i = [1:size(fields)]
+		subplot(sq, sq, i);
 
-seconds = xes / samprate;
+		%This is a copy !
+		Sig_copy = Signal__set_raw(Signal, raw.(fields{i}));
+		Sig_copy = Signal__set_name(Sig_copy, [Signal__get_signame(Signal) ' - ' ...
+		                                       fields{i}]);
 
-plot(seconds, raw);
-
-
-offset = Signal_get_offset(Signal);
-
-%The signal may be offseted with Signal__get_window. If so, say it
-if(offset ~= 0)
-	offsetT = offset / samprate;
-	xlabel(['Seconds - ' num2str(offsetT) ' (offset)']);
-else
-	xlabel('Seconds');
+		Signal_plot(Sig_copy, startT, endT);
+	end
+	return
+else %for 1D signals
+	Signal_plot1D(Signal, startT, endT);
 end
-
-%The y label title
-if(Signal__has_preproc_lowpass(Signal))
-	comments = ' (low passed)';
-else
-	comments = '';
-end
-
-ylabel([name ' (' signal_unit ')' comments]);
-
-
-%The graph title
-title([name ' vs Seconds']);
-
 

@@ -18,23 +18,33 @@ PRE { font-family: monospace }
 <BODY>
 <H1>TEAPhysio documentation</H1>
 <H3>Abstract</H3>
-<P>TEAPhysio (Toolbox for Emotion Analysis using Physiological signals)
- is a Matlab (fully Octave compliant) toolbox that aims to reduce code
- dispersing and duplication across projects. TEAP supports various
- signals (ECG, BVP, GSR, EEG, etc.) and it's aim is to allow the user to
- quickly use the signal's features without any more code. TEAP is also
- programmed in an OOP sort of way. It is really easy to program signal
- feature code.</P>
+<P><STRONG>TEAPhysio</STRONG>, the<EM> Toolbox for Emotion Analysis
+ using Physiological signals</EM>, is a Matlab (fully Octave compliant)
+ toolbox that aims to reduce code dispersing and duplication across
+ projects.</P>
+<P>TEAP supports various signals (ECG, BVP, GSR, EEG, etc.) and it's aim
+ is to allow the user to quickly use the signal's features without any
+ more code. TEAP is also programmed in an OOP sort of way. It is really
+ easy to program signal feature code.</P>
 <HR NOSHADE>
 <H1 ALIGN="CENTER"><A NAME="CONTENTS">Table of Contents</A></H1>
 <BR>
 <BR><B><A HREF="#1">Introduction</A></B>
 <UL>
-<LI><A HREF="#1_1">Terms and abbreviations</A></LI>
+<LI><A HREF="#1_1">License</A></LI>
+<LI><A HREF="#1_2">Thanks to</A></LI>
+<LI><A HREF="#1_3">Terms and abbreviations</A></LI>
 </UL>
-<B><A HREF="#2">TEAPhysio technological information</A></B>
-<BR>
-<BR><B><A HREF="#3">TEAP code examples</A></B><HR NOSHADE>
+<B><A HREF="#2">TEAPhysio utilisation</A></B>
+<UL>
+<LI><A HREF="#2_1">Description of TEAP's functions</A>
+<UL>
+<LI><A HREF="#2_1_1">TEAP user functions</A></LI>
+</UL>
+</LI>
+<LI><A HREF="#2_2">Using the TEAP functions</A></LI>
+</UL>
+<B><A HREF="#3">TEAP code examples</A></B><HR NOSHADE>
 <H1><A NAME="1">Introduction</A></H1>
 <P>TEAPhysio is a toolbox. You can also view-it as a library. That is,
  you can easily add a specific signal into you workspace and extract
@@ -51,13 +61,71 @@ Bulk Signal</CODE> consists of multiple signals.</P>
  have to know that) and returns a variable. No global variables or
  states are used.</P>
 <HR NOSHADE>
-<H2><A NAME="1_1">Terms and abbreviations</A></H2>
+<H2><A NAME="1_1">License</A></H2>
+<P>TEAPhysio is licensed under the <A href="http://opensource.org/licenses/BSD-3-Clause">
+BSD 3-Clause License</A>. For the exact license, please take a look at
+ the <CODE>LICENSE</CODE> file located at the root of the TEAP folder.</P>
+<HR NOSHADE>
+<H2><A NAME="1_2">Thanks to</A></H2>
+<P>Many thank to<EM> Mohammad Soleymani</EM>,<EM> Guillaume Chanel</EM>,
+ and<EM> Prof. Thierry Pun</EM> from the <A href="http://cvml.unige.ch/">
+University of Geneva/CVML</A>, TEAP couldn't have been developed without
+ their help</P>
+<HR NOSHADE>
+<H2><A NAME="1_3">Terms and abbreviations</A></H2>
 <UL>
 <LI><STRONG>TEAP</STRONG>: short for TEAPhysio</LI>
 <LI><STRONG>GSR</STRONG>: Galvanic Skin Response</LI>
 <LI><STRONG>HST</STRONG>: Human Skin Temperature</LI>
 </UL>
 <HR NOSHADE>
-<H1><A NAME="2">TEAPhysio technological information</A></H1>
+<H1><A NAME="2">TEAPhysio utilisation</A></H1>
+<P>In the following chapter we'll see how you can simply and efficiently
+ use TEAP.</P>
+<HR NOSHADE>
+<H2><A NAME="2_1">Description of TEAP's functions</A></H2>
+<P>We can divide TEAP functions into two parts:</P>
+<UL>
+<LI><STRONG>User functions</STRONG>: XXX_YYY_ZZZ</LI>
+<LI><STRONG>Toolbox functions</STRONG>: XXX__YYY_ZZZ</LI>
+</UL>
+<P>The functions you want to know are the<STRONG> user functions</STRONG>
+, that is the ones that are useful to you. The toolbox functions (the
+ ones containing<EM> 2 trailing underscores</EM>) are specific to TEAP,
+ and you shouldn't have to use them (except if you want to add a feature
+ to TEAP).</P>
+<HR NOSHADE>
+<H3><A NAME="2_1_1">TEAP user functions</A></H3>
+<H4>Signals</H4>
+<P>As we saw, User functions are the ones that you be useful to you.
+ Here are the different possible user functions:</P>
+<UL>
+<LI><CODE>SSS_feat_FFF</CODE>: calculates the feature<EM> FFF</EM> for a
+ signal of type<EM> SSS</EM>. Ex: <CODE>BVP_feat_BPM(BVPSig)</CODE>.
+ Please note that there also are some general functions, ex: <CODE>
+Signal_feat_enr()</CODE>, that apply to all signals.</LI>
+<LI><CODE>SSS_aqn_TTT</CODE>: creates a TEAPhysio<EM> SSS</EM> signal
+ from something.<EM> TTT</EM> can be <CODE>variable</CODE>. In this
+ case, creates a signal<EM> SSS</EM> from a variable. Ex: <CODE>
+GSR_aqn_variable(data, fs)</CODE>.</LI>
+<LI><CODE>Signal_plot</CODE>: plots a signal, with good axis and co.</LI>
+<LI><CODE>Signal_plot_pts</CODE>: plots points onto the graph. Divides
+ by the sampling rate, so you read seconds.</LI>
+</UL>
+<H4>Bulk Signals</H4>
+<P>As you may see, there are fewer bulk signal functions than signal
+ functions.
+<BR> This is because bulk signal functions are only used to create the
+ bulk signal.
+<BR> When you want to calculate things, you do it on signals.</P>
+<P>Here are the two main functions:</P>
+<UL>
+<LI><CODE>Bulk_load_PPP</CODE>: loads a bulk signal from something. Ex: <CODE>
+Bulk_load_eeglab()</CODE> to load a bulk signal from an ecglab variable.</LI>
+<LI><CODE>Bulk_plot</CODE>: plots all the bulk signal (calls <CODE>
+Signal_plot</CODE> on each of it's signals).</LI>
+</UL>
+<HR NOSHADE>
+<H2><A NAME="2_2">Using the TEAP functions</A></H2>
 <HR NOSHADE>
 <H1><A NAME="3">TEAP code examples</A></H1>

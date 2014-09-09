@@ -1,1 +1,0 @@
-#TEAPhysio technological information

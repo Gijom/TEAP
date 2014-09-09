@@ -7,5 +7,5 @@ function Signal = RES__new_empty()
 
 Signal = Signal__new_empty();
 Signal = Signal__set_signame(Signal, RES__get_signame());
-Signal = Signal__set_unit(Signal, 'µV'); %FIXME
+Signal = Signal__set_unit(Signal, 'uV');
 

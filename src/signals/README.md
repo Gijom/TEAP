@@ -3,13 +3,13 @@
 ##DMY: DONE
 	A simple dummy signal for tests, learning how the toolbox works, and co.
 
-##BVP/PLET
+##BVP/PLET DONE
 	Blood Volume Pressure
 
 ##ECG: DONE
 	Electrocardiography
 
-##EEG:
+##EEG: SEMIDONE
 	Electroencephalography
 
 ##EMG:

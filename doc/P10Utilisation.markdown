@@ -14,5 +14,4 @@ TEAP's functions will always be accessible.
 If you want to build a project that uses TEAP and that should work everywhere, 
 the best way is to copy TEAPhysio in your project's folder. Then, you'll simply 
 have to call the `init.m` scrip to load TEAP.
-#Description of how the functions work
 

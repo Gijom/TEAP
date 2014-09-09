@@ -81,7 +81,7 @@ end
 %Compute bpm from the pic list
 [BPM delta_t t] = PICtoBPM(listePic, fs);
 
-BPM = mean(BPM); %And take it's mean
+%%%%%BPM = mean(BPM); %And take it's mean
 
 end
 

@@ -6,7 +6,7 @@ function Signal = RES_aqn_variable(rawRES, sampRate)
 % Outputs:
 %   Signal: A RES TEAPhysio signal
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: RES_aqn_variable(rawRes, sampRate');

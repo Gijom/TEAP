@@ -8,7 +8,7 @@ function [Signal] = Signal__set_absolute(Signal, isAbsolute) %vodka
 % Outputs:
 %  Signal: the same signal with the flag set
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal__set_absolute(Signal, isAbsolute)');

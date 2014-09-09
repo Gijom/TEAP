@@ -15,7 +15,7 @@ function Child = Signal__get_window_frames(Signal, startT, endT)
 %  Signal__get_window
 %  Signal__get_offset
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 3)
 	error('Usage: ChildSig = Signal__get_window_frames(Signal, startT, endT)');

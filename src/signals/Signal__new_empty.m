@@ -3,7 +3,7 @@ function Signal = Signal__new_empty()
 % Output:
 %  Signal: an empty signal
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk
 

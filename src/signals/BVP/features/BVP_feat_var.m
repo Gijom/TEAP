@@ -5,7 +5,7 @@ function mvar = BVP_feat_var(BVPSignal)
 % Outputs:
 %  mvar: the signal's variance
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have an BVP signal

@@ -5,7 +5,7 @@ function name = BVP__get_signame()
 % Outputs:
 %  name: the name of the BVP signal. In this case: 'BVP'
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 name = 'BVP';
 

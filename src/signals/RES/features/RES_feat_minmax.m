@@ -7,7 +7,7 @@ function [minmax] = RES_feat_minmax(RESsignal)
 %  minmax: the greatest breath of the patient.
 %
 %Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 %Make sure we have a RES signal
 RESsignal = RES__assert_type(RESsignal);

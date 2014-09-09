@@ -6,7 +6,7 @@ function Data = EEG_get_channel(Signal, channelName)
 % Outputs:
 %  Data: the data of the channel
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Data = EEG_get_channel(Signal, channelName)');

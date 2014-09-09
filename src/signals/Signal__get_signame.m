@@ -5,7 +5,7 @@ function signalName = Signal__get_signame(Signal)
 % Outputs:
 %  signalName: the name of the signal (ex: 'GSR')
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 if(nargin ~= 1)

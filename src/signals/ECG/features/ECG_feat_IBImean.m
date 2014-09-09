@@ -6,7 +6,7 @@ function IBIMean = ECG_feat_IBImean(ECGSignal)
 %  IBIMean: the InterBeatInterval mean
 %
 %Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have an ECG signal

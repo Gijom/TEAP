@@ -15,7 +15,7 @@ function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 % call the function that way:
 %  ECG_aqn_variable(electrodesDiff, sampRate);
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 Signal = ECG__new_empty();
 

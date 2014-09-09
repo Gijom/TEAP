@@ -5,7 +5,7 @@ function mmean = BVP_feat_mean(BVPSignal)
 % Outputs:
 %  mmean: the signal's mean
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have an BVP signal

@@ -5,7 +5,7 @@ function [STD] = Signal_feat_std(Signal)
 % Outputs:
 %  STD: the calculated std, using the std() function
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 Signal__assert_mine(Signal);
 

@@ -6,7 +6,7 @@ function Raw = Signal__get_raw(Signal)
 % Outputs:
 %  Raw: the raw data of the signal
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)
 	error('Usage: Signal__get_raw(Signal)');

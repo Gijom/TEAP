@@ -6,7 +6,7 @@ function HSTSignal = HST_filter_basic(HSTSignal)
 % Outputs:
 %  HSTSignal: the HST signal filtered
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 HSTSignal = HST__assert_type(HSTSignal);
 

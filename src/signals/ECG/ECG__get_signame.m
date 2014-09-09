@@ -5,7 +5,7 @@ function name = ECG__get_signame()
 % Outputs:
 %  name: the name of the ECG signal, in this case, 'ECG'
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 name = 'ECG';
 

@@ -5,7 +5,7 @@ function Signal = BVP_aqn_variable(rawBVP, sampRate)
 %   sampRate [1x1]: the sampling rate, in Hz
 % Outputs:
 %   Signal: A BVP TEAPhysio signal
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: BVP_aqn_variable(rawBVP, sampRate)');

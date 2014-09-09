@@ -5,7 +5,7 @@ function [signals] = Bulk_get_signals(BulkSig)
 % Outputs:
 %  signals: the array containing the signals name (ex: ['GSR'; 'EEG'])
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 Bulk_assert_mine(BulkSig);
 

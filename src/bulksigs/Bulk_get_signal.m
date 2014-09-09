@@ -6,7 +6,7 @@ function [Signal] = Bulk_get_signal(BulkSignal, typeWanted)
 % Outputs:
 %  Signal: the wanted signal. FAILS if does not exist
 %
-%Copyright Frank Villaro-Dixon MIT LICENSE, 2014
+%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Signal = Bulk_get_signal(BulkSignal, typeWanted);');

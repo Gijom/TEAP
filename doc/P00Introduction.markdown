@@ -1,13 +1,18 @@
 #Introduction
-TEAP was written during a bachelor project at [University of 
-Geneva](http://cui.unige.ch) by Frank Villaro-Dixon. The main reason for TEAP 
-was that we wanted a Matlab toolbox for Emotion Analysis using Physiological 
-signals (hence it's name).  Indeed, some PhD students used various scripts for 
-different things, and it was a mess sharing those scripts. TEAP's goal was to 
-unify all that.
+TEAPhysio is a toolbox. You can also view-it as a library. That is, you can 
+easily add a specific signal into you workspace and extract it's features using 
+TEAP.
 
+As you'll see, TEAP is divided into 2 main components: `Signals` and `Bulk 
+signals`.
 
-Briefly, TEAP consists of 100 `.m` files (1700 lines of code + 1000 lines of 
-comments) and works quite well. We hope you'll enjoy-it.
+A `Signal` may be viewed as a channel from the acquisition card (except for 
+things like EEG and ECG (which uses 2 differential signals), but these specific 
+cases are embedded in within the signal).
 
-Down below is some documentation on how to use TEAP.
+A `Bulk Signal` can be viewed as the acquisition card: a `Bulk Signal` consists 
+of multiple signals.
+
+An important thing about TEAP is that TEAP is stateless: that is, each function 
+works on a variable (mainly structures, but you don't have to know that) and 
+returns a variable. No global variables or states are used.

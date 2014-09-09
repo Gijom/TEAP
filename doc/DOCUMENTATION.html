@@ -22,29 +22,69 @@ PRE { font-family: monospace }
  using Physiological signals</EM>, is a Matlab (fully Octave compliant)
  toolbox that aims to reduce code dispersing and duplication across
  projects.</P>
-<P>TEAP supports various signals (ECG, BVP, GSR, EEG, etc.) and it's aim
- is to allow the user to quickly use the signal's features without any
- more code. TEAP is also programmed in an OOP sort of way. It is really
- easy to program signal feature code.</P>
+<P>TEAP supports various signals (<EM>ECG</EM>,<EM> BVP</EM>,<EM> GSR</EM>
+,<EM> EEG</EM> and some more) and it's aim is to allow the user to
+ quickly use the signal's features without any more overhead coding.
+ TEAP is also programmed in an OOP sort of way: it is really easy to
+ program signal feature code or to add another signal structure to the
+ toolbox.</P>
 <HR NOSHADE>
 <H1 ALIGN="CENTER"><A NAME="CONTENTS">Table of Contents</A></H1>
 <BR>
 <BR><B><A HREF="#1">Introduction</A></B>
 <UL>
-<LI><A HREF="#1_1">License</A></LI>
-<LI><A HREF="#1_2">Thanks to</A></LI>
-<LI><A HREF="#1_3">Terms and abbreviations</A></LI>
+<LI><A HREF="#1_1">Getting TEAPhysio</A></LI>
+<LI><A HREF="#1_2">License</A></LI>
+<LI><A HREF="#1_3">Thanks to</A></LI>
+<LI><A HREF="#1_4">Contributing to TEAP</A></LI>
+<LI><A HREF="#1_5">Terms and abbreviations</A></LI>
 </UL>
 <B><A HREF="#2">TEAPhysio utilisation</A></B>
 <UL>
-<LI><A HREF="#2_1">Description of TEAP's functions</A>
+<LI><A HREF="#2_1">Loading TEAP</A>
 <UL>
-<LI><A HREF="#2_1_1">TEAP user functions</A></LI>
+<LI><A HREF="#2_1_1">TEAPhysio for multiple small projects</A></LI>
+<LI><A HREF="#2_1_2">TEAPhysio for a standalone project</A></LI>
 </UL>
 </LI>
-<LI><A HREF="#2_2">Using the TEAP functions</A></LI>
 </UL>
-<B><A HREF="#3">TEAP code examples</A></B><HR NOSHADE>
+<B><A HREF="#3">Description of how the functions work</A></B>
+<UL>
+<LI><A HREF="#3_1">Description of TEAP's functions</A>
+<UL>
+<LI><A HREF="#3_1_1">TEAP user functions</A></LI>
+</UL>
+</LI>
+<LI><A HREF="#3_2">Using the TEAP functions</A>
+<UL>
+<LI><A HREF="#3_2_1">Signals</A></LI>
+<LI><A HREF="#3_2_2">Bulk signals</A></LI>
+</UL>
+</LI>
+</UL>
+<B><A HREF="#4">TEAP code examples</A></B>
+<BR>
+<BR><B><A HREF="#5">Technical Information</A></B>
+<BR>
+<BR><B><A HREF="#6">Technical Info: Signals</A></B>
+<UL>
+<LI><A HREF="#6_1">Description</A></LI>
+<LI><A HREF="#6_2">OOP structure</A>
+<UL>
+<LI><A HREF="#6_2_1">pre-processing structure</A></LI>
+</UL>
+</LI>
+<LI><A HREF="#6_3">Complete example</A></LI>
+<LI><A HREF="#6_4">Technical Info: Bulk Signals</A>
+<UL>
+<LI><A HREF="#6_4_1">Taking an embedded signal</A></LI>
+<LI><A HREF="#6_4_2">Getting the list of the signals of a bulk signal</A>
+</LI>
+<LI><A HREF="#6_4_3">Adding a signal to a bulk signal</A></LI>
+</UL>
+</LI>
+</UL>
+<HR NOSHADE>
 <H1><A NAME="1">Introduction</A></H1>
 <P>TEAPhysio is a toolbox. You can also view-it as a library. That is,
  you can easily add a specific signal into you workspace and extract
@@ -61,18 +101,32 @@ Bulk Signal</CODE> consists of multiple signals.</P>
  have to know that) and returns a variable. No global variables or
  states are used.</P>
 <HR NOSHADE>
-<H2><A NAME="1_1">License</A></H2>
+<H2><A NAME="1_1">Getting TEAPhysio</A></H2>
+<P>The best way to get TEAP is via git: the URL is:</P>
+<PRE><CODE>git://git.vi-di.fr/TEAPhysio.git
+</CODE></PRE>
+<P>so you just have to type:</P>
+<PRE><CODE>git clone git://git.vi-di.fr/TEAPhysio.git
+</CODE></PRE>
+<HR NOSHADE>
+<H2><A NAME="1_2">License</A></H2>
 <P>TEAPhysio is licensed under the <A href="http://opensource.org/licenses/BSD-3-Clause">
 BSD 3-Clause License</A>. For the exact license, please take a look at
  the <CODE>LICENSE</CODE> file located at the root of the TEAP folder.</P>
 <HR NOSHADE>
-<H2><A NAME="1_2">Thanks to</A></H2>
+<H2><A NAME="1_3">Thanks to</A></H2>
 <P>Many thank to<EM> Mohammad Soleymani</EM>,<EM> Guillaume Chanel</EM>,
  and<EM> Prof. Thierry Pun</EM> from the <A href="http://cvml.unige.ch/">
 University of Geneva/CVML</A>, TEAP couldn't have been developed without
  their help</P>
 <HR NOSHADE>
-<H2><A NAME="1_3">Terms and abbreviations</A></H2>
+<H2><A NAME="1_4">Contributing to TEAP</A></H2>
+<P>If you want to contribute to TEAP, you are encouraged to send git
+ patches (see <A href=" https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/">
+here</A> for more info) to <A href="mailto:TEAP@vi-di.fr">TEAP@vi-di.fr</A>
+; they'll be applied upstream</P>
+<HR NOSHADE>
+<H2><A NAME="1_5">Terms and abbreviations</A></H2>
 <UL>
 <LI><STRONG>TEAP</STRONG>: short for TEAPhysio</LI>
 <LI><STRONG>GSR</STRONG>: Galvanic Skin Response</LI>
@@ -82,8 +136,21 @@ University of Geneva/CVML</A>, TEAP couldn't have been developed without
 <H1><A NAME="2">TEAPhysio utilisation</A></H1>
 <P>In the following chapter we'll see how you can simply and efficiently
  use TEAP.</P>
+<H2><A NAME="2_1">Loading TEAP</A></H2>
+<P>In order to load TEAPhysio, you have two possibilities, but they all
+ use the same principle</P>
+<H3><A NAME="2_1_1">TEAPhysio for multiple small projects</A></H3>
+<P>If you want to use TEAP for multiple small projects, the best way is
+ to extract TEAP somewhere and add-it to your matlab's (or octave's)
+ classpath. This way, TEAP's functions will always be accessible.</P>
+<H3><A NAME="2_1_2">TEAPhysio for a standalone project</A></H3>
+<P>If you want to build a project that uses TEAP and that should work
+ everywhere, the best way is to copy TEAPhysio in your project's folder.
+ Then, you'll simply have to call the <CODE>init.m</CODE> scrip to load
+ TEAP.</P>
+<H1><A NAME="3">Description of how the functions work</A></H1>
 <HR NOSHADE>
-<H2><A NAME="2_1">Description of TEAP's functions</A></H2>
+<H2><A NAME="3_1">Description of TEAP's functions</A></H2>
 <P>We can divide TEAP functions into two parts:</P>
 <UL>
 <LI><STRONG>User functions</STRONG>: XXX_YYY_ZZZ</LI>
@@ -95,7 +162,7 @@ University of Geneva/CVML</A>, TEAP couldn't have been developed without
  and you shouldn't have to use them (except if you want to add a feature
  to TEAP).</P>
 <HR NOSHADE>
-<H3><A NAME="2_1_1">TEAP user functions</A></H3>
+<H3><A NAME="3_1_1">TEAP user functions</A></H3>
 <H4>Signals</H4>
 <P>As we saw, User functions are the ones that you be useful to you.
  Here are the different possible user functions:</P>
@@ -126,6 +193,144 @@ Bulk_load_eeglab()</CODE> to load a bulk signal from an ecglab variable.</LI>
 Signal_plot</CODE> on each of it's signals).</LI>
 </UL>
 <HR NOSHADE>
-<H2><A NAME="2_2">Using the TEAP functions</A></H2>
+<H2><A NAME="3_2">Using the TEAP functions</A></H2>
+<P>Here's a short example (more examples below) of how to use TEAP:</P>
+<H3><A NAME="3_2_1">Signals</A></H3>
+<H4>Creating/acquiring a signal</H4>
+<P>Let's say that you have a raw signal in a variable. You then want to
+ create a signal to be able to extract it's features. Here's what you
+ have to do, using a<EM> BVP</EM> signal for the sake of simplicity:</P>
+<PRE><CODE>MyBVPSig = BVP_aqn_variable(BVP_raw_signal, raw_sig_sampfreq);
+</CODE></PRE>
+<P>Please note that in most cases, the function filters the signal (with
+ a mean, median or filter, depending on the signal), so you don't have
+ to do-it yourself.</P>
+<H4>Filtering the signal</H4>
+<P>Supposing you would want to filter the signal a bit more (but you
+ surely don't want to), you would have to do (supposing a median
+ filter):</P>
+<PRE><CODE>MyBVPSig = Signal__filter1_low_median(MyBVPSig, winSize);
+</CODE></PRE>
+<P>As you can see, you have to get the result into the same variable, or
+ else it won't be modified.</P>
+<H4>Displaying the signal</H4>
+<P>If you want to display the given signal, you only have to type:</P>
+<PRE><CODE>Signal_plot(MyBVPSig);
+</CODE></PRE>
+<H4>Calculating a feature</H4>
+<P>To calculate a feature, supposing that you know the features
+ supported by the signal (If you don't, in matlab/octave, type: <CODE>
+BVP_feat_&lt;TAB&gt;</CODE>, it'll give you a list), simply type:</P>
+<PRE><CODE>BVP_feat_BPM(MyBVPSig)
+</CODE></PRE>
+<H3><A NAME="3_2_2">Bulk signals</A></H3>
+<H4>Creating a bulk signal</H4>
+<P>Let's say that you want to import an eeglab bulk signal:</P>
+<PRE><CODE>load myBigMat.mat
+Bulk = Bulk_load_ecglab(EEG);
+</CODE></PRE>
+<P>and that's it.</P>
+<P><STRONG>Please note</STRONG> that <CODE>Bulk</CODE> is now an array !
+ If you only want to work with the first epoch, do:</P>
+<PRE><CODE>epoch1 = Bulk(1);
+</CODE></PRE>
+<H4>Displaying the bulk signal</H4>
+<P>To display the bulk signal:</P>
+<PRE><CODE>Bulk_plot(Bulk);
+</CODE></PRE>
+<P>This will display a figure per epoch. If you only want to display the
+ first epoch, do:</P>
+<PRE><CODE>Bulk_plot(Bulk(1));
+</CODE></PRE>
+<H4>Calculating features</H4>
+<P>Bulk signals contain signals. If you want to calculate the BPM from a<EM>
+ BVP</EM> signal, you can do-it in 2 ways:</P>
+<PRE><CODE>BVPSig = Bulk.BVP;
+BVP_feat_BPM(BVPSig);
+</CODE></PRE>
+<P>But TEAP is clever. If a bulk signal contains only one signal of the
+ type you want, you can directly do:</P>
+<PRE><CODE>BVP_feat_BPM(Bulk);
+</CODE></PRE>
 <HR NOSHADE>
-<H1><A NAME="3">TEAP code examples</A></H1>
+<H1><A NAME="4">TEAP code examples</A></H1>
+<P>For some examples, you can go to <CODE>src/signals/SSS/examples</CODE>
+ (<EM>SSS</EM> is the name of the signal). For example, there is an
+ example here:</P>
+<PRE><CODE>src/signals/GSR/examples/GSR_feat_peaks_example.m
+</CODE></PRE>
+<HR NOSHADE>
+<H1><A NAME="5">Technical Information</A></H1>
+<P>Here is some technical information, for you geeks or hackers:</P>
+<HR NOSHADE>
+<H1><A NAME="6">Technical Info: Signals</A></H1>
+<H2><A NAME="6_1">Description</A></H2>
+<P>Signals are organised in a OOP sort of way: each signal (ex. Galvanic
+ Skin Response) has their own folder (in our case: <CODE>GSR</CODE>).
+ Once in this folder, the functions are ordered by folder (eg:<EM>
+ acquisition</EM>,<EM> examples</EM>,<EM> features</EM>,<EM> tests</EM>
+). For example, if you want to capture a Galvanic Skin Response signal,
+ you would have to call a function in the <CODE>GSR/acquisition</CODE>
+ folder (for ex: <CODE>GSR_aqn_file()</CODE>).</P>
+<H2><A NAME="6_2">OOP structure</A></H2>
+<P>Signals of the TEAP toolbox are in fact structures. The signal has
+ the following attributes embedded:</P>
+<UL>
+<LI><CODE>TEAPhysio</CODE>: the signal type. Will always be<STRONG> S</STRONG>
+ for a signal.</LI>
+<LI><CODE>samprate</CODE>: the sampling rate of the signal.</LI>
+<LI><CODE>raw</CODE>: the raw data of the signal. It's a 1D horizontal
+ vector.</LI>
+<LI><CODE>unit</CODE>: the unit of the signal (ex:<EM> Ohm</EM>).</LI>
+<LI><CODE>name</CODE>: the signal's name (ex:<EM> GSR</EM>)</LI>
+<LI><CODE>isAbsolute</CODE>: indicates if the signal was
+ baselined/relatived.</LI>
+<LI><CODE>preprocessing</CODE>: a vector of pre-processing features (see
+ below).</LI>
+</UL>
+<P>You should<STRONG> always</STRONG> access to the signal's attributes
+ via the signal's functions. These functions are fail-safed, and
+ guarantee a semantic coherence across the variables: you can't call <CODE>
+GSR_feat_median(Sig1)</CODE> when <CODE>Sig1</CODE> is of type ECG.</P>
+<H3><A NAME="6_2_1">pre-processing structure</A></H3>
+<P>This structure indicates the possible pre-processing features that
+ the signal has. Actually, only <CODE>lowpass = 1</CODE> is sometimes
+ used.</P>
+<H2><A NAME="6_3">Complete example</A></H2>
+<P>Here is a little example of a complete signal showing features and
+ pre-processing markers: GSRsig =</P>
+<PRE> <CODE> scalar structure containing the fields:
+
+    TEAPhysio = S
+    samprate =  512
+    raw = SNIP
+    unit = Ohm
+    name = GSR
+    isAbsolute = 0
+    preprocessing =
+
+      scalar structure containing the fields:
+
+        lowpass =  1
+</CODE></PRE>
+<HR NOSHADE>
+<H2><A NAME="6_4">Technical Info: Bulk Signals</A></H2>
+<H3><A NAME="6_4_1">Taking an embedded signal</A></H3>
+<P>You could use <CODE>Bulk.SIG</CODE>, but it's actually a bad
+ practice. Use instead this simple function:</P>
+<PRE><CODE>Signal = Bulk_get_signal(BulkSig, SSS_get_signame())
+</CODE></PRE>
+<P><CODE>SSS_get_signame()</CODE> gives the name of a signal (ex: <CODE>
+GSR_get_signame()</CODE> gives back<STRONG> 'GSR'</STRONG>).</P>
+<H3><A NAME="6_4_2">Getting the list of the signals of a bulk signal</A></H3>
+<P>Well, the function <CODE>Bulk_get_signals()</CODE> gives a list of
+ all the signals inside this bulk signal (for you techies, it lists the
+ fields, and takes back the <CODE>TEAPhysio</CODE> control field.</P>
+<H3><A NAME="6_4_3">Adding a signal to a bulk signal</A></H3>
+<P>If you want to add a signal to a bulk signal, you may want to do:</P>
+<PRE><CODE>Bulk.SSS = SSSsig;
+</CODE></PRE>
+<P>but that is bad :(. Use:</P>
+<PRE><CODE>Bulk = Bulk_add_signal(Bulk, SSS_get_name(), SSSsig);
+</CODE></PRE>
+<P>instead ;)</P>

@@ -17,17 +17,24 @@ PRE { font-family: monospace }
 </HEAD>
 <BODY>
 <H1>TEAPhysio documentation</H1>
-<H3>Abstract</H3>
+<H2>Abstract</H2>
 <P><STRONG>TEAPhysio</STRONG>, the<EM> Toolbox for Emotion Analysis
- using Physiological signals</EM>, is a Matlab (fully Octave compliant)
- toolbox that aims to reduce code dispersing and duplication across
- projects.</P>
+ using Physiological signals</EM>, is a Matlab (fully <A href="https://gnu.org/software/octave/">
+Octave</A> compliant) toolbox that aims to reduce code dispersing and
+ duplication across your research projects.</P>
 <P>TEAP supports various signals (<EM>ECG</EM>,<EM> BVP</EM>,<EM> GSR</EM>
-,<EM> EEG</EM> and some more) and it's aim is to allow the user to
- quickly use the signal's features without any more overhead coding.
- TEAP is also programmed in an OOP sort of way: it is really easy to
- program signal feature code or to add another signal structure to the
- toolbox.</P>
+,<EM> EEG</EM>, etc.) and it's aim is to allow the user to quickly use
+ the and compute signal features without any boilerplate code. TEAP is
+ also programmed in an OOP sort of way: it is really easy to program
+ signal feature code or to add another signal structure to the toolbox.</P>
+<H2>Goal of the toolbox</H2>
+<P>There are actually some toolboxes that allow signal processing (like <A
+href="http://sccn.ucsd.edu/eeglab/">EEGLAB</A>, or <A href="http://biosig.sourceforge.net/">
+BioSig</A>), but these where too complex or too specialized. TEAP solves
+ that offering a somewhat high-level interface (see the examples below):
+ with some kB of code, you can do some powerful things. The goal was
+ also too allow a user to easily add signals or functions for a signal
+ feature extraction.</P>
 <HR NOSHADE>
 <H1 ALIGN="CENTER"><A NAME="CONTENTS">Table of Contents</A></H1>
 <BR>
@@ -124,7 +131,7 @@ BSD 3-Clause License</A>. For the exact license, please take a look at
 <P>Many thank to<EM> Mohammad Soleymani</EM>,<EM> Guillaume Chanel</EM>,
  and<EM> Prof. Thierry Pun</EM> from the <A href="http://cvml.unige.ch/">
 University of Geneva/CVML</A>, TEAP couldn't have been developed without
- their help</P>
+ their help !</P>
 <HR NOSHADE>
 <H2><A NAME="1_4">Contributing to TEAP</A></H2>
 <P>If you want to contribute to TEAP, you are encouraged to send git

@@ -15,7 +15,7 @@ end
 Signal = EEG__new_empty();
 Signal = Signal__set_samprate(Signal, sampRate);
 
-[nChannels, ~] = size(eegChannels);
+nChannels = length(eegChannels);
 [nChannelsGiven, ~] = size(eegData);
 
 if(nChannelsGiven ~= nChannels)
@@ -24,7 +24,7 @@ if(nChannelsGiven ~= nChannels)
 end
 
 for(i = [1:nChannels])
-	chaname = strtrim(eegChannels(i, :));
+	chaname = strtrim(eegChannels{i});
 	Signal = EEG_set_channel(Signal, chaname, eegData(i, :));
 end
 

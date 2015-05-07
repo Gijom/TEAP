@@ -60,7 +60,7 @@ correspondance = ['Fp1'; 'AF3'; 'F3'; 'F7'; 'FC5'; 'FC1'; 'C3'; 'T7'; 'CP5'; ...
 end
 
 %GSR
-function BulkSig = addGSR(BulkSig, iEpoch);
+function BulkSig = addGSR(BulkSig, iEpoch)
 	GSRChannel = findMyChannel('GSR1');
 	if(GSRChannel == 0)
 		return;
@@ -74,7 +74,7 @@ function BulkSig = addGSR(BulkSig, iEpoch);
 end
 
 %Temp/HST
-function BulkSig = addHST(BulkSig, iEpoch);
+function BulkSig = addHST(BulkSig, iEpoch)
 	HSTChannel = findMyChannel('Temp');
 	if(HSTChannel == 0)
 		return;
@@ -88,7 +88,7 @@ function BulkSig = addHST(BulkSig, iEpoch);
 end
 
 %Respiration
-function BulkSig = addRES(BulkSig, iEpoch);
+function BulkSig = addRES(BulkSig, iEpoch)
 	RESChannel = findMyChannel('Resp');
 	if(RESChannel == 0)
 		return;
@@ -102,7 +102,7 @@ function BulkSig = addRES(BulkSig, iEpoch);
 end
 
 %BVT/Plet
-function BulkSig = addBVP(BulkSig, iEpoch);
+function BulkSig = addBVP(BulkSig, iEpoch)
 	BVPChannel = findMyChannel('Plet');
 	if(BVPChannel == 0)
 		return;

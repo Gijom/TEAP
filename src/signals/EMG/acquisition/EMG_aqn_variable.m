@@ -22,7 +22,7 @@ Signal = EMG__new_empty();
 if(nargin == 2) %second case
 	sampRate = EMG2;
 	raw = EMG;
-else if(nargin == 3) %first case
+elseif(nargin == 3) %first case
 	raw = EMG2 - EMG;
 else
 	error('Usage: EMG_aqn_variable(EMG [, EMG2], sampRate)');

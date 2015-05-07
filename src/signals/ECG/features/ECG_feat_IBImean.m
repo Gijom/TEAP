@@ -20,7 +20,7 @@ samprate = Signal__get_samprate(ECGSignal);
 
 newfs = 256; %Hz, as needed by rpeakdetect
 ECG = downsample(rawSignal, samprate/newfs);
-[hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG, newfs);
+[hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG', newfs);
 [BPM IBI] = correctBPM(R_index, newfs);
 
 IBIMean = mean(IBI);

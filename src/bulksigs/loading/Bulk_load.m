@@ -175,10 +175,12 @@ end
     end
 %ECG
     function BulkSig = addECG(BulkSig, iEpoch,correspondance)
-        ECGChannel = findMyChannel(correspondance);
-        if(ECGChannel == 0)
-            return;
+        for i = 1:length(correspondance)
+            ECGChannel(i) = findMyChannel(correspondance{i});
         end
+        if any(ECGChannel == 0)
+            return;
+        end        
         if iEpoch ==0
             data = phys_data.data(ECGChannel, :);
         else

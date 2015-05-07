@@ -30,7 +30,7 @@ end
 config_file;
 %initialize EEG electrode labels
 signals = {};
-electrode_labels = struct
+electrode_labels = struct;
 config_file;
 %Number of epochs:
 nEpochs = length(phys_data.epoch);
@@ -49,7 +49,7 @@ if nEpochs>0
 else
     Bulk = Bulk_new_empty();
     for signal = signals
-        eval(['Bulk = add' signal{1} '(Bulk, 0, electrode_labels.' signal{1} ')']);
+        eval(['Bulk = add' signal{1} '(Bulk, 0, electrode_labels.' signal{1} ');']);
     end
     BulkSig(1) = Bulk;
     clear Bulk;

@@ -3,9 +3,20 @@ function [ECG_features] = ECG_feat_extr(ECGSignal)
 % Inputs:
 %  ECGSignal: the ECG signal
 % Outputs:
-%  ECG feartures: the InterBeatInterval mean
-% the InterBeatInterval variance
-% heart rate
+%  ECG_features: 1x19 vector including in the order of appearance in the 
+%vector:
+%1. HRV variance, 2. mean HRV, 3. mean heart rate, 4-8. Multiscale entropy at 5 levels on
+%HRV (5 feaures), 9. spectral powere 0-0.1Hz, 10.spectral power 0.1-0.2Hz,
+%11. spectral power 0.2-0.3 12. spectral power 0.3-0.4Hz,
+%13. spectral energy ratio between f<0.08Hz/f>0.15Hz and f<5.0Hz
+%14. Low frequency PS in tachogram (HRV) 
+%15. 
+%16.
+%17. 
+%18.
+%19.
+    LF MF HF (MF/(LF+HF)) sp01504];  %15:19
+% 
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 

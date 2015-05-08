@@ -1,4 +1,4 @@
-function [nbPeaks ampPeaks riseTime posPeaks] = GSR_feat_peaks(GSRsignal, ampThresh)
+function [nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal, ampThresh)
 %Computes the number of peaks from a GSR signal. It is based on the analysis of
 %local minima and local maxima preceding the local minima.
 % Inputs:
@@ -27,7 +27,7 @@ if(nargin < 2)
 end
 
 if(nargin < 1)
-	error('Usage: [nbPeaks ampPeaks riseTime posPeaks GSRsignal] = GSR_feat_peaks(GSRsignal, ampThresh)');
+	error('Usage: [nbPeaks, ampPeaks, riseTime, posPeaks, GSRsignal] = GSR_feat_peaks(GSRsignal, ampThresh)');
 end
 
 tThreshLow = 1;

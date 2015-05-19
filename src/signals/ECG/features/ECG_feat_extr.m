@@ -1,7 +1,7 @@
 function [ECG_features] = ECG_feat_extr(ECGSignal)
-%Computes the InterBeatInterval mean of an ECG signal
+%Computes  ECG features
 % Inputs:
-%  ECGSignal: the ECG signal
+%  ECGSignal: the ECG signal (already subtracted from one lead)
 % Outputs:
 %  ECG_features: 1x17 vector including in the order of appearance in the 
 %vector:

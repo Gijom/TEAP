@@ -10,12 +10,11 @@ function [ECG_features] = ECG_feat_extr(ECGSignal)
 %11. spectral power 0.2-0.3 12. spectral power 0.3-0.4Hz,
 %13. spectral energy ratio between f<0.08Hz/f>0.15Hz and f<5.0Hz
 %14. Low frequency PS in tachogram (HRV) 
-%15. 
-%16.
-%17. 
-%18.
-%19.
-    LF MF HF (MF/(LF+HF)) sp01504];  %15:19
+%15. LF
+%16.MF
+%17. HF
+%18. (MF/(LF+HF))
+%19. sp01504
 % 
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014

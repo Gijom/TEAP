@@ -1,4 +1,4 @@
-function [var] = Signal_feat_var(Signal)
+function [variance] = Signal_feat_var(Signal)
 %Computes the variance of a signal
 % Inputs:
 %  Signal
@@ -11,6 +11,6 @@ Signal__assert_mine(Signal);
 
 raw = Signal__get_raw(Signal);
 
-var = var(raw);
+variance = var(raw);
 
 

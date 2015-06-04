@@ -20,5 +20,5 @@ end
 
 raw = Signal__get_raw(RESsignal);
 
-energy = std(raw); %%FIXME: mail Guillaume. sum(raw.^2) ?
+energy = var(raw); 
 

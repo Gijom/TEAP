@@ -4,7 +4,7 @@ function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
 %  EEGsignal: the respiration  signal.
 %  varargin: you can choose which features to extract (see featureSelector)
 %            the list of available features is:
-%               - SP_delta: power spectral power for delta band <4Hz
+%               - SP_delta:power spectral power for delta band <4Hz
 %               - SP_theta: power spectral power for theta band [4,8[ Hz
 %               - SP_slowAlpha: power spectral power for slow alpha band [8,[10 Hz
 %               - SP_alpha: power spectral power for alpha band [8,12[ Hz
@@ -16,6 +16,9 @@ function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
 %  EEG_feats_names: names of the computed features (it is good pratice to
 %                   check this vector since the order of requested features
 %                   can be different than the requested one)
+%               the  features are per electode and therefore  1xN (N= number of electrodes)
+%               and the final output is a 2dimensional array whose size is N_features x N_electrodes
+
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 
 % Check inputs and define unknown values
@@ -50,7 +53,7 @@ if(~isempty(EEG_feats_names))
     %Write the values to the f
     %final vector output
     for (i = 1:length(EEG_feats_names))
-        eval(['EEG_feats((i-1)*n_electrodes+1:i*n_electrodes) = ' EEG_feats_names{i} ';']);
+        eval(['EEG_feats(i,:) = ' EEG_feats_names{i} '''';]);
     end
     
 else %no features selected

@@ -1,13 +1,14 @@
 function [EMG_feats, EMG_feats_names] = EMG_feat_extr(EMGsignal,varargin)
-%Computes Skin temperature featuEMG
+%Computes Skin EMG featuEMG
 % Inputs:
 %  EMGsignal: the EMG  signal.
 %  varargin: you can choose which features to extract (see featureSelector)
 %            the list of available features is:
 %               - mean_: average temprature
-%               - std_: standard deviation of the temperature
-%               - kurtosis_: Kurtosis of the temperature
-%               - skewness_: skewness of the temperature
+%               - std_: standard deviation of the EMG
+%               - kurtosis_: Kurtosis of the EMG
+%               - skewness_: skewness of the EMG
+%               - EMG_power: power spectral power above 20Hz
 % Outputs:
 %  EMG_feats: list of featuEMG values
 %  EMG_feats_names: names of the computed features (it is good pratice to

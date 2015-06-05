@@ -1,13 +1,15 @@
 function [RES_feats, RES_feats_names] = RES_feat_extr(RESsignal,varargin)
-%Computes Skin temperature features
+%Computes Skin respiration features
 % Inputs:
-%  RESsignal: the temperature  signal.
+%  RESsignal: the respiration  signal.
 %  varargin: you can choose which features to extract (see featureSelector)
 %            the list of available features is:
-%               - mean: average temprature
-%               - std: standard deviation of the temperature
-%               - kurtosis: Kurtosis of the temperature
-%               - skewness: skewness of the temperature
+%               - mean_: average temprature
+%               - std_: standard deviation of the respiration
+%               - kurtosis_: Kurtosis of the respiration
+%               - skewness_: skewness of the respiration
+%               - main_freq: main frenquency of the respiration
+%               - spxxyy: power spectral power between [xx,yy] /10 Hz
 % Outputs:
 %  RES_feats: list of features values
 %  RES_feats_names: names of the computed features (it is good pratice to

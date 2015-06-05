@@ -7,7 +7,7 @@ function [name] = EEG_get_elname(num)
 %
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
- 
+config_file; 
 name = electrode_labels.EEG{num};
 
 

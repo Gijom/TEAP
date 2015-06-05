@@ -48,7 +48,8 @@ if(~isempty(HST_feats_names))
     
     if any(strcmp('mean_',HST_feats_names)) || any(strcmp('std_',HST_feats_names)) || any(strcmp('kurtosis_',HST_feats_names)) || any(strcmp('skewness_',HST_feats_names))
         [mean_,std_, kurtosis_, skewness_] = Signal_feat_stat_moments(HSTsignal);
-    elseif any(strcmp('sp0001',HST_feats_names)) || any(strcmp('sp0102',HST_feats_names)) 
+    end
+    if any(strncmp('sp',HST_feats_names,2))
         bands = [0, 0.1; 0.1, 0.2];
         
         [powerBands] = Signal_feat_bandEnergy(HSTsignal, bands);

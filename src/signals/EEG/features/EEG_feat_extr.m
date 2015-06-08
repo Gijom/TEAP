@@ -19,7 +19,7 @@ function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
 %               the  features are per electode and therefore  1xN (N= number of electrodes)
 %               and the final output is a 2dimensional array whose size is N_features x N_electrodes
 
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2015
+%Copyright Mohammad Soleymani, Guillaume Chanel, Frank Villaro-Dixon, BSD Simplified, 2015
 
 % Check inputs and define unknown values
 narginchk(1, Inf);
@@ -47,10 +47,9 @@ n_electrodes = length(electrode_labels.EEG);
 %If some features are selected
 if(~isempty(EEG_feats_names))    
     if any(strncmp('SP',EEG_feats_names,2))       
+        %calculating spectral power features in different bands
         [SP_delta, SP_theta, SP_slowAlpha, SP_alpha, SP_beta, SP_gamma] = EEG_feat_bandENR(EEGsignal);
-    end
-    
-    %Write the values to the f
+    end        
     %final vector output
     for (i = 1:length(EEG_feats_names))
         eval(['EEG_feats(i,:) = ' EEG_feats_names{i} '''';]);

@@ -47,9 +47,13 @@ RES_feats_names = featuresSelector(featuresNames,varargin{:});
 
 %If some features are selected
 if(~isempty(RES_feats_names))    
+    %statistical moments
     if any(strcmp('mean_',RES_feats_names)) || any(strcmp('std_',RES_feats_names)) || any(strcmp('kurtosis_',RES_feats_names)) || any(strcmp('skewness_',RES_feats_names))
         [mean_,std_, kurtosis_, skewness_] = Signal_feat_stat_moments(RESsignal);
     end
+    %spectral power features in differnet bands defined in bands
+    % these bands are arbitrarily chosen based on the spectral content
+    %you can change them to what you prefer
     if any(strncmp('sp',RES_feats_names,2))
         bands = [0, 0.1; 0.1, 0.2; 0.2,0.3;0.3, 0.4; 0.4, 0.7;0.7,1;1,2.5];
         
@@ -62,6 +66,7 @@ if(~isempty(RES_feats_names))
         sp0710 = powerBands(6);
         sp1025 = powerBands(7);
     end
+    %Main frequency of respiration rhythm
     if any(strcmp('main_freq',RES_feats_names))
         [main_freq] = RES_feat_mainfreq(RESsignal);
     end

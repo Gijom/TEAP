@@ -46,10 +46,11 @@ EMG_feats_names = featuEMGSelector(featuEMGNames,varargin{:});
 %If some featuEMG are selected
 if(~isempty(EMG_feats_names))
     samprate = Signal__get_samprate(EMGSignal);
-    
+    %statistical moments
     if any(strcmp('mean_',EMG_feats_names)) || any(strcmp('std_',EMG_feats_names)) || any(strcmp('kurtosis_',EMG_feats_names)) || any(strcmp('skewness_',EMG_feats_names))
         [mean_,std_, kurtosis_, skewness_] = Signal_feat_stat_moments(EMGsignal);
     end
+    %EMG power above 20Hz; this is associated with muscule contractions
     if any(strcmp('EMG_power',EMG_feats_names))
         bands = [20,samprate/2];        
         EMG_power = Signal_feat_bandEnergy(EMGsignal, bands);

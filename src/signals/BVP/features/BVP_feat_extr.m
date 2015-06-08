@@ -4,6 +4,7 @@ function [BVP_feats, BVP_feats_names] = BVP_feat_extr(BVPSignal,varargin)
 %  BVPsignal: the BVP signal.
 %  varargin: you can choose which features to extract (see featureSelector)
 %            the list of available features is:
+%           mean_: averaged BVP - ralated to blood pressure
 %           IBIVar: variance of inter-beat-interval
 %           HRV: heart rate variability calculated based on the standard
 %           deviation of the successive IBI differences

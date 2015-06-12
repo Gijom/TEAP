@@ -21,7 +21,7 @@ end
 if strcmp(file_name(end-2:end),'mat')
     S = load(file_name);
     vars = fieldnames(S);
-    phys_data = S.data;
+    phys_data = S.(vars{1});
 else %otherwise load the file
     phys_data = pop_biosig(file_name);
 end

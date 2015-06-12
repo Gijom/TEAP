@@ -19,6 +19,7 @@ phys_data.srate = 128;
 phys_data.ref= 'common';
 phys_data.trials = 40;
 phys_data.nbchan=41; %added one since ground is added
+phys_data.epoch = 1:40;
 for i = 1:40
     phys_data.chanlocs(i).labels = electrode_labels{i};
 end

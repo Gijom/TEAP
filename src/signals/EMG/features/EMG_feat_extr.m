@@ -41,7 +41,7 @@ end
 
 % Define full feature list and get featuEMG selected by user
 featuEMGNames = {'mean_', 'std_', 'kurtosis_','skewness_','EMG_power'};
-EMG_feats_names = featuEMGSelector(featuEMGNames,varargin{:});
+EMG_feats_names = featuresSelector(featuEMGNames,varargin{:});
 
 %If some featuEMG are selected
 if(~isempty(EMG_feats_names))

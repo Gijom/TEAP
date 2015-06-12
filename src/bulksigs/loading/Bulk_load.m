@@ -40,7 +40,7 @@ if nEpochs>0
     for iEpoch = [1:nEpochs]
         Bulk = Bulk_new_empty();
         for signal = signals
-            eval(['Bulk = add' signal{1} '(Bulk, iEpoch, electrode_labels.' signal{1} ')']);
+            eval(['Bulk = add' signal{1} '(Bulk, iEpoch, electrode_labels.' signal{1} ');']);
         end
         BulkSig(iEpoch) = Bulk;
         clear Bulk;

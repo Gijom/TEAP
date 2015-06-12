@@ -20,7 +20,7 @@
 
 % for DEAP loaded from the mat file (not the bdf files)
 
-signals = {'EEG','GSR','HST','RES','BVP'};
+signals = {'EEG','GSR','HST','RES','BVP','EMG'};
 %electrode lables in the file where they are recorded
 electrode_labels.GSR = {'GSR'};
 electrode_labels.BVP = {'BVP'};

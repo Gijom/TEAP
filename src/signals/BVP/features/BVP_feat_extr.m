@@ -42,8 +42,8 @@ BVPSignal = BVP__assert_type(BVPSignal);
 
 
 % Define full feature list and get features selected by user
-featuresNames = {'mean_','IBIVar', 'HRV', 'HR', 'MSE1', 'MSE2', 'MSE3', 'MSE4','MSE5',  ... 
-                  'sp0001', 'sp0102', 'sp0203', 'sp0304', 'sp_energyRatio', ... 
+featuresNames = {'mean_','IBIVar', 'HRV', 'HR', 'MSE1', 'MSE2', 'MSE3', 'MSE4','MSE5',  ...
+    'sp0001', 'sp0102', 'sp0203', 'sp0304', 'sp_energyRatio', ...
     'tachogram_LFSP', 'tachogram_MFSP', 'tachogram_HFSP', 'tachogram_energy_ratio'};
 BVP_feats_names = featuresSelector(featuresNames,varargin{:});
 %If some features are selected
@@ -81,7 +81,7 @@ if(~isempty(BVP_feats_names))
             eval(['MSE' num2str(j) '=MSE(j);']);
         end
     end
-    if any(strncmp('sp',BVP_feats_names,2)) 
+    if any(strncmp('sp',BVP_feats_names,2))
         
         [P, f] = pwelch(rawSignal, [], [], [], samprate,'power');
         P=P/sum(P);
@@ -97,7 +97,7 @@ if(~isempty(BVP_feats_names))
     %effects of emotions on short-term power spectrum analysis of
     %heart rate variability," The American Journal of Cardiology, vol. 76,
     %no. 14, pp. 1089 -1093, 1995
-    if any(strncmp('tachogram',BVP_feats_names,9)) 
+    if any(strncmp('tachogram',BVP_feats_names,9))
         tachogram = zeros(length(rawSignal),1);
         tachogram(1:round(t(1)*samprate)) = IBI(1);
         for i = 1:length(t)-1

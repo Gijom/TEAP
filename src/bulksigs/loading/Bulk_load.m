@@ -11,7 +11,7 @@ function [BulkSig] = Bulk_load(file_name)
 %Copyright Mohammad Soleymani, BSD Simplified, 2014
 
 if(nargin ~= 1)
-    error('Usage: BulkSig = Bulk_load_eeglab(phys_data)');
+    error('Usage: BulkSig = Bulk_load(phys_data)');
 end
 
 if (~exist(file_name, 'file'))
@@ -21,8 +21,7 @@ end
 if strcmp(file_name(end-2:end),'mat')
     S = load(file_name);
     vars = fieldnames(S);
-    % we assume there is only one var!
-    phys_data = S.(vars{1});
+    phys_data = S.data;
 else %otherwise load the file
     phys_data = pop_biosig(file_name);
 end
@@ -161,17 +160,16 @@ end
         else
             data = phys_data.data(EMGChannel, :, iEpoch);
         end
-        if size(data,1)==2
-            data = data(1,:) - data(2,:); %subtracting two leads
-        elseif size(data,1)>2
-            error('Usage: We dont support more than two leads at the moment!');
+        temp = squeeze(zeros(size(data,1)/2,size(data,2),size(data,3)));
+        if mod(size(data,1),2)==0
+            for j = 1:size(data,1)/2
+                temp(j,:,:) = data(j*2-1,:,:) - data(j*2,:,:); %subtracting two leads
+            end
         else
-            error('Usage: You need two leads at least!');
+            error('Usage: You need two leads!');
         end
-        
-        
-        EMGSig = EMG_aqn_variable(squeeze(data), phys_data.srate);
-        BulkSig = Bulk_add_signal(BulkSig, EMG__get_signame(), EMGSig);
+            EMGSig = EMG_aqn_variable(squeeze(data), phys_data.srate);
+            BulkSig = Bulk_add_signal(BulkSig, EMG__get_signame(), EMGSig);
     end
 %ECG
     function BulkSig = addECG(BulkSig, iEpoch,correspondance)
@@ -180,7 +178,7 @@ end
         end
         if any(ECGChannel == 0)
             return;
-        end        
+        end
         if iEpoch ==0
             data = phys_data.data(ECGChannel, :);
         else
@@ -188,7 +186,7 @@ end
             data = squeeze(data);
         end
         if size(data,1)==2
-            data = data(1,:) - data(2,:); %subtracting two leads
+            data = data(1,:,:) - data(2,:,:); %subtracting two leads
         elseif size(data,1)>2
             error('Usage: We dont support more than two leads at the moment!');
         else

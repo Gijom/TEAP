@@ -14,8 +14,6 @@ for subject=1:32
     eeglab_file = sprintf('%s/s%0.2d_eeglab.mat',physio_path,subject);
     %loading the file
     bulk = Bulk_load(eeglab_file);
-    %it is already baselined
-    bulk = Signal__set_absolute(bulk, true);
     %exracting EMG feaures
     %TODO extract by subject by epoch
     for epoch =  1:40

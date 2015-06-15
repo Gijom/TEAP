@@ -29,23 +29,13 @@ narginchk(1, Inf);
 EMGsignal = EMG__assert_type(EMGsignal);
 
 
-if(~Signal__has_preproc_lowpass(EMGsignal))
-    warning(['For the function to work well, you should low-pass the signal' ...
-        '. Preferably with a mean filter']);
-end
-
-if(Signal__get_absolute(EMGsignal) ~= true)
-    warning('The signal was baselined/relative, are you sure you want that ?');
-end
-
-
 % Define full feature list and get featuEMG selected by user
 featuEMGNames = {'mean_', 'std_', 'kurtosis_','skewness_','EMG_power'};
 EMG_feats_names = featuresSelector(featuEMGNames,varargin{:});
 
 %If some featuEMG are selected
 if(~isempty(EMG_feats_names))
-    samprate = Signal__get_samprate(EMGSignal);
+    samprate = Signal__get_samprate(EMGsignal);
     %statistical moments
     if any(strcmp('mean_',EMG_feats_names)) || any(strcmp('std_',EMG_feats_names)) || any(strcmp('kurtosis_',EMG_feats_names)) || any(strcmp('skewness_',EMG_feats_names))
         [mean_,std_, kurtosis_, skewness_] = Signal_feat_stat_moments(EMGsignal);
@@ -53,12 +43,12 @@ if(~isempty(EMG_feats_names))
     %EMG power above 20Hz; this is associated with muscule contractions
     if any(strcmp('EMG_power',EMG_feats_names))
         bands = [20,samprate/2];        
-        EMG_power = Signal_feat_bandEnergy(EMGsignal, bands);
+        EMG_power = Signal_feat_bandEnergy(EMGsignal, bands)';
     end
     
     %Write the values to the final vector output
     for (i = 1:length(EMG_feats_names))
-        eval(['EMG_feats(i) = ' EMG_feats_names{i} ';']);
+        eval(['EMG_feats(i,:) = ' EMG_feats_names{i} ';']);
     end
     
 else %no featuEMG selected

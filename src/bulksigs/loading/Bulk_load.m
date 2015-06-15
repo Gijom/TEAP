@@ -165,6 +165,7 @@ end
             for j = 1:size(data,1)/2
                 temp(j,:,:) = data(j*2-1,:,:) - data(j*2,:,:); %subtracting two leads
             end
+            data = temp;
         else
             error('Usage: You need two leads!');
         end

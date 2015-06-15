@@ -52,7 +52,7 @@ if(~isempty(EEG_feats_names))
     end        
     %final vector output
     for (i = 1:length(EEG_feats_names))
-        eval(['EEG_feats(i,:) = ' EEG_feats_names{i} '''';]);
+        eval(['EEG_feats(i,:) = ' EEG_feats_names{i} ''';']);
     end
     
 else %no features selected

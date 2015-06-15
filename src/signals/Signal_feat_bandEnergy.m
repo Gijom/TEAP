@@ -25,7 +25,7 @@ end
 [P,f] = pwelch(raw,[],[],[],fs, 'power');
 %features for every band
 
-powerBands = zeros(size(bands,1),min(size(raw)));
+powerBands = zeros(min(size(raw)),size(bands,1));
 
 for j = 1:size(raw,2)
     for i = 1:size(bands,1)

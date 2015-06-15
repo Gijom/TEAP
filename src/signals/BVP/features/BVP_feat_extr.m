@@ -55,7 +55,7 @@ if(~isempty(BVP_feats_names))
     samprate = Signal__get_samprate(BVPSignal);
     %averaged BVP - ralated to blood pressure
     if any(strcmp('mean_',BVP_feats_names))
-        mean_ = mean(raw);
+        mean_ = mean(rawSignal);
     end
     
     if any(strcmp('IBIVar',BVP_feats_names)) || any(strncmp('tachogram',BVP_feats_names,9)) ...

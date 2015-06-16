@@ -14,9 +14,9 @@ function [ECG_feats, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
 %           MSE4: look at MSE1
 %           MSE5: look at MSE1
 %           sp0001: spectral power in 0.0-0.1Hz band
-%           sp0102: spectral power in 0.1-2.1Hz band
-%           sp0203: spectral power in 0.2-3.1Hz band
-%           sp0304: spectral power in 0.3-4.1Hz band
+%           sp0102: spectral power in 0.1-0.2Hz band
+%           sp0203: spectral power in 0.2-0.3Hz band
+%           sp0304: spectral power in 0.3-0.4Hz band
 %           sp_energyRatio: spectral power ratio between 0.0-0.08Hz and
 %           0.15-0.5Hz bands
 %           tachogram_LFSP: Tachogram's low freqneucy spectral content

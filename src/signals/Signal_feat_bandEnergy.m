@@ -21,8 +21,9 @@ if size(raw,1)<size(raw,2)
     raw = raw';
 end
 
-
-[P,f] = pwelch(raw,[],[],[],fs, 'power');
+for i = 1:size(raw,2)
+    [P(:,i),f] = pwelch(raw,[],[],[],fs, 'power');
+end
 %features for every band
 
 powerBands = zeros(min(size(raw)),size(bands,1));

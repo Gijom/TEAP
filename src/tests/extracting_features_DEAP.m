@@ -1,7 +1,7 @@
 %extracting features from DEAP database
 %path where the mat files are stored
 clear;clc;
-TEAP_path = '/home/soleyman/work/codes/TEAP/src';
+TEAP_path = fileparts(pwd);
 curr_path = cd;
 eval(['cd ' TEAP_path]);
 init

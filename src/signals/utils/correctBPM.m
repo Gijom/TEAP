@@ -14,6 +14,11 @@ function [bpm, delta_t, t, listePic] = correctBPM(listePic_in, fe, thresh)
 % OTHER INFO :
 %   Guillaume Chanel (thanks to Joep)
 %   4/09/2008
+
+%WARN I am not sure but this might be an old version check that this
+%corresponds to correctBPM3 in my codes
+
+
 if(nargin < 3)
     thresh = 0.2;
 end

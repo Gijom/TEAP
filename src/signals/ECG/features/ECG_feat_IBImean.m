@@ -7,23 +7,17 @@ function IBIMean = ECG_feat_IBImean(ECGSignal)
 %
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Modified by Guillaume Chanel
 
 
 %Make sure we have an ECG signal
 ECGSignal = ECG__assert_type(ECGSignal);
 
+%Compute IBI
+ECG__compute_IBI(ECGSignal);
 
-%Compute the results
-
-rawSignal = Signal__get_raw(ECGSignal);
-samprate = Signal__get_samprate(ECGSignal);
-
-newfs = 256; %Hz, as needed by rpeakdetect
-ECG = downsample(rawSignal, samprate/newfs);
-[hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG', newfs);
-[BPM IBI] = correctBPM(R_index, newfs);
-
-IBIMean = mean(IBI);
+%Compute average
+IBIMean = mean(Signal__get_raw(ECGSignal.IBI));
 
 end
 

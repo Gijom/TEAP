@@ -22,7 +22,7 @@ function [selfeatures] = featuresSelector(featuresNames,varargin)
 % (no error output).
 %
 % Examples:
-%   featuresSelector({'A','B',C'},'Include',{'A'.'C'})
+%   featuresSelector({'A','B',C'},'Include',{'A','C'})
 %       returns {'A','C'}
 %   featuresSelector({'A','B',C'},'Include',{'A'.'C'})
 %       returns {'B'}

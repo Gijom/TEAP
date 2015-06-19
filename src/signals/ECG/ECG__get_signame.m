@@ -8,5 +8,6 @@ function name = ECG__get_signame()
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 name = 'ECG';
+%WARN: shouldn't it be retuned from the ECG structure field 'name' ?
 
 

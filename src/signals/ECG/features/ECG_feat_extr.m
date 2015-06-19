@@ -1,117 +1,108 @@
-function [ECG_feats, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
-%Computes ECG features
+function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
+%Computes  ECG features
+%TODO: clarifiy the help
+% TODO: GET the IBI signal when needed
+%TODO call on other simple function instead of having all the computation
+%in one file
+% TODO correct features IBI to use the proper signal
 % Inputs:
-%  ECGsignal: the ECG signal.
-%  varargin: you can choose which features to extract (see featureSelector)
-%            the list of available features is:
-%           IBIVar: variance of inter-beat-interval
-%           HRV: heart rate variability calculated based on the standard
-%           deviation of the successive IBI differences
-%           HR: mean heart rate (beat per minute)
-%           MSE1: Multi-Scale Entropy at 5 levels 1-5
-%           MSE2: look at MSE1
-%           MSE3: look at MSE1
-%           MSE4: look at MSE1
-%           MSE5: look at MSE1
-%           sp0001: spectral power in 0.0-0.1Hz band
-%           sp0102: spectral power in 0.1-0.2Hz band
-%           sp0203: spectral power in 0.2-0.3Hz band
-%           sp0304: spectral power in 0.3-0.4Hz band
-%           sp_energyRatio: spectral power ratio between 0.0-0.08Hz and
-%           0.15-0.5Hz bands
-%           tachogram_LFSP: Tachogram's low freqneucy spectral content
-%           <0.08Hz
-%           tachogram_MFSP: Tachogram's medium freqneucy spectral content
-%           0.08Hz> and <0.15Hz
-%           tachogram_HFSP: Tachogram's high freqneucy spectral content
-%           0.15Hz> and <0.5Hz
-%           tachogram_energy_ratio: energu ratio tachogram_MFSP/(tachogram_HSP+tachogram_LFSP)
+%  ECGSignal: the ECG signal (already subtracted from one lead)
+%  varargin: you can choose which features to extract
+% default or no input will result in extracting all the features
 % Outputs:
-%  ECG_feats: list of features values
-%  ECG_feats_names: names of the computed features (it is good pratice to
-%                   check this vector since the order of requested features
-%                   can be different than the requested one)
+%  ECG_features: vector of features among the following features
+%1. 2. mean HRV, 3. mean heart rate,
+%4-8. Multiscale entropy at 5 levels on HRV (5 feaures),
+%9. Spectral power 0-0.1Hz,
+%10. Spectral power 0.1-0.2Hz,
+%11. Spectral power 0.2-0.3
+%12. Spectral power 0.3-0.4Hz,
+%13. Spectral energy ratio between f<0.08Hz/f>0.15Hz and f<5.0Hz
+%14. Low frequency spectral power in tachogram (HRV)  [0.01-0.08Hz]
+%15. Medium frequency spectral power in tachogram (HRV)  [0.08-0.15Hz]
+%16. High frequency spectral power in tachogram (HRV)  [0.15-0.5Hz]
+%17. Energy ratio for tachogram spectral content (MF/(LF+HF))
+% ECG_feats_names: names of features corresponding to th ECG_features
+% values
+
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
-% Check inputs and define unknown values
-narginchk(1, Inf);
+
+if isempty(varargin)
+    varargin = {'all'};
+end
 %Make sure we have an ECG signal
 ECGSignal = ECG__assert_type(ECGSignal);
 
-
 % Define full feature list and get features selected by user
-featuresNames = {'IBIVar', 'HRV', 'HR', 'MSE1', 'MSE2', 'MSE3', 'MSE4','MSE5',  ... 
-                  'sp0001', 'sp0102', 'sp0203', 'sp0304', 'sp_energyRatio', ... 
-    'tachogram_LFSP', 'tachogram_MFSP', 'tachogram_HFSP', 'tachogram_energy_ratio'};
+featuresNames = {'HR', 'HRV','MSE','sp0001','sp0102','sp0103','sp0203','sp0304','energyRatio','LF','MF','HF',...
+    'tachogram_energy_ratio'};
+featuresNamesIBI = {'HR', 'HRV','MSE','energyRatio','LF','MF','HF','tachogram_energy_ratio'};
 ECG_feats_names = featuresSelector(featuresNames,varargin{:});
-%If some features are selected
+
+%Compute the results
 if(~isempty(ECG_feats_names))
     
-    %Compute the results
+    %Compute IBI if a features needing it is requested
+    if(any(ismember(featuresNamesIBI,ECG_feats_names)))
+        ECGSignal = ECG__compute_IBI( ECGSignal );
+        IBI = Signal__get_raw(ECGSignal.IBI);
+        IBI_sp = Signal__get_samprate(ECGSignal.IBI);
+    end
     
-    rawSignal = Signal__get_raw(ECGSignal);
-    samprate = Signal__get_samprate(ECGSignal);
-    if any(strcmp('IBIVar',ECG_feats_names)) || any(strncmp('tachogram',ECG_feats_names,9)) ...
-            || any(strcmp('HR',ECG_feats_names)) || any(strcmp('HRV',ECG_feats_names))
-        newfs = 256; %Hz, as needed by rpeakdetect
-        %getting the raw signal
-        rawSignal = detrend(rawSignal);
-        %detecting peaks
-        [~, t, ~, R_index, ~, ~] = rpeakdetect(rawSignal', newfs);
-        %correcting for the impossible peaks
-        [BPM, IBI] = correctBPM(R_index, newfs);
-        %varaince of Inter Beat Intervals (IBI) relate dto HRV
-        IBIVar = var(IBI);
-        %the standard deviation of the successive differences between IBI
-        HRV = std(diff(IBI));
-        %heart rate
+    %Get information of ECG signal
+    ECG = Signal__get_raw(ECGSignal);
+    ECG_sp = Signal__get_samprate(ECGSignal);
+    
+    %
+    if any(strcmp('HR',varargin)) || any(strcmp('HRV',varargin))
+        HRV = std(IBI);
         HR = mean(BPM);
     end
-    if any(strncmp('MSE',ECG_feats_names,3))
+    if any(strcmp('MSE',varargin))
         %multi-scale entropy for 5 scales on hrv
         [MSE] = multiScaleEntropy(IBI,5);
-        for j = 1:5
-            eval(['MSE' num2str(j) '=MSE(j);']);
-        end
     end
-    if any(strncmp('sp',ECG_feats_names,2)) 
+    if any(any(strcmp('sp0001',varargin)) ...
+            || any(strcmp('sp0102',varargin)) ||  any(strcmp('sp0103',varargin)) ...
+            || any(strcmp('sp0203',varargin)) || any(strcmp('sp0304',varargin)) ...
+            || any(strcmp('energyRatio',varargin))
         
-        [P, f] = pwelch(rawSignal, [], [], [], samprate,'power');
+        [P, f] = pwelch(ECG, [], [], [], ECG_sp,'power');
         P=P/sum(P);
         %power spectral featyres
         sp0001 = log(sum(P(f>0.0 & f<=0.1))+eps);
         sp0102 = log(sum(P(f>0.1 & f<=0.2))+eps);
         sp0203 = log(sum(P(f>0.2 & f<=0.3))+eps);
         sp0304 = log(sum(P(f>0.3 & f<=0.4))+eps);
-        sp_energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
+        energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
     end
     %tachogram features; psd features on inter beat intervals
-    %R. McCraty, M. Atkinson, W. Tiller, G. Rein, and A. Watkins, "The
+    %R. McCraty, M. Atkinson, W. Tiller, G. Rein, and A. Watkins, �The
     %effects of emotions on short-term power spectrum analysis of
-    %heart rate variability," The American Journal of Cardiology, vol. 76,
-    %no. 14, pp. 1089 -1093, 1995
-    if any(strncmp('tachogram',ECG_feats_names,9)) 
-        tachogram = zeros(length(rawSignal),1);
-        tachogram(1:round(t(1)*samprate)) = IBI(1);
-        for i = 1:length(t)-1
-            tachogram(round(t(i)*samprate):round(t(i+1)*samprate)) = IBI(i);
-        end
-        tachogram(round(t(end)*samprate):end) = IBI(end);
-        [Pt, ft] = pwelch(tachogram, [], [], [], samprate,'power');
+    %heart rate variability,� The American Journal of Cardiology, vol. 76,
+    %no. 14, pp. 1089 � 1093, 1995
+    if any(strcmp('LF',varargin)) ...
+            || any(strcmp('MF',varargin)) ||  any(strcmp('HF',varargin)) ...
+            || any(strcmp('tachogram_energy_ratio',varargin))
+        [Pt, ft] = pwelch(IBI, [], [], [], IBI_sp,'power');
         clear tachogram
-        tachogram_LFSP = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
-        tachogram_MFSP = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
-        tachogram_HFSP = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
-        tachogram_energy_ratio = tachogram_MFSP/(tachogram_HFSP+tachogram_LFSP);
+        %WARN: check that this is possible with the IBI sampling rate
+        LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
+        MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
+        HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
+        tachogram_energy_ratio = MF/(LF+HF);
     end
     
-    %Write the values to the final vector output
-    for (i = 1:length(ECG_feats_names))
-        eval(['ECG_feats(i) = ' ECG_feats_names{i} ';']);
+    %Setup feature vector
+    for i = 1:length(ECG_feats_names)
+        eval(['ECG_features(i) = ' ECG_feats_names{i} ';']);
     end
-    
-else %no features selected
-    ECG_feats = [];
+else
+    ECG_features = [];
 end
+
+
 end
+

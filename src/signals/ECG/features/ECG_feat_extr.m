@@ -37,9 +37,9 @@ ECGSignal = ECG__assert_type(ECGSignal);
 
 % Define full feature list and get features selected by user
 %TODO: confirm with Mohammad that the changes are ok (suppression of 'sp0103'
-featuresNames = {'meanIBI', 'HRV','MSE','sp0001','sp0102','sp0203','sp0304','energyRatio','LF','MF','HF',...
+featuresNames = {'meanIBI', 'HRV','MSE','sp0001','sp0102','sp0203','sp0304','energyRatio','tachogram_LF','tachogram_MF','tachogram_HF',...
     'tachogram_energy_ratio'};
-featuresNamesIBI = {'meanIBI', 'HRV','MSE','energyRatio','LF','MF','HF','tachogram_energy_ratio'};
+featuresNamesIBI = {'meanIBI', 'HRV','MSE','energyRatio','tachogram_LF','tachogram_MF','tachogram_HF','tachogram_energy_ratio'};
 ECG_feats_names = featuresSelector(featuresNames,varargin{:});
 
 %Compute the results
@@ -84,17 +84,17 @@ if(~isempty(ECG_feats_names))
     %effects of emotions on short-term power spectrum analysis of
     %heart rate variability,� The American Journal of Cardiology, vol. 76,
     %no. 14, pp. 1089 � 1093, 1995
-    if any(strcmp('LF',ECG_feats_names)) ...
-            || any(strcmp('MF',ECG_feats_names)) ||  any(strcmp('HF',ECG_feats_names)) ...
+    if any(strcmp('tachogram_LF',ECG_feats_names)) ...
+            || any(strcmp('tachogram_MF',ECG_feats_names)) ||  any(strcmp('tachogram_HF',ECG_feats_names)) ...
             || any(strcmp('tachogram_energy_ratio',ECG_feats_names))
         [Pt, ft] = pwelch(IBI, [], [], [], IBI_sp,'power');
         clear tachogram
         %WARN: check that this is possible with the IBI sampling rate
         %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
-        LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
-        MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
-        HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
-        tachogram_energy_ratio = MF/(LF+HF);
+        tachogram_LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
+        tachogram_MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
+        tachogram_HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
+        tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
     end
     
     %Setup feature vector

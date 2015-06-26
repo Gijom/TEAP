@@ -1,10 +1,11 @@
 function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
 %Computes  ECG features
 %TODO: clarifiy the help
-% TODO: GET the IBI signal when needed
 %TODO call on other simple function instead of having all the computation
 %in one file
-% TODO correct features IBI to use the proper signal
+%ALSO try to find a way to update the bulk when the bulk is given in
+%parameter (to avoid recomputation of IBI each time
+%
 % Inputs:
 %  ECGSignal: the ECG signal (already subtracted from one lead)
 %  varargin: you can choose which features to extract
@@ -29,9 +30,6 @@ function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
-if isempty(varargin)
-    varargin = {'all'};
-end
 %Make sure we have an ECG signal
 ECGSignal = ECG__assert_type(ECGSignal);
 
@@ -72,6 +70,7 @@ if(~isempty(ECG_feats_names))
         [P, f] = pwelch(ECG, [], [], [], ECG_sp,'power');
         P=P/sum(P);
         %power spectral featyres
+        %WARN: check that this resolution is obrainable with the ECG sampling rate
         sp0001 = log(sum(P(f>0.0 & f<=0.1))+eps);
         sp0102 = log(sum(P(f>0.1 & f<=0.2))+eps);
         sp0203 = log(sum(P(f>0.2 & f<=0.3))+eps);

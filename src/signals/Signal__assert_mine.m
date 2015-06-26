@@ -9,10 +9,13 @@ if(nargin ~= 1)
 	error('Usage: Signal__assert_mine(Signal)');
 end
 
-if(isfield(Signal, 'TEAPhysio'))
-	if(Signal.TEAPhysio == 'S')
-		return;
-	end
+%TODO: implement the display of a bulk ?
+if(length(Signal) == 1) %Avoid multiple bulk case for instance
+    if(isfield(Signal, 'TEAPhysio'))
+        if(Signal.TEAPhysio == 'S')
+            return;
+        end
+    end
 end
 
 error('The signal given is not a TEAPhysio one')

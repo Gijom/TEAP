@@ -11,7 +11,7 @@ function [BulkSig] = Bulk_update_signal(BulkSig, signame, sig)
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: BulkSig = Bulk_add_signal(BulkSig, signame, sig)');
-	%Again, fuck matlab for not having a print_usage like command
+	%Matlab does not have a print_usage like command
 end
 
 Bulk_assert_mine(BulkSig);

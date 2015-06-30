@@ -15,7 +15,7 @@ function [Signal, Bulk] = Signal__assert_type(Signal, nameWanted)
 %          signal from the bulk if the input signal is a bulk one.
 
 if(nargin ~= 2 || nargout > 2)
-	%If fucking matlab was clever, they'd have implemented print_usage, like octave
+	%If matlab was clever, they'd have implemented print_usage, like octave
 	error('Usage: [Signal, Bulk] = Signal__assert_type(Signal, nameWanted)')
 end
 

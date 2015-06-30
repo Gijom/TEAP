@@ -44,7 +44,7 @@ correspondance = ['Fp1'; 'AF3'; 'F3'; 'F7'; 'FC5'; 'FC1'; 'C3'; 'T7'; 'CP5'; ...
 	data = zeros(numel, datlen);
 
 	for i = [1:numel]
-		chaname = strtrim(correspondance(i, :)); %fuckshit
+		chaname = strtrim(correspondance(i, :));
 		chan = findMyChannel(chaname);
 %		disp(['Will do ' chaname ' - ' num2str(chan)]);
 		if(chan == 0)

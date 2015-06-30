@@ -1,4 +1,4 @@
-function [BVP_feats, BVP_feats_names] = BVP_feat_extr(BVPSignal,varargin)
+function [BVP_feats, BVP_feats_names, Bulk] = BVP_feat_extr(BVPSignal,varargin)
 %Computes BVP features
 % Inputs:
 %  BVPsignal: the BVP signal.
@@ -28,14 +28,19 @@ function [BVP_feats, BVP_feats_names] = BVP_feat_extr(BVPSignal,varargin)
 %  BVP_feats_names: names of the computed features (it is good pratice to
 %                   check this vector since the order of requested features
 %                   can be different than the requested one)
+%  Bulk: if the input to the function is a Bulk than the Bulk is returned
+%        with the updated ECG signal, including IBI. Otherwise NaN is
+%        returned
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 % Check inputs and define unknown values
 narginchk(1, Inf);
 %Make sure we have an BVP signal
-BVPSignal = BVP__assert_type(BVPSignal);
-
+[BVPSignal, Bulk] = BVP__assert_type(BVPSignal);
+if(nargout < 3) %No bulk requested -> do not need to keep it
+    Bulk = [];
+end
 
 % Define full feature list and get features selected by user
 featuresNames = {'mean_', 'HRV', 'meanIBI', 'MSE',  ...
@@ -50,9 +55,15 @@ if(~isempty(BVP_feats_names))
     
     %First compute IBI if needed by the requested features
     if(any(ismember(featuresNamesIBI,BVP_feats_names)))
+        %Compute IBI
         BVPSignal = BVP__compute_IBI( BVPSignal );
         IBI = Signal__get_raw(BVPSignal.IBI);
         IBI_sp = Signal__get_samprate(BVPSignal.IBI);
+        
+        %Update the Bulk with the new ECG signal
+        if(~isempty(Bulk))
+            Bulk = Bulk_update_signal(Bulk, Signal__get_signame(BVPSignal), BVPSignal);
+        end
     end
     
     %Get the raw signals

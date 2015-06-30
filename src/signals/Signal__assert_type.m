@@ -1,4 +1,4 @@
-function Signal = Signal__assert_type(Signal, nameWanted)
+function [Signal, Bulk] = Signal__assert_type(Signal, nameWanted)
 % Checks that the signal given on the input is of the type nameWanted
 % This function is mainly used by SSS_assert_type(Sig), with params Sig and SSS.
 % NOTA BENE: in the case that Signal is a BULK signal, this function will
@@ -6,14 +6,17 @@ function Signal = Signal__assert_type(Signal, nameWanted)
 % Input:
 %  Signal: The signal you want to make sure of the type (can be a BULK signal,
 %          in that case, will take the component.
+%  Bulk: if the input is a bulk than the bulk is also returned to keep a
+%        backup of it. An empty vector is returned if the input is not a Bulk
+%        
 %  nameWanted: the type the signal must be of (ex: 'GSR').
 % Output:
 %  Signal: the signal. Can be the same as the input if single signal, or the
 %          signal from the bulk if the input signal is a bulk one.
 
-if(nargin ~= 2 || nargout ~= 1)
+if(nargin ~= 2 || nargout > 2)
 	%If fucking matlab was clever, they'd have implemented print_usage, like octave
-	error('Usage: Signal = Signal__assert_type(Signal, nameWanted)')
+	error('Usage: [Signal, Bulk] = Signal__assert_type(Signal, nameWanted)')
 end
 
 if(~isfield(Signal, 'TEAPhysio'))
@@ -25,11 +28,15 @@ if(length(Signal) ~= 1)
 	       'Could you please choose the epoch you want (eg: with Bulk(1))']);
 end
 
+%Initialize bulk to empty (in the case the input was not bulk)
+Bulk = [];
+
 %can either be a Bulk or a single signal
 if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
 	Signal__assert_mine(Signal);
 elseif(Signal.TEAPhysio == 'B') %Bulk signal
 	%We have to choose the signal that we want
+    Bulk = Signal;
 	Signal = Bulk_get_signal(Signal, nameWanted); %Will fail if does not exist
 else
 	error('The signal type is unknown. Should either be Signal or Bulk');
@@ -40,4 +47,3 @@ name = Signal__get_signame(Signal);
 if(~strcmp(name, nameWanted))
 	error(['Signal is of type: ' name '. Should be ' nameWanted])
 end
-

@@ -1,12 +1,10 @@
-function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
+function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargin)
 %Computes  ECG features
 %TODO: clarifiy the help
 %TODO call on other simple function instead of having all the computation
 %TODO: changes all any statement to all or ismember because I think it can
 %lead to problems (variable computation while it should not compute it)
 %in one file
-%ALSO try to find a way to update the bulk when the bulk is given in
-%parameter (to avoid recomputation of IBI each time
 %
 % Inputs:
 %  ECGSignal: the ECG signal (already subtracted from one lead)
@@ -14,6 +12,11 @@ function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
 % default or no input will result in extracting all the features
 % Outputs:
 %  ECG_features: vector of features among the following features
+%  ECG_feats_names: the names of the features is the same order than in
+%                   'ECG_features'
+%  Bulk: if the input to the function is a Bulk than the Bulk is returned
+%        with the updated ECG signal, including IBI. Otherwise NaN is
+%        returned
 %TODO update feature names there
 %1. 2. mean HRV, 3. mean heart rate,
 %4-8. Multiscale entropy at 5 levels on HRV (5 feaures),
@@ -29,12 +32,14 @@ function [ECG_features, ECG_feats_names] = ECG_feat_extr(ECGSignal,varargin)
 % ECG_feats_names: names of features corresponding to th ECG_features
 % values
 
-%Copyright Guillaume Chanel 2013
+%Copyright Guillaume Chanel 2013, 2015
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
-
-%Make sure we have an ECG signal
-ECGSignal = ECG__assert_type(ECGSignal);
+%Make sure we have an ECG signal and get the bulk for saving IBI (if needed)
+[ECGSignal, Bulk] = ECG__assert_type(ECGSignal);
+if(nargout < 3) %No bulk requested -> do not need to keep it
+    Bulk = [];
+end
 
 % Define full feature list and get features selected by user
 %TODO: confirm with Mohammad that the changes are ok (suppression of 'sp0103'
@@ -48,16 +53,22 @@ if(~isempty(ECG_feats_names))
     
     %Compute IBI if a features needing it is requested
     if(any(ismember(featuresNamesIBI,ECG_feats_names)))
+        %Compute IBI
         ECGSignal = ECG__compute_IBI( ECGSignal );
         IBI = Signal__get_raw(ECGSignal.IBI);
         IBI_sp = Signal__get_samprate(ECGSignal.IBI);
+        
+        %Update the Bulk with the new ECG signal
+        if(~isempty(Bulk))
+            Bulk = Bulk_update_signal(Bulk, Signal__get_signame(ECGSignal), ECGSignal);
+        end
     end
     
     %Get information of ECG signal
     ECG = Signal__get_raw(ECGSignal);
     ECG_sp = Signal__get_samprate(ECGSignal);
     
-    %
+    %meanIBI is computed
     if any(strcmp('meanIBI',ECG_feats_names)) || any(strcmp('HRV',ECG_feats_names))
         HRV = std(IBI);
         meanIBI = mean(IBI);

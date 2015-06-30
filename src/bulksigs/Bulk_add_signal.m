@@ -11,15 +11,14 @@ function [BulkSig] = Bulk_add_signal(BulkSig, signame, sig)
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: BulkSig = Bulk_add_signal(BulkSig, signame, sig)');
-	%Again, fuck matlab for not having a print_usage like command
+	%Matlab does not have a print_usage like command
 end
 
 Bulk_assert_mine(BulkSig);
 
 if(isfield(BulkSig, signame))
-	warning(['You are trying to add a signal that is already on the bulk'
-	         ' signal. Il this wanted ?']);
- end
+	warning(['You are trying to add a signal that is already on the bulk signal. Is this wanted ? In the case you want to update the signal preferably use Bulk_update_signal']);
+end
 
 BulkSig.(signame) = sig;
 

@@ -39,6 +39,7 @@ end
 %%%%%%%%%%% make threshold default 0.2 -> this was 0.15 on MIT data
 if nargin < 3
    thresh = 0.2;
+   
 end
 %%%%%%%%%%% make sample frequency default 256 Hz
 if nargin < 2
@@ -108,7 +109,10 @@ end
  mdfint = mdfint(delay:length(mdfint));
 %%%%%%%%% segment search area %%%%%%%%%%%%%%%%%%%%%%%
  %%%% first find the highest bumps in the data %%%%%%
- max_h = max (mdfint(round(len/4):round(3*len/4)));
+%  max_h = max (mdfint(round(len/4):round(3*len/4)));
+
+ %GC: The maximum height is replaced by the 95% percentile to avoid outliers problemes
+ max_h = prctile(mdfint(round(len/4):round(3*len/4)),95);
 
  %%%% then build an array of segments to look in %%%%%
  %thresh = 0.2;

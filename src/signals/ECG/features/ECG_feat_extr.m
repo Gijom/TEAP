@@ -100,14 +100,22 @@ if(~isempty(ECG_feats_names))
     if any(strcmp('tachogram_LF',ECG_feats_names)) ...
             || any(strcmp('tachogram_MF',ECG_feats_names)) ||  any(strcmp('tachogram_HF',ECG_feats_names)) ...
             || any(strcmp('tachogram_energy_ratio',ECG_feats_names))
-        [Pt, ft] = pwelch(IBI, [], [], [], IBI_sp,'power');
-        clear tachogram
-        %WARN: check that this is possible with the IBI sampling rate
-        %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
-        tachogram_LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
-        tachogram_MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
-        tachogram_HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
-        tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
+        
+        %Handle the case were IBI could not be computed
+        if(~isnan(IBI))
+            [Pt, ft] = pwelch(IBI, [], [], [], IBI_sp,'power');
+            %WARN: check that this is possible with the IBI sampling rate
+            %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
+            tachogram_LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
+            tachogram_MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
+            tachogram_HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
+            tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
+        else
+            tachogram_LF = NaN;
+            tachogram_MF = NaN;
+            tachogram_HF = NaN;
+            tachogram_energy_ratio = NaN;            
+        end
     end
     
     %Setup feature vector

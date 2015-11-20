@@ -33,7 +33,8 @@ welchWindow = fs*15;
 for iElec = 1:n_electrodes
 	name = EEG_get_elname(iElec);
 	data = EEG_get_channel(EEGSignal, name);
-
+    %detrending the EEG signals
+    data = detrend(data);
 	%Welch method to compute energy of the current electrode (trial + BL)
 	[PowerTrial, fTrial] = pwelch(data, welchWindow , [], [], fs);
     deltaBand(iElec) = log(sum(PowerTrial(fTrial>0 & fTrial<4)));

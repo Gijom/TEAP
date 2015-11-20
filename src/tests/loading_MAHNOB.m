@@ -63,9 +63,10 @@ for i = 1:length(sessions)
     bdf = openbdf([new_path files_of.name]);
     fprintf('loading and converting subject %0.2d trial %0.2d\n',subj_id,trial_id);
     data = readbdf(bdf,1:bdf.Head.NRec);
-    phys_data.data = zeros(n_chans+1,size(data.Record,2)-60*phys_data.srate);
+    triggers = find(diff(data.Record(47,:))~=0);    
+    phys_data.data = zeros(n_chans+1,(triggers(3)-triggers(1)));
     for j = 1:n_chans
-        phys_data.data(j,:) = data.Record(strcmp(electrode_labels{j},electrode_labels_orig),30*phys_data.srate+1:end-30*phys_data.srate);
+        phys_data.data(j,:) = data.Record(strcmp(electrode_labels{j},electrode_labels_orig),triggers(1)+1:triggers(3));
     end
     eeglab_file = sprintf('%s/s%0.2d_t%0.2d_eeglab.mat',path_towrite,subj_id,trial_id);
     save(eeglab_file,'phys_data');

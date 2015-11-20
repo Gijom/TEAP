@@ -1,5 +1,6 @@
 function EEGSignal = EEG_reference_mean(EEGSignal)
-%Creates a reference for the EEG signal; aka 'normalises' the signal
+%re-references the EEG signals to their mean
+%Creates a reference for the EEG signal; removed average reference' the signal
 % Inputs:
 %  EEGSignal: the EEG signal
 % Outputs:
@@ -15,14 +16,15 @@ EEGSignal = EEG__assert_type(EEGSignal);
 
 raw = Signal__get_raw(EEGSignal);
 
+eMean = mean(cell2mat(struct2cell(raw)));
+
 electrodes = fieldnames(raw);
+
 
 for i = [1:length(electrodes)]
 	%Take the signal we want
-	electrode = EEG_get_channel(EEGSignal, electrodes{1});
-
-	eMean = mean(electrode);
+	electrode = EEG_get_channel(EEGSignal, electrodes{i});
 	electrode = electrode - eMean;
-	EEGSignal = EEG_set_channel(EEGSignal, electrodes{1}, electrode);
+	EEGSignal = EEG_set_channel(EEGSignal, electrodes{i}, electrode);
 	%TODO: set up flag to say referenced
 end

@@ -1,5 +1,5 @@
 function GSRsignal = GSR_filter_basic(GSRsignal)
-%Cleans a signal adding a low-pass median filter to it. The window equals the
+%Cleans a signal adding a low-pass mean filter to it. The window equals the
 %sample rate, aka 1 sec.
 % Inputs:
 %  GSRsignal: the GSR signal.

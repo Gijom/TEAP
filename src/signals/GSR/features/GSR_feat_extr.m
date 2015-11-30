@@ -31,12 +31,21 @@ samprate = Signal__get_samprate(GSRsignal);
 % Define full feature list and get features selected by user
 featuresNames = {'nbPeaks', 'ampPeaks', 'riseTime','meanGSR','stdGSR'};
 GSR_feats_names = featuresSelector(featuresNames,varargin{:});
+if strcmp(GSRsignal.unit,'Ohm')
+    ampThresh = 100;%Ohm
+elseif strcmp(GSRsignal.unit,'nS')
+    %convert to resistance ohm
+    GSRsignal.raw = 1./(GSRsignal.raw*10E9);
+    ampThresh = 100;%Ohm
+else
+    error('The GSR unit is unknows; please fix it - the threshold shall be adjusted to the unit')
+end
 
 %If some features are selected
 if(~isempty(GSR_feats_names))
     
     if any(strcmp('nbPeaks',GSR_feats_names)) || any(strcmp('ampPeaks',GSR_feats_names)) || any(strcmp('riseTime',GSR_feats_names))
-        ampThresh = 100;%Ohm
+        
         [nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal,ampThresh);
         nbPeaks = nbPeaks/(length(GSRsignal)/samprate);
         ampPeaks = mean(ampPeaks);

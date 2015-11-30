@@ -17,6 +17,9 @@ Signal = Signal__set_samprate(Signal, sampRate);
 
 Signal = Signal__set_raw(Signal, Raw_convert_1D(rawRES));
 
+%And we filter the signal. Else, it's useless
+Signal = RES_filter_basic(Signal);
+
 
 end
 

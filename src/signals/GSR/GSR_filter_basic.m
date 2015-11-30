@@ -14,4 +14,4 @@ GSRsignal = GSR__assert_type(GSRsignal);
 
 sampRate = Signal__get_samprate(GSRsignal);
 
-GSRsignal = Signal_filter1_low_median(GSRsignal, sampRate);
+GSRsignal = Signal_filter1_low_mean(GSRsignal, round(sampRate/16));

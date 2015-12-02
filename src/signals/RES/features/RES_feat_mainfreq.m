@@ -24,15 +24,18 @@ Apass = 1;      % Bandwidth Attenuation
 [b, a] = iirpeak(Fpeak/(fs/2), BW/(fs/2), Apass);
 Resp_filt = filtfilt(b, a, raw);
 
+if length(Resp_filt<60*fs)
+	warning('Resp signal too short cannto calculate the spectral features'_
+	mainFreq = nan;
+else
+	%Compute the energy spectrum
+	[RespPower, fResp] = pwelch(Resp_filt, 30*fs, [], [], fs); %30 seconds segment
 
-%Compute the energy spectrum
-[RespPower, fResp] = pwelch(Resp_filt, 30*fs, [], [], fs); %30 seconds segment
 
 %Take the frequencies we want
 iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
 
-
 [dummy, iMainFreq] = max(RespPower(iFreqInterest));
 
 mainFreq = fResp(iFreqInterest(iMainFreq));
-
+end

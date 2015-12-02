@@ -28,7 +28,7 @@ betaBand  = zeros(1, n_electrodes);
 slowAlphaBand = zeros(1, n_electrodes);
 gammaBand = zeros(1, n_electrodes);
 %default is 15 seconds long
-welchWindow = fs*15;
+%welchWindow = fs*15;
 
 for iElec = 1:n_electrodes
 	name = EEG_get_elname(iElec);
@@ -36,7 +36,7 @@ for iElec = 1:n_electrodes
     %detrending the EEG signals
     data = detrend(data);
 	%Welch method to compute energy of the current electrode (trial + BL)
-	[PowerTrial, fTrial] = pwelch(data, welchWindow , [], [], fs);
+	[PowerTrial, fTrial] = pwelch(data, [] , [], [], fs,'power');
     deltaBand(iElec) = log(sum(PowerTrial(fTrial>0 & fTrial<4)));
 	thetaBand(iElec) = log(sum(PowerTrial(4<=fTrial & fTrial<8)));
 	slowAlphaBand(iElec) = log(sum(PowerTrial(8<=fTrial & fTrial<10)));

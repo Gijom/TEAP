@@ -16,7 +16,7 @@ Signal__assert_mine(Signal);
 
 raw = Signal__get_raw(Signal);
 
-filtered = medfilt1(raw, windowSize);
+filtered = smooth(raw, windowSize);
 
 Signal = Signal__set_raw(Signal, filtered);
 

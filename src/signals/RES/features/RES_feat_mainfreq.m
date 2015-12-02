@@ -24,8 +24,8 @@ Apass = 1;      % Bandwidth Attenuation
 [b, a] = iirpeak(Fpeak/(fs/2), BW/(fs/2), Apass);
 Resp_filt = filtfilt(b, a, raw);
 
-if length(Resp_filt<60*fs)
-	warning('Resp signal too short cannto calculate the spectral features'_
+if length(Resp_filt)<60*fs
+	warning('Resp signal too short cannto calculate the spectral features')
 	mainFreq = nan;
 else
 	%Compute the energy spectrum

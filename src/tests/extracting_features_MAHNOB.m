@@ -56,4 +56,4 @@ end
 save('mahnob_features.mat','features');
 
 
-fprintf('Done! Successfully converted the mat files\n');
+fprintf('Done! Successfully extracted the feaures\n');

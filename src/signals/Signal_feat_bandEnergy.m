@@ -21,16 +21,24 @@ if size(raw,1)<size(raw,2)
     raw = raw';
 end
 welch_window_size = fs* 10;
-if 1/min(bands(:))> welch_window_size/fs
+% to check the first band limit after 0
+bands_flat = bands(:);
+if min(bands_flat)==0    
+    min_f = bands_flat(find(bands_flat>0,1,'first'));    
+else
+    min_f = min(bands_flat);
+end
+    
+if 1/min_f> welch_window_size/fs
         warning('This welch window size is too small for your bands and the results are incorrect- consider increasing it');
 end
 
 powerBands = nan(min(size(raw)),size(bands,1));
 
-if size(raw,2)< welch_window_size +fs
+if size(raw,1)< welch_window_size +fs
     warning('singal too short for the welch size');
 end
-if size(raw,2)< welch_window_size +1
+if size(raw,1)< welch_window_size +1
     warning('singal too short for the welch size and this method will not work')
 
 else

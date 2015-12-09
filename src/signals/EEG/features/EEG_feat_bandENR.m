@@ -20,7 +20,7 @@ fs = Signal__get_samprate(EEGSignal);
 welch_window_size = fs*15;
 %get the signal length
 
-sing_length = length(EEG_get_channel(EEGSignal, EEG_get_elname(1));
+sing_length = length(EEG_get_channel(EEGSignal, EEG_get_elname(1)));
 n_electrodes = length(electrode_labels.EEG);
 deltaBand = nan(1, n_electrodes);
 thetaBand = nan(1, n_electrodes);

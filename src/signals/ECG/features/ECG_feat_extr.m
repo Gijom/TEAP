@@ -68,7 +68,8 @@ if(~isempty(ECG_feats_names))
     ECG = Signal__get_raw(ECGSignal);
     ECG_sp = Signal__get_samprate(ECGSignal);
     %set the welch window size
-    welch_window_size = ECG_sp* 20;
+    welch_window_size_ECG = ECG_sp* 20;
+    welch_window_size_IBI= IBI_sp* 20;
     
     %meanIBI is computed
     if any(strcmp('meanIBI',ECG_feats_names)) || any(strcmp('HRV',ECG_feats_names))
@@ -79,21 +80,19 @@ if(~isempty(ECG_feats_names))
         %multi-scale entropy for 5 scales on hrv
         [MSE] = multiScaleEntropy(IBI,5);
     end
-    if length(ECG)< welch_window_size +ECG_sp
+    if length(ECG)< welch_window_size_ECG +ECG_sp
         warning('singal to short for the welch size');
     end
-    if length(ECG)< welch_window_size +1
+    if length(ECG)< welch_window_size_ECG +1
         warning('singal to short for the welch size - PSD features cannot be calcualted');
         sp0001 = NaN;sp0102 = NaN;sp0203 = NaN; sp0304 = NaN;energyRatio = NaN;
-        tachogram_LF = NaN;tachogram_MF = NaN;tachogram_HF = NaN;
-        tachogram_energy_ratio = NaN;
     else
         if any(strcmp('sp0001',ECG_feats_names)) || any(strcmp('sp0102',ECG_feats_names)) ...
                 || any(strcmp('sp0203',ECG_feats_names)) || any(strcmp('sp0304',ECG_feats_names)) ...
                 || any(strcmp('energyRatio',ECG_feats_names))
             
-            [P, f] = pwelch(ECG, welch_window_size, [], [], ECG_sp);
-            P=P/sum(P);tachogram_MF=nan; tachogram_HF= NaN;
+            [P, f] = pwelch(ECG, welch_window_size_ECG, [], [], ECG_sp);
+            P=P/sum(P);
             %power spectral featyres
             %WARN: check that this resolution is obrainable with the ECG sampling rate
             sp0001 = log(sum(P(f>0.0 & f<=0.1))+eps);
@@ -102,29 +101,38 @@ if(~isempty(ECG_feats_names))
             sp0304 = log(sum(P(f>0.3 & f<=0.4))+eps);
             energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
         end
-        %tachogram features; psd features on inter beat intervals
-        %R. McCraty, M. Atkinson, W. Tiller, G. Rein, and A. Watkins, �The
-        %effects of emotions on short-term power spectrum analysis of
-        %heart rate variability,� The American Journal of Cardiology, vol. 76,
-        %no. 14, pp. 1089 � 1093, 1995
-        if any(strcmp('tachogram_LF',ECG_feats_names)) ...
-                || any(strcmp('tachogram_MF',ECG_feats_names)) ||  any(strcmp('tachogram_HF',ECG_feats_names)) ...
-                || any(strcmp('tachogram_energy_ratio',ECG_feats_names))
-            
-            %Handle the case were IBI could not be computed
-            if(~isnan(IBI))
-                [Pt, ft] = pwelch(IBI, welch_window_size, [], [], IBI_sp);
-                %WARN: check that this is possible with the IBI sampling rate
-                %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
-                tachogram_LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
-                tachogram_MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
-                tachogram_HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
-                tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
-            else
-                tachogram_LF = NaN;
-                tachogram_MF = NaN;
-                tachogram_HF = NaN;
-                tachogram_energy_ratio = NaN;
+        if length(IBI)< welch_window_size_IBI +IBI_sp
+            warning('singal to short for the welch size');
+        end
+        if length(IBI)< welch_window_size_IBI +1
+            warning('singal to short for the welch size - PSD features cannot be calcualted');
+            tachogram_LF = NaN;tachogram_MF = NaN;tachogram_HF = NaN;
+            tachogram_energy_ratio = NaN;
+        else
+            %tachogram features; psd features on inter beat intervals
+            %R. McCraty, M. Atkinson, W. Tiller, G. Rein, and A. Watkins, �The
+            %effects of emotions on short-term power spectrum analysis of
+            %heart rate variability,� The American Journal of Cardiology, vol. 76,
+            %no. 14, pp. 1089 � 1093, 1995
+            if any(strcmp('tachogram_LF',ECG_feats_names)) ...
+                    || any(strcmp('tachogram_MF',ECG_feats_names)) ||  any(strcmp('tachogram_HF',ECG_feats_names)) ...
+                    || any(strcmp('tachogram_energy_ratio',ECG_feats_names))
+                
+                %Handle the case were IBI could not be computed
+                if(~isnan(IBI))
+                    [Pt, ft] = pwelch(IBI, welch_window_size_IBI, [], [], IBI_sp);
+                    %WARN: check that this is possible with the IBI sampling rate
+                    %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
+                    tachogram_LF = log(sum(Pt(ft>0.01 & ft<=0.08))+eps);
+                    tachogram_MF = log(sum(Pt(ft>0.08 & ft<=0.15))+eps);
+                    tachogram_HF = log(sum(Pt(ft>0.15 & ft<=0.5))+eps);
+                    tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
+                else
+                    tachogram_LF = NaN;
+                    tachogram_MF = NaN;
+                    tachogram_HF = NaN;
+                    tachogram_energy_ratio = NaN;
+                end
             end
         end
     end

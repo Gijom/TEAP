@@ -43,7 +43,6 @@ end
 featuresNames = {'SP_delta', 'SP_theta', 'SP_slowAlpha','SP_alpha','SP_beta','SP_gamma'};
 EEG_feats_names = featuresSelector(featuresNames,varargin{:});
 config_file;
-n_electrodes = length(electrode_labels.EEG);
 %If some features are selected
 if(~isempty(EEG_feats_names))    
     if any(strncmp('SP',EEG_feats_names,2))       

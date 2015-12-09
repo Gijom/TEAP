@@ -29,7 +29,7 @@ function [BVP_feats, BVP_feats_names, Bulk] = BVP_feat_extr(BVPSignal,varargin)
 %                   check this vector since the order of requested features
 %                   can be different than the requested one)
 %  Bulk: if the input to the function is a Bulk than the Bulk is returned
-%        with the updated ECG signal, including IBI. Otherwise NaN is
+%        with the updated BVP signal, including IBI. Otherwise NaN is
 %        returned
 %Copyright Guillaume Chanel 2013
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
@@ -60,7 +60,7 @@ if(~isempty(BVP_feats_names))
         IBI = Signal__get_raw(BVPSignal.IBI);
         IBI_sp = Signal__get_samprate(BVPSignal.IBI);
         
-        %Update the Bulk with the new ECG signal
+        %Update the Bulk with the new BVP signal
         if(~isempty(Bulk))
             Bulk = Bulk_update_signal(Bulk, Signal__get_signame(BVPSignal), BVPSignal);
         end
@@ -86,19 +86,19 @@ if(~isempty(BVP_feats_names))
         [MSE] = multiScaleEntropy(IBI,5);
     end
     
-    welch_window_size = fs*20;
-    if length(rawSignal)< welch_window_size +fs
+    welch_window_size_BVP = samprate*20;
+    welch_window_size_IBI = IBI_sp*20;
+    if length(rawSignal)< welch_window_size_BVP +samprate
         warning('Signal is too short for this welch window size');
     end
-    if length(rawSignal)< welch_window_size +1
+    if length(rawSignal)< welch_window_size_BVP +1
         warning('Signal is too short for this welch window size and the PSD features cannot be calculated');
         sp0001 = NaN;sp0102 = NaN;sp0203 = NaN; sp0304 = NaN;sp_energyRatio = NaN;
-        tachogram_LF = NaN;tachogram_MF = NaN;tachogram_HF = NaN;
-        tachogram_energy_ratio = NaN;
+        
     else
         
         if any(strncmp('sp',BVP_feats_names,2))
-            [P, f] = pwelch(rawSignal, [], [], [], samprate,'power');
+            [P, f] = pwelch(rawSignal, welch_window_size_BVP, [], [], samprate);
             P=P/sum(P);
             %power spectral featyres
             sp0001 = log(sum(P(f>0.0 & f<=0.1))+eps);
@@ -107,7 +107,15 @@ if(~isempty(BVP_feats_names))
             sp0304 = log(sum(P(f>0.3 & f<=0.4))+eps);
             sp_energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
         end
-        
+    end
+    if length(IBI)< welch_window_size_BVP +IBI_sp
+        warning('Signal is too short for this welch window size');
+    end
+    if length(IBI)< welch_window_size_BVP +1
+        warning('Signal is too short for this welch window size and the PSD features cannot be calculated');
+        tachogram_LF = NaN;tachogram_MF = NaN;tachogram_HF = NaN;
+        tachogram_energy_ratio = NaN;
+    else
         %tachogram features; psd features on inter beat intervals
         %R. McCraty, M. Atkinson, W. Tiller, G. Rein, and A. Watkins, "The
         %effects of emotions on short-term power spectrum analysis of
@@ -116,7 +124,7 @@ if(~isempty(BVP_feats_names))
         if any(strcmp('tachogram_LF',BVP_feats_names)) ...
                 || any(strcmp('tachogram_MF',BVP_feats_names)) ||  any(strcmp('tachogram_HF',BVP_feats_names)) ...
                 || any(strcmp('tachogram_energy_ratio',BVP_feats_names))
-            [Pt, ft] = pwelch(IBI, [], [], [], IBI_sp,'power');
+            [Pt, ft] = pwelch(IBI, welch_window_size_BVP, [], [], IBI_sp);
             clear tachogram %TODO: delete ? Why is it useful ?
             %WARN: check that this is possible with the IBI sampling rate
             %WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?
@@ -126,12 +134,13 @@ if(~isempty(BVP_feats_names))
             tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
         end
     end
-    %Write the values to the final vector output
-    BVP_feats = [];
-    for (i = 1:length(BVP_feats_names))
-        eval(['BVP_feats = cat(2, BVP_feats, ' BVP_feats_names{i} ');']);
-    end
-    
+end
+%Write the values to the final vector output
+BVP_feats = [];
+for (i = 1:length(BVP_feats_names))
+    eval(['BVP_feats = cat(2, BVP_feats, ' BVP_feats_names{i} ');']);
+end
+
 else %no features selected
     BVP_feats = [];
 end

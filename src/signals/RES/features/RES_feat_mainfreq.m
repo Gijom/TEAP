@@ -25,7 +25,7 @@ Apass = 1;      % Bandwidth Attenuation
 Resp_filt = filtfilt(b, a, raw);
 
 if length(Resp_filt)<60*fs
-    warning('Resp signal too short cannot calculate the spectral features')
+    warning('Resp signal too short cannot calculate the spectral features - result of the central respiration frequency is not goign to be reliable')
 end
 %Compute the energy spectrum
 [RespPower, fResp] = pwelch(Resp_filt, [], [], [], fs,'power');

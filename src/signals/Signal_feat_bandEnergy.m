@@ -20,21 +20,34 @@ fs = Signal__get_samprate(Signal);
 if size(raw,1)<size(raw,2)
     raw = raw';
 end
-
-for i = 1:size(raw,2)
-    [P(:,i),f] = pwelch(raw,[],[],[],fs, 'power');
+welch_window_size = fs* 10;
+if 1/min(bands(:))> welch_window_size/fs
+        warning('This welch window size is too small for your bands and the results are incorrect- consider increasing it');
 end
-%features for every band
 
-powerBands = zeros(min(size(raw)),size(bands,1));
+powerBands = nan(min(size(raw)),size(bands,1));
 
-for j = 1:size(raw,2)
-    for i = 1:size(bands,1)
-        powerBands(j,i) = log(sum(P(f> bands(i,1)& f<=bands(i,2),j))+eps);
+if size(raw,2)< welch_window_size +fs
+    warning('singal too short for the welch size');
+end
+if size(raw,2)< welch_window_size +1
+    warning('singal too short for the welch size and this method will not work')
+
+else
+    
+    for i = 1:size(raw,2)
+        [P(:,i),f] = pwelch(raw,welch_window_size,[],[],fs);
     end
+    %features for every band
+    
+    
+    for j = 1:size(raw,2)
+        for i = 1:size(bands,1)
+            powerBands(j,i) = log(sum(P(f> bands(i,1)& f<=bands(i,2),j))+eps);
+        end
+    end
+    
 end
-
-
 
 
 

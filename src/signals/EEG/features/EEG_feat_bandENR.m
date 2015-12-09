@@ -11,38 +11,43 @@ function [deltaBand, thetaBand, slowAlphaBand, alphaBand, betaBand, gammaBand] =
 %
 %Copyright Mohammad Soleymani 2009
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+config_file;
 
 EEGSignal = EEG__assert_type(EEGSignal);
 
 fs = Signal__get_samprate(EEGSignal);
-
-
-%NB: if you want to offset the signal (eg: take out the first 0.5 secs, use
-%the Signal__get_window(Signal, 0.5) function
-config_file;
-n_electrodes = length(electrode_labels.EEG);
-deltaBand = zeros(1, n_electrodes);
-thetaBand = zeros(1, n_electrodes);
-alphaBand = zeros(1, n_electrodes);
-betaBand  = zeros(1, n_electrodes);
-slowAlphaBand = zeros(1, n_electrodes);
-gammaBand = zeros(1, n_electrodes);
 %default is 15 seconds long
-%welchWindow = fs*15;
+welch_window_size = fs*15;
+%get the signal length
 
-for iElec = 1:n_electrodes
-	name = EEG_get_elname(iElec);
-	data = EEG_get_channel(EEGSignal, name);
-    %detrending the EEG signals
-    data = detrend(data);
-	%Welch method to compute energy of the current electrode (trial + BL)
-	[PowerTrial, fTrial] = pwelch(data, [] , [], [], fs,'power');
-    deltaBand(iElec) = log(sum(PowerTrial(fTrial>0 & fTrial<4)));
-	thetaBand(iElec) = log(sum(PowerTrial(4<=fTrial & fTrial<8)));
-	slowAlphaBand(iElec) = log(sum(PowerTrial(8<=fTrial & fTrial<10)));
-    alphaBand(iElec) = log(sum(PowerTrial(8<=fTrial & fTrial<12)));
-	betaBand(iElec)  = log(sum(PowerTrial(12<=fTrial & fTrial<30)));
-	gammaBand(iElec) = log(sum(PowerTrial(30<fTrial)));
+sing_length = length(EEG_get_channel(EEGSignal, EEG_get_elname(1));
+n_electrodes = length(electrode_labels.EEG);
+deltaBand = nan(1, n_electrodes);
+thetaBand = nan(1, n_electrodes);
+alphaBand = nan(1, n_electrodes);
+betaBand  = nan(1, n_electrodes);
+slowAlphaBand = nan(1, n_electrodes);
+gammaBand = nan(1, n_electrodes);
+
+if sing_length< welch_window_size +fs
+    warning('singal too short for the welch size')
 end
-
-
+if sing_length< welch_window_size +1
+    warning('singal too short for the welch size and this method will not work')
+else   
+    for iElec = 1:n_electrodes
+        name = EEG_get_elname(iElec);
+        data = EEG_get_channel(EEGSignal, name);
+        %detrending the EEG signals
+        data = detrend(data);
+        %Welch method to compute energy of the current electrode (trial + BL)
+        [PowerTrial, fTrial] = pwelch(data, welch_window_size , [], [], fs);
+        deltaBand(iElec) = log(sum(PowerTrial(fTrial>0 & fTrial<4)));
+        thetaBand(iElec) = log(sum(PowerTrial(4<=fTrial & fTrial<8)));
+        slowAlphaBand(iElec) = log(sum(PowerTrial(8<=fTrial & fTrial<10)));
+        alphaBand(iElec) = log(sum(PowerTrial(8<=fTrial & fTrial<12)));
+        betaBand(iElec)  = log(sum(PowerTrial(12<=fTrial & fTrial<30)));
+        gammaBand(iElec) = log(sum(PowerTrial(30<fTrial)));
+    end
+    
+end

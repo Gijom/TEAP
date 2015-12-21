@@ -134,14 +134,14 @@ if(~isempty(BVP_feats_names))
             tachogram_energy_ratio = tachogram_MF/(tachogram_LF+tachogram_HF);
         end
     end
-end
-%Write the values to the final vector output
-BVP_feats = [];
-for (i = 1:length(BVP_feats_names))
-    eval(['BVP_feats = cat(2, BVP_feats, ' BVP_feats_names{i} ');']);
-end
 
-else %no features selected
-    BVP_feats = [];
-end
+	%Write the values to the final vector output
+	BVP_feats = [];
+	for (i = 1:length(BVP_feats_names))
+		eval(['BVP_feats = cat(2, BVP_feats, ' BVP_feats_names{i} ');']);
+	end
+
+	else %no features selected
+		BVP_feats = [];
+	end
 end

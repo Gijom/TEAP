@@ -44,7 +44,7 @@ if size(raw,1)< welch_window_size +1
 else
     
     for i = 1:size(raw,2)
-        [P(:,i),f] = pwelch(raw,welch_window_size,[],[],fs);
+        [P(:,i),f] = pwelch(raw(:,i),welch_window_size,[],[],fs);
     end
     %features for every band
     

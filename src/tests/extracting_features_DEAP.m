@@ -11,7 +11,7 @@ if ~exist([physio_path '/s30_eeglab.mat'],'file')
     loading_DEAP(physio_path);
 end
 %a problem with subject 24 26
-for subject=28:32
+for subject=1:32
     eeglab_file = sprintf('%s/s%0.2d_eeglab.mat',physio_path,subject);
     %loading the file
     bulk = Bulk_load(eeglab_file);
@@ -27,11 +27,11 @@ for subject=28:32
         [features(subject,epoch).GSR_feats, features(subject,epoch).GSR_feats_names] = ...
             GSR_feat_extr(bulk(epoch));
         %extracting BVP features
-        %[features(subject,epoch).BVP_feats, features(subject,epoch).BVP_feats_names] = ...
-%            BVP_feat_extr(bulk(epoch));
+        [features(subject,epoch).BVP_feats, features(subject,epoch).BVP_feats_names] = ...
+            BVP_feat_extr(bulk(epoch));
         %extracting skin temperature features
-        [features(subject,epoch).HST_feats, features(subject,epoch).HST_feats_names] = ...
-            HST_feat_extr(bulk(epoch));
+        %[features(subject,epoch).HST_feats, features(subject,epoch).HST_feats_names] = ...
+        %    HST_feat_extr(bulk(epoch));
         %extracting respiration features
         [features(subject,epoch).RES_feats, features(subject,epoch).RES_feats_names] = ...
             RES_feat_extr(bulk(epoch));

@@ -16,7 +16,7 @@ if(isempty(Signal__get_raw(BVPSignal.IBI)))
 
     %Compute IBI
     newfs = 256; %Hz, as needed by rpeakdetect
-    BVP = downsample(rawSignal, samprate/newfs); %WARN what happens if samprate/newfs is not a integer ?
+    BVP = resample(rawSignal, newfs, samprate); %WARN what happens if samprate/newfs is not a integer ?
     BVP = detrend(BVP);
     [hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(BVP', newfs);
     [~, IBI, ~, listePeak] = correctBPM(R_index, newfs);

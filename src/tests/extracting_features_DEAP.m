@@ -6,13 +6,13 @@ curr_path = cd;
 eval(['cd ' TEAP_path]);
 init
 eval(['cd ' curr_path]);
-physio_path = '/user/mmi/emotion/data/DEAP/physio_data';
+physio_path = '/user/mmi/emotion/data/DEAP/physio_data/';
 if ~exist([physio_path '/s30_eeglab.mat'],'file')
     loading_DEAP(physio_path);
 end
 %a problem with subject 24 26
 for subject=1:32
-    eeglab_file = sprintf('%s/s%0.2d_eeglab.mat',physio_path,subject);
+    eeglab_file = sprintf('%ss%0.2d_eeglab.mat',physio_path,subject);
     %loading the file
     bulk = Bulk_load(eeglab_file);
     %exracting EMG feaures
@@ -39,3 +39,8 @@ for subject=1:32
         %todo store it somebwere
     end
 end
+
+save([physio_path 'mahnob_features.mat'],'features');
+
+
+fprintf('Done! Successfully extracted the feaures\n');

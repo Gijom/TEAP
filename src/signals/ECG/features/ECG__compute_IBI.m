@@ -16,8 +16,11 @@ if(isempty(Signal__get_raw(ECGSignal.IBI)))
 
     %Compute IBI
     newfs = 256; %Hz, as needed by rpeakdetect
-    ECG = downsample(rawSignal, samprate/newfs); %WARN what happens if samprate/newfs is not a integer ?
-    [hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG', newfs);
+    ECG = resample(rawSignal, newfs, samprate); %WARN what happens if samprate/newfs is not a integer ?
+    if size(ECG,1)<size(ECG,2)
+        ECG = ECG';
+    end
+    [hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG, newfs);
     [~, IBI, ~, listePeak] = correctBPM(R_index, newfs);
     
     %If the number of detected peaks is lower than 2 than IBI cannot be

@@ -39,7 +39,7 @@ tThreshUp  = 10;
 %low peaks are the GSR appex reactions (highest sudation)
 %High peaks are used as starting points for the reaction
 GSR = Signal__get_raw(GSRsignal);
-
+GSR = detrend(GSR);
 dN = diff(diff(GSR) <= 0);
 idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;
@@ -51,7 +51,6 @@ samprate = Signal__get_samprate(GSRsignal);
 riseTime = []; %vector of rise time for each detected peak
 ampPeaks = []; %vector of amplitude for each detected peak
 posPeaks = []; %vector of final indexes of low peaks
-
 for(iP = [1:length(idxL)])
 	%get list of high peaks before the current low peak
 	nearestHP = idxH(idxH < idxL(iP));

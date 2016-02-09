@@ -4,7 +4,7 @@ function [nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal, amp
 % Inputs:
 %  GSRsignal: the GSR signal.
 %  ampThresh: the amplitude threshold in Ohms from which a peak is detected.
-%             Default is 200 Ohm
+%             Default is 100 Ohm
 % Outputs:
 %  nbPeaks: the # of peaks in the signal
 %  ampPeaks [1xP]: the amplitude of the peaks (maxima - minima)

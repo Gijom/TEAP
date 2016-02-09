@@ -29,6 +29,11 @@ if(isempty(Signal__get_raw(ECGSignal.IBI)))
         warning(['A least 2 peaks are needed to compute IBI but ' num2str(length(listePeak)) ' were found: result will be NaN'])
         ECGSignal.IBI = Signal__set_raw(ECGSignal.IBI,IBI);
     else
+        %Attribute the computed signal to IBI to check if range is correct
+        % This is done now because this can cause problems in the resampling
+        ECGSignal.IBI = Signal__set_raw(ECGSignal.IBI,IBI);
+        Signal__assert_range(ECGSignal.IBI, 0.25, 1.5, 1);
+        
         %Resample the signal with the one requested for IBI
         IBI_samprate = Signal__get_samprate(ECGSignal.IBI);
         IBI = interpIBI(listePeak/newfs,IBI_samprate,listePeak(end)/newfs)';

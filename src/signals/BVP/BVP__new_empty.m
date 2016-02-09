@@ -9,4 +9,4 @@ Signal = Signal__set_unit(Signal, 'undef');
 Signal.IBI = Signal__new_empty(); %Inter beat interval (empty if not computed) a vector otherwise
 Signal.IBI = Signal__set_signame(Signal.IBI, 'IBI');
 Signal.IBI = Signal__set_unit(Signal.IBI, 's'); %For the moment the user cannot choose it
-Signal.IBI = Signal__set_samprate(Signal.IBI, 4); %For the moment the user cannot choose it
+Signal.IBI = Signal__set_samprate(Signal.IBI, 8); %For the moment the user cannot choose it

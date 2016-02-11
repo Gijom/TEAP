@@ -38,7 +38,7 @@ elseif strcmp(GSRsignal.unit,'nS')
     GSRsignal.raw = 1./(GSRsignal.raw*10E9);
     ampThresh = 100;%Ohm
 else
-    error('The GSR unit is unknows; please fix it - the threshold shall be adjusted to the unit')
+    error('The GSR unit is unknows; please fix it - a threshold shall be adjusted to the unit')
 end
 
 %If some features are selected

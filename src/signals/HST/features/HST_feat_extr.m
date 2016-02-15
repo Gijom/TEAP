@@ -16,10 +16,11 @@
 %>                   can be different than the requested one)
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 
-% Check inputs and define unknown values
-narginchk(1, Inf);
 
 function [HST_feats, HST_feats_names] = HST_feat_extr(HSTsignal,varargin)
+
+% Check inputs and define unknown values
+narginchk(1, Inf);
 
 %Make sure we have a HST signal
 HSTsignal = HST__assert_type(HSTsignal);

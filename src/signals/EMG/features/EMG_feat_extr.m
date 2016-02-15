@@ -14,8 +14,6 @@
 %>                          can be different than the requested one)
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 
-% Check inputs and define unknown values
-narginchk(1, Inf);
 %
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %>          signal
@@ -23,6 +21,8 @@ narginchk(1, Inf);
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function [EMG_feats, EMG_feats_names] = EMG_feat_extr(EMGsignal, varargin)
 
+% Check inputs and define unknown values
+narginchk(1, Inf);
 
 %Make sure we have a EMG signal
 EMGsignal = EMG__assert_type(EMGsignal);

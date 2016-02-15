@@ -18,9 +18,9 @@
 
 %> @author Copyright Mohammad Soleymani, Guillaume Chanel, Frank Villaro-Dixon, BSD Simplified, 2015
 function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
+
 % Check inputs and define unknown values
 narginchk(1, Inf);
-
 
 %Make sure we have a EEG signal
 EEGsignal = EEG__assert_type(EEGsignal);

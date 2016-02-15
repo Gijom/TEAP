@@ -1,5 +1,5 @@
 %> @file Signal__set_absolute.m
-%> @ brief Sets the data of the signal to absolute or relative
+%> @brief Sets the data of the signal to absolute or relative
 %>
 %> Example: for a HST signal, do you have samples like [37, 37.5, 37.6] or more
 %> like [0, 0.5, 0.6] ? If true, the data is absolute (37), if false, it is relative (0).

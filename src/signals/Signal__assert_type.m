@@ -7,7 +7,7 @@
 
 %> @param  Signal: The signal you want to make sure of the type (can be a BULK signal,
 %>          in that case, will take the component.
-%> @param Bulk: if the input is a bulk than the bulk is also returned to keep a
+%> Bulk: if the input is a bulk than the bulk is also returned to keep a
 %>        backup of it. An empty vector is returned if the input is not a Bulk
 %> @param  nameWanted: the type the signal must be of (ex: 'GSR').
 

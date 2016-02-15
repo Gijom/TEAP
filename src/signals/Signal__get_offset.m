@@ -6,7 +6,7 @@
 %> @attention SEE ALSO:
 %>  - @c Signal__get_window
 %>  - @c Signal__get_window_frames
-%
+%>
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function offset = Signal__get_offset(Signal)
 

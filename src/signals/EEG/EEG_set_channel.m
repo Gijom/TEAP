@@ -5,7 +5,7 @@
 %> @param  channelName: the name of the channel (ex: 'AF3')
 %> @param  channelData: the data
 
-%> @retval  Signal
+%> @retval  Signal The set signal
 
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = EEG_set_channel(Signal, channelName, channelData)

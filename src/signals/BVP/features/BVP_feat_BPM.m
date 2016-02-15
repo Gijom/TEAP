@@ -1,7 +1,7 @@
 %> @file BVP_feat_BPM.m
 %> @brief Computes the BPM from a BVP signal
 
-%> @param  BVPs: the BVP signal
+%> @param  BVPSignal: the BVP signal
 
 %> @retval  BPM: the beats per minute
 %

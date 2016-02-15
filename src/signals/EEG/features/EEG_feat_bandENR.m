@@ -4,10 +4,10 @@
 %> @param  EEGSignal: the @b EEG signal
 
 %> @retval  thetaBand: 1xN vector; N number of electrodes
-%> @retval  alphaBand
-%> @retval  betaBand
-%> @retval  slowAlpha
-%> @retval  gammaBand
+%> @retval  alphaBand: 1xN vector; N number of electrodes
+%> @retval  betaBand: 1xN vector; N number of electrodes
+%> @retval  slowAlpha: 1xN vector; N number of electrodes
+%> @retval  gammaBand: 1xN vector; N number of electrodes
 %
 %> @author Copyright Mohammad Soleymani 2009
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014

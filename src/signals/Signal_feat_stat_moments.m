@@ -1,12 +1,12 @@
 %> @file Signal_feat_stat_moments.m
 %> @brief Computes the statistical moments for the input signals
 
-%> @param  Signal
+%> @param  Signal The signal to compute
 
-%> @retval  MU: the calculated std, using the @c mean() function
-%> @retval STD: the calculated std, using the @c std() function
-%> @retval KU: the calculated Kurtosis, using the @c kurtosis() function
-%> @retval SK: the calculated skewness, using the @c skewness() function
+%> @retval mean_: the calculated std, using the @c mean() function
+%> @retval std_: the calculated std, using the @c std() function
+%> @retval kurtosis_: the calculated Kurtosis, using the @c kurtosis() function
+%> @retval skewness_: the calculated skewness, using the @c skewness() function
 
 %> @author Copyright Moahmmad Soleymani and Frank Villaro-Dixon, BSD Simplified, 2015
 function [mean_,std_, kurtosis_, skewness_]= Signal_feat_stat_moments(Signal)

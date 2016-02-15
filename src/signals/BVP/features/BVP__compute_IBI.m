@@ -1,11 +1,9 @@
-function BVPSignal = BVP__compute_IBI( BVPSignal )
-%Computes the IBI if it is not yet available
-% Inputs:
-%  BVPSignal: the BVP signal
-% Outputs:
-%  BVPSignal: the BVP signal containing the computed IBI signal
+%> @brief Computes the IBI if it is not yet available
+%> @param  BVPSignal: the BVP signal
+%> @retval  BVPSignal: the @b BVP signal containing the computed IBI signal
 %
-%Copyright Guillaume Chanel 2015
+%> @author Copyright Guillaume Chanel 2015
+function BVPSignal = BVP__compute_IBI( BVPSignal )
 
 %Compute the signal if it has not been already computed
 if(isempty(Signal__get_raw(BVPSignal.IBI)))

@@ -1,12 +1,12 @@
+%> @brief Set a preprocessing attribute for a signal. Ex: lowPass, highPass
+
+%> @param  Signal: the signal
+%> @param  preprocName: the name of the preprocessing calculus done
+
+%> @retval  Signal: the modified signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = Signal__set_preproc(Signal, preprocName)
-%Set a preprocessing attribute for a signal. Ex: lowPass, highPass
-% Inputs:
-%  Signal: the signal
-%  preprocName: the name of the preprocessing calculus done
-% Outputs:
-%  Signal: the modified signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Signal = Signal__set_preproc(Signal, preprocName)');

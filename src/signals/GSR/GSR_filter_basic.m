@@ -1,12 +1,11 @@
+%> @brief Cleans a signal adding a low-pass mean filter to it. The window equals the
+%> sample rate, aka 1 sec.
+
+%> @param  GSRsignal: the GSR signal.
+%> @retval  Signal: the filtered GSR signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function GSRsignal = GSR_filter_basic(GSRsignal)
-%Cleans a signal adding a low-pass mean filter to it. The window equals the
-%sample rate, aka 1 sec.
-% Inputs:
-%  GSRsignal: the GSR signal.
-% Outputs:
-%  Signal: the filtered GSR signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have a GSR signal

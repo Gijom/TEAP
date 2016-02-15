@@ -1,9 +1,8 @@
-function Signal = Signal__new_empty()
-%Creates a new, empty, signal. This is mainly to represent the data structure
-% Output:
-%  Signal: an empty signal
+%> @brief Creates a new, empty, signal. This is mainly to represent the data structure
+%> @retval  Signal: an empty signal
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function Signal = Signal__new_empty()
 
 Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk
 

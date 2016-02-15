@@ -1,12 +1,10 @@
-function Boolean = Signal__has_preproc(Signal, preprocName)
-%Has the given signal been through this preprocessing step
-% Inputs:
-%  Signal: the signal
-%  preprocName: the pre-processing you want
-% Outputs:
-%  Boolean: a boolean value indicating if yes (1) or no (you guessed-it)
+%> @brief Has the given signal been through this preprocessing step
+%> @param  Signal: the signal
+%> @param preprocName: the pre-processing you want
+%> @retval  Boolean: a boolean value indicating if yes (1) or no (you guessed-it)
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function Boolean = Signal__has_preproc(Signal, preprocName)
 
 %Does the signal have some preprocessing done ?
 if(~isfield(Signal, 'preprocessing')) %No preprocessing whatsoever

@@ -1,10 +1,9 @@
+%> @brief Gets the list of the signals of the bulk signal. Ex: ['GSR'; 'EEG'].
+
+%> @param BulkSig the bulk signal
+
+%> @retval signals the array containing the signals name (ex: ['GSR'; 'EEG'])
 function [signals] = Bulk_get_signals(BulkSig)
-%Gets the list of the signals of the bulk signal. Ex: ['GSR'; 'EEG'].
-% Inputs:
-%  BulkSig: the bulk signal
-% Outputs:
-%  signals: the array containing the signals name (ex: ['GSR'; 'EEG'])
-%
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 Bulk_assert_mine(BulkSig);
@@ -18,6 +17,5 @@ for i = [1:size(fields)];
 		signals = [fields{i}; signals];
 	end
 end
-
 
 

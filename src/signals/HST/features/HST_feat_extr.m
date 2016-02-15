@@ -1,28 +1,25 @@
-function [HST_feats, HST_feats_names] = HST_feat_extr(HSTsignal,varargin)
-%Computes Skin temperature features
-% Inputs:
-%  HSTsignal: the temperature  signal.
-%  varargin: you can choose which features to extract (see featureSelector)
-%            the list of available features is:
-%               - mean: average temprature
-%               - std: standard deviation of the temperature
-%               - kurtosis: Kurtosis of the temperature
-%               - skewness: skewness of the temperature
-% Outputs:
-%  HST_feats: list of features values
-%  HST_feats_names: names of the computed features (it is good pratice to
-%                   check this vector since the order of requested features
-%                   can be different than the requested one)
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2015
+%> @brief Computes Skin temperature features
+%> @b WARNING: this function will give 'strange' results when applied on a relative
+%>          signal
+
+%> @param  HSTsignal the temperature  signal.
+%> @param varargin you can choose which features to extract (see featureSelector)
+%>            the list of available features is:
+%>               - mean: average temprature
+%>               - std: standard deviation of the temperature
+%>               - kurtosis: Kurtosis of the temperature
+%>               - skewness: skewness of the temperature
+
+%> @retval HST_feats list of features values
+%> @retval HST_feats_names names of the computed features (it is good pratice to
+%>                   check this vector since the order of requested features
+%>                   can be different than the requested one)
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 
 % Check inputs and define unknown values
 narginchk(1, Inf);
-%
-% WARNING: this function will give 'strange' results when applied on a relative
-%          signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
+function [HST_feats, HST_feats_names] = HST_feat_extr(HSTsignal,varargin)
 
 %Make sure we have a HST signal
 HSTsignal = HST__assert_type(HSTsignal);

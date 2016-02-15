@@ -1,12 +1,12 @@
+%> @brief Cleans a signal adding a low-pass mean filter to it. The window equals the
+%> sample rate, aka 1 sec.
+
+%> @param RESsignal: the RES signal.
+
+%> @retval Signal: the filtered RES signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function RESsignal = RES_filter_basic(RESsignal)
-%Cleans a signal adding a low-pass mean filter to it. The window equals the
-%sample rate, aka 1 sec.
-% Inputs:
-%  RESsignal: the RES signal.
-% Outputs:
-%  Signal: the filtered RES signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have a RES signal

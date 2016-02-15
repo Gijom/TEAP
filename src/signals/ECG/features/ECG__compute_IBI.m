@@ -1,11 +1,9 @@
-function ECGSignal = ECG__compute_IBI( ECGSignal )
-%Computes the IBI if it is not yet available
-% Inputs:
-%  ECGSignal: the ECG signal
-% Outputs:
-%  ECGSignal: the ECG signal containing the computed IBI signal
+%> @brief Computes the IBI if it is not yet available
+%> @param  ECGSignal: the ECG signal
+%> @retval  ECGSignal: the ECG signal containing the computed IBI signal
 %
-%Copyright Guillaume Chanel 2015
+%> @author Copyright Guillaume Chanel 2015
+function ECGSignal = ECG__compute_IBI( ECGSignal )
 
 %Compute the signal if it has not been already computed
 if(isempty(Signal__get_raw(ECGSignal.IBI)))

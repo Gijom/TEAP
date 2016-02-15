@@ -1,8 +1,8 @@
+%> @brief Asserts that the signal is a TEAPhysio bulk signal
+
+%> @param BulkSignal the signal to test
+
 function Bulk_assert_mine(BulkSignal)
-%Asserts that the signal is a TEAPhysio bulk signal
-% Inputs:
-%  BulkSignal: the signal to test
-%
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)
@@ -21,7 +21,6 @@ if(isfield(BulkSignal, 'TEAPhysio'))
 end
 
 error('The signal given is not a TEAPhysio one')
-
 
 %!error(Bulk_assert_mine(42))
 %!error(Bulk_assert_mine())

@@ -1,17 +1,18 @@
+%> @brief Computes the number of peaks from a GSR signal. It is based on the analysis of
+%> local minima and local maxima preceding the local minima.
+
+%> @param  GSRsignal: the GSR signal.
+%> @param  ampThresh: the amplitude threshold in Ohms from which a peak is detected.
+%>             Default is 100 Ohm
+
+%> @retval  nbPeaks: the # of peaks in the signal
+%> @retval  ampPeaks [1xP]: the amplitude of the peaks (maxima - minima)
+%> @retval  riseTime [1xP]: the duration of the rise time of each peak
+%> @retval  posPeaks [1xP]: index of the detected peaks in the GSR signal
+
+%> @author Copyright XXX 2011
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function [nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal, ampThresh)
-%Computes the number of peaks from a GSR signal. It is based on the analysis of
-%local minima and local maxima preceding the local minima.
-% Inputs:
-%  GSRsignal: the GSR signal.
-%  ampThresh: the amplitude threshold in Ohms from which a peak is detected.
-%             Default is 100 Ohm
-% Outputs:
-%  nbPeaks: the # of peaks in the signal
-%  ampPeaks [1xP]: the amplitude of the peaks (maxima - minima)
-%  riseTime [1xP]: the duration of the rise time of each peak
-%  posPeaks [1xP]: index of the detected peaks in the GSR signal
-%Copyright XXX 2011
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have a GSR signal

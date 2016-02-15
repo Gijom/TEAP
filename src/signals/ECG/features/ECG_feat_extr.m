@@ -1,5 +1,4 @@
-function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargin)
-%Computes  ECG features
+%> @brief Computes  ECG features
 %TODO: clarifiy the help
 %TODO call on other simple function instead of having all the computation
 %TODO: changes all any statement to all or ismember because I think it can
@@ -7,17 +6,18 @@ function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargi
 %in one file
 %
 % Inputs:
-%  ECGSignal: the ECG signal (already subtracted from one lead)
-%  varargin: you can choose which features to extract
-% default or no input will result in extracting all the features
-% Outputs:
-%  ECG_features: vector of features among the following features
-%  ECG_feats_names: the names of the features is the same order than in
-%                   'ECG_features'
-%  Bulk: if the input to the function is a Bulk than the Bulk is returned
-%        with the updated ECG signal, including IBI. Otherwise NaN is
-%        returned
-%TODO update feature names there
+%> @param  ECGSignal: the ECG signal (already subtracted from one lead)
+%> @param  varargin: you can choose which features to extract
+%> default or no input will result in extracting all the features
+
+%> @retval  ECG_features: vector of features among the following features
+%> @retval  ECG_feats_names: the names of the features is the same order than in
+%>                   'ECG_features'
+%> @retval  Bulk: if the input to the function is a Bulk than the Bulk is returned
+%>        with the updated ECG signal, including IBI. Otherwise NaN is
+%>        returned
+%>
+%>TODO update feature names there
 %1. 2. mean HRV, 3. mean heart rate,
 %4-8. Multiscale entropy at 5 levels on HRV (5 feaures),
 %9. Spectral power 0-0.1Hz,
@@ -32,8 +32,9 @@ function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargi
 % ECG_feats_names: names of features corresponding to th ECG_features
 % values
 
-%Copyright Guillaume Chanel 2013, 2015
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Guillaume Chanel 2013, 2015
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargin)
 
 %Make sure we have an ECG signal and get the bulk for saving IBI (if needed)
 [ECGSignal, Bulk] = ECG__assert_type(ECGSignal);

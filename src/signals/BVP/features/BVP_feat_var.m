@@ -1,12 +1,9 @@
-function mvar = BVP_feat_var(BVPSignal)
-%Computes the variance of a BVP signal
-% Inputs:
-%  BVPs: the BVP signal
-% Outputs:
-%  mvar: the signal's variance
+%> @brief Computes the variance of a @b BVP signal
+%> @param  BVPSignal: the @b BVP signal
+%> @retval mvar: the signal's variance
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
-
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function mvar = BVP_feat_var(BVPSignal)
 
 %Make sure we have an BVP signal
 BVPSignal = BVP__assert_type(BVPSignal);

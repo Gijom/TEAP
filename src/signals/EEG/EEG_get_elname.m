@@ -1,13 +1,13 @@
-function [name] = EEG_get_elname(num)
-%Gets the electrode name from a number
-% Inputs:
-%  number: the electrode number (eg: 2)
-% Outputs:
-%  name: the name (eg: 'AF3')
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @brief Gets the electrode name from a number
 
-config_file; 
+%> @param  number: the electrode number (eg: 2)
+
+%> @retval  name: the name (eg: 'AF3')
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function [name] = EEG_get_elname(num)
+
+config_file;
 name = electrode_labels.EEG{num};
 
 

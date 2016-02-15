@@ -1,13 +1,13 @@
-function Signal_plot(Signal, startT, endT)
-%Plots a signal: value vs time, between startT and entT.
-% Signal_plot(sig); Signal_plot(sig, start); Signal_plot(sig, start, end);
-% NOTA BENE: if you want to display a bulk signal instead, use Bulk_plot(Bulk);
-% Inputs:
-%  Signal: the sigal to plot
-%  startT: the start time, in frames (optional)
-%  endT: the end time, or 0 if all the signal (optional)
+%> @brief Plots a signal: value vs time, between startT and entT.
+%> @c Signal_plot(sig); @c Signal_plot(sig, start); @c Signal_plot(sig, start, end);
+%> @attention NOTA BENE: if you want to display a bulk signal instead, use Bulk_plot(Bulk);
+
+%> @param  Signal: the sigal to plot
+%> @param  startT: the start time, in frames (optional)
+%> @param  endT: the end time, or 0 if all the signal (optional)
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function Signal_plot(Signal, startT, endT)
 
 raw = Signal__get_raw(Signal);
 

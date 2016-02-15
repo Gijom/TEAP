@@ -1,7 +1,6 @@
+%> @brief NOTCHPEAKARGCHK Validates the inputs for the IIRNOTCH and IIRPEAK
+%> functions.
 function [Ab, msg] = notchpeakargchk(Wo, BW, opts)
-% NOTCHPEAKARGCHK Validates the inputs for the IIRNOTCH and IIRPEAK
-% functions.
-
 %   Author(s): P. Pacheco
 %   Copyright 1999-2002 The MathWorks, Inc.
 %   $Revision: 1.2 $  $Date: 2001/07/06 17:42:26 $

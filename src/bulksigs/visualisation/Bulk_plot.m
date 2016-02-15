@@ -1,12 +1,10 @@
+%> @brief Plots a bulk signal: for each signal of the bulk signal, creates a figure and
+%> displays the signal
+
+%> @param  BulkSig the bulk signal
+%> @param title the optional title
+
 function Bulk_plot(BulkSig, title)
-%Plots a bulk signal: for each signal of the bulk signal, creates a figure and
-%displays the signal
-% Inputs:
-%  BulkSig: the bulk signal
-%  title: the optional title
-% Outputs:
-%  NONE
-%
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 

@@ -1,12 +1,12 @@
+%> @brief Simply tells you if that specific channel on the @b EEG signal exists.
+
+%> @param  EEGSignal: the EEG signal
+%> @param  channelName: the channelName (ex: 'Fp1')
+
+%> @retval  ChannelExists: a boolean variable
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function ChannelExists = EEG_has_channel(EEGSignal, channelName)
-%Simply tells you if that specific channel on the EEG signal exists.
-% Inputs:
-%  EEGSignal: the EEG signal
-%  channelName: the channelName (ex: 'Fp1')
-% Outputs:
-%  ChannelExists: a boolean variable
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: ChannelExists = EEG_has_channel(EEGSignal, channelName)');

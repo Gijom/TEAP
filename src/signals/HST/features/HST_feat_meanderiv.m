@@ -1,13 +1,11 @@
-function [meanTemp] = HST_feat_meanderiv(HSTsignal)
-%Computes the mean derivation of the HST signal.
-% Inputs:
-%  HSTsignal: the HST signal.
-%
-% Outputs:
-%  meanTemp: the mean derivation of the temperature, in d°C/dt
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @brief Computes the mean derivation of the HST signal.
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
+%> @param HSTsignal the HST signal.
+
+%> @retval meanTemp the mean derivation of the temperature, in d°C/dt
+
+function [meanTemp] = HST_feat_meanderiv(HSTsignal)
 
 %Make sure we have a HST signal
 HSTsignal = HST__assert_type(HSTsignal);

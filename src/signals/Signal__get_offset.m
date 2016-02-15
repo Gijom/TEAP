@@ -1,15 +1,13 @@
+%> @brief Gets the offset(in frames) relative to its parent (the first it had, non recursive).
+%> @param  Signal: the signal you want to know the offset
+%> @retval  offset: the signal offset, in frames
+%
+%> @attention SEE ALSO:
+%>  - @c Signal__get_window
+%>  - @c Signal__get_window_frames
+%
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function offset = Signal__get_offset(Signal)
-%Gets the offset(in frames) relative to its parent (the first it had, non recursive).
-% Inputs:
-%  Signal: the signal you want to know the offset
-% Outputs:
-%  offset: the signal offset, in frames
-%
-%SEE ALSO:
-%  Signal__get_window
-%  Signal__get_window_frames
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)
 	error('Usage: offset = Signal__get_offset(Signal)');

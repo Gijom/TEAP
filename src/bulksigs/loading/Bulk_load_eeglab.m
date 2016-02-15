@@ -1,11 +1,11 @@
+%> @brief Loads an EEGLab variable, into a TEAPhysio bulk signal, containing EEG, ECG,
+%> GSR, etc.
+
+%> @param EEGV the variable given by EEGLab (ex: load A.mat; Bulk_load_eeglab(EEG))
+
+%> @retval BulkSig a TEAPhysio bulk signal vector
+
 function [BulkSig] = Bulk_load_eeglab(EEGV)
-%Loads an EEGLab variable, into a TEAPhysio bulk signal, containing EEG, ECG,
-%GSR, etc.
-% Inputs:
-%  EEGV: the variable given by EEGLab (ex: load A.mat; Bulk_load_eeglab(EEG))
-% Outputs:
-%  BulkSig: a TEAPhysio bulk signal vector
-%
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)

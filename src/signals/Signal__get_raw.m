@@ -1,12 +1,9 @@
+%> @brief Returns the raw data of the signal
+%> @param  Signal: the signal you want the raw data of
+%> @retval  Raw: the raw data of the signal
+%
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Raw = Signal__get_raw(Signal)
-%Returns the raw data of the signal
-%
-% Inputs:
-%  Signal: the signal you want the raw data of
-% Outputs:
-%  Raw: the raw data of the signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)
 	error('Usage: Signal__get_raw(Signal)');

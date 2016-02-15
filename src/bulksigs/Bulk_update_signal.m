@@ -1,12 +1,11 @@
+%> @brief Updates a signal in the bulk signal
+
+%> @param BulkSig the bulk collection
+%> @param signame the signal name (ex: 'HST')
+%> @param sig the actual signal (ex: after HST_aqn_variable)
+
+%> @retval BulkSig the bulksignal with the signal updated
 function [BulkSig] = Bulk_update_signal(BulkSig, signame, sig)
-%Update a signal to the bulk signal
-% Inputs:
-%  BulkSig: the bulk collection
-%  signame: the signal name (ex: 'HST')
-%  sig: the actual signal (ex: after HST_aqn_variable)
-% Outputs:
-%  BulkSig: the bulksignal with the signal updated
-%
 %Copyright Frank Villaro-Dixon, Guillaume Chanel, BSD Simplified, 2014
 
 if(nargin ~= 3 || nargout ~= 1)

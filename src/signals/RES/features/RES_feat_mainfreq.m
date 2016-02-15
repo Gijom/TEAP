@@ -1,13 +1,13 @@
+%> @brief Computes the main frequency of a respiration signal.
+
+%> @param  RESsignal: the RES signal.
+
+%> @retval mainFreq: the main respiration frequency, given in Hz
+
+%> @author Copyright Guillaume Chanel 2013
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+
 function [mainFreq] = RES_feat_mainfreq(RESsignal)
-%Computes the main frequency of a respiration signal.
-% Inputs:
-%  RESsignal: the RES signal.
-%
-%Outputs:
-%  mainFreq: the main respiration frequency, given in Hz
-%
-%Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have a RES signal

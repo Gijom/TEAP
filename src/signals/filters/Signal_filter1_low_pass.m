@@ -1,12 +1,12 @@
+%> @brief A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
+
+%> @param Signal: the signal to filter (will use the .raw component). Not a bulk sig. !
+%> @param cutOffFreq: the cutOff frequency of the filter
+
+%> @retval Signal: the low-passed-signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
-%A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
-% Inputs:
-%  Signal: the signal to filter (will use the .raw component). Not a bulk sig. !
-%  cutOffFreq: the cutOff frequency of the filter
-% Outputs:
-%  Signal: the low-passed-signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_pass(Signal, cutOffFreq)');

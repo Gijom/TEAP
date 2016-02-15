@@ -1,12 +1,11 @@
-function EEGSignal = EEG_reference_mean(EEGSignal)
-%re-references the EEG signals to their mean
-%Creates a reference for the EEG signal; removed average reference' the signal
-% Inputs:
-%  EEGSignal: the EEG signal
-% Outputs:
-%  EEGSignal: the referenced EEG signal
+%> @brief re-references the @b EEG signals to their mean
+%> Creates a reference for the @b EEG signal; removed average reference' the signal
+
+%> @param  EEGSignal: the @b EEG signal
+%> @retval  EEGSignal: the referenced @b EEG signal
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function EEGSignal = EEG_reference_mean(EEGSignal)
 
 if(nargin ~= 1 || nargout ~= 1)
 	error('Usage: EEGSignal = EEG_reference_mean(EEGSignal);');

@@ -1,11 +1,9 @@
-function [variance] = Signal_feat_var(Signal)
-%Computes the variance of a signal
-% Inputs:
-%  Signal
-% Outputs:
-%  var: the calculated var, using the var() function
+%> @brief Computes the variance of a signal
+%> @param  Signal
+%> @retval  var: the calculated var, using the @c var() function
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function [variance] = Signal_feat_var(Signal)
 
 Signal__assert_mine(Signal);
 

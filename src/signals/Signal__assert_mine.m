@@ -1,9 +1,9 @@
+%> @brief Asserts that the signal is a TEAPhysio one
+
+%> @param  Signal: the signal to test
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal__assert_mine(Signal)
-%Asserts that the signal is a TEAPhysio one
-% Inputs:
-%  Signal: the signal to test
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 1)
 	error('Usage: Signal__assert_mine(Signal)');

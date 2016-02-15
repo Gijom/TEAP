@@ -1,35 +1,33 @@
-%function [bpm, delta_t, t, listePic] = PLETtoBPM(data, fe, methodPeak, SizeWindow, verbose)
-% calcul le heart rate bpm a partir du fichier des données data
-% le signal a une frequence d'echantillonage fe. Search for the upper peak,
-% if systolic upstroke is desired, simply negate the signal
-%IN:
-% data: the pletysmograph data
-% fe: sampling frequency
-% methodPeak: detection method for choice in case of many peak (default 'max')
-%   'sharp': the shapest peak
-%   'max: the highest peak
-%   'first': the first peak of the two
-% SizeWindow: for mean filtering, 0-> no fitlering (default fe/50) 
-% verbose: display a graph of the result if 1 (default 0)
-%OUT:
-% bpm : Heart rate in bpm
-% delta : Heart rate in time
-% t : vecteur contenant les samples central des deux pics ayant servi a
-% calculer le bpm
-% listePic : liste des echantillon ou il y a eu des pics detecté
-% Ver 2 : n'utilise pas les wavlet mais seulement la dérivée du signal
-% Ver 3 : plus de gros filtrage et choix des pics suivant differetes
-% methodes
-%
-%Copyright Guillaume Chanel 2015
+%> @brief calcul le heart rate bpm a partir du fichier des données data
+%> le signal a une frequence d'echantillonage fe. Search for the upper peak,
+%> if systolic upstroke is desired, simply negate the signal
+
+%> @param data the pletysmograph data
+%> @param fe sampling frequency
+%> @param methodPeak detection method for choice in case of many peak (default 'max')
+%>   'sharp': the shapest peak
+%>   'max: the highest peak
+%>   'first': the first peak of the two
+%> @param SizeWindow for mean filtering, 0-> no fitlering (default fe/50) 
+%> @param verbose display a graph of the result if 1 (default 0)
+
+%> @retval bpm Heart rate in bpm
+%> @retval delta Heart rate in time
+%> @retval t vecteur contenant les samples central des deux pics ayant servi a
+%> calculer le bpm
+%> @retval listePic liste des echantillon ou il y a eu des pics detecté
+%> Ver 2 : n'utilise pas les wavlet mais seulement la dérivée du signal
+%> Ver 3 : plus de gros filtrage et choix des pics suivant differetes methodes
+
+%> Copyright Guillaume Chanel 2015
 
 function [bpm, delta_t, t, listePic] = PLETtoBPM(data, fe, methodPeak, SizeWindow, verbose)
 
 if(nargin < 3)
-    methodPeak = 'max';    
+    methodPeak = 'max';
 end
 if(nargin < 4)
-   SizeWindow = round(fe/50);   
+   SizeWindow = round(fe/50);
 end
 if(nargin < 5)
     verbose = 0;
@@ -88,7 +86,7 @@ while(iPic<=length(listePic)-1)
                     choice = 2;
                 else
                     choice = 1;
-                end                    
+                end
             case 'max'
                 [dummy, choice] = max([data(listePic(iPic)) data(listePic(iPic+1))]);
             case 'first'

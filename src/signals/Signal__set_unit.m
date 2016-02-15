@@ -1,13 +1,12 @@
+%> @brief Sets the unit of a signal
+
+%> @param Signal the signal you want to add the unit to
+%> @param unitStr the unit name (ex: 'Ohm');
+
+%> @retval Signal the newly modified signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = Signal__set_unit(Signal, unitStr)
-%Sets the unit of a signal
-%
-% Inputs:
-%  Signal: the signal you want to add the unit to
-%  unitStr: the unit name (ex: 'Ohm');
-% Outputs:
-%  The newly modified signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Signal = Signal__set_unit(Signal, unitStr)');

@@ -1,12 +1,12 @@
-function Signal = Signal_filter1_low_mean(Signal, windowSize)
-%Filters the signal with a low pass mean filtering
-% Inputs:
-%  Signal: the signal to filter. Not a bulk signal !
-%  windowSize: the window size (in samples)
-% Outputs:
-%  Signal: the newly filtered signal
+%> @brief Filters the signal with a low pass mean filtering
+
+%> @param  Signal: the signal to filter. Not a bulk signal !
+%> @param windowSize: the window size (in samples)
+
+%> @retval Signal: the newly filtered signal
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function Signal = Signal_filter1_low_mean(Signal, windowSize)
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal_filter1_low_mean(Signal, windowSize)');

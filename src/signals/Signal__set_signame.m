@@ -1,14 +1,13 @@
+%> @brief Sets the name of a signal (ex: 'GSR', 'ECG', etc…) you should NOT use this function,
+%> only TEAPhysio uses-it
+
+%> @param  Signal: the signal you want to set the name
+%> @param nameStr: the name string
+
+%> @retval  Signal: the modified signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = Signal__set_signame(Signal, nameStr)
-%Sets the name of a signal (ex: 'GSR', 'ECG', etc…) you should NOT use this function,
-%only TEAPhysio uses-it
-%
-% Inputs:
-%  Signal: the signal you want to set the name
-%  nameStr: the name string
-% Outputs:
-%  Signal: the modified signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Signal = Signal__set_signame(Signal, nameStr)');

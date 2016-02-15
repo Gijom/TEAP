@@ -1,11 +1,8 @@
-function name = GSR__get_signame()
-%Get the name of a GSR signal
-% Inputs:
-%  NONE
-% Outputs:
-%  name: the name of the GSR signal, in this case, 'GSR'
+%> @brief Gets the name of a GSR signal
+%> @retval  name: the name of the GSR signal, in this case, 'GSR'
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function name = GSR__get_signame()
 
 name = 'GSR';
 

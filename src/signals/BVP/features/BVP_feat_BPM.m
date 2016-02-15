@@ -1,12 +1,12 @@
-function BPM = BVP_feat_BPM(BVPSignal)
-%Computes the BPM from a BVP signal
-% Inputs:
-%  BVPs: the BVP signal
-% Outputs:
-%  BPM: the beats per minute
+%> @brief Computes the BPM from a BVP signal
+
+%> @param  BVPs: the BVP signal
+
+%> @retval  BPM: the beats per minute
 %
-%Copyright Mohammad Soleymani 2013
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Mohammad Soleymani 2013
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function BPM = BVP_feat_BPM(BVPSignal)
 
 
 %Make sure we have an BVP signal
@@ -17,7 +17,7 @@ fs = Signal__get_samprate(BVPSignal);
 
 
 if(nargin < 3)
-    methodPeak = 'max';
+	methodPeak = 'max';
 end
 
 SizeWindow = round(fs/50);

@@ -1,20 +1,19 @@
-function [bpm, delta_t, t, listePic] = correctBPM(listePic_in, fe, thresh)
-% IN :
-%   listePic_in [1*N] : vector of peaks with position of peak in sample for each
-%                       peak ([1 8 20] 3 peaks at samples 1, 8 and 20)
-%   fe : sampling frequency
-%   thresh : limit between two peaks for detection of miss or bad peak.
-%            decreasing this limit will not always augment the nuber of
-%            corrections (see First step, Decide wich problems are true ones in the code)
-% OUT :
-%   bpm : new computed bpm from the corrected list of peaks
-%   listPic : corrected list of peaks
-% DEPENDANCIES :
-%   PICtoBPM : compute BPM from of vector of peaks
-% OTHER INFO :
-%   Guillaume Chanel (thanks to Joep)
-%   4/09/2008
+%> @b DEPENDANCIES :
+%>   PICtoBPM : compute BPM from of vector of peaks
+%>   Guillaume Chanel (thanks to Joep)
+%>   4/09/2008
 
+%> @param listePic_in [1*N] : vector of peaks with position of peak in sample for each
+%> peak ([1 8 20] 3 peaks at samples 1, 8 and 20)
+%> @param fe  ampling frequency
+%> @param thresh limit between two peaks for detection of miss or bad peak.
+%> decreasing this limit will not always augment the number of
+%> corrections (see First step, Decide which problems are true ones in the code)
+
+%> @retval bpm new computed bpm from the corrected list of peaks
+%> @retval listPic corrected list of peaks
+
+function [bpm, delta_t, t, listePic] = correctBPM(listePic_in, fe, thresh)
 %WARN I am not sure but this might be an old version check that this
 %corresponds to correctBPM3 in my codes
 

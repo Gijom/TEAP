@@ -1,13 +1,12 @@
+%> @brief Computes the energy of a respiration signal.
+
+%> @param  RESsignal: the RES signal.
+
+%> @retval  energy: the energy of the signal
+
+%> @author Copyright Guillaume Chanel 2013
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function [energy] = RES_feat_energy(RESsignal)
-%Computes the energy of a respiration signal.
-% Inputs:
-%  RESsignal: the RES signal.
-%
-%Outputs:
-%  energy: the energy of the signal
-%
-%Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 %Make sure we have a RES signal
 RESsignal = RES__assert_type(RESsignal);

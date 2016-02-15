@@ -1,12 +1,10 @@
-function Signal = Signal__set_offset(Signal, offset)
-%Sets the offset of the specified signal
-% Inputs:
-%  Signal: the signal
-%  offset: the offset of the signal, in frames/samples
-% Outputs:
-%  Signal: the modified signal
+%> @brief Sets the offset of the specified signal
+%> @param  Signal: the signal
+%> @param  offset: the offset of the signal, in frames/samples
+%> @retval Signal: the modified signal
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function Signal = Signal__set_offset(Signal, offset)
 
 if(nargin ~= 2 || nargout ~= 1)
 	error('Usage: Signal = Signal__set_offset(Signal, offset)');

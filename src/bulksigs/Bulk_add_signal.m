@@ -1,12 +1,12 @@
+%> @brief Adds a signal to the bulk signal (and I love repetitions)
+
+%> @param BulkSig the bulk collection
+%> @param signame the signal name (ex: 'HST')
+%> @param sig the actual signal (ex: after HST_aqn_variable)
+
+%> @retval BulkSig the bulksignal with the signal added
+
 function [BulkSig] = Bulk_add_signal(BulkSig, signame, sig)
-%Adds a signal to the bulk signal (and I love repetitions)
-% Inputs:
-%  BulkSig: the bulk collection
-%  signame: the signal name (ex: 'HST')
-%  sig: the actual signal (ex: after HST_aqn_variable)
-% Outputs:
-%  BulkSig: the bulksignal with the signal added
-%
 %Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 3 || nargout ~= 1)

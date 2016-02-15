@@ -1,12 +1,10 @@
-function IBIVar = ECG_feat_IBIvar(ECGSignal)
-%Computes the InterBeatInterval variance of an ECG signal
-% Inputs:
-%  ECGSignal: the ECG signal
-% Outputs:
-%  IBIVar: the InterBeatInterval variance
+%> @brief Computes the InterBeatInterval variance of an ECG signal
+%> @param  ECGSignal: the ECG signal
+%> @retval  IBIVar: the InterBeatInterval variance
 %
-%Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Guillaume Chanel 2013
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function IBIVar = ECG_feat_IBIvar(ECGSignal)
 
 
 %Make sure we have an ECG signal

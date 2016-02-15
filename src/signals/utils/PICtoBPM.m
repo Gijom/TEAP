@@ -1,17 +1,15 @@
+%> @brief Computes BPM and IBI from a list of pics
+%> @b Author: Guillaume Chanel
+
+%> @param listePic list of samples containing a pic
+%> @param fe sampling frequency
+
+%> @retval bpm beat per minuts
+%> @retval delta_t Interbeat intervals (IBI)
+%> @retval sample (possibly 1/2 samples) at which the IBI is computed, this is
+%>in fact the average of the start and end beats samples (i.e. the HR
+%> considered to lies inbetween the two beats).
 function [bpm delta_t t] = PICtoBPM(listePic, fe)
-%Computes BPM and IBI from a list of pics
-% INPUTS:
-%  listePic: list of samples containing a pic
-%  fe: sampling frequency
-%
-% OUTPUTS:
-%  bpm: beat per minuts
-%  delta_t: Interbeat intervals (IBI)
-%  t: sample (possibly 1/2 samples) at which the IBI is computed, this is
-%     in fact the average of the start and end beats samples (i.e. the HR
-%     considered to lies inbetween the two beats).
-%
-% Author: Guillaume Chanel
 
 bpm =[];
 t = [];

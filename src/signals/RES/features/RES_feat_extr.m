@@ -1,21 +1,19 @@
+%> @brief Computes Skin respiration features
+%> @param  RESsignal: the respiration  signal.
+%> @param varargin: you can choose which features to extract (see featureSelector)
+%>            the list of available features is:
+%>               - mean_: average temprature
+%>               - std_: standard deviation of the respiration
+%>               - kurtosis_: Kurtosis of the respiration
+%>               - skewness_: skewness of the respiration
+%>               - main_freq: main frenquency of the respiration
+%>               - spxxyy: power spectral power between [xx,yy] /10 Hz
+%> @retval  RES_feats: list of features values
+%> @retval RES_feats_names: names of the computed features (it is good pratice to
+%>                   check this vector since the order of requested features
+%>                   can be different than the requested one)
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 function [RES_feats, RES_feats_names] = RES_feat_extr(RESsignal,varargin)
-%Computes Skin respiration features
-% Inputs:
-%  RESsignal: the respiration  signal.
-%  varargin: you can choose which features to extract (see featureSelector)
-%            the list of available features is:
-%               - mean_: average temprature
-%               - std_: standard deviation of the respiration
-%               - kurtosis_: Kurtosis of the respiration
-%               - skewness_: skewness of the respiration
-%               - main_freq: main frenquency of the respiration
-%               - spxxyy: power spectral power between [xx,yy] /10 Hz
-% Outputs:
-%  RES_feats: list of features values
-%  RES_feats_names: names of the computed features (it is good pratice to
-%                   check this vector since the order of requested features
-%                   can be different than the requested one)
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2015
 
 % Check inputs and define unknown values
 narginchk(1, Inf);
@@ -23,7 +21,7 @@ narginchk(1, Inf);
 % WARNING: this function will give 'strange' results when applied on a relative
 %          signal
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 %Make sure we have a RES signal

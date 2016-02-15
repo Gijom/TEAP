@@ -1,6 +1,6 @@
+%> @brief Takes a raw signal and reshapes-it into a good form (aka 1D horizontal signal,
+%> [1xN];
 function Raw = Raw_convert_1D(Raw)
-%Takes a raw signal and reshapes-it into a good form (aka 1D horizontal signal,
-% [1xN];
 
 [y, x] = size(Raw);
 

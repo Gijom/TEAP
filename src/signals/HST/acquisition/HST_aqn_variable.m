@@ -1,12 +1,11 @@
+%> @brief HST_aqn_variable gets a HST signal from a variable
+%> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+
+%> @param rawHST [1xN] the raw HST signal
+%> @param sampRate [1x1] the sampling rate, in Hz
+
+%> @retval Signal A HST TEAPhysio signal
 function Signal = HST_aqn_variable(rawHST, sampRate)
-% HST_aqn_variable gets a HST signal from a variable
-% Inputs:
-%   rawHST [1xN]: the raw HST signal
-%   sampRate [1x1]: the sampling rate, in Hz
-% Outputs:
-%   Signal: A HST TEAPhysio signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 
 if(nargin ~= 2)

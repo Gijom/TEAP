@@ -1,11 +1,9 @@
-function signalName = Signal__get_signame(Signal)
-%Gets the name of a signal, eg: 'GSR' for a Galvanic Skin Response signal
-% Inputs:
-%  Signal: the signal you want to get the name of.
-% Outputs:
-%  signalName: the name of the signal (ex: 'GSR')
+%> @brief Gets the name of a signal, eg: 'GSR' for a Galvanic Skin Response signal
+%> @param  Signal: the signal you want to get the name of.
+%> @retval  signalName: the name of the signal (ex: 'GSR')
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function signalName = Signal__get_signame(Signal)
 
 
 if(nargin ~= 1)

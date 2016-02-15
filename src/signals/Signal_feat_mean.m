@@ -1,11 +1,9 @@
-function [MEAN] = Signal_feat_mean(Signal)
-%Computes the mean of a signal
-% Inputs:
-%  Signal:
-% Outputs:
-%  MEAN: the mean, calculated using the mean() function
+%> @brief Computes the mean of a signal
+%> @param Signal: The signal you want to calculate the mean
+%> @retval  MEAN: the mean, calculated using the mean() function
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function [MEAN] = Signal_feat_mean(Signal)
 
 Signal__assert_mine(Signal);
 raw = Signal__get_raw(Signal);

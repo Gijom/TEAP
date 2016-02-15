@@ -1,13 +1,11 @@
+%> @brief Loads a bdf file, into a TEAPhysio bulk signal, containing EEG, ECG,
+%> GSR, etc.
+%> @param file_name: this variable includes the full path; 
+%> it can be any file supported by biogs sload/sopn
+
+%> @retval BulkSig a TEAPhysio bulk signal vector
+
 function [BulkSig] = Bulk_load(file_name)
-%Loads a bdf file, into a TEAPhysio bulk signal, containing EEG, ECG,
-%GSR, etc.
-% Inputs:
-%  file_name: this variable includ the full path
-% it can be any file supported by biogs sload/sopn
-%
-% Outputs:
-%  BulkSig: a TEAPhysio bulk signal vector
-%
 %Copyright Mohammad Soleymani, BSD Simplified, 2014
 
 if(nargin ~= 1)

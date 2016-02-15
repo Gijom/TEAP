@@ -1,5 +1,5 @@
+%> @brief Sets the raw data of the signal S
 function Signal = Signal__set_raw(Signal, raw)
-%Sets the raw data of the signal S
 
 if(nargin ~= 2)
 	error('Usage: Signal = Signal__set_raw(Signal, raw)');

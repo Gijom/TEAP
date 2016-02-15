@@ -1,11 +1,9 @@
-function unit = Signal__get_unit(Signal)
-%Gets the unit of a signal (ex: 'Ohm' for a GSR signal)
-% Inputs:
-%  Signal: the signal
-% Outputs:
-%  unit: a string naming the unit
+%> @brief Gets the unit of a signal (ex: 'Ohm' for a GSR signal)
+%> @param  Signal: the signal
+%> @retval  unit: a string naming the unit
 %
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function unit = Signal__get_unit(Signal)
 
 if(nargin ~= 1)
 	error('Usage: unitName = Signal__get_unit(Signal)');

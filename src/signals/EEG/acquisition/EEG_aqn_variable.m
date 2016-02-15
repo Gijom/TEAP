@@ -1,11 +1,11 @@
+%> @brief  EEG_aqn_variable gets an EEG signal from a variable.
+
+%> @param   eegChannels [Cxstrings]: a vector specifying the C EEG channels given
+%> @param   eegData [CxN]: a matrix containing the EEG data
+%> @param   sampRate [1x1]: the sampling rate, in Hz
+
+%> @retval   Signal: An EEG TEAPhysio signal
 function Signal = EEG_aqn_variable(eegChannels, eegData, sampRate)
-% EEG_aqn_variable gets an EEG signal from a variable.
-% Inputs:
-%   eegChannels [Cxstrings]: a vector specifying the C EEG channels given
-%   eegData [CxN]: a matrix containing the EEG data
-%   sampRate [1x1]: the sampling rate, in Hz
-% Outputs:
-%   Signal: An EEG TEAPhysio signal
 
 if(nargin ~= 3)
 	error('Usage: Signal = EEG_aqn_variable(eegChannels, eegData, sampRate');

@@ -1,13 +1,10 @@
-function IBIMean = ECG_feat_IBImean(ECGSignal)
-%Computes the InterBeatInterval mean of an ECG signal
-% Inputs:
-%  ECGSignal: the ECG signal
-% Outputs:
-%  IBIMean: the InterBeatInterval mean
+%> @brief Computes the InterBeatInterval mean of an ECG signal
+%> @param  ECGSignal: the ECG signal
+%> @retval IBIMean: the InterBeatInterval mean
 %
-%Copyright Guillaume Chanel 2013
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
-%Modified by Guillaume Chanel
+%> @author Copyright Guillaume Chanel 2013
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+function IBIMean = ECG_feat_IBImean(ECGSignal)
 
 
 %Make sure we have an ECG signal

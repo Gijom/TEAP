@@ -1,21 +1,21 @@
+%> @brief Computes GSR features
+
+%> @param  GSRsignal: the GSR signal.
+%> @param  varargin: you can choose which features to extract (see featureSelector)
+%>            the list of available features is:
+%>               - nbPeaks: number of GSR peaks per second
+%>               - ampPeaks: average amplitude of peaks
+%>               - riseTime: average rise time of peaks
+%>               - meanGSR: average GSR value
+%>               - stdGSR: variance of GSR
+
+%> @retval  GSR_feats: list of features values
+%> @retval  GSR_feats_names: names of the computed features (it is good pratice to
+%>                   check this vector since the order of requested features
+%>                   can be different than the requested one)
+%> @author Copyright XXX 2011
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function [GSR_feats, GSR_feats_names] = GSR_feat_extr(GSRsignal,varargin)
-%Computes GSR features
-% Inputs:
-%  GSRsignal: the GSR signal.
-%  varargin: you can choose which features to extract (see featureSelector)
-%            the list of available features is:
-%               - nbPeaks: number of GSR peaks per second
-%               - ampPeaks: average amplitude of peaks
-%               - riseTime: average rise time of peaks
-%               - meanGSR: average GSR value
-%               - stdGSR: variance of GSR
-% Outputs:
-%  GSR_feats: list of features values
-%  GSR_feats_names: names of the computed features (it is good pratice to
-%                   check this vector since the order of requested features
-%                   can be different than the requested one)
-%Copyright XXX 2011
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 % Check inputs and define unknown values
 narginchk(1, Inf);

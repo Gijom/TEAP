@@ -1,11 +1,12 @@
+%> @brief GSR_aqn_variable gets a GSR signal from a variable
+
+%> @param   rawGSR [1xN]: the raw GSR signal
+%> @param   sampRate [1x1]: the sampling rate, in Hz
+
+%> @retval   Signal: A GSR TEAPhysio signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = GSR_aqn_variable(rawGSR, sampRate)
-% GSR_aqn_variable gets a GSR signal from a variable
-% Inputs:
-%   rawGSR [1xN]: the raw GSR signal
-%   sampRate [1x1]: the sampling rate, in Hz
-% Outputs:
-%   Signal: A GSR TEAPhysio signal
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: GSR_aqn_variable(rawGSR, sampRate)');

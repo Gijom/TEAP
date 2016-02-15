@@ -1,13 +1,13 @@
+%> @brief Sets the channel 'channelName' of the EEG signal
+
+%> @param  Signal: the EEG signal
+%> @param  channelName: the name of the channel (ex: 'AF3')
+%> @param  channelData: the data
+
+%> @retval  Signal
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = EEG_set_channel(Signal, channelName, channelData)
-%Sets the channel 'channelName' of the EEG signal
-% Inputs:
-%  Signal: the EEG signal
-%  channelName: the name of the channel (ex: 'AF3')
-%  channelData: the data
-% Outputs:
-%  Signal
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: Signal = EEG_set_channel(Signal, channelName, channelData)');

@@ -1,12 +1,12 @@
+%> @brief Gets the channel data from the EEG signal
+
+%> @param  Signal: the signal
+%> @param  channelName: the name of the channel you want to take
+
+%> @retval  Data: the data of the channel
+
+%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Data = EEG_get_channel(Signal, channelName)
-%Gets the channel data from the EEG signal
-% Inputs:
-%  Signal: the signal
-%  channelName: the name of the channel you want to take
-% Outputs:
-%  Data: the data of the channel
-%
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 if(nargin ~= 2)
 	error('Usage: Data = EEG_get_channel(Signal, channelName)');

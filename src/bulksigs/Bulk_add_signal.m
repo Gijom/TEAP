@@ -1,3 +1,4 @@
+%> @file Bulk_add_signal.m
 %> @brief Adds a signal to the bulk signal (and I love repetitions)
 
 %> @param BulkSig the bulk collection

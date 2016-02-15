@@ -1,3 +1,4 @@
+%> @file Bulk_get_signals.m
 %> @brief Gets the list of the signals of the bulk signal. Ex: ['GSR'; 'EEG'].
 
 %> @param BulkSig the bulk signal

@@ -1,3 +1,4 @@
+%> @file Bulk_load_eeglab.m
 %> @brief Loads an EEGLab variable, into a TEAPhysio bulk signal, containing EEG, ECG,
 %> GSR, etc.
 

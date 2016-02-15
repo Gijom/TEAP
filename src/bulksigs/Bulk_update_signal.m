@@ -1,3 +1,4 @@
+%> @file Bulk_update_signal.m
 %> @brief Updates a signal in the bulk signal
 
 %> @param BulkSig the bulk collection

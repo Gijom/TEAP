@@ -1,3 +1,4 @@
+%> @file Bulk_assert_mine.m
 %> @brief Asserts that the signal is a TEAPhysio bulk signal
 
 %> @param BulkSignal the signal to test

@@ -1,3 +1,4 @@
+%> @file Bulk_get_signal.m
 %> @brief Takes a specific signal from a bulk signal
 
 %> @param BulkSignal the bulk signal containing all the specific signals

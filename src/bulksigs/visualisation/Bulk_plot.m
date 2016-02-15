@@ -1,3 +1,4 @@
+%> @file Bulk_plot.m
 %> @brief Plots a bulk signal: for each signal of the bulk signal, creates a figure and
 %> displays the signal
 

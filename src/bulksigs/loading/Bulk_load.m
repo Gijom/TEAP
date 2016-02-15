@@ -1,3 +1,4 @@
+%> @file Bulk_load.m
 %> @brief Loads a bdf file, into a TEAPhysio bulk signal, containing EEG, ECG,
 %> GSR, etc.
 %> @param file_name: this variable includes the full path; 

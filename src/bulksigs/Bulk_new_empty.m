@@ -1,3 +1,4 @@
+%> @file Bulk_new_empty.m
 %> @brief Creates a new empty Bulk signal
 %> @retval BulkSig an empty bulk signal
 function [BulkSig] = Bulk_new_empty()

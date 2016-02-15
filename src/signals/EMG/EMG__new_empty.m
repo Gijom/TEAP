@@ -1,3 +1,4 @@
+%> @file EMG__new_empty.m
 %> @brief Creates a new EMG empty signal
 function Signal = EMG__new_empty()
 

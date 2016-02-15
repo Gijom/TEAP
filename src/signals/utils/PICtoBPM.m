@@ -1,3 +1,4 @@
+%> @file PICtoBPM.m
 %> @brief Computes BPM and IBI from a list of pics
 %> @b Author: Guillaume Chanel
 

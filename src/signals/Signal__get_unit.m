@@ -1,3 +1,4 @@
+%> @file Signal__get_unit.m
 %> @brief Gets the unit of a signal (ex: 'Ohm' for a GSR signal)
 %> @param  Signal: the signal
 %> @retval  unit: a string naming the unit

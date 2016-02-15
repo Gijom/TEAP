@@ -1,3 +1,4 @@
+%> @file HST_aqn_variable.m
 %> @brief HST_aqn_variable gets a HST signal from a variable
 %> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 

@@ -1,3 +1,4 @@
+%> @file Signal__has_preproc.m
 %> @brief Has the given signal been through this preprocessing step
 %> @param  Signal: the signal
 %> @param preprocName: the pre-processing you want

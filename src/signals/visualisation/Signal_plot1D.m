@@ -1,3 +1,4 @@
+%> @file Signal_plot1D.m
 %> @brief Plots a signal: value vs time, between startT and entT.
 %> @c Signal_plot1D(sig); @c Signal_plot1D(sig, start); @c Signal_plot1D(sig, start, end);
 %> @attention NOTA BENE: if you want to display a bulk signal instead, use Bulk_plot(Bulk);

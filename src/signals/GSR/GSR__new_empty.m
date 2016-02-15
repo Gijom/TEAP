@@ -1,3 +1,4 @@
+%> @file GSR__new_empty.m
 %> @brief Creates a new GSR empty signal
 function Signal = GSR__new_empty()
 

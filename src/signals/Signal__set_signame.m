@@ -1,3 +1,4 @@
+%> @file Signal__set_signame.m
 %> @brief Sets the name of a signal (ex: 'GSR', 'ECG', etc…) you should NOT use this function,
 %> only TEAPhysio uses-it
 

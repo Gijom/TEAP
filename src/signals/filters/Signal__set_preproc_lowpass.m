@@ -1,3 +1,4 @@
+%> @file Signal__set_preproc_lowpass.m
 %> @brief Sets the pre-processing property of low-pass for the signal
 %> @param  Signal
 %> @retval Signal: the modified signal

@@ -1,3 +1,4 @@
+%> @file Signal__set_preproc.m
 %> @brief Set a preprocessing attribute for a signal. Ex: lowPass, highPass
 
 %> @param  Signal: the signal

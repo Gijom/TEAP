@@ -1,3 +1,4 @@
+%> @file EEG_feat_bandENR.m
 %> @brief Computes the band energy (trial/baseline) for the @b EEG signal.
 
 %> @param  EEGSignal: the @b EEG signal

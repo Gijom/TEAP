@@ -1,3 +1,4 @@
+%> @file Signal__assert_range.m
 %> @brief Asserts that the signal is a TEAPhysio one
 
 %> @param  Signal: the signal to test

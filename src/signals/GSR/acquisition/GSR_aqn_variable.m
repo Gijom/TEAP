@@ -1,3 +1,4 @@
+%> @file GSR_aqn_variable.m
 %> @brief GSR_aqn_variable gets a GSR signal from a variable
 
 %> @param   rawGSR [1xN]: the raw GSR signal

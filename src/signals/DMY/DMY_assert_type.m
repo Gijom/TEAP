@@ -1,3 +1,4 @@
+%> @file DMY_assert_type.m
 function Signal = DMY_assert_type(Signal)
 %Asserts that the given signal is a DMY one
 %Please refer to Signal__assert_type for more and extensive documentation ;)

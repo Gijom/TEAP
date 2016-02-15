@@ -1,3 +1,4 @@
+%> @file GSR__get_signame.m
 %> @brief Gets the name of a GSR signal
 %> @retval  name: the name of the GSR signal, in this case, 'GSR'
 %

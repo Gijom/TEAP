@@ -1,3 +1,4 @@
+%> @file Signal__set_unit.m
 %> @brief Sets the unit of a signal
 
 %> @param Signal the signal you want to add the unit to

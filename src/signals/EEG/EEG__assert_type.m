@@ -1,3 +1,4 @@
+%> @file EEG__assert_type.m
 %> @brief Asserts that the given signal is an EEG one
 %> Please refer to @c Signal__assert_type for more extensive documentation
 function Signal = EEG__assert_type(Signal)

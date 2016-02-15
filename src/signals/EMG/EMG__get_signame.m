@@ -1,3 +1,4 @@
+%> @file EMG__get_signame.m
 %> @brief Get the name of a EMG signal
 
 %> @retval name: the name of the EMG signal, in this case, 'EMG'

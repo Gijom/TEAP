@@ -1,3 +1,4 @@
+%> @file Signal__has_preproc_lowpass.m
 %> @brief Has the signal been low-passed ?
 %> @param  Signal
 %> @retval Boolean: 1: yes

@@ -1,3 +1,4 @@
+%> @file HST__new_empty.m
 %> @brief Creates a new HST empty signal
 function Signal = HST__new_empty()
 

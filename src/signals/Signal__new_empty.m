@@ -1,3 +1,4 @@
+%> @file Signal__new_empty.m
 %> @brief Creates a new, empty, signal. This is mainly to represent the data structure
 %> @retval  Signal: an empty signal
 %

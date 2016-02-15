@@ -1,3 +1,4 @@
+%> @file Signal__get_window_frames.m
 %> @brief Takes a portion of a signal between startT and endT frames. NB: that the
 %> child signal will memorize the offset to its father (the first-one, non recursive)
 %> start: useful if you want to plot the signal with logical times.

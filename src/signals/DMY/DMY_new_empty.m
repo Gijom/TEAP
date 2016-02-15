@@ -1,3 +1,4 @@
+%> @file DMY_new_empty.m
 function Signal = DMY_new_empty()
 % Creates a new DMY empty signal
 

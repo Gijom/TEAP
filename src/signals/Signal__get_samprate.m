@@ -1,3 +1,4 @@
+%> @file Signal__get_samprate.m
 %> @brief Returns the sampling rate of a signal
 
 %> @param  Signal: the signal you want to get the sampling rate

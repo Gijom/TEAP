@@ -1,3 +1,4 @@
+%> @file ECG__assert_type.m
 %> @brief Makes sure that the given signal is an ECG one
 %> Please refer to @c Signal__assert_type for more documentation
 function [Signal, Bulk] = ECG__assert_type(Signal)

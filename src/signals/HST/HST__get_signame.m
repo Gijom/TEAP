@@ -1,3 +1,4 @@
+%> @file HST__get_signame.m
 %> @brief Gets the name of a HST signal
 %> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 

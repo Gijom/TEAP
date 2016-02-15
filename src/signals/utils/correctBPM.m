@@ -1,3 +1,4 @@
+%> @file correctBPM.m
 %> @b DEPENDANCIES :
 %>   PICtoBPM : compute BPM from of vector of peaks
 %>   Guillaume Chanel (thanks to Joep)

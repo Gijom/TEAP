@@ -1,3 +1,4 @@
+%> @file Signal_filter1_low_pass.m
 %> @brief A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
 
 %> @param Signal: the signal to filter (will use the .raw component). Not a bulk sig. !

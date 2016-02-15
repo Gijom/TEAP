@@ -1,3 +1,4 @@
+%> @file Signal__assert_type.m
 %> @brief Checks that the signal given on the input is of the type nameWanted
 %> This function is mainly used by @b SSS_assert_type(Sig), with params @b Sig and @b SSS.
 

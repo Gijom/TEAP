@@ -1,3 +1,4 @@
+%> @file EMG__assert_type.m
 %> @brief Makes sure that the given signal is an EMG one
 %> Please refer to Signal__assert_type for more documentation
 function Signal = EMG__assert_type(Signal)

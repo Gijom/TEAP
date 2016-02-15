@@ -1,3 +1,4 @@
+%> @file RES__new_empty.m
 %> @brief Creates a new RES empty signal
 %> @retval  Signal: an empty RES signal.
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014

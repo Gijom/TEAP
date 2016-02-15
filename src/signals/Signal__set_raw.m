@@ -1,3 +1,4 @@
+%> @file Signal__set_raw.m
 %> @brief Sets the raw data of the signal S
 function Signal = Signal__set_raw(Signal, raw)
 

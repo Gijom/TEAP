@@ -1,3 +1,4 @@
+%> @file EEG_feat_extr.m
 %> @brief Computes Skin respiration features
 %> @param  EEGsignal: the respiration  signal.
 %> @param  varargin: you can choose which features to extract (see featureSelector)

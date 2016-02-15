@@ -1,3 +1,4 @@
+%> @file rpeakdetect.m
 function [hrv, R_t, R_amp, R_index, S_t, S_amp]  = rpeakdetect(data, samp_freq, thresh, testmode)
 
 % [hrv, R_t, R_amp, R_index, S_t, S_amp]  = rpeakdetect(data, samp_freq, thresh, testmode);

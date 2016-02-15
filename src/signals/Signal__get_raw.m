@@ -1,3 +1,4 @@
+%> @file Signal__get_raw.m
 %> @brief Returns the raw data of the signal
 %> @param  Signal: the signal you want the raw data of
 %> @retval  Raw: the raw data of the signal

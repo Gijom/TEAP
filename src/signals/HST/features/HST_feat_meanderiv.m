@@ -1,3 +1,4 @@
+%> @file HST_feat_meanderiv.m
 %> @brief Computes the mean derivation of the HST signal.
 %> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 

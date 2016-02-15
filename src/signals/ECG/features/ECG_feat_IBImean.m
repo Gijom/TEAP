@@ -1,3 +1,4 @@
+%> @file ECG_feat_IBImean.m
 %> @brief Computes the InterBeatInterval mean of an ECG signal
 %> @param  ECGSignal: the ECG signal
 %> @retval IBIMean: the InterBeatInterval mean

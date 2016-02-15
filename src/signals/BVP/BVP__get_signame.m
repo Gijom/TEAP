@@ -1,3 +1,4 @@
+%> @file BVP__get_signame.m
 %> @brief Returns the name of a @b BVP signal
 %> @retval  name: the name of the @b BVP signal. In this case: 'BVP'
 %

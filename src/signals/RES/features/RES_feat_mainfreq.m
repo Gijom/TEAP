@@ -1,3 +1,4 @@
+%> @file RES_feat_mainfreq.m
 %> @brief Computes the main frequency of a respiration signal.
 
 %> @param  RESsignal: the RES signal.

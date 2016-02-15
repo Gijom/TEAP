@@ -1,3 +1,4 @@
+%> @file notchpeakargchk.m
 %> @brief NOTCHPEAKARGCHK Validates the inputs for the IIRNOTCH and IIRPEAK
 %> functions.
 function [Ab, msg] = notchpeakargchk(Wo, BW, opts)

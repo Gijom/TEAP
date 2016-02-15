@@ -1,3 +1,4 @@
+%> @file HST_feat_mean.m
 %> @brief Computes the mean of the HST signal (aka the mean temperature)
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %> signal

@@ -1,3 +1,4 @@
+%> @file GSR_feat_peaks.m
 %> @brief Computes the number of peaks from a GSR signal. It is based on the analysis of
 %> local minima and local maxima preceding the local minima.
 

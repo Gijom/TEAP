@@ -1,3 +1,4 @@
+%> @file Signal_filter1_low_mean.m
 %> @brief Filters the signal with a low pass mean filtering
 
 %> @param  Signal: the signal to filter. Not a bulk signal !

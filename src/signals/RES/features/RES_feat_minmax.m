@@ -1,3 +1,4 @@
+%> @file RES_feat_minmax.m
 %> @brief Computes the peak-to-peak value of a respiration signal (aka greatest breath).
 %> @param RESsignal the RES signal.
 %> @retval  minmax: the greatest breath of the patient.

@@ -1,3 +1,4 @@
+%> @file HST__assert_type.m
 %> @brief Asserts that the given signal is a HST one
 %> Yo: if you want to know how this works, please see my master:Signal__assert_type
 function Signal = HST__assert_type(Signal)

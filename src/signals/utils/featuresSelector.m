@@ -1,3 +1,4 @@
+%> @file featuresSelector.m
 %> @brfie This function select a subset of features from 'featuresNames' based on
 %> 'include' / 'exclude' satements.
 %> Features are always returned in the same order than 'features name'

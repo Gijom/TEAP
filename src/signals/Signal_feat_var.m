@@ -1,3 +1,4 @@
+%> @file Signal_feat_var.m
 %> @brief Computes the variance of a signal
 %> @param  Signal
 %> @retval  var: the calculated var, using the @c var() function

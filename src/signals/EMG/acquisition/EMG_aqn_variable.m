@@ -1,3 +1,4 @@
+%> @file EMG_aqn_variable.m
 %> @brief EMG_aqn_variable gets an EMG signal from a variable
 %> @b USAGE:
 %> If you've got the signal from the 2 electrodes, you must call the function

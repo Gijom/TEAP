@@ -1,3 +1,4 @@
+%> @file RES_feat_extr.m
 %> @brief Computes Skin respiration features
 %> @param  RESsignal: the respiration  signal.
 %> @param varargin: you can choose which features to extract (see featureSelector)

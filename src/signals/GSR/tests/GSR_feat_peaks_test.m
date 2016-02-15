@@ -1,3 +1,4 @@
+%> @file GSR_feat_peaks_test.m
 %Tests the GSR peak feature.
 
 %!test

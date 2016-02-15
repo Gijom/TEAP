@@ -1,3 +1,4 @@
+%> @file Signal_feat_mean.m
 %> @brief Computes the mean of a signal
 %> @param Signal: The signal you want to calculate the mean
 %> @retval  MEAN: the mean, calculated using the mean() function

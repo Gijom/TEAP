@@ -1,3 +1,4 @@
+%> @file Signal__set_offset.m
 %> @brief Sets the offset of the specified signal
 %> @param  Signal: the signal
 %> @param  offset: the offset of the signal, in frames/samples

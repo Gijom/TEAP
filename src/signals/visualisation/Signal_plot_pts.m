@@ -1,3 +1,4 @@
+%> @file Signal_plot_pts.m
 %> @brief Plots some (xval, yval) points on the graph. You have to use this function if
 %> your xvals are in the frame domain (aka not secs like the graph produced by
 %> @c Signal_plot. This function just divides xval by @c Signal__get_samprate(Signal).

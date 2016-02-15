@@ -1,3 +1,4 @@
+%> @file HST_feat_means_test.m
 %Tests the HST mean thingy features
 
 %!test

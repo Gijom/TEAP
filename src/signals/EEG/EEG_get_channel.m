@@ -1,3 +1,4 @@
+%> @file EEG_get_channel.m
 %> @brief Gets the channel data from the EEG signal
 
 %> @param  Signal: the signal

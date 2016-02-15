@@ -1,3 +1,4 @@
+%> @file HST_feat_example.m
 addpath(genpath('../../../'));
 
 %Acquire the raw signal

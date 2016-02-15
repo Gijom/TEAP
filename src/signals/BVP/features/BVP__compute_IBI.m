@@ -1,3 +1,4 @@
+%> @file BVP__compute_IBI.m
 %> @brief Computes the IBI if it is not yet available
 %> @param  BVPSignal: the BVP signal
 %> @retval  BVPSignal: the @b BVP signal containing the computed IBI signal

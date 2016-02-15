@@ -1,3 +1,4 @@
+%> @file ECG__compute_IBI.m
 %> @brief Computes the IBI if it is not yet available
 %> @param  ECGSignal: the ECG signal
 %> @retval  ECGSignal: the ECG signal containing the computed IBI signal

@@ -1,3 +1,4 @@
+%> @file BVP_aqn_variable.m
 %> @brief BVP_aqn_variable gets a BVP signal from a variable
 
 %> @param   rawBVP [1xN]: the raw BVP signal

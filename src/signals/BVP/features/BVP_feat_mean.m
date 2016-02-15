@@ -1,3 +1,4 @@
+%> @file BVP_feat_mean.m
 %> @brief Computes the mean of a @b BVP signal
 %> @param  BVPs: the BVP signal
 % Outputs:

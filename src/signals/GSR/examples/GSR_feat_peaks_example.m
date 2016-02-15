@@ -1,3 +1,4 @@
+%> @file GSR_feat_peaks_example.m
 %Before all, load TEAPhysio
 addpath(genpath('../../../'))
 

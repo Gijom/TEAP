@@ -1,3 +1,4 @@
+%> @file EEG_set_channel.m
 %> @brief Sets the channel 'channelName' of the EEG signal
 
 %> @param  Signal: the EEG signal

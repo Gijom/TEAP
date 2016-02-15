@@ -1,3 +1,4 @@
+%> @file interpIBI.m
 function [IBI,HR,t] = interpIBI(peaks,fs,duration, silent)
 % function [IBI,HR,t] = interpIBI(peaks,fs,duration)
 % 

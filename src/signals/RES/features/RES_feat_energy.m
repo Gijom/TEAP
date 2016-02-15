@@ -1,3 +1,4 @@
+%> @file RES_feat_energy.m
 %> @brief Computes the energy of a respiration signal.
 
 %> @param  RESsignal: the RES signal.

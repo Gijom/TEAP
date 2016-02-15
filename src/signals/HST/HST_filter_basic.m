@@ -1,3 +1,4 @@
+%> @file HST_filter_basic.m
 %> @brief Cleans an HST signal using a low-pass mean filter. The window equals the sample
 %> rate, aka 1sec
 %> Copyright Frank Villaro-Dixon, BSD Simplified, 2014

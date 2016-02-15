@@ -1,3 +1,4 @@
+%> @file GSR_filter_basic.m
 %> @brief Cleans a signal adding a low-pass mean filter to it. The window equals the
 %> sample rate, aka 1 sec.
 

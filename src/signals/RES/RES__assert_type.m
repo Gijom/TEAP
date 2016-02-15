@@ -1,3 +1,4 @@
+%> @file RES__assert_type.m
 %> @brief Makes sure that the given signal is a RES one
 %> If you want to know more about that, please see Signal__assert_type's document…
 function Signal = RES__assert_type(Signal)

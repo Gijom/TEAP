@@ -1,3 +1,4 @@
+%> @file Signal__get_absolute.m
 %> @brief Is the signal data absolute or relative ?
 %> @param  Signal
 %> @retval  isAbsolute: true/false depending on if it is absolute (true) or relative

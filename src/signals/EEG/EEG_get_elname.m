@@ -1,3 +1,4 @@
+%> @file EEG_get_elname.m
 %> @brief Gets the electrode name from a number
 
 %> @param  number: the electrode number (eg: 2)

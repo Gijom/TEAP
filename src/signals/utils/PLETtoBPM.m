@@ -1,3 +1,4 @@
+%> @file PLETtoBPM.m
 %> @brief calcul le heart rate bpm a partir du fichier des données data
 %> le signal a une frequence d'echantillonage fe. Search for the upper peak,
 %> if systolic upstroke is desired, simply negate the signal

@@ -1,3 +1,4 @@
+%> @file HST_feat_extr.m
 %> @brief Computes Skin temperature features
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %>          signal

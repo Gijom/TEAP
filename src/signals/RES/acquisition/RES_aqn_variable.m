@@ -1,3 +1,4 @@
+%> @file RES_aqn_variable.m
 %> @brief RES_aqn_variable gets a RES signal from a variable
 
 %> @param rawRES [1xN]: the raw RES signal

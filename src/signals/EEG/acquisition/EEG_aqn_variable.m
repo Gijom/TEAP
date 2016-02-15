@@ -1,3 +1,4 @@
+%> @file EEG_aqn_variable.m
 %> @brief  EEG_aqn_variable gets an EEG signal from a variable.
 
 %> @param   eegChannels [Cxstrings]: a vector specifying the C EEG channels given

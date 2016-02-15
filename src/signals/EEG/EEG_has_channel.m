@@ -1,3 +1,4 @@
+%> @file EEG_has_channel.m
 %> @brief Simply tells you if that specific channel on the @b EEG signal exists.
 
 %> @param  EEGSignal: the EEG signal

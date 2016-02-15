@@ -1,3 +1,4 @@
+%> @file Signal__get_offset.m
 %> @brief Gets the offset(in frames) relative to its parent (the first it had, non recursive).
 %> @param  Signal: the signal you want to know the offset
 %> @retval  offset: the signal offset, in frames

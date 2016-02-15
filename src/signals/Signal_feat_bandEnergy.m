@@ -1,3 +1,4 @@
+%> @file Signal_feat_bandEnergy.m
 %> @brief Computes the standard deviation of a given signal
 %> @author Copyright Mohammad Soleymani, BSD Simplified, 2015
 %> @param  Signal

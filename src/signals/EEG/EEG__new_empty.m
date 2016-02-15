@@ -1,3 +1,4 @@
+%> @file EEG__new_empty.m
 %> @brief Creates a new EEG empty signal
 function Signal = EEG__new_empty()
 

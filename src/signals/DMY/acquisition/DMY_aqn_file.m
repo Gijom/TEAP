@@ -1,3 +1,4 @@
+%> @file DMY_aqn_file.m
 function Signal = DMY_aqn_file(filename)
 % DMY_AQN_FILE gets a DMY signal from a filename
 

@@ -1,3 +1,4 @@
+%> @file BVP_filter_basic.m
 %> @brief Cleans a signal adding a low-pass median filter to it. The window equals the
 %> sample rate, aka 1 sec.
 %> @param  BVPsignal: the @b BVP signal.

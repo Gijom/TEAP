@@ -1,3 +1,4 @@
+%> @file iirpeak.m
 function [num, den] = iirpeak(Wo, BW, varargin)
 %IIRPEAK Second-order IIR peaking (resonator) digital filter design.
 %   [NUM, DEN] = IIRPEAK(Wo, BW) designs a second-order resonator digital

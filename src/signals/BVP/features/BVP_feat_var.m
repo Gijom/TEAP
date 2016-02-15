@@ -1,3 +1,4 @@
+%> @file BVP_feat_var.m
 %> @brief Computes the variance of a @b BVP signal
 %> @param  BVPSignal: the @b BVP signal
 %> @retval mvar: the signal's variance

@@ -1,3 +1,4 @@
+%> @file EEG_reference_mean.m
 %> @brief re-references the @b EEG signals to their mean
 %> Creates a reference for the @b EEG signal; removed average reference' the signal
 

@@ -1,3 +1,4 @@
+%> @file EEG_aqn_var_example.m
 AF3 = csvread('outFile_signal_AF3')';
 F3 = csvread('outFile_signal_F3')';
 Fp1 = csvread('outFile_signal_Fp1')';

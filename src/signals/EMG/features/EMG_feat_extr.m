@@ -1,3 +1,4 @@
+%> @file EMG_feat_extr.m
 %> @brief Computes Skin EMG featuEMG
 %> @param  EMGsignal: the EMG  signal.
 %> @param  varargin: you can choose which features to extract (see featureSelector)

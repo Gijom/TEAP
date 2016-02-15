@@ -1,3 +1,4 @@
+%> @file ECG_aqn_variable.m
 %> @brief ECG_aqn_variable gets an ECG signal from a variable
 %> @attention USAGE:
 %> If you've got the signal from the 2 electrodes, you must call the function

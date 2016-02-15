@@ -1,3 +1,4 @@
+%> @file Signal_feat_std.m
 %> @brief Computes the standard deviation of a given signal
 %> @param  Signal
 %> @retval  STD: the calculated std, using the @c std() function

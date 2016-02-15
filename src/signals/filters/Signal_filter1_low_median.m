@@ -1,3 +1,4 @@
+%> @file Signal_filter1_low_median.m
 %> @brief Filters the signal with a low pass median filtering method
 %> @param Signal: the signal to filter. Not a bulk signal !
 %> @param windowSize: the window size (in samples)

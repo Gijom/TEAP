@@ -1,3 +1,4 @@
+%> @file Signal__set_samprate.m
 %> @brief Sets the sampling rate of a signal
 %> @param  Signal: the signal
 %> @param  samprate: the sampling rate

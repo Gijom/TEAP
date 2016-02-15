@@ -1,2 +1,2 @@
-make:
-	./makedoc.sh
+doc:
+	doxygen

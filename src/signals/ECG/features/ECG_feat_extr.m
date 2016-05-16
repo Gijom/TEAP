@@ -101,7 +101,7 @@ if(~isempty(ECG_feats_names))
             sp0102 = log(sum(P(f>0.1 & f<=0.2))+eps);
             sp0203 = log(sum(P(f>0.2 & f<=0.3))+eps);
             sp0304 = log(sum(P(f>0.3 & f<=0.4))+eps);
-            energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
+            energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<0.5))+eps);
         end
         if length(IBI)< welch_window_size_IBI +IBI_sp
             warning('singal to short for the welch size');

@@ -108,7 +108,7 @@ if(~isempty(BVP_feats_names))
             sp0102 = log(sum(P(f>0.1 & f<=0.2))+eps);
             sp0203 = log(sum(P(f>0.2 & f<=0.3))+eps);
             sp0304 = log(sum(P(f>0.3 & f<=0.4))+eps);
-            sp_energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<5))+eps);
+            sp_energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<0.5))+eps);
         end
     end
     if length(IBI)< welch_window_size_BVP +IBI_sp

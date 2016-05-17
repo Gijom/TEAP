@@ -29,8 +29,14 @@ if length(Resp_filt)<60*fs
     warning('Resp signal too short cannot calculate the spectral features - result of the central respiration frequency is not goign to be reliable')
 end
 %Compute the energy spectrum
-[RespPower, fResp] = pwelch(Resp_filt, [], [], [], fs,'power');
+win_length = round(length(Resp_filt)/4.5);
+nfft = sqrt(2^ceil(log2(win_length)));
 
+if nfft<256
+    nfft = 256;
+end
+%had to specify for compatibility between octave and matlab
+[RespPower, fResp] = pwelch(Resp_filt, win_length, 0.5, nfft, fs,'power');
 
 %Take the frequencies we want
 iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
@@ -38,4 +44,7 @@ iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);
 [dummy, iMainFreq] = max(RespPower(iFreqInterest));
 
 mainFreq = fResp(iFreqInterest(iMainFreq));
-
+% if isempty(mainFreq)
+%     mainFreq = NaN;
+% end
+    

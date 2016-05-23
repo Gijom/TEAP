@@ -1,4 +1,6 @@
 %> @file GSR_feat_peaks_example.m
+%> @brief Loads a GSR signal, computes it's attributes and displays the signal
+
 %Before all, load TEAPhysio
 addpath(genpath('../../../'))
 
@@ -26,7 +28,7 @@ Signal_plot_pts(signal, posPeaks, rawSig(posPeaks), 'r*');
 
 figure
 
-%Take a part of a signal
+%Take a part of a signal, between 41 and 85 seconds
 truncated = Signal__get_window(signal, 41, 85);
 Signal_plot(truncated);
 

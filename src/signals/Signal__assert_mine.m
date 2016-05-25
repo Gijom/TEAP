@@ -18,7 +18,7 @@
 
 %> @param  Signal: the signal to test
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal__assert_mine(Signal)
 
 if(nargin ~= 1)

@@ -19,7 +19,7 @@
 %> @param preprocName: the pre-processing you want
 %> @retval  Boolean: a boolean value indicating if yes (1) or no (you guessed-it)
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Boolean = Signal__has_preproc(Signal, preprocName)
 
 %Does the signal have some preprocessing done ?

@@ -25,7 +25,7 @@
 %> @retval  gammaBand: 1xN vector; N number of electrodes
 %
 %> @author Copyright Mohammad Soleymani 2009
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [deltaBand, thetaBand, slowAlphaBand, alphaBand, betaBand, gammaBand] = EEG_feat_bandENR(EEGSignal)
 config_file;
 

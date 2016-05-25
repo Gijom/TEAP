@@ -30,7 +30,7 @@
 %> @retval Child: the cut signal
 %
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Child = Signal__get_window_frames(Signal, startT, endT)
 
 if(nargin ~= 3)

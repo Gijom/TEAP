@@ -18,7 +18,7 @@
 %> @param  Signal: the signal you want to get the name of.
 %> @retval  signalName: the name of the signal (ex: 'GSR')
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function signalName = Signal__get_signame(Signal)
 
 

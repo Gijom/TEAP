@@ -22,7 +22,7 @@
 
 %> @retval BulkSig the bulksignal with the signal updated
 function [BulkSig] = Bulk_update_signal(BulkSig, signame, sig)
-%Copyright Frank Villaro-Dixon, Guillaume Chanel, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, Guillaume Chanel, 2014
 
 if(nargin ~= 3 || nargout ~= 1)
 	error('Usage: BulkSig = Bulk_add_signal(BulkSig, signame, sig)');

@@ -19,7 +19,7 @@
 %> @param  BVPsignal: the @b BVP signal.
 %> @retval  Signal: the filtered @b BVP signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function BVPsignal = BVP_filter_basic(BVPsignal)
 
 

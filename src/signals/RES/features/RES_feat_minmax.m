@@ -17,8 +17,7 @@
 %> @brief Computes the peak-to-peak value of a respiration signal (aka greatest breath).
 %> @param RESsignal the RES signal.
 %> @retval  minmax: the greatest breath of the patient.
-%> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Guillaume Chanel, Frank Villaro-Dixon, 2013-2014
 function [minmax] = RES_feat_minmax(RESsignal)
 
 %Make sure we have a RES signal

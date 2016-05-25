@@ -21,7 +21,7 @@
 
 %> @retval   Signal: A GSR TEAPhysio signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = GSR_aqn_variable(rawGSR, sampRate)
 
 if(nargin ~= 2)

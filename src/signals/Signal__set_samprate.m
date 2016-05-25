@@ -19,7 +19,7 @@
 %> @param  samprate: the sampling rate
 %> @retval  Signal: the newly modified signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal__set_samprate(Signal, samprate)
 
 if(nargin ~= 2)

@@ -22,7 +22,7 @@
 %>  - @c Signal__get_window
 %>  - @c Signal__get_window_frames
 %>
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function offset = Signal__get_offset(Signal)
 
 if(nargin ~= 1)

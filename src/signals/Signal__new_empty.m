@@ -17,7 +17,7 @@
 %> @brief Creates a new, empty, signal. This is mainly to represent the data structure
 %> @retval  Signal: an empty signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal__new_empty()
 
 Signal.TEAPhysio = 'S'; %'S' because it is a signal. May have been 'B' for Bulk

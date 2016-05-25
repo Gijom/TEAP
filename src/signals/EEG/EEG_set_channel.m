@@ -22,7 +22,7 @@
 
 %> @retval  Signal The set signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = EEG_set_channel(Signal, channelName, channelData)
 
 if(nargin ~= 3 || nargout ~= 1)

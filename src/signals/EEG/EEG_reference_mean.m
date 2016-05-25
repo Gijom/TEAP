@@ -20,7 +20,7 @@
 %> @param  EEGSignal: the @b EEG signal
 %> @retval  EEGSignal: the referenced @b EEG signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function EEGSignal = EEG_reference_mean(EEGSignal)
 
 if(nargin ~= 1 || nargout ~= 1)

@@ -30,7 +30,7 @@
 %>                   check this vector since the order of requested features
 %>                   can be different than the requested one)
 %> @author Copyright XXX 2011
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [GSR_feats, GSR_feats_names] = GSR_feat_extr(GSRsignal,varargin)
 
 % Check inputs and define unknown values

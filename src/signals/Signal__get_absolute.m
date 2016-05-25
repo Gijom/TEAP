@@ -22,7 +22,7 @@
 %> @attention SEE ALSO:
 %> - Signal__set_absolute
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [isAbsolute] = Signal__get_absolute(Signal)
 
 if(nargin ~= 1)

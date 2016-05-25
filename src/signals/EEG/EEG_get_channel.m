@@ -21,7 +21,7 @@
 
 %> @retval  Data: the data of the channel
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Data = EEG_get_channel(Signal, channelName)
 
 if(nargin ~= 2)

@@ -21,7 +21,7 @@
 
 %> @retval  ChannelExists: a boolean variable
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function ChannelExists = EEG_has_channel(EEGSignal, channelName)
 
 if(nargin ~= 2)

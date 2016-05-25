@@ -20,8 +20,8 @@
 
 %> @retval  energy: the energy of the signal
 
-%> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Guillaume Chanel, Frank Villaro-Dixon, 2013-2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [energy] = RES_feat_energy(RESsignal)
 
 %Make sure we have a RES signal

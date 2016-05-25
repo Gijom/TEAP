@@ -24,7 +24,7 @@
 %> @param  yvals: the y values
 %> @param  props: plot properties (like 'r*')
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal_plot_pts(Signal, xvals, yvals, props)
 
 samprate = Signal__get_samprate(Signal);

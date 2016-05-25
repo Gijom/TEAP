@@ -21,7 +21,7 @@
 %> @param title the optional title
 
 function Bulk_plot(BulkSig, title)
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, 2014
 
 
 %IF MULTIPLE EPOCHS

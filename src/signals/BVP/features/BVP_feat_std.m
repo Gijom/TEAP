@@ -18,7 +18,7 @@
 %> @param  BVPs: the BVP signal
 %> @retval  mstd: the signal's std
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function mstd = BVP_feat_std(BVPSignal)
 
 %Make sure we have an BVP signal

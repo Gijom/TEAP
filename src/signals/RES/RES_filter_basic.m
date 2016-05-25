@@ -21,7 +21,7 @@
 
 %> @retval Signal: the filtered RES signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function RESsignal = RES_filter_basic(RESsignal)
 
 

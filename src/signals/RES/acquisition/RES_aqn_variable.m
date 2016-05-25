@@ -20,7 +20,7 @@
 %> @param sampRate [1x1]: the sampling rate, in Hz
 
 %> @retval Signal: A RES TEAPhysio signal
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = RES_aqn_variable(rawRES, sampRate)
 
 if(nargin ~= 2)

@@ -48,7 +48,7 @@
 %>        returned
 
 %> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [BVP_feats, BVP_feats_names, Bulk] = BVP_feat_extr(BVPSignal,varargin)
 
 % Check inputs and define unknown values

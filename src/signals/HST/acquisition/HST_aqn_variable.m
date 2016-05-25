@@ -20,7 +20,7 @@
 %> @param sampRate [1x1] the sampling rate, in Hz
 %> @retval Signal A HST TEAPhysio signal
 
-%> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> Copyright Frank Villaro-Dixon, 2014
 function Signal = HST_aqn_variable(rawHST, sampRate)
 
 
@@ -34,7 +34,7 @@ Signal = Signal__set_samprate(Signal, sampRate);
 if(median(rawHST) > 70)
 	warning(['The signal given seems to be given in °F. I need °C ! ' ...
 	         'Automatic conversion applied. ' ...
-	         'And stop using Fahrenheit, nobody uses them anyway !']);
+	         'And stop using Fahrenheit, nobody uses it anyway !']);
 	rawHST = (rawHST - 32) .* (5/9);
 end
 

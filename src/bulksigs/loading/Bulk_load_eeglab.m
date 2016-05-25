@@ -22,7 +22,7 @@
 %> @retval BulkSig a TEAPhysio bulk signal vector
 
 function [BulkSig] = Bulk_load_eeglab(EEGV)
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, 2014
 
 if(nargin ~= 1)
 	error('Usage: BulkSig = Bulk_load_eeglab(EEGV)');

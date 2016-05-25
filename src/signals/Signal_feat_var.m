@@ -18,7 +18,7 @@
 %> @param  Signal
 %> @retval  var: the calculated var, using the @c var() function
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [variance] = Signal_feat_var(Signal)
 
 Signal__assert_mine(Signal);

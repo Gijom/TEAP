@@ -30,7 +30,7 @@
 %> - Signal__get_window_frames
 %> - Signal__get_offset
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Child = Signal__get_window(Signal, startT, endT)
 
 

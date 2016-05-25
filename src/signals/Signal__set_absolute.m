@@ -24,7 +24,7 @@
 
 %> @retval  Signal: the same signal with the flag set
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [Signal] = Signal__set_absolute(Signal, isAbsolute) 
 
 if(nargin ~= 2 || nargout ~= 1)

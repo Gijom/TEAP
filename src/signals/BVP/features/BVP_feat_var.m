@@ -18,7 +18,7 @@
 %> @param  BVPSignal: the @b BVP signal
 %> @retval mvar: the signal's variance
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function mvar = BVP_feat_var(BVPSignal)
 
 %Make sure we have an BVP signal

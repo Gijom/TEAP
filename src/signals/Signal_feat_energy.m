@@ -18,7 +18,7 @@
 %> @param  Signal:
 %> @retval ENR the energy, as the sum of each (element squared)
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [ENR] = Signal_feat_energy(Signal)
 
 Signal__assert_mine(Signal);

@@ -18,7 +18,7 @@
 %> @param  Signal: the signal
 %> @retval  unit: a string naming the unit
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function unit = Signal__get_unit(Signal)
 
 if(nargin ~= 1)

@@ -17,7 +17,7 @@
 %> @brief Asserts that the signal is a TEAPhysio bulk signal
 
 %> @param BulkSignal the signal to test
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, 2014
 
 function Bulk_assert_mine(BulkSignal)
 

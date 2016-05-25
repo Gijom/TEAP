@@ -21,7 +21,7 @@
 %> @retval mainFreq: the main respiration frequency, given in Hz
 
 %> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 
 function [mainFreq] = RES_feat_mainfreq(RESsignal)
 

@@ -19,7 +19,7 @@
 %> @retval IBIMean: the InterBeatInterval mean
 %
 %> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function IBIMean = ECG_feat_IBImean(ECGSignal)
 
 

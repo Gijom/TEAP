@@ -30,7 +30,7 @@
 %> @retval HST_feats_names names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features
 %>                   can be different than the requested one)
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
+%> @author Copyright Frank Villaro-Dixon, 2015
 
 
 function [HST_feats, HST_feats_names] = HST_feat_extr(HSTsignal,varargin)
@@ -43,8 +43,8 @@ HSTsignal = HST__assert_type(HSTsignal);
 
 
 if(~Signal__has_preproc_lowpass(HSTsignal))
-    warning(['For the function to work well, you should low-pass the signal' ...
-        '. Preferably with a mean filter']);
+	warning(['For the function to work well, you should low-pass the signal' ...
+	        '. Preferably with a mean filter']);
 end
 
 if(Signal__get_absolute(HSTsignal) ~= true)

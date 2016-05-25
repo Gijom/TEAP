@@ -27,7 +27,7 @@
 %> @retval  posPeaks [1xP]: index of the detected peaks in the GSR signal
 
 %> @author Copyright XXX 2011
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal, ampThresh)
 
 

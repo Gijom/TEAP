@@ -20,7 +20,7 @@
 
 %> @retval  name: the name (eg: 'AF3')
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [name] = EEG_get_elname(num)
 
 config_file;

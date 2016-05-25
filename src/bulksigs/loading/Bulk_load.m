@@ -22,7 +22,7 @@
 %> @retval BulkSig a TEAPhysio bulk signal vector
 
 function [BulkSig] = Bulk_load(file_name)
-%Copyright Mohammad Soleymani, BSD Simplified, 2014
+%Copyright Mohammad Soleymani, 2014
 
 if(nargin ~= 1)
     error('Usage: BulkSig = Bulk_load(phys_data)');

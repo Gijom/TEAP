@@ -32,7 +32,7 @@
 %>               the  features are per electode and therefore  1xN (N= number of electrodes)
 %>               and the final output is a 2dimensional array whose size is N_features x N_electrodes
 
-%> @author Copyright Mohammad Soleymani, Guillaume Chanel, Frank Villaro-Dixon, BSD Simplified, 2015
+%> @author Copyright Mohammad Soleymani, Guillaume Chanel, Frank Villaro-Dixon, 2015
 function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
 
 % Check inputs and define unknown values

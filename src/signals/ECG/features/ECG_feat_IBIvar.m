@@ -19,7 +19,7 @@
 %> @retval  IBIVar: the InterBeatInterval variance
 %
 %> @author Copyright Guillaume Chanel 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function IBIVar = ECG_feat_IBIvar(ECGSignal)
 
 

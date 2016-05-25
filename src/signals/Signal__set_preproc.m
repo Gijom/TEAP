@@ -21,7 +21,7 @@
 
 %> @retval  Signal: the modified signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal__set_preproc(Signal, preprocName)
 
 if(nargin ~= 2)

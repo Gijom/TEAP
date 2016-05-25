@@ -21,7 +21,7 @@
 %> @param  maxVal: the maximum value (defaults to +Inf)
 %> @param  soft: boolean indicating if the assert is soft (i.e. 1 -> warning) or hard (i.e. 0 -> error), defaults to 0
 %
-%> @author Copyright Guillaume Chanel, BSD Simplified, 2016
+%> @author Copyright Guillaume Chanel, 2016
 function Signal__assert_range(Signal, minVal, maxVal, soft)
 
 if(nargin > 4 || nargin < 2)

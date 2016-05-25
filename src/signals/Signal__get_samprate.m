@@ -20,7 +20,7 @@
 
 %> @retval  samprate: the sampling rate of the signal, in hertz
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function samprate = Signal__get_samprate(Signal)
 
 if(nargin ~= 1)

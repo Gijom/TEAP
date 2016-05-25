@@ -22,7 +22,7 @@
 %> @param  startT: the start time, in frames (optional)
 %> @param  endT: the end time, or 0 if all the signal (optional)
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal_plot1D(Signal, startT, endT)
 
 raw = Signal__get_raw(Signal);

@@ -49,7 +49,7 @@
 % values
 
 %> @author Copyright Guillaume Chanel 2013, 2015
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargin)
 
 %Make sure we have an ECG signal and get the bulk for saving IBI (if needed)

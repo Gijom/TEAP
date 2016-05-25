@@ -28,13 +28,12 @@
 %> @retval EMG_feats_names: names of the computed features (it is good pratice to
 %>                          check this vector since the order of requested features
 %>                          can be different than the requested one)
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2015
+%> @author Copyright Frank Villaro-Dixon, 2015
 
 %
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %>          signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function [EMG_feats, EMG_feats_names] = EMG_feat_extr(EMGsignal, varargin)
 
 % Check inputs and define unknown values

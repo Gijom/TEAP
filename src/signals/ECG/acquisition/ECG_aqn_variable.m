@@ -29,7 +29,7 @@
 
 %> @retval   Signal: An ECG TEAPhysio signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 
 Signal = ECG__new_empty();

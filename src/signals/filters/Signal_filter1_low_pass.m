@@ -21,7 +21,7 @@
 
 %> @retval Signal: the low-passed-signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 
 if(nargin ~= 2 || nargout ~= 1)

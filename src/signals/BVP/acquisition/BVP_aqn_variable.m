@@ -21,7 +21,7 @@
 
 %> @retval   Signal: A BVP TEAPhysio signal
 
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = BVP_aqn_variable(rawBVP, sampRate)
 
 if(nargin ~= 2)

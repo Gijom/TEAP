@@ -33,7 +33,7 @@
 
 %> @retval Signal An EMG TEAPhysio signal
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = EMG_aqn_variable(EMG, EMG2, sampRate)
 
 Signal = EMG__new_empty();

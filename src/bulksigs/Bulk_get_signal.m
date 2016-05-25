@@ -20,7 +20,7 @@
 %> @param typeWanted the type you want (ex: 'HST', etc. Defined by SSS_get_signame !)
 
 %> @retval Signal the wanted signal. FAILS if does not exist
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, 2014
 
 function [Signal] = Bulk_get_signal(BulkSignal, typeWanted)
 

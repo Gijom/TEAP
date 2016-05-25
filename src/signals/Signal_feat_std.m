@@ -18,7 +18,7 @@
 %> @param  Signal
 %> @retval  STD: the calculated std, using the @c std() function
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function [STD] = Signal_feat_std(Signal)
 
 Signal__assert_mine(Signal);

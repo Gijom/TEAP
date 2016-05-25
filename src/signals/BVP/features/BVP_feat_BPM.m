@@ -21,7 +21,7 @@
 %> @retval  BPM: the beats per minute
 %
 %> @author Copyright Mohammad Soleymani 2013
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function BPM = BVP_feat_BPM(BVPSignal)
 
 

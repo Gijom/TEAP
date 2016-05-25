@@ -19,7 +19,7 @@
 % Outputs:
 %> @retval  mmean: the signal's mean
 %
-%> @author Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 function mmean = BVP_feat_mean(BVPSignal)
 
 %Make sure we have an BVP signal

@@ -18,7 +18,7 @@
 %> @param BulkSig the bulk signal
 
 %> @retval signals the array containing the signals name (ex: ['GSR'; 'EEG'])
-%Copyright Frank Villaro-Dixon, BSD Simplified, 2014
+%Copyright Frank Villaro-Dixon, 2014
 
 function [signals] = Bulk_get_signals(BulkSig)
 Bulk_assert_mine(BulkSig);

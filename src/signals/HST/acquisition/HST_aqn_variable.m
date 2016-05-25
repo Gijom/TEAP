@@ -1,11 +1,26 @@
+%This file is part of TEAP.
+%
+%TEAP is free software: you can redistribute it and/or modify
+%it under the terms of the GNU General Public License as published by
+%the Free Software Foundation, either version 3 of the License, or
+%(at your option) any later version.
+%
+%TEAP is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%
+%You should have received a copy of the GNU General Public License
+%along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
+
 %> @file HST_aqn_variable.m
 %> @brief HST_aqn_variable gets a HST signal from a variable
-%> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 
 %> @param rawHST [1xN] the raw HST signal
 %> @param sampRate [1x1] the sampling rate, in Hz
-
 %> @retval Signal A HST TEAPhysio signal
+
+%> Copyright Frank Villaro-Dixon, BSD Simplified, 2014
 function Signal = HST_aqn_variable(rawHST, sampRate)
 
 

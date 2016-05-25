@@ -15,7 +15,7 @@
 	<type>toolbox</type>
 
 	<!-- The icon element is used in the Start button -->
-	<icon>sampleicon.gif</icon>
+	<icon>favicon.png</icon>
 
 	<!-- (Required) The help_location is relative path to help (HTML) file folder -->
 	<help_location>help</help_location>

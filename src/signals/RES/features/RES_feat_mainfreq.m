@@ -40,16 +40,17 @@ Apass = 1;      % Bandwidth Attenuation
 [b, a] = iirpeak(Fpeak/(fs/2), BW/(fs/2), Apass);
 Resp_filt = filtfilt(b, a, raw);
 
-if length(Resp_filt)<60*fs
-    warning('Resp signal too short cannot calculate the spectral features - result of the central respiration frequency is not goign to be reliable')
+if length(Resp_filt) < 60*fs
+	warning('Resp signal too short cannot calculate the spectral features - result of the central respiration frequency is not going to be reliable')
 end
 %Compute the energy spectrum
 win_length = round(length(Resp_filt)/4.5);
 nfft = sqrt(2^ceil(log2(win_length)));
 
-if nfft<256
-    nfft = 256;
+if nfft < 256
+	nfft = 256;
 end
+
 %had to specify for compatibility between octave and matlab
 [RespPower, fResp] = pwelch(Resp_filt, win_length, 0.5, nfft, fs,'power');
 
@@ -62,4 +63,4 @@ mainFreq = fResp(iFreqInterest(iMainFreq));
 % if isempty(mainFreq)
 %     mainFreq = NaN;
 % end
-    
+

@@ -14,12 +14,12 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 
 %> @file Bulk_load_eeglab.m
-%> @brief Loads an EEGLab variable, into a TEAPhysio bulk signal, containing EEG, ECG,
+%> @brief Loads an EEGLab variable, into a TEAP bulk signal, containing EEG, ECG,
 %> GSR, etc.
 
 %> @param EEGV the variable given by EEGLab (ex: load A.mat; Bulk_load_eeglab(EEG))
 
-%> @retval BulkSig a TEAPhysio bulk signal vector
+%> @retval BulkSig a TEAP bulk signal vector
 
 function [BulkSig] = Bulk_load_eeglab(EEGV)
 %Copyright Frank Villaro-Dixon, 2014

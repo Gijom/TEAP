@@ -28,7 +28,7 @@ fields = fieldnames(BulkSig);
 signals = [];
 
 for i = [1:size(fields)];
-	if(~strcmp(fields{i}, 'TEAPhysio'))
+	if(~strcmp(fields{i}, 'TEAP'))
 		signals = [fields{i}; signals];
 	end
 end

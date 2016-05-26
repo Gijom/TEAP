@@ -31,7 +31,7 @@
 %> @param   EMG2 [1xN]: the other pair EMG signal (optional if difference already calc.)
 %> @param   sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval Signal An EMG TEAPhysio signal
+%> @retval Signal An EMG TEAP signal
 %
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = EMG_aqn_variable(EMG, EMG2, sampRate)

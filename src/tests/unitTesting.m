@@ -1,4 +1,4 @@
-%Runs the tests of the TEAPhysio lib
+%Runs the tests of the TEAP lib
 %NB: runTests.sh should be called instead
 
 init

@@ -14,7 +14,7 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 
 %> @file Bulk_assert_mine.m
-%> @brief Asserts that the signal is a TEAPhysio bulk signal
+%> @brief Asserts that the signal is a TEAP bulk signal
 
 %> @param BulkSignal the signal to test
 %Copyright Frank Villaro-Dixon, 2014
@@ -30,13 +30,13 @@ if(length(BulkSignal) ~= 1)
 	       'Could you please choose the epoch you want (eg: with Bulk(1))']);
 end
 
-if(isfield(BulkSignal, 'TEAPhysio'))
-	if(BulkSignal.TEAPhysio == 'B')
+if(isfield(BulkSignal, 'TEAP'))
+	if(BulkSignal.TEAP == 'B')
 		return;
 	end
 end
 
-error('The signal given is not a TEAPhysio one')
+error('The signal given is not a TEAP one')
 
 %!error(Bulk_assert_mine(42))
 %!error(Bulk_assert_mine())

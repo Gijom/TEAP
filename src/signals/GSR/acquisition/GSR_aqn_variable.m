@@ -19,7 +19,7 @@
 %> @param   rawGSR [1xN]: the raw GSR signal
 %> @param   sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval   Signal: A GSR TEAPhysio signal
+%> @retval   Signal: A GSR TEAP signal
 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = GSR_aqn_variable(rawGSR, sampRate)

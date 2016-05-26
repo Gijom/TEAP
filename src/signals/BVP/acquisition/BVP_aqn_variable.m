@@ -19,7 +19,7 @@
 %> @param   rawBVP [1xN]: the raw BVP signal
 %> @param    sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval   Signal: A BVP TEAPhysio signal
+%> @retval   Signal: A BVP TEAP signal
 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = BVP_aqn_variable(rawBVP, sampRate)

@@ -14,7 +14,7 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 
 %> @file Signal__assert_range.m
-%> @brief Asserts that the signal is a TEAPhysio one
+%> @brief Asserts that the signal is a TEAP one
 
 %> @param  Signal: the signal to test
 %> @param  minVal: the minimum value (default to -Inf)

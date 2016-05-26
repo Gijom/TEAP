@@ -2,7 +2,7 @@
 %Tests the HST mean thingy features
 
 %!test
-%! %Before all, load TEAPhysio
+%! %Before all, load TEAP
 %! addpath(genpath('../../../'))
 %! %First, we load some data:
 %! data = csvread('HST_example.csv');

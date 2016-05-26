@@ -30,7 +30,7 @@ Signal__assert_mine(Signal);
 
 
 if(~isfield(Signal, 'name'))
-	error('Signal given is not a TEAPhysio signal')
+	error('Signal given is not a TEAP signal')
 end
 
 signalName = Signal.name;

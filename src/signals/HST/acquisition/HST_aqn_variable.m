@@ -18,7 +18,7 @@
 
 %> @param rawHST [1xN] the raw HST signal
 %> @param sampRate [1x1] the sampling rate, in Hz
-%> @retval Signal A HST TEAPhysio signal
+%> @retval Signal A HST TEAP signal
 
 %> Copyright Frank Villaro-Dixon, 2014
 function Signal = HST_aqn_variable(rawHST, sampRate)

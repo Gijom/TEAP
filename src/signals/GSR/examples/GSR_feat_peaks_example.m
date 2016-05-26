@@ -16,7 +16,7 @@
 %> @file GSR_feat_peaks_example.m
 %> @brief Loads a GSR signal, computes it's attributes and displays the signal
 
-%Before all, load TEAPhysio
+%Before all, load TEAP
 addpath(genpath('../../../'))
 
 %Then, we load some data:

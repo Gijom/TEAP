@@ -36,7 +36,7 @@ if(nargin ~= 2 || nargout > 2)
 	error('Usage: [Signal, Bulk] = Signal__assert_type(Signal, nameWanted)')
 end
 
-if(~isfield(Signal, 'TEAPhysio'))
+if(~isfield(Signal, 'TEAP'))
 	error('The signal seems not to be a TEAP one.');
 end
 
@@ -49,9 +49,9 @@ end
 Bulk = [];
 
 %can either be a Bulk or a single signal
-if(Signal.TEAPhysio == 'S') %Single speed ^W Signal
+if(Signal.TEAP == 'S') %Single speed ^W Signal
 	Signal__assert_mine(Signal);
-elseif(Signal.TEAPhysio == 'B') %Bulk signal
+elseif(Signal.TEAP == 'B') %Bulk signal
 	%We have to choose the signal that we want
     Bulk = Signal;
 	Signal = Bulk_get_signal(Signal, nameWanted); %Will fail if does not exist

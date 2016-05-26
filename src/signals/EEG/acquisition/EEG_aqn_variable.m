@@ -20,7 +20,7 @@
 %> @param   eegData [CxN]: a matrix containing the EEG data
 %> @param   sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval   Signal: An EEG TEAPhysio signal
+%> @retval   Signal: An EEG TEAP signal
 function Signal = EEG_aqn_variable(eegChannels, eegData, sampRate)
 
 if(nargin ~= 3)

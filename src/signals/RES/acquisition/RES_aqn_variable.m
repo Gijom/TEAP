@@ -19,7 +19,7 @@
 %> @param rawRES [1xN]: the raw RES signal
 %> @param sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval Signal: A RES TEAPhysio signal
+%> @retval Signal: A RES TEAP signal
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = RES_aqn_variable(rawRES, sampRate)
 

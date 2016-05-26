@@ -4,5 +4,5 @@
 function [BulkSig] = Bulk_new_empty()
 %Copyright Frank Villaro-Dixon, Public Domain, 2014
 
-BulkSig.TEAPhysio = 'B'; %See Signal__new_empty for more doc
+BulkSig.TEAP = 'B'; %See Signal__new_empty for more doc
 

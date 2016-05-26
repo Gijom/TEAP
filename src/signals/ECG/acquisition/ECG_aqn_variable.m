@@ -27,7 +27,7 @@
 %> @param   ECG2 [1xN]: the other pair ECG signal (optional if difference already calc.)
 %> @param   sampRate [1x1]: the sampling rate, in Hz
 
-%> @retval   Signal: An ECG TEAPhysio signal
+%> @retval   Signal: An ECG TEAP signal
 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)

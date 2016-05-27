@@ -14,9 +14,9 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 
 %> @file ECG_feat_IBI_example.m
-addpath(genpath('../../../'));
+addpath(genpath('../../../')); %load the toolbox
 
-probe1 = csvread('ECG_example_probe1.csv');
+probe1 = csvread('ECG_example_probe1.csv'); 
 probe2 = csvread('ECG_example_probe2.csv');
 
 sig = ECG_aqn_variable(probe1, probe2, 1024);

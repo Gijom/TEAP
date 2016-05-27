@@ -41,9 +41,9 @@ rawSig = Signal__get_raw(signal);
 Signal_plot_pts(signal, posPeaks, rawSig(posPeaks), 'r*');
 %Note that we didn't had to 'hold on': the function does-it itself.
 
-figure
 
 %Take a part of a signal, between 41 and 85 seconds
+figure;
 truncated = Signal__get_window(signal, 41, 85);
 Signal_plot(truncated);
 

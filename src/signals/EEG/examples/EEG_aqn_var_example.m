@@ -14,6 +14,9 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 
 %> @file EEG_aqn_var_example.m
+
+addpath(genpath('../../../'));
+
 AF3 = csvread('outFile_signal_AF3')';
 F3 = csvread('outFile_signal_F3')';
 Fp1 = csvread('outFile_signal_Fp1')';

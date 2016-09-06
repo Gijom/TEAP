@@ -223,6 +223,7 @@ end
 			end
 		end
 		iChannel = 0;
+        warning(['Could not find channel ' chanName ', it will not be included in the bulk. Please correct the configuration file (config_file.m) accordingly'])
 	end
 
 

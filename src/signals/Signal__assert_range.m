@@ -24,7 +24,7 @@
 %> @author Copyright Guillaume Chanel, 2016
 function Signal__assert_range(Signal, minVal, maxVal, soft)
 
-if(nargin > 4 || nargin < 2)
+if(nargin > 4 || nargin < 1)
 	error('Usage: Signal__assert_mine(Signal)');
 end
 
@@ -54,9 +54,11 @@ if(maxSig > maxVal)
 	msg = [msg 'The value ' num2str(maxSig) ' is too high for ' Signal__get_signame(Signal) ' signals (max = ' num2str(maxVal) '). '];
 end
 
-if(soft == 1)
-	warning([msg 'This might lead to other warnings']);
-else
-	error(msg);
+if(~isempty(msg))
+    if(soft == 1)
+	    warning([msg 'This might lead to other warnings']);
+    else
+	    error(msg);
+    end
 end
 

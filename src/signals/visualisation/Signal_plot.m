@@ -34,8 +34,8 @@ elseif(nargin < 3)
 	endT = 0;
 end
 
-%mainly for EEG
-if(strcmp(typeinfo(raw), 'matrix') == 0)
+%mainly (only?) for EEG
+if(isstruct(raw))
 	figure; %FIXME: embed within
 	%use things like parent=axes('Parent'); or things like that
 

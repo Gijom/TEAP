@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_feat_std.m
 %> @brief Computes the std of a BVP signal
 %> @param  BVPs: the BVP signal

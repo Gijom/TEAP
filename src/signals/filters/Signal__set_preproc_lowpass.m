@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_preproc_lowpass.m
 %> @brief Sets the pre-processing property of low-pass for the signal
 %> @param  Signal

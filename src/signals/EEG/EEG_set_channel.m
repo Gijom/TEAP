@@ -12,16 +12,16 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_set_channel.m
 %> @brief Sets the channel 'channelName' of the EEG signal
-
+% 
 %> @param  Signal: the EEG signal
 %> @param  channelName: the name of the channel (ex: 'AF3')
 %> @param  channelData: the data
-
+% 
 %> @retval  Signal The set signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = EEG_set_channel(Signal, channelName, channelData)
 

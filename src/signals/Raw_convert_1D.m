@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Raw_convert_1D.m
 %> @brief Takes a raw signal and reshapes-it into a good form (aka 1D horizontal signal,
 %> [1xN];

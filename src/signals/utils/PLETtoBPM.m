@@ -12,12 +12,12 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file PLETtoBPM.m
-%> @brief calcul le heart rate bpm a partir du fichier des données data
+%> @brief calcul le heart rate bpm a partir du fichier des donnï¿½es data
 %> le signal a une frequence d'echantillonage fe. Search for the upper peak,
 %> if systolic upstroke is desired, simply negate the signal
-
+% 
 %> @param data the pletysmograph data
 %> @param fe sampling frequency
 %> @param methodPeak detection method for choice in case of many peak (default 'max')
@@ -26,16 +26,16 @@
 %>   'first': the first peak of the two
 %> @param SizeWindow for mean filtering, 0-> no fitlering (default fe/50) 
 %> @param verbose display a graph of the result if 1 (default 0)
-
+% 
 %> @retval bpm Heart rate in bpm
 %> @retval delta Heart rate in time
 %> @retval t vecteur contenant les samples central des deux pics ayant servi a
 %> calculer le bpm
-%> @retval listePic liste des echantillon ou il y a eu des pics detecté
-%> Ver 2 : n'utilise pas les wavlet mais seulement la dérivée du signal
+%> @retval listePic liste des echantillon ou il y a eu des pics detectï¿½
+%> Ver 2 : n'utilise pas les wavlet mais seulement la dï¿½rivï¿½e du signal
 %> Ver 3 : plus de gros filtrage et choix des pics suivant differetes methodes
-
-%> Copyright Guillaume Chanel 2015
+% 
+%> @author Guillaume Chanel 2015
 
 function [bpm, delta_t, t, listePic] = PLETtoBPM(data, fe, methodPeak, SizeWindow, verbose)
 

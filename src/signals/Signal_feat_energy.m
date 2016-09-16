@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal_feat_energy.m
 %> @brief Computes the energy of a signal
 %> @param  Signal:

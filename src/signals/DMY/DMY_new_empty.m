@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file DMY_new_empty.m
 function Signal = DMY_new_empty()
 % Creates a new DMY empty signal

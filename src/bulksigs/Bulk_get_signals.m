@@ -14,9 +14,9 @@
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
 %> @file Bulk_get_signals.m
 %> @brief Gets the list of the signals of the bulk signal. Ex: ['GSR'; 'EEG'].
-
+% 
 %> @param BulkSig the bulk signal
-
+% 
 %> @retval signals the array containing the signals name (ex: ['GSR'; 'EEG'])
 %Copyright Frank Villaro-Dixon, 2014
 

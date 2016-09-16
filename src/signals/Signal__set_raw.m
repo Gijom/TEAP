@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_raw.m
 %> @brief Sets the raw data of the signal S
 function Signal = Signal__set_raw(Signal, raw)

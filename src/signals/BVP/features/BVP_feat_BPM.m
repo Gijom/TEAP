@@ -12,12 +12,12 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_feat_BPM.m
 %> @brief Computes the BPM from a BVP signal
-
+% 
 %> @param  BVPSignal: the BVP signal
-
+% 
 %> @retval  BPM: the beats per minute
 %
 %> @author Copyright Mohammad Soleymani 2013

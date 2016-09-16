@@ -12,13 +12,13 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Bulk_get_signal.m
 %> @brief Takes a specific signal from a bulk signal
-
+% 
 %> @param BulkSignal the bulk signal containing all the specific signals
 %> @param typeWanted the type you want (ex: 'HST', etc. Defined by SSS_get_signame !)
-
+% 
 %> @retval Signal the wanted signal. FAILS if does not exist
 %Copyright Frank Villaro-Dixon, 2014
 

@@ -12,12 +12,12 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_samprate.m
 %> @brief Returns the sampling rate of a signal
-
+% 
 %> @param  Signal: the signal you want to get the sampling rate
-
+% 
 %> @retval  samprate: the sampling rate of the signal, in hertz
 %
 %> @author Copyright Frank Villaro-Dixon, 2014

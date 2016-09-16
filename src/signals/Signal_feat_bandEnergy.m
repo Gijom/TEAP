@@ -12,11 +12,11 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal_feat_bandEnergy.m
 %> @brief Computes the standard deviation of a given signal
 %> @author Copyright Mohammad Soleymani, 2015
-
+% 
 %> @param  Signal
 %> @param bands a 2 x n dimenional array including the bands lower and upper
 %> bounds

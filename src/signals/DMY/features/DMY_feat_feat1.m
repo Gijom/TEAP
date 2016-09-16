@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file DMY_feat_feat1.m
 %> @brief Computes feature feat1 from a DMY signal Signal. The result is stored in the
 %> signal cache, then returned.

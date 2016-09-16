@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES__new_empty.m
 %> @brief Creates a new RES empty signal
 %> @retval  Signal: an empty RES signal.

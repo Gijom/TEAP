@@ -12,13 +12,13 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES_aqn_variable.m
 %> @brief RES_aqn_variable gets a RES signal from a variable
-
+% 
 %> @param rawRES [1xN]: the raw RES signal
 %> @param sampRate [1x1]: the sampling rate, in Hz
-
+% 
 %> @retval Signal: A RES TEAP signal
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = RES_aqn_variable(rawRES, sampRate)

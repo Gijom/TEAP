@@ -1,16 +1,31 @@
+%This file is part of TEAP.
+%
+%TEAP is free software: you can redistribute it and/or modify
+%it under the terms of the GNU General Public License as published by
+%the Free Software Foundation, either version 3 of the License, or
+%(at your option) any later version.
+%
+%TEAP is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%
+%You should have received a copy of the GNU General Public License
+%along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
+%
 %> @file correctBPM.m
 %> @b DEPENDANCIES :
 %>   PICtoBPM : compute BPM from of vector of peaks
 %>   Guillaume Chanel (thanks to Joep)
 %>   4/09/2008
-
+% 
 %> @param listePic_in [1*N] : vector of peaks with position of peak in sample for each
 %> peak ([1 8 20] 3 peaks at samples 1, 8 and 20)
 %> @param fe  ampling frequency
 %> @param thresh limit between two peaks for detection of miss or bad peak.
 %> decreasing this limit will not always augment the number of
 %> corrections (see First step, Decide which problems are true ones in the code)
-
+% 
 %> @retval bpm new computed bpm from the corrected list of peaks
 %> @retval listPic corrected list of peaks
 

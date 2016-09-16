@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_offset.m
 %> @brief Sets the offset of the specified signal
 %> @param  Signal: the signal

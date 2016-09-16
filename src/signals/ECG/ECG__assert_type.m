@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file ECG__assert_type.m
 %> @brief Makes sure that the given signal is an ECG one
 %> Please refer to @c Signal__assert_type for more documentation

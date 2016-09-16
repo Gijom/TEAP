@@ -12,14 +12,14 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES_feat_mainfreq.m
 %> @brief Computes the main frequency of a respiration signal.
-
+% 
 %> @param  RESsignal: the RES signal.
-
+% 
 %> @retval mainFreq: the main respiration frequency, given in Hz
-
+% 
 %> @author Copyright Guillaume Chanel 2013
 %> @author Copyright Frank Villaro-Dixon, 2014
 

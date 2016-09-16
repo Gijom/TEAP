@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_aqn_variable.m
 %> @brief BVP_aqn_variable gets a BVP signal from a variable
-
+% 
 %> @param   rawBVP [1xN]: the raw BVP signal
 %> @param    sampRate [1x1]: the sampling rate, in Hz
-
+% 
 %> @retval   Signal: A BVP TEAP signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = BVP_aqn_variable(rawBVP, sampRate)
 

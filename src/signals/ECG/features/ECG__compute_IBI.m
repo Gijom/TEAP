@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file ECG__compute_IBI.m
 %> @brief Computes the IBI if it is not yet available
 %> @param  ECGSignal: the ECG signal

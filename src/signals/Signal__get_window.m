@@ -12,18 +12,18 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_window.m
 %> @brief Takes a portion of a signal between startT and endT seconds. NB: that the
 %> child signal will memorize the offset to its father (the first-one, non recursive)
 %> start: useful if you want to plot the signal with logical times.
 %> If you want to specify frames (aka. samples) instead of seconds, you should
 %> use @c Signal__get_window_frames()
-
+% 
 %> @param  Signal: the signal you want to take a portion of.
 %> @param  startT: the start time (s)
 %> @param  endT: the end time (s)
-
+% 
 %> @retval Signal: son signal
 %
 %> @attention SEE ALSO:

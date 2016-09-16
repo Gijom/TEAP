@@ -12,17 +12,17 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal_feat_stat_moments.m
 %> @brief Computes the statistical moments for the input signals
-
+% 
 %> @param  Signal The signal to compute
-
+% 
 %> @retval mean_: the calculated std, using the @c mean() function
 %> @retval std_: the calculated std, using the @c std() function
 %> @retval kurtosis_: the calculated Kurtosis, using the @c kurtosis() function
 %> @retval skewness_: the calculated skewness, using the @c skewness() function
-
+% 
 %> @author Copyright Moahmmad Soleymani and Frank Villaro-Dixon, 2015
 function [mean_,std_, kurtosis_, skewness_]= Signal_feat_stat_moments(Signal)
 

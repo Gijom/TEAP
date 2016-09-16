@@ -12,10 +12,10 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file GSR_feat_peaks_example.m
 %> @brief Loads a GSR signal, computes it's attributes and displays the signal
-
+% 
 %Before all, load TEAP
 addpath(genpath('../../../'))
 

@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_raw.m
 %> @brief Returns the raw data of the signal
 %> @param  Signal: the signal you want the raw data of

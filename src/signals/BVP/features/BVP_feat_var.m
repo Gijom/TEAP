@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_feat_var.m
 %> @brief Computes the variance of a @b BVP signal
 %> @param  BVPSignal: the @b BVP signal

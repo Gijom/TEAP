@@ -20,11 +20,11 @@ function [num, den] = iirpeak(Wo, BW, varargin)
 %      fvtool(b, a);
 %
 %   See also IIRNOTCH, IIRCOMB, FIRGR.
-
+% 
 %   Author(s): P. Pacheco
 %   Copyright 1999-2006 The MathWorks, Inc.
 %   $Revision: 1.1.4.4 $  $Date: 2007/12/14 14:34:01 $
-
+% 
 %   References:
 %     [1] Sophocles J. Orfanidis, Introduction To Signal Processing
 %         Prentice-Hall 1996.

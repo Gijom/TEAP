@@ -12,16 +12,16 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_absolute.m
 %> @brief Sets the data of the signal to absolute or relative
 %>
 %> Example: for a HST signal, do you have samples like [37, 37.5, 37.6] or more
 %> like [0, 0.5, 0.6] ? If true, the data is absolute (37), if false, it is relative (0).
-
+% 
 %> @param  Signal: the signal to set the flag
 %> @param  isAbsolute: true/false
-
+% 
 %> @retval  Signal: the same signal with the flag set
 %
 %> @author Copyright Frank Villaro-Dixon, 2014

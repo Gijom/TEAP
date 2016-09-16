@@ -12,14 +12,14 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES_feat_energy.m
 %> @brief Computes the energy of a respiration signal.
-
+% 
 %> @param  RESsignal: the RES signal.
-
+% 
 %> @retval  energy: the energy of the signal
-
+% 
 %> @author Copyright Guillaume Chanel, Frank Villaro-Dixon, 2013-2014
 %> @author Copyright Frank Villaro-Dixon, 2014
 function [energy] = RES_feat_energy(RESsignal)

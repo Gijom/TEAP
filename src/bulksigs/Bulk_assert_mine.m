@@ -12,10 +12,10 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Bulk_assert_mine.m
 %> @brief Asserts that the signal is a TEAP bulk signal
-
+% 
 %> @param BulkSignal the signal to test
 %Copyright Frank Villaro-Dixon, 2014
 

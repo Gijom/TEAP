@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__has_preproc.m
 %> @brief Has the given signal been through this preprocessing step
 %> @param  Signal: the signal

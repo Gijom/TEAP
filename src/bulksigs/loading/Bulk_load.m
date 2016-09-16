@@ -12,13 +12,13 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Bulk_load.m
 %> @brief Loads a bdf file, into a TEAP bulk signal, containing EEG, ECG,
 %> GSR, etc.
 %> @param file_name: this variable includes the full path; 
 %> it can be any file supported by biogs sload/sopn
-
+% 
 %> @retval BulkSig a TEAP bulk signal vector
 
 function [BulkSig] = Bulk_load(file_name)

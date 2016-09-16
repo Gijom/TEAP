@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES_feat_minmax.m
 %> @brief Computes the peak-to-peak value of a respiration signal (aka greatest breath).
 %> @param RESsignal the RES signal.

@@ -12,13 +12,13 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file HST_feat_mean.m
 %> @brief Computes the mean of the HST signal (aka the mean temperature)
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %> signal
 %> @author Copyright Frank Villaro-Dixon, 2014
-
+% 
 %> @param HSTsignal the HST signal.
 %> @retval meanTemp the mean temperature, in °C
 

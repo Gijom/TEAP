@@ -12,12 +12,12 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_feat_bandENR.m
 %> @brief Computes the band energy (trial/baseline) for the @b EEG signal.
-
+% 
 %> @param  EEGSignal: the @b EEG signal
-
+% 
 %> @retval  thetaBand: 1xN vector; N number of electrodes
 %> @retval  alphaBand: 1xN vector; N number of electrodes
 %> @retval  betaBand: 1xN vector; N number of electrodes

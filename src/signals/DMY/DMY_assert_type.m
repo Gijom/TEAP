@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file DMY_assert_type.m
 function Signal = DMY_assert_type(Signal)
 %Asserts that the given signal is a DMY one

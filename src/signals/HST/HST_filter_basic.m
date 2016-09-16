@@ -12,12 +12,12 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file HST_filter_basic.m
 %> @brief Cleans an HST signal using a low-pass mean filter. The window equals the sample
 %> rate, aka 1sec
 %> Copyright Frank Villaro-Dixon, 2014
-
+% 
 %> @param  HSTSignal the HST signal to filter
 %> @retval HSTSignal the HST signal filtered
 

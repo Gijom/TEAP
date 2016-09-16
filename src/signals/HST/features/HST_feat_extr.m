@@ -12,20 +12,22 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file HST_feat_extr.m
 %> @brief Computes Skin temperature features
 %> @b WARNING: this function will give 'strange' results when applied on a relative
 %>          signal
-
+% 
 %> @param  HSTsignal the temperature  signal.
 %> @param varargin you can choose which features to extract (see featureSelector)
 %>            the list of available features is:
-%>               - mean: average temprature
-%>               - std: standard deviation of the temperature
-%>               - kurtosis: Kurtosis of the temperature
-%>               - skewness: skewness of the temperature
-
+%>               - mean_: average temprature
+%>               - std_: standard deviation of the temperature
+%>               - kurtosis_: Kurtosis of the temperature
+%>               - skewness_: skewness of the temperature
+%>               - sp0001: Spectral power 0-0.1Hz,
+%>               - sp0102: Spectral power 0.1-0.2Hz,
+% 
 %> @retval HST_feats list of features values
 %> @retval HST_feats_names names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features

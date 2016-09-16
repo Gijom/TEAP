@@ -12,16 +12,16 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+%
 %> @file Bulk_add_signal.m
 %> @brief Adds a signal to the bulk signal (and I love repetitions)
-
+%
 %> @param BulkSig the bulk collection
 %> @param signame the signal name (ex: 'HST')
 %> @param sig the actual signal (ex: after HST_aqn_variable)
-
+%
 %> @retval BulkSig the bulksignal with the signal added
-%Copyright Frank Villaro-Dixon, 2014
+%> @author Copyright Frank Villaro-Dixon, 2014
 
 function [BulkSig] = Bulk_add_signal(BulkSig, signame, sig)
 

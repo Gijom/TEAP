@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file GSR_aqn_variable.m
 %> @brief GSR_aqn_variable gets a GSR signal from a variable
-
+% 
 %> @param   rawGSR [1xN]: the raw GSR signal
 %> @param   sampRate [1x1]: the sampling rate, in Hz
-
+% 
 %> @retval   Signal: A GSR TEAP signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = GSR_aqn_variable(rawGSR, sampRate)
 

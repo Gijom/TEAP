@@ -12,14 +12,14 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal_filter1_low_median.m
 %> @brief Filters the signal with a low pass median filtering method
 %> @param Signal: the signal to filter. Not a bulk signal !
 %> @param windowSize: the window size (in samples)
-
+% 
 %> @retval  Signal: the newly filtered signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal_filter1_low_median(Signal, windowSize)
 

@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_get_channel.m
 %> @brief Gets the channel data from the EEG signal
-
+% 
 %> @param  Signal: the signal
 %> @param  channelName: the name of the channel you want to take
-
+% 
 %> @retval  Data: the data of the channel
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Data = EEG_get_channel(Signal, channelName)
 

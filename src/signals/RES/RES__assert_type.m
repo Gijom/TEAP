@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES__assert_type.m
 %> @brief Makes sure that the given signal is a RES one
 %> If you want to know more about that, please see Signal__assert_type's document…

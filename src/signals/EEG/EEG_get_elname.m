@@ -12,14 +12,14 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_get_elname.m
 %> @brief Gets the electrode name from a number
-
+% 
 %> @param  num: the electrode number (eg: 2)
-
+% 
 %> @retval  name: the name (eg: 'AF3')
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function [name] = EEG_get_elname(num)
 

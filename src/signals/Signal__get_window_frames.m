@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_window_frames.m
 %> @brief Takes a portion of a signal between startT and endT frames. NB: that the
 %> child signal will memorize the offset to its father (the first-one, non recursive)
@@ -26,9 +26,8 @@
 %> @param  Signal: the signal you want to take a portion of.
 %> @param startT: the start time (frames)
 %> @param endT: the end time (frames)
-
+% 
 %> @retval Child: the cut signal
-%
 %
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Child = Signal__get_window_frames(Signal, startT, endT)

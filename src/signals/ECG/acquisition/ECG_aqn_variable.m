@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file ECG_aqn_variable.m
 %> @brief ECG_aqn_variable gets an ECG signal from a variable
 %> @attention USAGE:
@@ -22,13 +22,13 @@
 %> If, however, the difference was already calculated by your device, you can
 %> call the function that way:
 %>  @c ECG_aqn_variable(electrodesDiff, sampRate);
-
+% 
 %> @param   ECG [1xN]:  the ECG signal
 %> @param   ECG2 [1xN]: the other pair ECG signal (optional if difference already calc.)
 %> @param   sampRate [1x1]: the sampling rate, in Hz
-
+% 
 %> @retval   Signal: An ECG TEAP signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = ECG_aqn_variable(ECG, ECG2, sampRate)
 

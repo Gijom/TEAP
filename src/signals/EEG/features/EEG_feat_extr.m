@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_feat_extr.m
 %> @brief Computes Skin respiration features
 %> @param  EEGsignal: the respiration  signal.
@@ -24,14 +24,14 @@
 %>               - SP_alpha: power spectral power for alpha band [8,12[ Hz
 %>               - SP_beta: power spectral power for beta band [12,30[ Hz
 %>               - SP_gamma: power spectral power for gamma band >30Hz
-
+% 
 %> @retval  EEG_feats: list of features values
 %> @retval  EEG_feats_names: names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features
 %>                   can be different than the requested one)
 %>               the  features are per electode and therefore  1xN (N= number of electrodes)
 %>               and the final output is a 2dimensional array whose size is N_features x N_electrodes
-
+% 
 %> @author Copyright Mohammad Soleymani, Guillaume Chanel, Frank Villaro-Dixon, 2015
 function [EEG_feats, EEG_feats_names] = EEG_feat_extr(EEGsignal,varargin)
 

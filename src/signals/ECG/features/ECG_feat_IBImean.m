@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file ECG_feat_IBImean.m
 %> @brief Computes the InterBeatInterval mean of an ECG signal
 %> @param  ECGSignal: the ECG signal

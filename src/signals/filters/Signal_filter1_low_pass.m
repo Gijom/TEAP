@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal_filter1_low_pass.m
 %> @brief A simple low-pass filter applyed to 1D signals (such as GSR, ECG, etc…).
-
+% 
 %> @param Signal: the signal to filter (will use the .raw component). Not a bulk sig. !
 %> @param cutOffFreq: the cutOff frequency of the filter
-
+% 
 %> @retval Signal: the low-passed-signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal_filter1_low_pass(Signal, cutOffFreq)
 

@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_unit.m
 %> @brief Sets the unit of a signal
-
+% 
 %> @param Signal the signal you want to add the unit to
 %> @param unitStr the unit name (ex: 'Ohm');
-
+% 
 %> @retval Signal the newly modified signal
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function Signal = Signal__set_unit(Signal, unitStr)
 

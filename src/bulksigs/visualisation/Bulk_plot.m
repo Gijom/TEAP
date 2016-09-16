@@ -12,11 +12,11 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Bulk_plot.m
 %> @brief Plots a bulk signal: for each signal of the bulk signal, creates a figure and
 %> displays the signal
-
+% 
 %> @param  BulkSig the bulk signal
 %> @param title the optional title
 

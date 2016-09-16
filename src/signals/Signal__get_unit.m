@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_unit.m
 %> @brief Gets the unit of a signal (ex: 'Ohm' for a GSR signal)
 %> @param  Signal: the signal

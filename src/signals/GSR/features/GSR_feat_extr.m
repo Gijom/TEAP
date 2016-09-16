@@ -12,10 +12,10 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file GSR_feat_extr.m
 %> @brief Computes GSR features
-
+% 
 %> @param  GSRsignal: the GSR signal.
 %> @param  varargin: you can choose which features to extract (see featureSelector)
 %>            the list of available features is:
@@ -24,7 +24,7 @@
 %>               - riseTime: average rise time of peaks
 %>               - meanGSR: average GSR value
 %>               - stdGSR: variance of GSR
-
+% 
 %> @retval  GSR_feats: list of features values
 %> @retval  GSR_feats_names: names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features

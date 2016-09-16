@@ -12,15 +12,15 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_has_channel.m
 %> @brief Simply tells you if that specific channel on the @b EEG signal exists.
-
+% 
 %> @param  EEGSignal: the EEG signal
 %> @param  channelName: the channelName (ex: 'Fp1')
-
+% 
 %> @retval  ChannelExists: a boolean variable
-
+% 
 %> @author Copyright Frank Villaro-Dixon, 2014
 function ChannelExists = EEG_has_channel(EEGSignal, channelName)
 

@@ -12,18 +12,17 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_feat_extr.m
 %> @brief Computes @b BVP features
 %> @param  BVPsignal: the BVP signal.
 %> @param  varargin: you can choose which features to extract (see featureSelector)
 %>
-%>  TODO update the list correctly
 %>            the list of available features is:
 %>           - mean_: averaged BVP - ralated to blood pressure
 %>           - HRV: heart rate variability calculated based on the standard
 %>           deviation IBI differences
-%>           - HR: mean heart rate (beat per minute)
+%>           - meanIBI: mean heart rate (beat per minute)
 %>           - MSE: Multi-Scale Entropy at 5 levels 1-5
 %>           - sp0001: spectral power in 0.0-0.1Hz band
 %>           - sp0102: spectral power in 0.1-2.1Hz band
@@ -31,14 +30,14 @@
 %>           - sp0304: spectral power in 0.3-4.1Hz band
 %>           - sp_energyRatio: spectral power ratio between 0.0-0.08Hz and
 %>           0.15-0.5Hz bands
-%>           - tachogram_LFSP: Tachogram's low freqneucy spectral content
+%>           - tachogram_LF: Tachogram's low freqneucy spectral content
 %>           <0.08Hz
-%>           - tachogram_MFSP: Tachogram's medium freqneucy spectral content
+%>           - tachogram_MF: Tachogram's medium freqneucy spectral content
 %>           0.08Hz> and <0.15Hz
-%>           - tachogram_HFSP: Tachogram's high freqneucy spectral content
+%>           - tachogram_HF: Tachogram's high freqneucy spectral content
 %>           0.15Hz> and <0.5Hz
 %>           - tachogram_energy_ratio: energu ratio tachogram_MFSP/(tachogram_HSP+tachogram_LFSP)
-
+% 
 %> @retval  BVP_feats: list of features values
 %> @retval  BVP_feats_names: names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features
@@ -46,7 +45,7 @@
 %> @retval  Bulk: if the input to the function is a Bulk than the Bulk is returned
 %>        with the updated BVP signal, including IBI. Otherwise NaN is
 %>        returned
-
+% 
 %> @author Copyright Guillaume Chanel 2013
 %> @author Copyright Frank Villaro-Dixon, 2014
 function [BVP_feats, BVP_feats_names, Bulk] = BVP_feat_extr(BVPSignal,varargin)
@@ -93,8 +92,6 @@ if(~isempty(BVP_feats_names))
 	if any(strcmp('mean_',BVP_feats_names))
 		mean_ = mean(rawSignal);
 	end
-
-
 
 	if any(strcmp('meanIBI',BVP_feats_names)) || any(strcmp('HRV',BVP_feats_names))
 		HRV = std(IBI);

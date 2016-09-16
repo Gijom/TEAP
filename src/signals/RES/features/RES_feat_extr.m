@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file RES_feat_extr.m
 %> @brief Computes Skin respiration features
 %> @param  RESsignal: the respiration  signal.
@@ -24,6 +24,8 @@
 %>               - skewness_: skewness of the respiration
 %>               - main_freq: main frenquency of the respiration
 %>               - spxxyy: power spectral power between [xx,yy] /10 Hz
+%>                 available values are: 'sp0001', 'sp0102','sp0203', 'sp0304',
+%>                                       'sp0407', 'sp0710','sp1025'
 %> @retval  RES_feats: list of features values
 %> @retval RES_feats_names: names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features

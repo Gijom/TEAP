@@ -12,11 +12,11 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file HST_feat_meanderiv.m
 %> @brief Computes the mean derivation of the HST signal.
 %> @author Copyright Frank Villaro-Dixon, 2014
-
+% 
 %> @param HSTsignal the HST signal.
 %> @retval meanTemp the mean derivation of the temperature, in d°C/dt (= dK/dt)
 

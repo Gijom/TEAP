@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP__assert_type.m
 %> @brief Asserts that the given signal is a @b BVP one
 %> Please refer to @c Signal__assert_type for more and extensive documentation ;)

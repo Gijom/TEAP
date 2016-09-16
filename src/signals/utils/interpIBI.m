@@ -1,4 +1,37 @@
+%This file is part of TEAP.
+%
+%TEAP is free software: you can redistribute it and/or modify
+%it under the terms of the GNU General Public License as published by
+%the Free Software Foundation, either version 3 of the License, or
+%(at your option) any later version.
+%
+%TEAP is distributed in the hope that it will be useful,
+%but WITHOUT ANY WARRANTY; without even the implied warranty of
+%MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%GNU General Public License for more details.
+%
+%You should have received a copy of the GNU General Public License
+%along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
+%
 %> @file interpIBI.m
+%> @brief This function interpolate an HR/IBI signal (from a list of peaks) with the
+%> method proposed in:
+%>       Berger et al., "An Efficient Algorithm for Spectral Analysis of
+%>       Heart Rate Variability", IEEE Trans. on Biomedical Engineering,
+%>       Vol. 33, No. 9, sept. 1986
+%> @param peaks: a list of R peaks expressed in seconds (e.g. [0.3 1.4 2.3 3.2])
+%> @param fs: sampling frequency desired for the interpolated HR/IBI signal
+%> @param duration: duration desired. Concerning time aspects, the first sample
+%>  is assumed to lie at time 1/fs (which can be before the first peak) and
+%>  the last at time 'duration'. If point in time that are not computable
+%>  because of lack of peaks (beginning and end of the output signals), they are
+%>  simply padded with the closest computed value.
+%
+%> @retval IBI [1*N]: N interbeat intervals (in seconds)
+%> @retval HR [1*N]: N heart rate values
+%> @retval t [1*N]: N time stamps corresponding to the IBI and HR values
+%
+% @author: Guillaume Chanel
 function [IBI,HR,t] = interpIBI(peaks,fs,duration, silent)
 % function [IBI,HR,t] = interpIBI(peaks,fs,duration)
 % 
@@ -26,7 +59,7 @@ function [IBI,HR,t] = interpIBI(peaks,fs,duration, silent)
 % 
 %   HR [1*N]: N heart rate values
 % 
-%   t [1*N]; N time stamps corresponding to the IBI and HR values
+%   t [1*N]: N time stamps corresponding to the IBI and HR values
 % 
 % Author: Guillaume Chanel
 % Date: 7/12/2009

@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__new_empty.m
 %> @brief Creates a new, empty, signal. This is mainly to represent the data structure
 %> @retval  Signal: an empty signal

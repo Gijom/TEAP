@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EMG_aqn_variable.m
 %> @brief EMG_aqn_variable gets an EMG signal from a variable
 %> @b USAGE:
@@ -30,7 +30,7 @@
 %> @param   EMG [1xN]:  the EMG signal
 %> @param   EMG2 [1xN]: the other pair EMG signal (optional if difference already calc.)
 %> @param   sampRate [1x1]: the sampling rate, in Hz
-
+% 
 %> @retval Signal An EMG TEAP signal
 %
 %> @author Copyright Frank Villaro-Dixon, 2014

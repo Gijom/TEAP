@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file BVP_filter_basic.m
 %> @brief Cleans a signal adding a low-pass median filter to it. The window equals the
 %> sample rate, aka 1 sec.

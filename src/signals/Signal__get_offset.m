@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__get_offset.m
 %> @brief Gets the offset(in frames) relative to its parent (the first it had, non recursive).
 %> @param  Signal: the signal you want to know the offset

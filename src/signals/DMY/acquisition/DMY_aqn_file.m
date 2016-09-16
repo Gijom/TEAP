@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file DMY_aqn_file.m
 function Signal = DMY_aqn_file(filename)
 % DMY_AQN_FILE gets a DMY signal from a filename

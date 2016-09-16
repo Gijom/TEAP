@@ -12,14 +12,14 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Bulk_update_signal.m
 %> @brief Updates a signal in the bulk signal
-
+% 
 %> @param BulkSig the bulk collection
 %> @param signame the signal name (ex: 'HST')
 %> @param sig the actual signal (ex: after HST_aqn_variable)
-
+% 
 %> @retval BulkSig the bulksignal with the signal updated
 function [BulkSig] = Bulk_update_signal(BulkSig, signame, sig)
 %Copyright Frank Villaro-Dixon, Guillaume Chanel, 2014

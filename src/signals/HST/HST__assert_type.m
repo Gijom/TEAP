@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file HST__assert_type.m
 %> @brief Asserts that the given signal is a HST one
 %> Yo: if you want to know how this works, please see my master:Signal__assert_type

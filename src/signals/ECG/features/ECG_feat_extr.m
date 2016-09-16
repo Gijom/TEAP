@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file ECG_feat_extr.m
 %> @brief Computes  ECG features
 %TODO: clarifiy the help
@@ -24,8 +24,22 @@
 % Inputs:
 %> @param  ECGSignal: the ECG signal (already subtracted from one lead)
 %> @param  varargin: you can choose which features to extract
-%> default or no input will result in extracting all the features
-
+%>      default or no input will result in extracting all the features
+%>      (see feature Extractor)
+%> featues names include:
+%>  - meanIBI: mean interbeat interval
+%>  - HRV: heart rate variability (deviation of IBI)
+%>  - MSE: Multi-Scale Entropy at 5 levels 1-5 (5 features)
+%>  - sp0001: Spectral power 0-0.1Hz,
+%>  - sp0102: Spectral power 0.1-0.2Hz,
+%>  - sp0203: Spectral power 0.2-0.3Hz,
+%>  - sp0304: Spectral power 0.3-0.4Hz,
+%>  - energyRatio: Spectral energy ratio between f<0.08Hz/f>0.15Hz and f<5.0Hz
+%>  - tachogram_LF: Low frequency spectral power in tachogram (HRV)  [0.01-0.08Hz]
+%>  - tachogram_MF: Medium frequency spectral power in tachogram (HRV)  [0.08-0.15Hz]
+%>  - tachogram_HF: High frequency spectral power in tachogram (HRV)  [0.15-0.5Hz]
+%>  - tachogram_energy_ratio: Energy ratio for tachogram spectral content (MF/(LF+HF))
+% 
 %> @retval  ECG_features: vector of features among the following features
 %> @retval  ECG_feats_names: the names of the features is the same order than in
 %>                   'ECG_features'
@@ -33,21 +47,7 @@
 %>        with the updated ECG signal, including IBI. Otherwise NaN is
 %>        returned
 %>
-%>TODO update feature names there
-%1. 2. mean HRV, 3. mean heart rate,
-%4-8. Multiscale entropy at 5 levels on HRV (5 feaures),
-%9. Spectral power 0-0.1Hz,
-%10. Spectral power 0.1-0.2Hz,
-%11. Spectral power 0.2-0.3
-%12. Spectral power 0.3-0.4Hz,
-%13. Spectral energy ratio between f<0.08Hz/f>0.15Hz and f<5.0Hz
-%14. Low frequency spectral power in tachogram (HRV)  [0.01-0.08Hz]
-%15. Medium frequency spectral power in tachogram (HRV)  [0.08-0.15Hz]
-%16. High frequency spectral power in tachogram (HRV)  [0.15-0.5Hz]
-%17. Energy ratio for tachogram spectral content (MF/(LF+HF))
-% ECG_feats_names: names of features corresponding to th ECG_features
-% values
-
+% 
 %> @author Copyright Guillaume Chanel 2013, 2015
 %> @author Copyright Frank Villaro-Dixon, 2014
 function [ECG_features, ECG_feats_names, Bulk] = ECG_feat_extr(ECGSignal,varargin)

@@ -12,11 +12,11 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file EEG_reference_mean.m
 %> @brief re-references the @b EEG signals to their mean
 %> Creates a reference for the @b EEG signal; removed average reference' the signal
-
+% 
 %> @param  EEGSignal: the @b EEG signal
 %> @retval  EEGSignal: the referenced @b EEG signal
 %

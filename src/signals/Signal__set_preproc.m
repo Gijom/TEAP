@@ -12,10 +12,10 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-
+% 
 %> @file Signal__set_preproc.m
 %> @brief Set a preprocessing attribute for a signal. Ex: lowPass, highPass
-
+% 
 %> @param  Signal: the signal
 %> @param  preprocName: the name of the preprocessing calculus done
 

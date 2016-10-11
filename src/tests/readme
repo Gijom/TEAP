@@ -1,0 +1,9 @@
+To reproduce the results in the paper; you need to download the databases from
+http://mahnob-db.eu/hci-tagging
+and
+http://www.eecs.qmul.ac.uk/mmv/datasets/deap/
+
+You will have to also donwload libsvm
+http://www.csie.ntu.edu.tw/~cjlin/libsvm/
+and set all the path in the scripts to work. 
+These examples are only tested in Matlab.

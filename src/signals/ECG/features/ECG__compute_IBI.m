@@ -34,7 +34,7 @@ if(isempty(Signal__get_raw(ECGSignal.IBI)))
 	if size(ECG,1)<size(ECG,2)
 		ECG = ECG';
 	end
-	[hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG, newfs);
+	[hrv, R_t, R_amp, R_index, S_t, S_amp] = rpeakdetect(ECG, newfs); %FIXME: there seem to be a problem with filter side effects (begin and end)
 	[~, IBI, ~, listePeak] = correctBPM(R_index, newfs);
 	
 	%If the number of detected peaks is lower than 2 than IBI cannot be

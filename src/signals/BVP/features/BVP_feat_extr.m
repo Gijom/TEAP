@@ -99,7 +99,7 @@ if(~isempty(BVP_feats_names))
 	end
 	if any(strncmp('MSE',BVP_feats_names,3))
 		%multi-scale entropy for 5 scales on hrv
-		[MSE] = multiScaleEntropy(IBI,5);
+		[MSE] = multiScaleEntropy(IBI,5); %FIXME: this is applied on a 4Hz signal -> but probably the features were originally computed on an IBI sequence
 	end
 
 	welch_window_size_BVP = samprate*20;

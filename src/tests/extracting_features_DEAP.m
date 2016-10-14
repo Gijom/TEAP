@@ -1,17 +1,20 @@
 %extracting features from DEAP database
 %path where the mat files are stored
+%You need to go to http://www.eecs.qmul.ac.uk/mmv/datasets/deap/ to get the data
+%You should download the mat files and the ratings and set the correct path
 clear;clc;
 TEAP_path = fileparts(pwd);
 curr_path = cd;
 eval(['cd ' TEAP_path]);
 init
 eval(['cd ' curr_path]);
-physio_path = '/user/mmi/emotion/data/DEAP/physio_data/';
+%replace the following line by where your phsyio data is located
+physio_path = 'DEAP/physio_data/';
+%replcae the following path with your local path of the ratings
+feedbacks = readtable('DEAP/metadata/participant_ratings.csv');
 if ~exist([physio_path '/s30_eeglab.mat'],'file')
     loading_DEAP(physio_path);
 end
-
-feedbacks = readtable('/user/mmi/emotion/data/DEAP/metadata/participant_ratings.csv');
 for subject=1:32
     eeglab_file = sprintf('%ss%0.2d_eeglab.mat',physio_path,subject);
     %loading the file
@@ -45,12 +48,11 @@ for subject=1:32
         features(subject,epoch).feedback.felt_liking = feedback.Liking;
         features(subject,epoch).feedback.felt_familiarity = feedback.Familiarity;
         fprintf('extracted all the features for subject %d epoch %d\n',subject, epoch);
-        %todo store it somebwere
     end
 end
 
 
-
+%we store the features in the same path where the signals were
 save([physio_path 'deap_features.mat'],'features');
 
 

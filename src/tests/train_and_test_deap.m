@@ -1,13 +1,9 @@
 clear
 clc
 close all
-%loading the deap signals converted to EEGLAB format
-load('deap_features.mat')
-%adding the path to dr toolbox https://lvdmaaten.github.io/drtoolbox/
-addpath(genpath('drtoolbox'))
-addpath('../../mylibs');
-%addpath('../../../toolboxes/libsvm-3.19/matlab');
-
+%uupdate the follosing path to match your local ones
+addpath('machine_learning_codes/');
+load('DEAP/physio_data/deap_features.mat')
 ctr = 0;
 for part = 1:32
     for trial = 1:40
@@ -162,7 +158,11 @@ parameters.upper_limit = 0.5;
 parameters.grid_search = true;
 parameters.featSelection = 'none';
 parameters.classifier = 'ridge_reg';
+<<<<<<< HEAD
+parameters.cross_validation = 'leave-one-out';%'one-participant-out';%'k-fold';%
+=======
 parameters.cross_validation = 'leave-one-out';
+>>>>>>> upstream/master
 for subject = 1:32
     if parameters.verbose
         fprintf('Regression for samples from subject %d\n',subject);

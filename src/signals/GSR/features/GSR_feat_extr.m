@@ -45,7 +45,7 @@ end
 samprate = Signal__get_samprate(GSRsignal);
 
 % Define full feature list and get features selected by user
-featuresNames = {'nbPeaks', 'ampPeaks', 'riseTime', 'meanGSR', 'stdGSR'};
+featuresNames = {'nbPeaks', 'ampPeaks', 'riseTime', 'meanGSR', 'stdGSR','firstQuartileGSR','thirdQuartileGSR'};
 GSR_feats_names = featuresSelector(featuresNames,varargin{:});
 
 signalUnit = Signal__get_unit(GSRsignal);
@@ -80,10 +80,20 @@ if(~isempty(GSR_feats_names))
 		meanGSR = Signal_feat_mean(GSRsignal);
 	end
 	
-	%variance computation
+	%standard devisation computation
 	if any(strcmp('stdGSR',GSR_feats_names))
 		stdGSR = Signal_feat_std(GSRsignal);
-	end
+    end
+    %first quartile
+	if any(strcmp('firstQuartileGSR',GSR_feats_names))
+		firstQuartileGSR = Signal_feat_quant(GSRsignal, 0.25);
+    end
+    
+    %third quartile
+	if any(strcmp('thirdQuartileGSR',GSR_feats_names))
+		thirdQuartileGSR = Signal_feat_quant(GSRsignal, 0.75);
+    end
+    
 	
 	%Write the values to the final vector output
 	for (i = 1:length(GSR_feats_names))

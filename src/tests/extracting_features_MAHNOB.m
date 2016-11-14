@@ -10,9 +10,8 @@
 clc
 clear
 close all
-
-MAHNOB_path = '/user/mmi/emotion/data/MAHNOB-HCI/teapformat/';
-addpath('/home/soleyman/work/codes/mylibs')
+%replace thee following line by the location where you saved the mat files
+MAHNOB_path = 'MAHNOB-HCI/teapformat/';
 cntr = 0;
 files_physio = dir([MAHNOB_path '*_eeglab.mat']);
 %there is only one epoch
@@ -40,9 +39,6 @@ for i = 1:length(files_physio)
     %extracting GSR features
     [features(subj_id,trial_id).GSR_feats, features(subj_id,trial_id).GSR_feats_names] = ...
         GSR_feat_extr(bulk(epoch));
-    %extracting BVP features
-    %[features(subj_id,trial_id).BVP_feats, features(subj_id,trial_id).BVP_feats_names] = ...
-    %            BVP_feat_extr(bulk(epoch));
     %extracting skin temperature features
     [features(subj_id,trial_id).HST_feats, features(subj_id,trial_id).HST_feats_names] = ...
         HST_feat_extr(bulk(epoch));
@@ -52,7 +48,7 @@ for i = 1:length(files_physio)
     fprintf('extracted all the features for subject %d trial %d\n',subj_id, trial_id);
     
 end
-
+%correct the following path to where you want your features to be saved
 save('mahnob_features.mat','features');
 
 

@@ -1,13 +1,9 @@
 clear
 clc
 close all
-
-load('/user/mmi/emotion/data/DEAP/physio_data/deap_features.mat')
-addpath(genpath('/home/soleyman/work/codes/toolboxes/drtoolbox/'))
-addpath(genpath('/home/soleyman/work/codes/toolboxes/SRR_code/'))
-addpath('../../mylibs');
-%addpath('../../../toolboxes/libsvm-3.19/matlab');
-
+%uupdate the follosing path to match your local ones
+addpath('machine_learning_codes/');
+load('DEAP/physio_data/deap_features.mat')
 ctr = 0;
 for part = 1:32
     for trial = 1:40
@@ -52,9 +48,9 @@ parameters.nbClasses = 2;
 parameters.lower_limit = -0.5;
 parameters.upper_limit = 0.5;
 parameters.grid_search = true;
-parameters.featSelection = 'Fisher';%'pca';%'forward';%'anova';%'none';%'FCBF';%'linSVM_BS';%'kpca';%'linSVM_FS';%'corr';%''rpca';%'anova';%
-parameters.classifier = 'diaglinear';%'gentle_boost';%'SVMRbf';%'linear';%'SVMLin';%'linear';%'SVMchi';%'SVM_HI';%'gentle_boost';%'quadratic';%'diagquadratic';%'gentle_boost';% 'HMM';%'CRF';%'HCRF';%
-parameters.cross_validation = 'leave-one-out';%'one-participant-out';%'k-fold';%
+parameters.featSelection = 'Fisher';
+parameters.classifier = 'diaglinear';
+parameters.cross_validation = 'leave-one-out';
 for subject = 1:32
     idx = part_vect ==subject;
     if parameters.verbose
@@ -160,8 +156,8 @@ parameters.nbClasses = -1;
 parameters.lower_limit = -0.5;
 parameters.upper_limit = 0.5;
 parameters.grid_search = true;
-parameters.featSelection = 'none';%'pca';%'anova';%'linSVM_BS';%'kpca';%'linSVM_FS';%'corr';%'FCBF';%'rpca';%'anova';%'gentle_boost';%
-parameters.classifier = 'ridge_reg';'srr';%'diaglinear';%'SVMRbf';%'linear';%'SVMLin';%'linear';%'SVMchi';%'SVM_HI';%'gentle_boost';%'quadratic';%'diagquadratic';%'gentle_boost';% 'HMM';%'CRF';%'HCRF';%
+parameters.featSelection = 'none';
+parameters.classifier = 'ridge_reg';
 parameters.cross_validation = 'leave-one-out';%'one-participant-out';%'k-fold';%
 for subject = 1:32
     if parameters.verbose

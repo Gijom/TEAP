@@ -7,9 +7,11 @@
 %Takes the path physio_files_path and writes the mat files in eeglab format
 %acceptable by TEAP
 %for ECG we take the ECG2-ECG3 as the lead
+%You should get the MAHNOB-HCI database here: mahnob-db.eu/hci-tagging
+%Download only the physiological files and session metadata
+
 clc
 clear
-close all
 electrode_labels_orig =  {'Fp1', 'AF3', 'F3', 'F7', 'FC5', 'FC1', 'C3', 'T7', 'CP5', ...
     'CP1', 'P3', 'P7', 'PO3', 'O1', 'Oz', 'Pz', 'Fp2', 'AF4', ...
     'Fz', 'F4', 'F8', 'FC6', 'FC2', 'Cz', 'C4', 'T8', 'CP6', ...
@@ -26,10 +28,10 @@ feltEmos = {'Neutral', 'Anger', 'Disgust', 'Fear', 'Joy', 'Sadness', ...
     'Surprise', 'Scream', 'Bored', 'Sleepy', 'Unknown','Amusement', 'Anxiety'};
 
 n_chans = 38;
-
-MAHNOB_path = '/user/mmi/emotion/data/MAHNOB-HCI/Sessions/';
-path_towrite = '/user/mmi/emotion/data/MAHNOB-HCI/teapformat';
-addpath('/home/soleyman/work/codes/mylibs')
+%Update the following two lines with your local path
+%Pleas
+MAHNOB_path = 'MAHNOB-HCI/Sessions/';
+path_towrite = 'MAHNOB-HCI/teapformat';
 sessions = dir(MAHNOB_path);
 cntr = 0;
 

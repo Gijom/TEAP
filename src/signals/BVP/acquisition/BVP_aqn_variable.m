@@ -35,7 +35,7 @@ Signal = Signal__set_samprate(Signal, sampRate);
 Signal = Signal__set_raw(Signal, Raw_convert_1D(rawBVP));
 
 %And we filter the signal. Else, it's useless
-Signal = BVP_filter_basic(Signal);
+Signal = BVP_filter_basic(Signal); %FIXME: should this be done ? Or an option ?
 
 end
 

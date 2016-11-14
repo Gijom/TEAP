@@ -158,7 +158,11 @@ parameters.upper_limit = 0.5;
 parameters.grid_search = true;
 parameters.featSelection = 'none';
 parameters.classifier = 'ridge_reg';
+<<<<<<< HEAD
 parameters.cross_validation = 'leave-one-out';%'one-participant-out';%'k-fold';%
+=======
+parameters.cross_validation = 'leave-one-out';
+>>>>>>> upstream/master
 for subject = 1:32
     if parameters.verbose
         fprintf('Regression for samples from subject %d\n',subject);

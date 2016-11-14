@@ -56,7 +56,7 @@ tThreshUp  = 10;
 %low peaks are the GSR appex reactions (highest sudation)
 %High peaks are used as starting points for the reaction
 GSR = Signal__get_raw(GSRsignal);
-GSR = detrend(GSR);
+%GSR = detrend(GSR);
 dN = diff(diff(GSR) <= 0);
 idxL = find(dN < 0) + 1; %+1 to account for the double derivative
 idxH = find(dN > 0) + 1;

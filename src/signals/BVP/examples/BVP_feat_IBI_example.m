@@ -12,21 +12,21 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-% 
-%> @file BVP_filter_basic.m
-%> @brief Cleans a signal adding a low-pass median filter to it. The window equals the
-%> sample rate, aka 1 sec.
-%> @param  BVPsignal: the @b BVP signal.
-%> @retval  Signal: the filtered @b BVP signal
 %
-%> @author Copyright Frank Villaro-Dixon, 2014
-function BVPsignal = BVP_filter_basic(BVPsignal)
+%> @file BVP_feat_IBI_example.m
+addpath(genpath('../../../')); %load the toolbox
 
+data = csvread('BVP_example.csv')';
 
-%Make sure we have a BVP signal
-BVPsignal = BVP__assert_type(BVPsignal);
+sig = BVP_aqn_variable(data, 512); %Sampling freq is 512 (not known from CSV)
 
-sampRate = Signal__get_samprate(BVPsignal);
+figure;
+subplot(2,1,1);
+Signal_plot(sig);
 
-BVPsignal = Signal_filter1_low_median(BVPsignal, sampRate/8); %FIXME: sampRate seems to be far too much filtering, temporarily changed to /8
+sig = BVP__compute_IBI(sig);
 
+subplot(2,1,2);
+Signal_plot(sig.IBI);
+
+IBIvar = BVP_feat_var(sig)

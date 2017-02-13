@@ -19,4 +19,5 @@ Citation
 ==========
 
 If you are using TEAP please cite:
+
 Soleymani, M., Villaro-Dixon, F., Pun, T., & Chanel, G. (2017). Toolbox for Emotional feAture extraction from Physiological signals (TEAP). Frontiers in ICT, 4. https://doi.org/10.3389/fict.2017.00001

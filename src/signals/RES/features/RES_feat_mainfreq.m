@@ -52,7 +52,7 @@ if nfft < 256
 end
 
 %had to specify for compatibility between octave and matlab
-[RespPower, fResp] = pwelch(Resp_filt, win_length, 0.5, nfft, fs,'power');
+[RespPower, fResp] = pwelch(Resp_filt, win_length, round(0.5*win_length), nfft, fs,'power');
 
 %Take the frequencies we want
 iFreqInterest = find(0.16 <= fResp & fResp <= 0.6);

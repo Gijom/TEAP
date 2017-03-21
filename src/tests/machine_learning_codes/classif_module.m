@@ -243,8 +243,17 @@ switch(parameters.classifier)
         estimated = svmpredict(ones(size(xTest,1),1), xTest, model);
         estimated(estimated<parameters.lower_limit) = parameters.lower_limit;
         estimated(estimated>parameters.upper_limit) = parameters.upper_limit;
-        
-        
         scores = zeros(length(estimated),1);
+   case {'diaglinear' 'linear' 'quadratic' 'diagquadratic'}
+            try
+                [estimated,~,scores] = classify(xTest, xTrain,labels_train,parameters.classifier);
+            catch
+                disp('pooled variance problem - passing')
+                estimated = ones(size(xTest,1));
+                scores = zeros(size(xTest,1),parameters.nbClasses);
+            end
+            if parameters.is_fusion
+                [estimated_training, ~, scores_training]  = classify(xTrain, xTrain, labels_train,parameters.classifier);
+            end        
 end
 

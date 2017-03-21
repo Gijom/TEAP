@@ -106,9 +106,9 @@ switch(parameters.classifier)
         if size(y,1)<size(y,2)
             y = y';
         end
-        
+
         Cs = 10.^[-4:4];
-        
+
         if parameters.grid_search
             perf_metr_m = zeros(length(Cs),1);
             perf_metr_sd = zeros(length(Cs),1);
@@ -116,7 +116,7 @@ switch(parameters.classifier)
             params.nbFolds = 3;
             folds  = kfold_gen(y,params);
             for iC = 1:length(Cs)
-                
+
                 svm_prms = ['-s 11 -c ' num2str(Cs(iC))];
                 lbls_fld = ones(size(y));
                 nbTrials = length(y);
@@ -140,50 +140,50 @@ switch(parameters.classifier)
                         sparse(x_val), model);
                     [evals] = regressionPrec(lbls_est,  y_val);
                 end
-                
-                
+
+
                 perf_metr_rho(iC) = evals.rho;
                 perf_metr_rmse(iC) = evals.RMSE;
             end
             inds = find(perf_metr_rmse==min(perf_metr_rmse));
             if length(inds) >1
-                
+
                 iBestC = inds(perf_metr_rho(inds) == max(perf_metr_rho(inds)));
             else
                 iBestC = inds;
             end
             rmse_min = min(perf_metr_rmse(:));
-            
+
             disp(['Best C = ' num2str(Cs(iBestC))  ', RMSE  = ' num2str(rmse_min)]);
-            
+
             svm_prms = ['-s 11 -c ' num2str(Cs(iBestC)) ];
         else
             svm_prms = '-s 11  -c 10 ';
-            
+
         end
-        
+
         model = train(y, sparse(x), svm_prms);
         estimated = predict(ones(size(xTest,1),1), sparse(xTest), model);
         estimated(estimated<parameters.lower_limit) = parameters.lower_limit;
         estimated(estimated>parameters.upper_limit) = parameters.upper_limit;
-        
-        
+
+
         scores = zeros(length(estimated),1);
     case 'SVR_RBF'
         addpath('../toolboxes/libsvm-3.19/matlab');
         x = xTrain;
         y = labels_train;
-        
+
         x_val = xVal;
         y_val = labels_val;
         if size(y,1)<size(y,2)
             y = y';
         end
-        
+
         Cs = 2.^[-3:3];%5 10 % instead of starting at -6
         Gammas = 1/size(xTrain,2);%2.^[-15:2:-9];%instead of +9
         %
-        
+
         if parameters.grid_search
             perf_metr_m = zeros(length(Cs),length(Gammas));
             perf_metr_sd = zeros(length(Cs),1);
@@ -196,7 +196,7 @@ switch(parameters.classifier)
                     lbls_fld = ones(size(y));
                     nbTrials = length(y);
                     if isempty(xVal)
-                        
+
                         for k = 1:parameters.nbFolds
                             test_set = folds{k};
                             train_set = setdiff(1:nbTrials,test_set);
@@ -207,38 +207,38 @@ switch(parameters.classifier)
                         [evals] = regressionPrec(lbls_fld,  y);
                     else
                         model = svmtrain(y, x, svm_prms);
-                        
+
                         lbls_est = svmpredict(y_val, ...
                             x_val, model);
                         [evals] = regressionPrec(lbls_est,  y_val);
-                        
+
                     end
                     perf_metr_rho(iC,iGamma) = evals.rho;
                     perf_metr_rmse(iC,iGamma) = evals.RMSE;
                 end
-                
+
             end
             inds = find(perf_metr_rmse==min(perf_metr_rmse(:)));
             if length(inds) >1
-                
+
                 iBests = inds(find(perf_metr_rho(inds) == max(perf_metr_rho(inds)),1,'first'));
-                
+
             else
                 iBests = inds;
             end
-            
+
             [iBestC iBestGamma] = find(perf_metr_rmse==perf_metr_rmse(iBests) ...
                 & perf_metr_rho==perf_metr_rho(iBests),1,'first');
             disp(['Best C = ' num2str(Cs(iBestC)) ' Best Gamma  = ' num2str(Gammas(iBestGamma)) ', rho  = ' num2str(max(perf_metr_rho(:)))]);
-            
+
             rho_max = max(perf_metr_rho(:));
             svm_prms = ['-s 4 -t 2 -d 3 -c ' num2str(Cs(iBestC)) ' -g ' num2str(Gammas(iBestGamma)) ' -h 0' ];
         else
             svm_prms = '-s 4 -t 2 -d 3 -c 10 -g 0.01 -h 0 ';
-            
+
         end
-        
-        
+
+
         model = svmtrain(y, x, svm_prms);
         estimated = svmpredict(ones(size(xTest,1),1), xTest, model);
         estimated(estimated<parameters.lower_limit) = parameters.lower_limit;
@@ -252,8 +252,12 @@ switch(parameters.classifier)
                 estimated = ones(size(xTest,1));
                 scores = zeros(size(xTest,1),parameters.nbClasses);
             end
-            if parameters.is_fusion
+            try
                 [estimated_training, ~, scores_training]  = classify(xTrain, xTrain, labels_train,parameters.classifier);
-            end        
-end
+            catch
+                disp('pooled variance problem for training - passing')
+                estimated_training = ones(size(xTrain,1));
+                scores_training = zeros(size(xTrain,1),parameters.nbClasses);
+            end
 
+end

@@ -18,7 +18,7 @@ for part = 1:32
             features(part,trial).BVP_feats];
         part_vect(ctr) = part;
         trial_vect(ctr) =  trial;
-        
+
         % self rported arousal and valence which was not used in any of the
         % original articles
         %Soleymani, Mohammad, et al. "Continuous emotion detection in response to music videos." Automatic Face & Gesture Recognition and Workshops (FG 2011), 2011 IEEE International Conference on. IEEE, 2011.
@@ -27,7 +27,7 @@ for part = 1:32
         valence_reported(ctr) = (features(part,trial).feedback.felt_valence-5);
         dominance_reported(ctr) = (features(part,trial).feedback.felt_dominance-5);
         liking_reported(ctr) = (features(part,trial).feedback.felt_liking-5);
-        
+
         %translation of reported keywords to two levels of arousal and
         %valence and likability
         %Koelstra, Sander, et al. "Deap: A database for emotion analysis; using physiological signals." Affective Computing, IEEE Transactions on 3.1 (2012): 18-31.
@@ -39,11 +39,11 @@ for part = 1:32
     %normalize per participant
     EEG_feats(part_vect==part,:) = zscore(EEG_feats(part_vect==part,:));
     periph_feats(part_vect==part,:) = zscore(periph_feats(part_vect==part,:));
-    
+
 end
 parameters.verbose = false;
 
-parameters.normalize = 2;
+parameters.normalize = 3;
 parameters.nbClasses = 2;
 parameters.lower_limit = -0.5;
 parameters.upper_limit = 0.5;
@@ -51,17 +51,19 @@ parameters.grid_search = true;
 parameters.featSelection = 'Fisher';
 parameters.classifier = 'diaglinear';
 parameters.cross_validation = 'leave-one-out';
+%ignore the nan peripheral features
+periph_feats(isnan(periph_feats))=0;
 for subject = 1:32
     idx = part_vect ==subject;
     if parameters.verbose
         fprintf('Classifying samples from subject %d\n',subject);
-        
+
         fprintf('EEG signals\n');
     end
     %EEG cross validation arousal reported binary class
     [estimated_self_arousal_EEG{subject}, scores_self_arousal_EEG{subject}, evals_self_arousal_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), arousal_feltclass(idx), [], parameters);
-    
+
     %EEG cross validation valence reported binary class
     [estimated_self_valence_EEG{subject}, scores_self_valence_EEG{subject}, evals_self_valence_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), valence_feltclass(idx), [], parameters);
@@ -71,13 +73,13 @@ for subject = 1:32
     %EEG cross validation liking reported binary class
     [estimated_self_liking_EEG{subject}, scores_self_liking_EEG{subject}, evals_self_liking_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), liking_feltclass(idx), [], parameters);
-    if parameters.verbose 
+    if parameters.verbose
         fprintf('Peripheral signals signals\n');
     end
     %Peripheral cross validation arousal reported binary class
     [estimated_self_arousal_periph{subject}, scores_self_arousal_periph{subject}, evals_self_arousal_periph{subject}]  = ...
         cross_validation_module(periph_feats(idx,:), arousal_feltclass(idx), [], parameters);
-    
+
     %Peripheral cross validation valence reported binary class
     [estimated_self_valence_periph{subject}, scores_self_valence_periph{subject}, evals_self_valence_periph{subject}]  = ...
         cross_validation_module(periph_feats(idx,:), valence_feltclass(idx), [], parameters);
@@ -91,23 +93,23 @@ for subject = 1:32
     f1s_self_valence_EEG(subject) = mean(evals_self_valence_EEG{subject}.f1s);
     f1s_self_dominance_EEG(subject) = mean(evals_self_dominance_EEG{subject}.f1s);
     f1s_self_liking_EEG(subject) = mean(evals_self_liking_EEG{subject}.f1s);
-    
+
     cr_self_arousal_EEG(subject) = evals_self_arousal_EEG{subject}.classification_rate;
     cr_self_valence_EEG(subject) = evals_self_valence_EEG{subject}.classification_rate;
     cr_self_dominance_EEG(subject) = evals_self_dominance_EEG{subject}.classification_rate;
     cr_self_liking_EEG(subject) = evals_self_liking_EEG{subject}.classification_rate;
-    
+
     f1s_self_arousal_periph(subject) = mean(evals_self_arousal_periph{subject}.f1s);
     f1s_self_valence_periph(subject) = mean(evals_self_valence_periph{subject}.f1s);
     f1s_self_dominance_periph(subject) = mean(evals_self_dominance_periph{subject}.f1s);
     f1s_self_liking_periph(subject) = mean(evals_self_liking_periph{subject}.f1s);
-    
+
     cr_self_arousal_periph(subject) = evals_self_arousal_periph{subject}.classification_rate;
     cr_self_valence_periph(subject) = evals_self_valence_periph{subject}.classification_rate;
     cr_self_dominance_periph(subject) = evals_self_dominance_periph{subject}.classification_rate;
     cr_self_liking_periph(subject) = evals_self_liking_periph{subject}.classification_rate;
-    
-    
+
+
 end
 
 
@@ -158,22 +160,18 @@ parameters.upper_limit = 0.5;
 parameters.grid_search = true;
 parameters.featSelection = 'none';
 parameters.classifier = 'ridge_reg';
-<<<<<<< HEAD
-parameters.cross_validation = 'leave-one-out';%'one-participant-out';%'k-fold';%
-=======
 parameters.cross_validation = 'leave-one-out';
->>>>>>> upstream/master
 for subject = 1:32
     if parameters.verbose
         fprintf('Regression for samples from subject %d\n',subject);
-        
+
         fprintf('EEG signals\n');
     end
     idx = part_vect ==subject;
     %EEG cross validation arousal reported binary class
     [estimated_self_arousal_EEG{subject}, scores_self_arousal_EEG{subject}, evals_self_arousal_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), arousal_reported(idx), [], parameters);
-    
+
     %EEG cross validation valence reported binary class
     [estimated_self_valence_EEG{subject}, scores_self_valence_EEG{subject}, evals_self_valence_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), valence_reported(idx), [], parameters);
@@ -183,14 +181,14 @@ for subject = 1:32
     %EEG cross validation liking reported binary class
     [estimated_self_liking_EEG{subject}, scores_self_liking_EEG{subject}, evals_self_liking_EEG{subject}]  = ...
         cross_validation_module(EEG_feats(idx,:), liking_reported(idx), [], parameters);
-    
+
     if parameters.verbose
         fprintf('Peripheral signals\n');
     end
     %Peripheral cross validation arousal reported binary class
     [estimated_self_arousal_periph{subject}, scores_self_arousal_periph{subject}, evals_self_arousal_periph{subject}]  = ...
         cross_validation_module(periph_feats(idx,:), arousal_reported(idx), [], parameters);
-    
+
     %Peripheral cross validation valence reported binary class
     [estimated_self_valence_periph{subject}, scores_self_valence_periph{subject}, evals_self_valence_periph{subject}]  = ...
         cross_validation_module(periph_feats(idx,:), valence_reported(idx), [], parameters);
@@ -204,23 +202,23 @@ for subject = 1:32
     RMSE_self_valence_EEG(subject) = evals_self_valence_EEG{subject}.RMSE;
     RMSE_self_dominance_EEG(subject) = evals_self_dominance_EEG{subject}.RMSE;
     RMSE_self_liking_EEG(subject) = evals_self_liking_EEG{subject}.RMSE;
-    
+
     MAE_self_arousal_EEG(subject) = evals_self_arousal_EEG{subject}.MAE;
     MAE_self_valence_EEG(subject) = evals_self_valence_EEG{subject}.MAE;
     MAE_self_dominance_EEG(subject) = evals_self_dominance_EEG{subject}.MAE;
     MAE_self_liking_EEG(subject) = evals_self_liking_EEG{subject}.MAE;
-    
+
     RMSE_self_arousal_periph(subject) = evals_self_arousal_periph{subject}.RMSE;
     RMSE_self_valence_periph(subject) = evals_self_valence_periph{subject}.RMSE;
     RMSE_self_dominance_periph(subject) = evals_self_dominance_periph{subject}.RMSE;
     RMSE_self_liking_periph(subject) = evals_self_liking_periph{subject}.RMSE;
-    
+
     MAE_self_arousal_periph(subject) = evals_self_arousal_periph{subject}.MAE;
     MAE_self_valence_periph(subject) = evals_self_valence_periph{subject}.MAE;
     MAE_self_dominance_periph(subject) = evals_self_dominance_periph{subject}.MAE;
     MAE_self_liking_periph(subject) = evals_self_liking_periph{subject}.MAE;
-    
-    
+
+
 end
 
 

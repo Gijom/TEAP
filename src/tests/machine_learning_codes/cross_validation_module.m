@@ -69,7 +69,7 @@ for k = 1:parameters.nbFolds
     xTrain = features(trainSet,:);
     xTest = features(iTest,:);
     labelsTrain = labels(trainSet);
-    xTrain, xTest] = normalization_module(xTrain, xTest, parameters);
+    [xTrain, xTest] = normalization_module(xTrain, xTest, parameters);
     [~, xTrain, xTest] = feature_sel_module(xTrain, xTest, labelsTrain, parameters);
     [estimated(iTest), scores(iTest,:)]= classif_module(xTrain, [],xTest, labelsTrain, [], parameters);
     

@@ -1,4 +1,4 @@
-function [iFeatSelected] = feature_sel_module(train_data, test_data, labelsTrain, parameters)
+function [iFeatSelected, train_data, test_data] = feature_sel_module(train_data, test_data, labelsTrain, parameters)
 %feature selection module
 iFeatSelected = [];
 train_data(isnan(train_data)) = 0;
@@ -35,4 +35,6 @@ switch parameters.featSelection
 end
 if isempty(iFeatSelected)
 iFeatSelected = 1:nbFeatures;
+train_data  = train_data(:,iFeatSelected);
+test_data = test_data(:,iFeatSelected);
 end

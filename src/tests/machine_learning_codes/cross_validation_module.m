@@ -37,6 +37,9 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+nbTrials = size(features,1);
+scores = zeros(nbTrials,parameters.nbClasses);
+estimated = zeros(nbTrials,1);
 
 
 %creating folds

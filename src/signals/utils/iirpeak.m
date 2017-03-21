@@ -29,7 +29,7 @@ function [num, den] = iirpeak(Wo, BW, varargin)
 %     [1] Sophocles J. Orfanidis, Introduction To Signal Processing
 %         Prentice-Hall 1996.
 
-error(nargchk(2, 3, nargin, 'struct'));
+narginchk(2, 3);
 
 % Validate input arguments.
 [Ab, msg] = notchpeakargchk(Wo, BW, varargin);

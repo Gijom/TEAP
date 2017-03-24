@@ -40,8 +40,12 @@ switch(parameters.classifier)
             parameters.nbFolds = 5;
             folds  = kfold_gen(labels_train,parameters);
             paramSV = '';
-            for k = 1:parameters.nbClasses
-                paramSV = [paramSV '-w' num2str(labels_unique(k)) ' ' num2str(length(labels_train)/sum(labels_train==labels_unique(k))) ' ' ];
+            if length(labels_unique)==parameters.nbClasses
+                for k = 1:parameters.nbClasses
+                    paramSV = [paramSV '-w' num2str(labels_unique(k)) ' ' num2str(length(labels_train)/sum(labels_train==labels_unique(k))) ' ' ];
+                end
+            else
+                warning('Training set labels do not contains all the labels')
             end
             for iC = 1:length(Cs)
                 for iGamma = 1:length(Gammas)

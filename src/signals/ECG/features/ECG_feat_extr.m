@@ -157,11 +157,18 @@ if(~isempty(ECG_feats_names))
 	ECG_features = [];
 	for i = 1:length(ECG_feats_names)
 		eval(['ECG_features = cat(2, ECG_features, ' ECG_feats_names{i} ');']);
-	end
+    end
+
+    %MSE actually contains five features so rename features MSE as MSE1, MSE2... if it exists
+    %TODO: just a temporary hack ?
+    idx = find(ismember(ECG_feats_names, 'MSE'))
+    if ~isempty(idx)
+        ECG_feats_names = {ECG_feats_names{1:idx-1} 'MSE1' 'MSE2' 'MSE3' 'MSE4' 'MSE5' ECG_feats_names{idx+1:end}}
+    end
+
 else
 	ECG_features = [];
 end
-
 
 end
 

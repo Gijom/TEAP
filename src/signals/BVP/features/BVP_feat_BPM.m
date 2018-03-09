@@ -40,7 +40,7 @@ SizeWindow = round(fs/50);
 data = data - mean(data);
 
 %Filter the data
-dataS = filtfilt(ones(1, SizeWindow)/SizeWindow, 1,
+dataS = filtfilt(ones(1, SizeWindow)/SizeWindow, 1, ...
                  [repmat(data(1), SizeWindow, 1); data]);
 dataS = dataS(SizeWindow+1:end);
 

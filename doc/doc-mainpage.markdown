@@ -46,11 +46,11 @@ returns a variable. No global variables or states are used.
 ## Getting TEAPhysio
 The best way to get TEAP is via git: the URL is:
 
-	git://git.vi-di.fr/TEAPhysio.git
+	https://github.com/Gijom/TEAP
 
 so you just have to type:
 
-	git clone git://git.vi-di.fr/TEAPhysio.git
+	git clone https://github.com/Gijom/TEAP.git
 
 ## License
 TEAPhysio is licensed under the [BSD 3-Clause
@@ -63,10 +63,7 @@ from the [University of Geneva/CVML](http://cvml.unige.ch/), TEAP couldn't have
 been developed without their help !
 
 ## Contributing to TEAP
-If you want to contribute to TEAP, you are encouraged to send git patches (see
-[here](
-https://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git/) for
-more info) to [TEAP@vi-di.fr](mailto:TEAP@vi-di.fr); they'll be applied upstream
+If you want to contribute to TEAP, you are encouraged to submit [pull requests](https://help.github.com/en/articles/about-pull-requests) via github
 
 You can also read the `HACKING` and the `CONTRIB` file for more info.
 

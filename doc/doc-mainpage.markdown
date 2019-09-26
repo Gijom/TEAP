@@ -4,7 +4,7 @@
 # Overview
 
 ## Abstract
-**TEAPhysio**, the *Toolbox for Emotion Analysis using Physiological signals*,
+**TEAP**, the *Toolbox for Emotional feAture extraction from Physiological signals*,
 is a Matlab (fully [Octave](https://gnu.org/software/octave/) compliant) toolbox
 that aims to reduce code dispersing and duplication across your research
 projects.

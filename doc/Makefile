@@ -2,4 +2,4 @@ doc:
 	doxygen
 
 deploy:
-	scp -r html/* vi-di.fr:/var/www/teap.science/doxygen
+	scp -r html/* teap.unige.ch:/www/teap.unige.ch/doxygen

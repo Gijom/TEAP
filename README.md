@@ -14,6 +14,7 @@ Documentation and more information
 ==========
 
 Please have a look at our [website](http://teap.unige.ch/)
+Or directly check the [documentation](http://teap.unige.ch/doxygen/)
 
 Citation
 ==========

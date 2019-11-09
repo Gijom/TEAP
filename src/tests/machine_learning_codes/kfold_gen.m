@@ -30,7 +30,7 @@ else
     else
         for c = 1:params.nbClasses
             iCurrentClass = find(labels == c);
-            iCurrentClass = randperm(length(iCurrentClass));
+            iCurrentClass = iCurrentClass(randperm(length(iCurrentClass)))';
             nbTrialsPerClass(c) = length(iCurrentClass);
             nbTrialsPerFold = round(nbTrialsPerClass(c) / params.nbFolds); %imprecision si le nombre de trial par classe n'est pas divisible par k (params.nbFolds)
             %On ajoute les indexes pour diviser en k-1 folds

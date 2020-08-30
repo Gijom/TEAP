@@ -69,7 +69,7 @@ if(~isempty(GSR_feats_names))
 	if any(strcmp('nbPeaks',GSR_feats_names)) || any(strcmp('ampPeaks',GSR_feats_names)) || any(strcmp('riseTime',GSR_feats_names))
 		
 		[nbPeaks, ampPeaks, riseTime, posPeaks] = GSR_feat_peaks(GSRsignal,ampThresh);
-		nbPeaks = nbPeaks/(length(GSRsignal)/samprate);
+		nbPeaks = nbPeaks/(length(GSRsignal.raw)/samprate);
 		ampPeaks = mean(ampPeaks);
 		riseTime = mean(riseTime);
 		%TODO what is this good for? posPeaks

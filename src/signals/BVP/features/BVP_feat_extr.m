@@ -12,7 +12,7 @@
 %
 %You should have received a copy of the GNU General Public License
 %along with TEAP.  If not, see <http://www.gnu.org/licenses/>.
-% 
+%
 %> @file BVP_feat_extr.m
 %> @brief Computes @b BVP features
 %> @param  BVPsignal: the BVP signal.
@@ -37,7 +37,7 @@
 %>           - tachogram_HF: Tachogram's high freqneucy spectral content
 %>           0.15Hz> and <0.5Hz
 %>           - tachogram_energy_ratio: energu ratio tachogram_MFSP/(tachogram_HSP+tachogram_LFSP)
-% 
+%
 %> @retval  BVP_feats: list of features values
 %> @retval  BVP_feats_names: names of the computed features (it is good pratice to
 %>                   check this vector since the order of requested features
@@ -45,7 +45,7 @@
 %> @retval  Bulk: if the input to the function is a Bulk than the Bulk is returned
 %>        with the updated BVP signal, including IBI. Otherwise NaN is
 %>        returned
-% 
+%
 %> @author Copyright Guillaume Chanel 2013
 %> @author Copyright Frank Villaro-Dixon, 2014
 function [BVP_feats, BVP_feats_names, Bulk] = BVP_feat_extr(BVPSignal,varargin)
@@ -124,10 +124,10 @@ if(~isempty(BVP_feats_names))
 			sp_energyRatio = log(sum(P(f<0.08))/sum(P(f>0.15 & f<0.5))+eps);
 		end
 	end
-	if length(IBI)< welch_window_size_BVP +IBI_sp
+	if length(IBI)< welch_window_size_IBI +IBI_sp
 		warning('Signal is too short for this welch window size');
 	end
-	if length(IBI)< welch_window_size_BVP +1
+	if length(IBI)< welch_window_size_IBI +1
 		warning('Signal is too short for this welch window size and the PSD features cannot be calculated');
 		tachogram_LF = NaN;tachogram_MF = NaN;tachogram_HF = NaN;
 		tachogram_energy_ratio = NaN;
@@ -140,7 +140,7 @@ if(~isempty(BVP_feats_names))
 		if any(strcmp('tachogram_LF',BVP_feats_names)) ...
 				|| any(strcmp('tachogram_MF',BVP_feats_names)) ||  any(strcmp('tachogram_HF',BVP_feats_names)) ...
 				|| any(strcmp('tachogram_energy_ratio',BVP_feats_names))
-			[Pt, ft] = pwelch(IBI, welch_window_size_BVP, [], [], IBI_sp);
+			[Pt, ft] = pwelch(IBI, welch_window_size_IBI, [], [], IBI_sp);
 			clear tachogram %TODO: delete ? Why is it useful ?
 			%WARN: check that this is possible with the IBI sampling rate
 			%WARN: these values are sometimes negative because of the log, doesn't it appear as strange for a user ?

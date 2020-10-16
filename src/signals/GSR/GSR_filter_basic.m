@@ -29,4 +29,10 @@ GSRsignal = GSR__assert_type(GSRsignal);
 
 sampRate = Signal__get_samprate(GSRsignal);
 
-GSRsignal = Signal_filter1_low_mean(GSRsignal, round(sampRate/16));
+if (sampRate < 32)
+    warning(
+        sprintf('Basic GSR filter cannot be applied because provided sampling frequency %d  <  32\n Either increase the sampling frequency or apply your own filter.', sampRate)
+    );
+else
+    GSRsignal = Signal_filter1_low_mean(GSRsignal, round(sampRate/16));
+end
